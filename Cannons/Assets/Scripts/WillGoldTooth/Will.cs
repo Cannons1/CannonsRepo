@@ -6,16 +6,13 @@ using UnityEngine;
 [RequireComponent(typeof(CollectingCoinExpPoints))]
 public class Will : MonoBehaviour
 {
-    //public delegate void WillEvents();
-    //public static event WillEvents OnDie;
-    //public static event WillEvents OnCameraMove;
-
     [HideInInspector] public GameObject cannonTriggered;
-    GameObject reference;
+    Transform reference;
 
     public static Will will = null;
 
     [HideInInspector] public bool inCannon;
+    float speed = 2;
 
     private void Awake()
     {
@@ -52,22 +49,24 @@ public class Will : MonoBehaviour
     void StuckOnCannon()
     {
         GetComponent<Rigidbody>().isKinematic = true;
-        reference = cannonTriggered.transform.GetChild(0).gameObject;
+        reference = cannonTriggered.transform.GetChild(0).gameObject.transform;
+        StartCoroutine(MoveToCannon());
         transform.SetParent(cannonTriggered.gameObject.transform);
-        transform.position = reference.transform.position;
         StartCoroutine(cannonTriggered.GetComponent<CannonParent>().Wick());
         StartCoroutine(cannonTriggered.GetComponent<RotatingCannon>().CannonRotate());
     }
 
-    /*private void OnBecameInvisible()
+    IEnumerator MoveToCannon()
     {
-        if(OnDie != null)
+        float step = (speed / (transform.position - reference.position).magnitude) * Time.fixedDeltaTime;
+        float t = 0;
+        while(t <= 1.0f)
         {
-            OnDie();
+            t += step;
+            transform.position = Vector3.Lerp(transform.position, reference.position, t);
+            yield return new WaitForFixedUpdate();
         }
-        else
-        {
-            Debug.Log("I dont know what to do ma frien");
-        }
-    }*/
+        transform.position = reference.position;
+        Debug.Log("Ya me moví");
+    }
 }
