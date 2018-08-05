@@ -11,7 +11,7 @@ public class ExpBoost : DateTimeController
 
     private void Start()
     {
-        if (Singleton.instance.expBoost == 1) {
+        if (Singleton.instance.ExpBoost == 1) {
             expBoostButton.interactable = false;
         }
         OnExpBoostReady += ExpBoostReady;
@@ -20,7 +20,7 @@ public class ExpBoost : DateTimeController
 
     public void BuyExpBoost()
     {
-        Singleton.instance.expBoost = 1;
+        Singleton.instance.ExpBoost = 1;
         SaveExpBoostTime();
         expBoostButton.interactable = false;
 
@@ -31,7 +31,7 @@ public class ExpBoost : DateTimeController
 
     public void ExpBoostReady()
     {
-        Singleton.instance.expBoost = 0;
+        Singleton.instance.ExpBoost = 0;
         expBoostButton.interactable = true;
     }
 }

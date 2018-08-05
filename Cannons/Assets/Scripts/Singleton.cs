@@ -6,40 +6,106 @@ public class Singleton : MonoBehaviour
 {
     public static Singleton instance = null;
 
+
+
     #region booleans for muted audios(Configuration)
-    public bool sFxMuted;
-    public bool musicMuted;
+    public bool SfxMuted {
+        get { return sFxMuted; }
+        set { sFxMuted = value; }
+    }
+    public bool MusicMuted {
+        get { return musicMuted; }
+        set { musicMuted = value; }
+    }
+    private bool sFxMuted;
+    private bool musicMuted;
     #endregion
 
     #region ints for coins
-    public int coins;
-    public int coinsInGame;
+    public int Coins {
+        get { return coins; }
+        set { coins = value; }
+    }
+    public int CoinsInGame {
+        get { return coinsInGame; }
+        set { coinsInGame = value; }
+    }
+    private int coins;
+    private int coinsInGame;
     #endregion
 
     #region floats for Experience
-    public float experience;
-    public float expInGame;
-    public int lvlInGame;
-    public float maxValue;
-    public float maxValueInGame;
+    public int Experience {
+        get { return experience; }
+        set { experience = value; }
+    }
+    public int ExpInGame {
+        get { return expInGame; }
+        set { expInGame = value; }
+    }
+    public int LvlInGame {
+        get { return lvlInGame; }
+        set { lvlInGame = value; }
+    }
+    public int MaxValue {
+        get { return maxValue; }
+        set { maxValue = value; }
+    }
+    public int MaxValueInGame {
+        get { return maxValueInGame; }
+        set { maxValueInGame = value; }
+    }
+    private int experience;
+    private int expInGame;
+    private int lvlInGame;
+    private int maxValue;
+    private int maxValueInGame;
     #endregion
 
     #region lvl
-    public int lvl = 1;
+    public int Lvl
+    {
+        get { return lvl; }
+        set { lvl = value; }
+    }
+    private int lvl;
     #endregion
 
     #region ints for points
-    public int points;
-    public int pointsInGame;
+    public int Points
+    {
+        get { return points; }
+        set { points = value; }
+    }
+    public int PointsInGame
+    {
+        get { return pointsInGame; }
+        set { pointsInGame = value; }
+    }
+    private int points;
+    private int pointsInGame;
     #endregion
 
     #region shop boosts
-    public byte expBoost = 0;
+    public byte ExpBoost {
+        get { return expBoost; }
+        set { expBoost = value; }
+    }
+    private byte expBoost;
     #endregion
 
     #region dailyGifts
-    public int dailyGifts = 0;
-    public int activeToggles = 0;
+    public byte DailyGifts
+    {
+        get { return dailyGifts; }
+        set { dailyGifts = value; }
+    }
+    public byte ActiveToggles {
+        get { return activeToggles; }
+        set { activeToggles = value; }
+    }
+    private byte dailyGifts;
+    private byte activeToggles;
     #endregion
 
     void Awake()
@@ -53,5 +119,6 @@ public class Singleton : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        lvl = 1;
     }
 }

@@ -41,7 +41,7 @@ public class CollectingCoinExpPoints : MonoBehaviour
 
         if (collisioned.GetComponent<IExperience>() != null)
         {
-            if (Singleton.instance.expBoost == 0)
+            if (Singleton.instance.ExpBoost == 0)
                 exp = Random.Range(1, 4);
             else
                 exp = Random.Range(4, 7);

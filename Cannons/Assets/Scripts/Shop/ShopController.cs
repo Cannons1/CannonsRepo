@@ -43,9 +43,9 @@ public class ShopController : MonoBehaviour {
         if (!((GameManager.Instance.skinAvailability & 1 << skinIndex) == 1 << skinIndex)) //Si la disponibilidad de skin no es igual a la skin a comprar
         {
             int value = _value;
-            if (Singleton.instance.coins >= value)
+            if (Singleton.instance.Coins >= value)
             {
-                Singleton.instance.coins -= value;
+                Singleton.instance.Coins -= value;
                 GameManager.Instance.skinAvailability += 1 << skinIndex;
                 GameManager.Instance.Save();
                 skinContainer.transform.GetChild(skinIndex).GetChild(0).gameObject.SetActive(false);

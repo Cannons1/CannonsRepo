@@ -11,45 +11,45 @@ public class WriteVbles : MonoBehaviour
 
     private void Start()
     {
-        numberOfCoins.text = Singleton.instance.coins.ToString("0");
-        experience.value = Singleton.instance.experience;
-        characterLvl.text = Singleton.instance.lvl.ToString("0");
-        highScore.text = Singleton.instance.points.ToString("0");
+        numberOfCoins.text = Singleton.instance.Coins.ToString("0");
+        experience.value = Singleton.instance.Experience;
+        characterLvl.text = Singleton.instance.Lvl.ToString("0");
+        highScore.text = Singleton.instance.Points.ToString("0");
         percentaje = 3;
-        experience.maxValue += Singleton.instance.maxValue;
+        experience.maxValue += Singleton.instance.MaxValue;
     }
 
     public void WritingNumberOfCoins()
     {
-        numberOfCoins.text = Singleton.instance.coins.ToString("0");
+        numberOfCoins.text = Singleton.instance.Coins.ToString("0");
     }
 
     public void WritingPoints()
     {
-        numberOfPoints.text = Singleton.instance.pointsInGame.ToString("0");
+        numberOfPoints.text = Singleton.instance.PointsInGame.ToString("0");
 
-        if (Singleton.instance.pointsInGame > Singleton.instance.points)
+        if (Singleton.instance.PointsInGame > Singleton.instance.Points)
         {
-            Singleton.instance.points = Singleton.instance.pointsInGame;
-            highScore.text = Singleton.instance.points.ToString("0");
+            Singleton.instance.Points = Singleton.instance.PointsInGame;
+            highScore.text = Singleton.instance.Points.ToString("0");
         }
     }
 
     public void WriteExp()
     {
-        experience.value += Singleton.instance.expInGame;
+        experience.value += Singleton.instance.ExpInGame;
 
-        if (Singleton.instance.experience >= experience.maxValue)
+        if (Singleton.instance.Experience >= experience.maxValue)
         {
-            Singleton.instance.lvlInGame++;//Lvl up
-            Singleton.instance.lvl++;
+            Singleton.instance.LvlInGame++;//Lvl up
+            Singleton.instance.Lvl++;
             experience.maxValue += percentaje;//Ten percent more each time you lvl up
-            Singleton.instance.maxValue += percentaje;
-            Singleton.instance.maxValueInGame += percentaje;
+            Singleton.instance.MaxValue += percentaje;
+            Singleton.instance.MaxValueInGame += percentaje;
             experience.value = 0;
-            Singleton.instance.expInGame = 0;
-            Singleton.instance.experience = 0;
-            characterLvl.text = Singleton.instance.lvl.ToString("0");
+            Singleton.instance.ExpInGame = 0;
+            Singleton.instance.Experience = 0;
+            characterLvl.text = Singleton.instance.Lvl.ToString("0");
         }
     }
 }

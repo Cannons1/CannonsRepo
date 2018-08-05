@@ -8,23 +8,23 @@ public class Experience : MonoBehaviour, IExperience
 
     private void Start()
     {
-        Singleton.instance.expInGame = 0f;
-        Singleton.instance.lvlInGame = 0;
-        Singleton.instance.maxValueInGame = 0f;
+        Singleton.instance.ExpInGame = 0;
+        Singleton.instance.LvlInGame = 0;
+        Singleton.instance.MaxValueInGame = 0;
     }
 
-    public void EarningExperience(float _Experience)
+    public void EarningExperience(int _Experience)
     {
-        Singleton.instance.experience += _Experience;
-        Singleton.instance.expInGame += _Experience;
-        Debug.Log(Singleton.instance.experience + "xp");
+        Singleton.instance.Experience += _Experience;
+        Singleton.instance.ExpInGame += _Experience;
+        Debug.Log(Singleton.instance.Experience + "xp");
         mWriteExp.WriteExp();
     }
 
     public void MinusExperienceInGame()
     {
-        Singleton.instance.experience -= Singleton.instance.expInGame;
-        Singleton.instance.lvl -= Singleton.instance.lvlInGame;
-        Singleton.instance.maxValue -= Singleton.instance.maxValueInGame;
+        Singleton.instance.Experience -= Singleton.instance.ExpInGame;
+        Singleton.instance.Lvl -= Singleton.instance.LvlInGame;
+        Singleton.instance.MaxValue -= Singleton.instance.MaxValueInGame;
     }
 }

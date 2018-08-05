@@ -20,7 +20,7 @@ public class AudioUI : MonoBehaviour
     public void MusicButton()
     {
         i += 1;
-        if (Singleton.instance.musicMuted == true)
+        if (Singleton.instance.MusicMuted == true)
         {
             if (i == 1)
             {

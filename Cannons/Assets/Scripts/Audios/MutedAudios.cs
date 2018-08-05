@@ -11,12 +11,12 @@ public class MutedAudios : MonoBehaviour
 
     private void Start()
     {
-        if (Singleton.instance.musicMuted == false)
+        if (Singleton.instance.MusicMuted == false)
             musicToggle.isOn = false;
         else
             musicToggle.isOn = true;
 
-        if (Singleton.instance.sFxMuted == false)
+        if (Singleton.instance.SfxMuted == false)
             sFxToggle.isOn = false;
         else
             sFxToggle.isOn = true;
@@ -24,28 +24,28 @@ public class MutedAudios : MonoBehaviour
 
     public void MusicMuted(float _MusicVol)
     {
-        Singleton.instance.musicMuted = true;
+        Singleton.instance.MusicMuted = true;
 
-        if (Singleton.instance.musicMuted)
+        if (Singleton.instance.MusicMuted)
             masterMixer.SetFloat("musicVolume", _MusicVol);
 
         if (musicToggle.isOn == false)
         {
-            Singleton.instance.musicMuted = false;
+            Singleton.instance.MusicMuted = false;
             masterMixer.ClearFloat("musicVolume");
         }
     }
 
     public void FxMuted(float _FxVol)
     {
-        Singleton.instance.sFxMuted = true;
+        Singleton.instance.SfxMuted = true;
 
-        if (Singleton.instance.sFxMuted)
+        if (Singleton.instance.SfxMuted)
             masterMixer.SetFloat("fxVolume", _FxVol);
             
         if (sFxToggle.isOn == false)
         {
-            Singleton.instance.sFxMuted = false;
+            Singleton.instance.SfxMuted = false;
             masterMixer.ClearFloat("fxVolume");
         }
     }

@@ -16,7 +16,7 @@ public class DailyGifts : MonoBehaviour
             a.interactable = false;
         }
 
-        switch (Singleton.instance.activeToggles)
+        switch (Singleton.instance.ActiveToggles)
         {
             case 1:
                 dailyToggles[0].enabled = false;
@@ -38,7 +38,7 @@ public class DailyGifts : MonoBehaviour
                 break;
             case 7:
                 dailyToggles[6].enabled = false;
-                Singleton.instance.activeToggles = 0;
+                Singleton.instance.ActiveToggles = 0;
                 break;
             default:
                 break;
@@ -49,7 +49,7 @@ public class DailyGifts : MonoBehaviour
 
     public void UnlockingDailyGifts()
     {
-        switch (Singleton.instance.dailyGifts)
+        switch (Singleton.instance.DailyGifts)
         {
             case 0:
                 dailyToggles[0].interactable = true;
@@ -83,7 +83,7 @@ public class DailyGifts : MonoBehaviour
     public void Interacting()
     {
 
-        switch (Singleton.instance.dailyGifts)
+        switch (Singleton.instance.DailyGifts)
         {
             case 0:
                 GiftFirstToggle();
@@ -117,16 +117,16 @@ public class DailyGifts : MonoBehaviour
     public void GettingGift()
     {
         mAudioUI.SoundClaimGift();
-        Singleton.instance.activeToggles++;
+        Singleton.instance.ActiveToggles++;
         DateTimeController.SaveDateTime();
-        dailyToggles[Singleton.instance.dailyGifts].interactable = false;
+        dailyToggles[Singleton.instance.DailyGifts].interactable = false;
     }
 
     #region Gifts of Toggles
     void GiftFirstToggle()
     {
         GettingGift();
-        Singleton.instance.coins += 5;
+        Singleton.instance.Coins += 5;
         mWriteVbles.WritingNumberOfCoins();
         Debug.Log("First Gift");
     }

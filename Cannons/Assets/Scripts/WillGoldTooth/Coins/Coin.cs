@@ -11,22 +11,22 @@ public class Coin : MonoBehaviour, ICoins
 
     private void Start()
     {
-        Singleton.instance.coinsInGame = 0;
+        Singleton.instance.CoinsInGame = 0;
         mMeshRenderer = GetComponent<MeshRenderer>();
         mBoxCollider = GetComponent<BoxCollider>();
     }
 
     public void CoinsCollected(int _Coin)
     {
-        Singleton.instance.coins += _Coin;
-        Singleton.instance.coinsInGame += _Coin;
+        Singleton.instance.Coins += _Coin;
+        Singleton.instance.CoinsInGame += _Coin;
         mWriteCoins.WritingNumberOfCoins();//Will write the number of coins in a text
         DeactivatedCoin();//When you pick a coin it will deactivate its meshRenderer and box collider
     }
 
     public void MinusCoinsInGame()
     {
-        Singleton.instance.coins -= Singleton.instance.coinsInGame;
+        Singleton.instance.Coins -= Singleton.instance.CoinsInGame;
     }
 
     public void DeactivatedCoin()

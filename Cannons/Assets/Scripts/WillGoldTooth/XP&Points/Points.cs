@@ -8,12 +8,12 @@ public class Points : MonoBehaviour, IPoints
 
     private void Start()
     {
-        Singleton.instance.pointsInGame = 0;
+        Singleton.instance.PointsInGame = 0;
     }
 
     public void GettingPoints(int _points)
     {
-        Singleton.instance.pointsInGame += _points;
+        Singleton.instance.PointsInGame += _points;
         mWriteCoins.WritingPoints();//Will write the number of points in a text
     }
 }

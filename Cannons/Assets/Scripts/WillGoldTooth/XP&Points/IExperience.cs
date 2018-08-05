@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface IExperience
 {
-    void EarningExperience(float _Experience);
+    void EarningExperience(int _Experience);
 }
 
 public interface IPoints

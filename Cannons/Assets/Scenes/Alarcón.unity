@@ -228,6 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mlvlMgr: {fileID: 114256811862882682, guid: 8f21b9231e4310e42958acf7365a67bc, type: 2}
+  willAudios: {fileID: 0}
 --- !u!65 &17275441
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4537,6 +4538,61 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1165073401
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1165073403}
+  - component: {fileID: 1165073402}
+  m_Layer: 0
+  m_Name: Singleton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1165073402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1165073401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b09e30591def32f4e98778bd316a0005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sFxMuted: 0
+  musicMuted: 0
+  coins: 0
+  coinsInGame: 0
+  experience: 0
+  expInGame: 0
+  lvlInGame: 0
+  maxValue: 0
+  maxValueInGame: 0
+  lvl: 1
+  points: 0
+  pointsInGame: 0
+  expBoost: 0
+  dailyGifts: 0
+  activeToggles: 0
+--- !u!4 &1165073403
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1165073401}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 74.03906, y: -349.96576, z: 1234.3915}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1169600391
 GameObject:
