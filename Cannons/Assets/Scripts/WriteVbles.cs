@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class WriteVbles : MonoBehaviour
 {
-    [SerializeField] Text numberOfCoins, characterLvl, numberOfPoints, highScore;
+    [SerializeField] Text numberOfCoins, characterLvl, numberOfPoints, highScore, costExpBoost;
     [SerializeField] Slider experience;
     [SerializeField] Experience mExperience;
     [SerializeField] AudioUI mAudioUI;
     int percentaje;
     private void Start()
     {
+        costExpBoost.text = ExpBoost.cost.ToString("0");
         numberOfCoins.text = Singleton.instance.Coins.ToString("0");
         characterLvl.text = Singleton.instance.Lvl.ToString("0");
         highScore.text = Singleton.instance.Points.ToString("0");

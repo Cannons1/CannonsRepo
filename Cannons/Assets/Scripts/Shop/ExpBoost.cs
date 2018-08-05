@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ExpBoost : DateTimeController
 {
     [SerializeField] Button expBoostButton;
+    [SerializeField] public static int cost = 150;
 
     //string[] s = new string[2];
 
@@ -20,10 +21,13 @@ public class ExpBoost : DateTimeController
 
     public void BuyExpBoost()
     {
-        Singleton.instance.ExpBoost = 1;
-        SaveExpBoostTime();
-        expBoostButton.interactable = false;
-
+        if (Singleton.instance.Coins >= cost)
+        {
+            Singleton.instance.Coins -= cost;
+            Singleton.instance.ExpBoost = 1;
+            SaveExpBoostTime();
+            expBoostButton.interactable = false;
+        }
         /*s[0] = "boostExp";
         s[1] = Singleton.expBoost.ToString();
         Memento.memento.Save(s);*/
