@@ -14,7 +14,6 @@ public class CannonParent : MonoBehaviour
     {
         if (Input.GetButtonUp("Fire1") && Will.will.inCannon && LvlMgr.unpause)
         {
-            Debug.Log("Shoot");
             Shoot();
         }
     }

@@ -30,7 +30,6 @@ public class Will : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         cannonTriggered = other.gameObject;
-        Debug.Log(cannonTriggered.name);
 
         if (cannonTriggered.tag == "Cannon")
         {
@@ -67,6 +66,5 @@ public class Will : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
         transform.position = reference.position;
-        Debug.Log("Ya me moví");
     }
 }

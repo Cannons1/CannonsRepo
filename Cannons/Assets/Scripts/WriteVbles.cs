@@ -7,48 +7,41 @@ public class WriteVbles : MonoBehaviour
 {
     [SerializeField] Text numberOfCoins, characterLvl, numberOfPoints, highScore;
     [SerializeField] Slider experience;
+    [SerializeField] Experience mExperience;
+    [SerializeField] AudioUI mAudioUI;
     int percentaje;
-
     private void Start()
     {
         numberOfCoins.text = Singleton.instance.Coins.ToString("0");
-        experience.value = Singleton.instance.Experience;
         characterLvl.text = Singleton.instance.Lvl.ToString("0");
         highScore.text = Singleton.instance.Points.ToString("0");
-        percentaje = 3;
         experience.maxValue += Singleton.instance.MaxValue;
+        experience.value = Singleton.instance.Experience;
+        percentaje = 3;
     }
-
     public void WritingNumberOfCoins()
     {
         numberOfCoins.text = Singleton.instance.Coins.ToString("0");
     }
-
     public void WritingPoints()
     {
         numberOfPoints.text = Singleton.instance.PointsInGame.ToString("0");
-
         if (Singleton.instance.PointsInGame > Singleton.instance.Points)
         {
             Singleton.instance.Points = Singleton.instance.PointsInGame;
             highScore.text = Singleton.instance.Points.ToString("0");
         }
     }
-
     public void WriteExp()
     {
-        experience.value += Singleton.instance.ExpInGame;
-
+        experience.value = Singleton.instance.Experience;
         if (Singleton.instance.Experience >= experience.maxValue)
         {
-            Singleton.instance.LvlInGame++;//Lvl up
-            Singleton.instance.Lvl++;
+            Singleton.instance.Lvl++; Singleton.instance.LvlInGame++;//Lvl up
             experience.maxValue += percentaje;//Ten percent more each time you lvl up
-            Singleton.instance.MaxValue += percentaje;
-            Singleton.instance.MaxValueInGame += percentaje;
+            Singleton.instance.MaxValue += percentaje; Singleton.instance.MaxValueInGame += percentaje;
             experience.value = 0;
-            Singleton.instance.ExpInGame = 0;
-            Singleton.instance.Experience = 0;
+            Singleton.instance.ExpInGame = 0; Singleton.instance.Experience = 0;
             characterLvl.text = Singleton.instance.Lvl.ToString("0");
         }
     }

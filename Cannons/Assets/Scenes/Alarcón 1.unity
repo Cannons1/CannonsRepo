@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1162,7 +1162,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: [{fileID: 1463244479}]
+  m_Children:
+  - {fileID: 1463244479}
   m_Father: {fileID: 1903399114}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3928,6 +3929,8 @@ MonoBehaviour:
   numberOfPoints: {fileID: 1359556206}
   highScore: {fileID: 1427355622}
   experience: {fileID: 1903399113}
+  mExperience: {fileID: 532875500}
+  mAudioUI: {fileID: 1159173604}
 --- !u!4 &992566777
 Transform:
   m_ObjectHideFlags: 0

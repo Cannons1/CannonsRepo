@@ -34,7 +34,7 @@ public class Singleton : MonoBehaviour
     private int coinsInGame;
     #endregion
 
-    #region floats for Experience
+    #region Experience
     public int Experience {
         get { return experience; }
         set { experience = value; }

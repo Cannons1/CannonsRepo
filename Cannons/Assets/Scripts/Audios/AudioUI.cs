@@ -9,14 +9,11 @@ public class AudioUI : MonoBehaviour
     [SerializeField] LvlMgr mLvlMgr;
     [SerializeField] Coin mCoinsInGame;
     [SerializeField] Experience mExperience;
-
     int i = 0;
-
     public void SoundClaimGift() {
         uIAudioSource.clip = claimAGift;
         uIAudioSource.Play();
     }
-
     public void MusicButton()
     {
         i += 1;
@@ -40,39 +37,32 @@ public class AudioUI : MonoBehaviour
         }
 
     }
-
     public void AudioPlayButton()
     {
         uIAudioSource.clip = buttonPlay;
         uIAudioSource.Play();
-
         //StartCoroutine(AudioPlayFinished());
     }
-
     IEnumerator AudioPlayFinished()
     {
         yield return new WaitForSeconds(buttonPlay.length); //After sound of the play button will continue to next level
         mLvlMgr.PlayButton();
     }
-
     public void AudioButtonDefault()
     {
         uIAudioSource.clip = buttonDefault;
         uIAudioSource.Play();
     }
-
     public void AudioButtonBack()
     {
         uIAudioSource.clip = buttonBack;
         uIAudioSource.Play();
     }
-
     public void AudioMenuButton()
     {
         Time.timeScale = 1;//Unnpause the game
         uIAudioSource.clip = buttonBack;
         uIAudioSource.Play();
-
         mCoinsInGame.MinusCoinsInGame();//If the user press menu in a middle of a game, the coins wont count
         mExperience.MinusExperienceInGame();//If the user press menu in a middle of a game, the experience wont count
         mLvlMgr.MenuButton();//Returns to menu
