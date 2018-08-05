@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5042e19a83d5ce48a11250c66f8d87d, type: 3}
+  m_Name: SkinDatabase
+  m_EditorClassIdentifier: 
+  skins:
+  - skinName: Will
+    skinDescription: Is will gold tooth!!
+    skinSprite: {fileID: 21300000, guid: 5ae470a1a2d060b4eb3861e913e78e23, type: 3}
+    skinValue: 0
+    skinModel: {fileID: 1274854319799740, guid: e4bd94df92fe2fb438a451c6a1b39001,
+      type: 2}
+  - skinName: Red beard
+    skinDescription: A pirate with a red beard
+    skinSprite: {fileID: 21300002, guid: 5ae470a1a2d060b4eb3861e913e78e23, type: 3}
+    skinValue: 100
+    skinModel: {fileID: 1660191156117368, guid: 63708295f77bb234599490bb6cc1d7c6,
+      type: 2}
+  - skinName: Black beard
+    skinDescription: A pirate with a black beard
+    skinSprite: {fileID: 21300004, guid: 5ae470a1a2d060b4eb3861e913e78e23, type: 3}
+    skinValue: 200
+    skinModel: {fileID: 1647704181162974, guid: a6f1b425ea491c1489e34fcfc43342aa,
+      type: 2}
+  - skinName: Yellow beard
+    skinDescription: A pirate with a yellow beard
+    skinSprite: {fileID: 21300006, guid: 5ae470a1a2d060b4eb3861e913e78e23, type: 3}
+    skinValue: 300
+    skinModel: {fileID: 1471469473313762, guid: 2dab147a6b8fb574486371f77959df47,
+      type: 2}
