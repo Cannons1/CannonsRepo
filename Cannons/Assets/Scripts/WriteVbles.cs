@@ -11,8 +11,7 @@ public class WriteVbles : MonoBehaviour
     [SerializeField] AudioUI mAudioUI;
 
     int percentaje;
-    
-    
+
     private void Start()
     {
         percentaje = 3;

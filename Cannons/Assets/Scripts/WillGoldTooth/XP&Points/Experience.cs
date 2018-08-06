@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Experience : MonoBehaviour, IExperience
+public class Experience : MonoBehaviour
 {
-    [SerializeField] WriteVbles mWriteVbles;
-
     public int Saved { get { return saved; } set { saved = value; } }
     public bool SavedLastExp { get { return saveLastExp; } set { saveLastExp = value; } }
 
@@ -22,12 +20,10 @@ public class Experience : MonoBehaviour, IExperience
         saved = Singleton.instance.Experience;
         Debug.Log(saved + "saved");
     }
-    public void EarningExperience(int _Experience)
+    /*public void EarningExperience(int _Experience)
     {
-        Singleton.instance.Experience += _Experience;
-        Singleton.instance.ExpInGame += _Experience;
-        mWriteVbles.WriteExp();
-        /*mWriteVbles.experience.value = Singleton.instance.Experience;
+        
+        mWriteVbles.experience.value = Singleton.instance.Experience;
 
         if (Singleton.instance.ExpInGame >= mWriteVbles.experience.maxValue)
         {
@@ -39,8 +35,8 @@ public class Experience : MonoBehaviour, IExperience
             mWriteVbles.experience.value = 0;
             //Singleton.instance.ExpInGame = 0; Singleton.instance.Experience = 0;
             mWriteVbles.WriteCharacterLvl();
-        }*/
-    }
+        }
+    }*/
     public void MinusExperienceInGame()
     {
          Singleton.instance.Experience -= Singleton.instance.ExpInGame;

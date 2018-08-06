@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coin : MonoBehaviour, ICoins
+public class Coin : MonoBehaviour, ICoins, IExperience
 {
-    [SerializeField] WriteVbles mWriteCoins;
+    [SerializeField] WriteVbles mWriteVbles;
     MeshRenderer mMeshRenderer;
     BoxCollider mBoxCollider;
     [SerializeField] GameObject coinPlus;
@@ -20,7 +20,7 @@ public class Coin : MonoBehaviour, ICoins
     {
         Singleton.instance.Coins += _Coin;
         Singleton.instance.CoinsInGame += _Coin;
-        mWriteCoins.WritingNumberOfCoins();//Will write the number of coins in a text
+        mWriteVbles.WritingNumberOfCoins();//Will write the number of coins in a text
         DeactivatedCoin();//When you pick a coin it will deactivate its meshRenderer and box collider
     }
 
@@ -43,5 +43,12 @@ public class Coin : MonoBehaviour, ICoins
         GameObject a = Instantiate(coinPlus, transform.position, Quaternion.identity);
         yield return lifeTimeCoin;
         Destroy(a);
+    }
+
+    public void EarningExperience(int _Experience)
+    {
+        Singleton.instance.Experience += _Experience;
+        Singleton.instance.ExpInGame += _Experience;
+        mWriteVbles.WriteExp();
     }
 }
