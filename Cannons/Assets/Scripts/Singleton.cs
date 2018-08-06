@@ -6,8 +6,6 @@ public class Singleton : MonoBehaviour
 {
     public static Singleton instance = null;
 
-
-
     #region booleans for muted audios(Configuration)
     public bool SfxMuted {
         get { return sFxMuted; }

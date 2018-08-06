@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ExpBoost : DateTimeController
 {
     [SerializeField] Button expBoostButton;
-    [SerializeField] public static int cost = 150;
+    public static int cost = 150;
 
     //string[] s = new string[2];
 

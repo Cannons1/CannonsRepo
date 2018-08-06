@@ -7,6 +7,9 @@ public class DieEvent : MonoBehaviour {
     [SerializeField] WillAudios willAudios;
     public void ChargeMenuLevel()
     {
+        /*Singleton.instance.Experience = Singleton.instance.ExpInGame;
+        Singleton.instance.Lvl = Singleton.instance.LvlInGame;
+        Singleton.instance.MaxValue = Singleton.instance.MaxValueInGame;*/
         StartCoroutine(EndDieAudio());
     }
     WaitForSeconds dieLength = new WaitForSeconds(0.5472562f);

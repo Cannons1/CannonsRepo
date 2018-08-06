@@ -63,8 +63,16 @@ public class AudioUI : MonoBehaviour
         Time.timeScale = 1;//Unnpause the game
         uIAudioSource.clip = buttonBack;
         uIAudioSource.Play();
+        if (mExperience.SavedLastExp)
+        {
+            Singleton.instance.Experience = mExperience.Saved;
+            mExperience.MinusLvl();
+            Debug.Log(mExperience.Saved + "Esto es lo que cargaré");
+        }
+        else {
+            mExperience.MinusExperienceInGame();//If the user press menu in a middle of a game, the experience wont count
+        }
         mCoinsInGame.MinusCoinsInGame();//If the user press menu in a middle of a game, the coins wont count
-        mExperience.MinusExperienceInGame();//If the user press menu in a middle of a game, the experience wont count
         mLvlMgr.MenuButton();//Returns to menu
     }
 }

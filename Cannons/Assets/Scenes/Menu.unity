@@ -7664,7 +7664,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0
+  m_Text: 150
 --- !u!1 &1599003108
 GameObject:
   m_ObjectHideFlags: 0
@@ -7961,7 +7961,6 @@ MonoBehaviour:
   characterLvl: {fileID: 1776873013}
   numberOfPoints: {fileID: 1102978993}
   highScore: {fileID: 1102978993}
-  costExpBoost: {fileID: 1594864929}
   experience: {fileID: 1315030441}
   mExperience: {fileID: 0}
   mAudioUI: {fileID: 1436810330}
