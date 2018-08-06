@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Experience : MonoBehaviour
+public class ExpCoinPoinMgr : MonoBehaviour
 {
     public int Saved { get { return saved; } set { saved = value; } }
     public bool SavedLastExp { get { return saveLastExp; } set { saveLastExp = value; } }
@@ -18,6 +18,8 @@ public class Experience : MonoBehaviour
         Singleton.instance.LvlInGame = 0;
         Singleton.instance.MaxValueInGame = 0;
         saved = Singleton.instance.Experience;
+        Singleton.instance.PointsInGame = 0;
+        Singleton.instance.CoinsInGame = 0;
         Debug.Log(saved + "saved");
     }
     /*public void EarningExperience(int _Experience)

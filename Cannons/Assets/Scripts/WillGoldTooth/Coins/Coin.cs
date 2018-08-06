@@ -11,7 +11,6 @@ public class Coin : MonoBehaviour, ICoins, IExperience
 
     private void Start()
     {
-        Singleton.instance.CoinsInGame = 0;
         mMeshRenderer = GetComponent<MeshRenderer>();
         mBoxCollider = GetComponent<BoxCollider>();
     }

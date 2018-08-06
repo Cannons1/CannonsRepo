@@ -7,7 +7,7 @@ public class WriteVbles : MonoBehaviour
 {
     [SerializeField] Text numberOfCoins, characterLvl, numberOfPoints, highScore;
     public Slider experience;
-    [SerializeField] Experience mExperience;
+    [SerializeField] ExpCoinPoinMgr mExperience;
     [SerializeField] AudioUI mAudioUI;
 
     int percentaje;

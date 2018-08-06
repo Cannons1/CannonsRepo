@@ -8,7 +8,7 @@ public class AudioUI : MonoBehaviour
     [SerializeField] AudioClip buttonDefault, buttonBack, buttonPlay, claimAGift;
     [SerializeField] LvlMgr mLvlMgr;
     [SerializeField] Coin mCoinsInGame;
-    [SerializeField] Experience mExperience;
+    [SerializeField] ExpCoinPoinMgr mExperience;
     int i = 0;
     public void SoundClaimGift() {
         uIAudioSource.clip = claimAGift;
