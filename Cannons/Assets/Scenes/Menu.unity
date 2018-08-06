@@ -6772,6 +6772,7 @@ GameObject:
   - component: {fileID: 1436810333}
   - component: {fileID: 1436810332}
   - component: {fileID: 1436810329}
+  - component: {fileID: 1436810328}
   m_Layer: 0
   m_Name: AudioController
   m_TagString: Untagged
@@ -6779,6 +6780,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1436810328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1436810327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b68da2f2986dc4408ce52654f1ee0d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicAudiosource: {fileID: 1222981268}
+  menuMusic: {fileID: 8300000, guid: 6c20265f7f4efcf43b8aefe80f61fc60, type: 3}
 --- !u!114 &1436810329
 MonoBehaviour:
   m_ObjectHideFlags: 0
