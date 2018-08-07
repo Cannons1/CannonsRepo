@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class WriteVbles : MonoBehaviour
 {
-    [SerializeField] Text numberOfCoins, characterLvl, numberOfPoints, highScore;
+    [SerializeField] Text numberOfCoins, numCoinsInRetry, characterLvl, numberOfPoints, highScore;
     public Slider experience;
     [SerializeField] ExpCoinPoinMgr mExperience;
     [SerializeField] AudioUI mAudioUI;
@@ -24,6 +24,9 @@ public class WriteVbles : MonoBehaviour
     public void WritingNumberOfCoins()
     {
         numberOfCoins.text = Singleton.instance.Coins.ToString("0");
+    }
+    public void WriteCoinInRetry() {
+        numCoinsInRetry.text = Singleton.instance.Coins.ToString("0");
     }
     public void WritingPoints()
     {

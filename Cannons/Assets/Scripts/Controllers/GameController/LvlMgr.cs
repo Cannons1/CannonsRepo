@@ -31,6 +31,7 @@ public class LvlMgr : MonoBehaviour
 
     public void MenuButton()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(menuButton);
     }
 
@@ -55,5 +56,4 @@ public class LvlMgr : MonoBehaviour
     {
         unpause = true;
     }
-    
 }

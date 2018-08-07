@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DieEvent : MonoBehaviour {
-    [SerializeField] LvlMgr mlvlMgr;
     [SerializeField] WillAudios willAudios;
+    [SerializeField] Retry mRetry;
+
     public void ChargeMenuLevel()
     {
-        /*Singleton.instance.Experience = Singleton.instance.ExpInGame;
-        Singleton.instance.Lvl = Singleton.instance.LvlInGame;
-        Singleton.instance.MaxValue = Singleton.instance.MaxValueInGame;*/
         StartCoroutine(EndDieAudio());
     }
     WaitForSeconds dieLength = new WaitForSeconds(0.5472562f);
@@ -17,6 +15,8 @@ public class DieEvent : MonoBehaviour {
     {
         willAudios.DieAudio();
         yield return dieLength;
-        mlvlMgr.MenuButton();
+        mRetry.ActiveCanvas();
+        Time.timeScale = 0;
+        //mlvlMgr.MenuButton();
     }
 }
