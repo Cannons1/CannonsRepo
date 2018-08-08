@@ -4450,9 +4450,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 848141814}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1436810330}
+        m_MethodName: AudioButtonDefault
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4472,9 +4472,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1436810330}
-        m_MethodName: AudioButtonDefault
-        m_Mode: 1
+      - m_Target: {fileID: 848141814}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5507,7 +5507,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 0.34
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -6808,7 +6808,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicAudiosource: {fileID: 1222981268}
-  menuMusic: {fileID: 8300000, guid: 6c20265f7f4efcf43b8aefe80f61fc60, type: 3}
+  menuMusic: {fileID: 8300000, guid: 6c352fdb672d18841acebf8d8e65218e, type: 3}
+  atmosphereMenu: {fileID: 8300000, guid: 6c20265f7f4efcf43b8aefe80f61fc60, type: 3}
 --- !u!114 &1436810329
 MonoBehaviour:
   m_ObjectHideFlags: 0
