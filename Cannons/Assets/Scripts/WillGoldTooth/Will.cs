@@ -1,21 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(CollectingCoinExpPoints))]
+[RequireComponent(typeof(Animator))]
 public class Will : MonoBehaviour
 {
     [HideInInspector] public GameObject cannonTriggered;
     Transform reference;
-
+    private Rigidbody mRigid;
+    Animator anim;
+    public Animator _anim { get { return anim; } set { anim = value; } }
     public static Will will = null;
 
-    [HideInInspector] public bool inCannon;
+    [HideInInspector] public bool inCannon = false;
     float speed = 2;
-
+    float velocity;
+   
     private void Awake()
     {
+        anim = GetComponent<Animator>();
+        anim.runtimeAnimatorController = Resources.Load("AnimControllers/PlayerController") as RuntimeAnimatorController;
+        mRigid = GetComponent<Rigidbody>();
+
         if (will == null)
         {
             will = this;
@@ -25,16 +34,18 @@ public class Will : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
     }
-
+    
     private void OnTriggerEnter(Collider other)
     {
         cannonTriggered = other.gameObject;
 
         if (cannonTriggered.tag == "Cannon")
-        {
+        {          
             inCannon = true;
-            other.enabled = false;
+            anim.SetBool("InCannon", inCannon);
+            other.enabled = false;           
             StuckOnCannon();
         }
 
@@ -52,6 +63,8 @@ public class Will : MonoBehaviour
         StartCoroutine(MoveToCannon());
         transform.SetParent(cannonTriggered.gameObject.transform);
         StartCoroutine(cannonTriggered.GetComponent<CannonParent>().Wick());
+
+             
         StartCoroutine(cannonTriggered.GetComponent<RotatingCannon>().CannonRotate());
     }
 
@@ -66,5 +79,21 @@ public class Will : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
         transform.position = reference.position;
+    }
+   
+    public IEnumerator FlyAnimation()
+    {       
+        while (!inCannon)
+        {
+            anim.SetBool("InCannon", inCannon);
+            velocity = (Mathf.Sign(mRigid.velocity.y) > 0) ? velocity = 1 : velocity = -1;
+            anim.SetFloat("Velocity", velocity);           
+            yield return null;
+        }
+        if (inCannon)
+        {
+            anim.SetBool("InCannon", inCannon);
+            velocity = 0;
+        }
     }
 }
