@@ -22,7 +22,7 @@ MonoBehaviour:
     skinDescription: A pirate with a red beard
     skinSprite: {fileID: 21300002, guid: 5ae470a1a2d060b4eb3861e913e78e23, type: 3}
     skinValue: 100
-    skinModel: {fileID: 1529388836188480, guid: 0eace1704495f5443890d653e61ac43c,
+    skinModel: {fileID: 1660191156117368, guid: 63708295f77bb234599490bb6cc1d7c6,
       type: 2}
   - skinName: Black beard
     skinDescription: A pirate with a black beard

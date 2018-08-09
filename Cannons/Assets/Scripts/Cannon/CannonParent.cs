@@ -21,12 +21,11 @@ public class CannonParent : MonoBehaviour
     {
         willBody = Will.will.gameObject.GetComponent<Rigidbody>();
         Will.will.gameObject.transform.SetParent(null);
-        willBody.isKinematic = false;     
+        willBody.isKinematic = false;
         willBody.velocity = Will.will.cannonTriggered.transform.up * shootForce;
         Will.will.inCannon = false;
-        Will.will.StartCoroutine(Will.will.FlyAnimation());
     }
-  
+
     public IEnumerator Wick()
     {
         float i = 0;
