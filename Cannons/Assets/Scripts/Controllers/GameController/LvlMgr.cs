@@ -24,6 +24,14 @@ public class LvlMgr : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            Application.Quit();
+        }
+    }
+
     public void PlayButton()
     {
         SceneManager.LoadScene(playButton);
@@ -43,11 +51,13 @@ public class LvlMgr : MonoBehaviour
     public void PauseButton()
     {
         unpause = false;
+        Debug.Log(unpause);
         Time.timeScale = 0;
     }
     
     public void ResumeButton()
     {
+        CanvasMgr.unnpause = 0;
         Time.timeScale = 1;        
         Invoke("waitForShoot", 0.1f);
     }

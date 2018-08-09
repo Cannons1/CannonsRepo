@@ -67,7 +67,7 @@ public class AudioUI : MonoBehaviour
         {
             Singleton.instance.Experience = mExperience.Saved;
             mExperience.MinusLvl();
-            Debug.Log(mExperience.Saved + "Esto es lo que cargaré");
+            Debug.Log(mExperience.Saved + " Esto es lo que cargaré");
         }
         else {
             mExperience.MinusExperienceInGame();//If the user press menu in a middle of a game, the experience wont count
