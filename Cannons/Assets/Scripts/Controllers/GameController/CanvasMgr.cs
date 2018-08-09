@@ -4,37 +4,72 @@ using UnityEngine;
 
 public class CanvasMgr : MonoBehaviour {
 
-    [SerializeField] GameObject canvasPaused;
-    public static byte unnpause;
+    [SerializeField] GameObject[] canvas;
+    [SerializeField] AudioUI mAduioUI;
+    public static int unnpause;
+
+    private void Start()
+    {
+        unnpause = 0;
+    }
 
     void Update () {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
-            unnpause += 1;
-            PauseButton();
-            if (Input.GetKeyDown(KeyCode.Escape) && unnpause == 2) {
-                ResumeButton();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            unnpause ++;
+            switch (unnpause) {
+                case 1:
+                    PauseButton();
+                    mAduioUI.AudioButtonDefault();
+                    break;
+                case 2:
+                    ResumeButton();
+                    break;
+                default:
+                    unnpause = 0;
+                    break;
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape) && canvas[2].activeInHierarchy) {
+            SettingsBack();
+            PauseButton();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape) && canvas[3].activeInHierarchy) {
+            MenuCancel();
+            PauseButton();
         }
 	}
 
     private void PauseButton()
     {
-        canvasPaused.SetActive(true);
+        canvas[0].SetActive(false);
+        canvas[1].SetActive(true);
         LvlMgr.unpause = false;
-        Debug.Log(unnpause);
         Time.timeScale = 0;
     }
 
     private void ResumeButton()
     {
-        canvasPaused.SetActive(false);
+        mAduioUI.AudioButtonBack();
+        canvas[0].SetActive(true);
+        canvas[1].SetActive(false);
         LvlMgr.unpause = true;
         Time.timeScale = 1;
-        Invoke("waitForShoot", 0.1f);
-    }
-
-    private void waitForShoot()
-    {
         unnpause = 0;
     }
+
+    private void SettingsBack() {
+        unnpause = 1;
+        canvas[2].SetActive(false);
+        mAduioUI.AudioButtonBack();
+    }
+
+    private void MenuCancel() {
+        unnpause = 1;
+        canvas[3].SetActive(false);
+        mAduioUI.AudioButtonBack();
+    }
+
 }
