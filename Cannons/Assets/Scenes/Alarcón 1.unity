@@ -1558,7 +1558,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasPaused: {fileID: 9832562}
-  mLvlMgr: {fileID: 114256811862882682, guid: 8f21b9231e4310e42958acf7365a67bc, type: 2}
 --- !u!4 &295369509
 Transform:
   m_ObjectHideFlags: 0
@@ -1606,8 +1605,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 27.7}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -0.00000096858, y: 29.3}
+  m_SizeDelta: {x: 113.79, y: 31.02}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &298900696
 MonoBehaviour:
@@ -4913,8 +4912,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0.0000036061, y: -15.51}
+  m_SizeDelta: {x: 113.79, y: 31.02}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1094439216
 MonoBehaviour:
@@ -5759,7 +5758,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1398792357
 RectTransform:
   m_ObjectHideFlags: 0
