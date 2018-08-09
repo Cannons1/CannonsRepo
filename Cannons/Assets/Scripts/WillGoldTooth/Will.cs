@@ -18,7 +18,7 @@ public class Will : MonoBehaviour
     [HideInInspector] public bool inCannon = false;
     float speed = 2;
     float velocity;
-   
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -34,22 +34,23 @@ public class Will : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
+
     }
-    
+
     private void OnTriggerEnter(Collider other)
     {
         cannonTriggered = other.gameObject;
 
         if (cannonTriggered.tag == "Cannon")
-        {          
+        {
             inCannon = true;
             anim.SetBool("InCannon", inCannon);
-            other.enabled = false;           
+            other.enabled = false;
             StuckOnCannon();
         }
 
-        if (cannonTriggered.GetComponent<DieEvent>() != null) {
+        if (cannonTriggered.GetComponent<DieEvent>() != null)
+        {
             DieEvent dieEvent;
             dieEvent = cannonTriggered.GetComponent<DieEvent>();
             dieEvent.ChargeMenuLevel();
@@ -61,10 +62,9 @@ public class Will : MonoBehaviour
         GetComponent<Rigidbody>().isKinematic = true;
         reference = cannonTriggered.transform.GetChild(0).gameObject.transform;
         StartCoroutine(MoveToCannon());
+        transform.rotation = Quaternion.FromToRotation(transform.up, cannonTriggered.transform.up);
         transform.SetParent(cannonTriggered.gameObject.transform);
         StartCoroutine(cannonTriggered.GetComponent<CannonParent>().Wick());
-
-             
         StartCoroutine(cannonTriggered.GetComponent<RotatingCannon>().CannonRotate());
     }
 
@@ -72,22 +72,23 @@ public class Will : MonoBehaviour
     {
         float step = (speed / (transform.position - reference.position).magnitude) * Time.fixedDeltaTime;
         float t = 0;
-        while(t <= 1.0f)
+        while (t <= 1.0f)
         {
             t += step;
             transform.position = Vector3.Lerp(transform.position, reference.position, t);
+            transform.rotation = Quaternion.Lerp(transform.rotation, reference.rotation, Time.time * speed);
             yield return new WaitForFixedUpdate();
         }
         transform.position = reference.position;
     }
-   
+
     public IEnumerator FlyAnimation()
-    {       
+    {
         while (!inCannon)
         {
             anim.SetBool("InCannon", inCannon);
             velocity = (Mathf.Sign(mRigid.velocity.y) > 0) ? velocity = 1 : velocity = -1;
-            anim.SetFloat("Velocity", velocity);           
+            anim.SetFloat("Velocity", velocity);
             yield return null;
         }
         if (inCannon)
