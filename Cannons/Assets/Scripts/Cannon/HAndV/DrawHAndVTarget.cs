@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DrawHAndVTarget : MonoBehaviour {
-
+public class DrawHAndVTarget : MonoBehaviour
+{
     public Transform from;
     public Transform to;
 
