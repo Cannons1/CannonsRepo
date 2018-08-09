@@ -27,6 +27,9 @@ public class GameManager : MonoBehaviour {
             skinAvailability = PlayerPrefs.GetInt("SkinAvailibility");
         }
         else Save();
+
+        Application.targetFrameRate = 60;
+        QualitySettings.vSyncCount = 0;
     }
 
     public void Save()
