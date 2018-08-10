@@ -7,7 +7,7 @@ public abstract class CannonParent : MonoBehaviour
     [Header("Shooting")]
     [SerializeField] float wickTime;
     Vector3 direction;
-    static float shootForce = 20f;
+    [SerializeField] protected float shootForce = 22f;
     Rigidbody willBody;
     GameObject reference;
     [HideInInspector] public CannonType cannonType;
@@ -28,6 +28,7 @@ public abstract class CannonParent : MonoBehaviour
         willBody.velocity = Will.will.transform.up * shootForce;
         Will.will.inCannon = false;
         canShoot = false;
+        Will.will.cannonTriggered.SetActive(false);
         Will.will.StartCoroutine(Will.will.FlyAnimation());
     }
   

@@ -69,7 +69,7 @@ public class Will : MonoBehaviour
                 StartCoroutine(cannonTriggered.GetComponent<CannonParent>().Wick());
                 break;
             case CannonType.targetCannon:
-                StartCoroutine(cannonTriggered.GetComponent<HAndV>().Preparation(180));
+                StartCoroutine(cannonTriggered.GetComponent<HAndV>().Preparation());
                 break;
             case CannonType.rotatingCannon:
                 StartCoroutine(cannonTriggered.GetComponent<RotatingCannon>().CannonRotate());

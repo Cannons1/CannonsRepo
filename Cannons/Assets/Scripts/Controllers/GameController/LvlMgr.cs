@@ -60,7 +60,8 @@ public class LvlMgr : MonoBehaviour
         unpause = true;
     }
 
-    public void FirstLvl() {
+    public void FirstLvl()
+    {
         SceneManager.LoadScene(lvl1);
     }
 

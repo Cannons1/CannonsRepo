@@ -8,6 +8,8 @@ public class HAndV : CannonParent
     private float speed = 2.5f;
     float time = 0.5f;
     private Vector3 start, end, lastPos;
+    [Range(-90, 180)]
+    [SerializeField] int firstRotation;
 
     private void Start()
     {
@@ -49,10 +51,10 @@ public class HAndV : CannonParent
         }
     }
 
-    public IEnumerator Preparation(int _rotation)
+    public IEnumerator Preparation()
     {
         Vector3 startingRotation = transform.eulerAngles;
-        Vector3 targetRotation = new Vector3(0, 0, startingRotation.z + _rotation);
+        Vector3 targetRotation = new Vector3(0, 0, startingRotation.z + firstRotation);
         float elapsedTime = 0f;
 
         while (elapsedTime < time)
