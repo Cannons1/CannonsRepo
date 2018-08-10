@@ -6,16 +6,15 @@ using System.Linq;
 public class RotatingCannon : CannonParent
 {
     [SerializeField] float rotationSpeed, angleRotation;
-<<<<<<< HEAD
+
     AnimatorClipInfo[] playerClip;
-=======
+
 
     private void Start()
     {
         cannonType = CannonType.rotatingCannon;
     }
 
->>>>>>> Cannons
     protected override void Update()
     {
         base.Update();
