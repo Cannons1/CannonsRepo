@@ -11,6 +11,7 @@ public class HAndV : CannonParent
 
     void Start()
     {
+        cannonType = CannonType.targetCannon;
 
         target = transform.GetChild(2).transform;
 
@@ -29,7 +30,7 @@ public class HAndV : CannonParent
         base.Update();
     }
 
-    IEnumerator Move()
+    public IEnumerator Move()
     {
         while(true)
         {

@@ -6,6 +6,11 @@ public class RotatingCannon : CannonParent
 {
     [SerializeField] float rotationSpeed, angleRotation;
 
+    private void Start()
+    {
+        cannonType = CannonType.rotatingCannon;
+    }
+
     protected override void Update()
     {
         base.Update();

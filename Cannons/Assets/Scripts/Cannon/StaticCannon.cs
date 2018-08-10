@@ -2,9 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StaticCannon : CannonParent {
+public class StaticCannon : CannonParent
+{
 
-	protected override void Update ()
+    private void Start()
+    {
+        cannonType = CannonType.staticCannon;
+    }
+
+    protected override void Update ()
     {
         base.Update();
     }

@@ -10,6 +10,7 @@ public abstract class CannonParent : MonoBehaviour
     static float shootForce = 20f;
     Rigidbody willBody;
     GameObject reference;
+    [HideInInspector] public CannonType cannonType;
 
     protected virtual void Update()
     {
