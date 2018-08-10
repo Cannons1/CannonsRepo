@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LvlMgr : MonoBehaviour
 {
-    [SerializeField] string playButton, menuButton, rouletteScene;
+    [SerializeField] string playButton, menuButton, rouletteScene, lvl1, lvl2;
 
     public static LvlMgr instance;
     public static bool unpause;
@@ -58,5 +58,14 @@ public class LvlMgr : MonoBehaviour
     void waitForShoot()
     {
         unpause = true;
+    }
+
+    public void FirstLvl() {
+        SceneManager.LoadScene(lvl1);
+    }
+
+    public void SecondLvl()
+    {
+        SceneManager.LoadScene(lvl2);
     }
 }
