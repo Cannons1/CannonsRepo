@@ -2,34 +2,49 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HAndV : MonoBehaviour
+public class HAndV : CannonParent
 {
-    [SerializeField] Transform target;
+    Transform target;
 
-    private float speed = 5f;
+    private float speed = 2.5f;
     private Vector3 start, end, lastPos;
 
     void Start()
     {
+        cannonType = CannonType.targetCannon;
+
+        target = transform.GetChild(2).transform;
+
         if (target != null)
         {
             target.parent = null;
             start = transform.position;
             end = target.position;
         }
+
+        StartCoroutine(Move());
     }
 
-    private void FixedUpdate()
+    protected override void Update()
     {
-        if (target != null)
-        {
-            float fixedSpeed = speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, target.position, fixedSpeed);
-        }
+        base.Update();
+    }
 
-        if (transform.position == target.position)
+    public IEnumerator Move()
+    {
+        while(true)
         {
-            target.position = (target.position == start) ? end : start;
+            if (target != null)
+            {
+                float fixedSpeed = speed * Time.deltaTime;
+                transform.position = Vector3.MoveTowards(transform.position, target.position, fixedSpeed);
+            }
+
+            if (transform.position == target.position)
+            {
+                target.position = (target.position == start) ? end : start;
+            }
+            yield return null;
         }
     }
 }

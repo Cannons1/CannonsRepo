@@ -65,6 +65,19 @@ public class Will : MonoBehaviour
         transform.rotation = Quaternion.FromToRotation(transform.up, cannonTriggered.transform.up);
         transform.SetParent(cannonTriggered.gameObject.transform);
         StartCoroutine(cannonTriggered.GetComponent<CannonParent>().Wick());
+        switch(cannonTriggered.GetComponent<CannonParent>().cannonType)
+        {
+            case CannonType.staticCannon:
+                break;
+            case CannonType.targetCannon:
+                StartCoroutine(cannonTriggered.GetComponent<HAndV>().Move());
+                break;
+            case CannonType.rotatingCannon:
+                StartCoroutine(cannonTriggered.GetComponent<RotatingCannon>().CannonRotate());
+                break;
+            default:
+                break;
+        }
         StartCoroutine(cannonTriggered.GetComponent<RotatingCannon>().CannonRotate());
     }
 
@@ -76,7 +89,7 @@ public class Will : MonoBehaviour
         {
             t += step;
             transform.position = Vector3.Lerp(transform.position, reference.position, t);
-            transform.rotation = Quaternion.Lerp(transform.rotation, reference.rotation, Time.time * speed);
+            transform.rotation = Quaternion.Lerp(transform.rotation, reference.rotation, t);
             yield return new WaitForFixedUpdate();
         }
         transform.position = reference.position;

@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CannonParent : MonoBehaviour
+[RequireComponent(typeof(Points))]
+public abstract class CannonParent : MonoBehaviour
 {
     [SerializeField] float wickTime;
     Vector3 direction;
-    [SerializeField] float shootForce;
+    static float shootForce = 20f;
     Rigidbody willBody;
     GameObject reference;
+    [HideInInspector] public CannonType cannonType;
 
     protected virtual void Update()
     {
