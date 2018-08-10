@@ -1,7 +1,5 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(CollectingCoinExpPoints))]
@@ -16,7 +14,7 @@ public class Will : MonoBehaviour
     public static Will will = null;
 
     [HideInInspector] public bool inCannon = false;
-    float speed = 2;
+    static float speed = 2f;
     float velocity;
 
     private void Awake()
@@ -43,8 +41,6 @@ public class Will : MonoBehaviour
 
         if (cannonTriggered.tag == "Cannon")
         {
-            inCannon = true;
-            anim.SetBool("InCannon", inCannon);
             other.enabled = false;
             StuckOnCannon();
         }
@@ -62,15 +58,18 @@ public class Will : MonoBehaviour
         GetComponent<Rigidbody>().isKinematic = true;
         reference = cannonTriggered.transform.GetChild(0).gameObject.transform;
         StartCoroutine(MoveToCannon());
-        transform.rotation = Quaternion.FromToRotation(transform.up, cannonTriggered.transform.up);
-        transform.SetParent(cannonTriggered.gameObject.transform);
-        StartCoroutine(cannonTriggered.GetComponent<CannonParent>().Wick());
-        switch(cannonTriggered.GetComponent<CannonParent>().cannonType)
+        transform.SetParent(cannonTriggered.gameObject.transform);  
+    }
+
+    void AlredyinCannon()
+    {
+        switch (cannonTriggered.GetComponent<CannonParent>().cannonType)
         {
             case CannonType.staticCannon:
+                StartCoroutine(cannonTriggered.GetComponent<CannonParent>().Wick());
                 break;
             case CannonType.targetCannon:
-                StartCoroutine(cannonTriggered.GetComponent<HAndV>().Move());
+                StartCoroutine(cannonTriggered.GetComponent<HAndV>().Preparation(180));
                 break;
             case CannonType.rotatingCannon:
                 StartCoroutine(cannonTriggered.GetComponent<RotatingCannon>().CannonRotate());
@@ -78,9 +77,7 @@ public class Will : MonoBehaviour
             default:
                 break;
         }
-        StartCoroutine(cannonTriggered.GetComponent<RotatingCannon>().CannonRotate());
     }
-
     IEnumerator MoveToCannon()
     {
         float step = (speed / (transform.position - reference.position).magnitude) * Time.fixedDeltaTime;
@@ -93,13 +90,24 @@ public class Will : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
         transform.position = reference.position;
+
+        anim.SetBool("InCannon", true);
+
+        yield return new WaitForSeconds(0.001f);
+        var playerClip = _anim.GetCurrentAnimatorClipInfo(0);
+        Debug.Log(playerClip[0].clip.name);
+        yield return new WaitForSeconds(playerClip[0].clip.length);
+
+        inCannon = true;
+
+        AlredyinCannon();
     }
 
     public IEnumerator FlyAnimation()
     {
+        anim.SetBool("InCannon", inCannon);
         while (!inCannon)
         {
-            anim.SetBool("InCannon", inCannon);
             velocity = (Mathf.Sign(mRigid.velocity.y) > 0) ? velocity = 1 : velocity = -1;
             anim.SetFloat("Velocity", velocity);
             yield return null;

@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HAndV : CannonParent
@@ -7,13 +6,25 @@ public class HAndV : CannonParent
     Transform target;
 
     private float speed = 2.5f;
+    float time = 0.5f;
     private Vector3 start, end, lastPos;
 
-    void Start()
+    private void Start()
     {
         cannonType = CannonType.targetCannon;
 
         target = transform.GetChild(2).transform;
+
+    }
+
+    protected override void Update()
+    {
+        base.Update();
+    }
+
+    IEnumerator Move()
+    {
+        canShoot = true;
 
         if (target != null)
         {
@@ -22,17 +33,7 @@ public class HAndV : CannonParent
             end = target.position;
         }
 
-        StartCoroutine(Move());
-    }
-
-    protected override void Update()
-    {
-        base.Update();
-    }
-
-    public IEnumerator Move()
-    {
-        while(true)
+        while (Will.will.inCannon)
         {
             if (target != null)
             {
@@ -46,5 +47,23 @@ public class HAndV : CannonParent
             }
             yield return null;
         }
+    }
+
+    public IEnumerator Preparation(int _rotation)
+    {
+        Vector3 startingRotation = transform.eulerAngles;
+        Vector3 targetRotation = new Vector3(0, 0, startingRotation.z + _rotation);
+        float elapsedTime = 0f;
+
+        while (elapsedTime < time)
+        {
+            elapsedTime += Time.deltaTime;
+            transform.eulerAngles = Vector3.LerpUnclamped(startingRotation, targetRotation, (elapsedTime / time));
+            yield return new WaitForFixedUpdate();
+        }
+        transform.eulerAngles = targetRotation;
+
+        StartCoroutine(Wick());
+        StartCoroutine(Move());
     }
 }

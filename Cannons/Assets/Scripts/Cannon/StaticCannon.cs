@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class StaticCannon : CannonParent
 {
-
     private void Start()
     {
         cannonType = CannonType.staticCannon;

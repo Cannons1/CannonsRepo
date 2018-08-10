@@ -1,20 +1,21 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Points))]
 public abstract class CannonParent : MonoBehaviour
 {
+    [Header("Shooting")]
     [SerializeField] float wickTime;
     Vector3 direction;
     static float shootForce = 20f;
     Rigidbody willBody;
     GameObject reference;
     [HideInInspector] public CannonType cannonType;
+    protected bool canShoot;
 
     protected virtual void Update()
     {
-        if (Input.GetButtonUp("Fire1") && Will.will.inCannon && LvlMgr.unpause)
+        if (Input.GetButtonUp("Fire1") && canShoot && LvlMgr.unpause)
         {
             Shoot();
         }
@@ -24,8 +25,9 @@ public abstract class CannonParent : MonoBehaviour
         willBody = Will.will.gameObject.GetComponent<Rigidbody>();
         Will.will.gameObject.transform.SetParent(null);
         willBody.isKinematic = false;     
-        willBody.velocity = Will.will.cannonTriggered.transform.up * shootForce;
+        willBody.velocity = Will.will.transform.up * shootForce;
         Will.will.inCannon = false;
+        canShoot = false;
         Will.will.StartCoroutine(Will.will.FlyAnimation());
     }
   
