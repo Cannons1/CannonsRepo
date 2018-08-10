@@ -55,6 +55,8 @@ MonoBehaviour:
   playButton: "Alarc\xF3n 1"
   menuButton: Menu
   rouletteScene: Roulette
+  lvl1: Lvl1
+  lvl2: Lvl2
 --- !u!114 &114791736690340684
 MonoBehaviour:
   m_ObjectHideFlags: 1
