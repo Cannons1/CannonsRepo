@@ -43,11 +43,14 @@ public class LvlMgr : MonoBehaviour
     public void PauseButton()
     {
         unpause = false;
+        Debug.Log(unpause);
         Time.timeScale = 0;
+        CanvasMgr.unnpause = 1;
     }
     
     public void ResumeButton()
     {
+        CanvasMgr.unnpause = 0;
         Time.timeScale = 1;        
         Invoke("waitForShoot", 0.1f);
     }
