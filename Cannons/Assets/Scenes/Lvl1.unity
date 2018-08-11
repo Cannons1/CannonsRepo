@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -157,36 +157,9 @@ Prefab:
       propertyPath: mCoinsInGame
       value: 
       objectReference: {fileID: 740930660}
-    - target: {fileID: 114414949778851446, guid: 50968a4552340f3468aec73489bdefb1,
-        type: 2}
-      propertyPath: menuButton
-      value: Menu
-      objectReference: {fileID: 0}
-    - target: {fileID: 114436990746121814, guid: 50968a4552340f3468aec73489bdefb1,
-        type: 2}
-      propertyPath: willAudios
-      value: 
-      objectReference: {fileID: 6566650}
-    - target: {fileID: 114436990746121814, guid: 50968a4552340f3468aec73489bdefb1,
-        type: 2}
-      propertyPath: mRetry
-      value: 
-      objectReference: {fileID: 6566649}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50968a4552340f3468aec73489bdefb1, type: 2}
   m_IsPrefabAsset: 0
---- !u!114 &6566649 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114108315363862360, guid: 50968a4552340f3468aec73489bdefb1,
-    type: 2}
-  m_PrefabInternal: {fileID: 6566648}
-  m_Script: {fileID: 11500000, guid: f91ba1b3657c7014788743e02284de56, type: 3}
---- !u!114 &6566650 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114803597176318448, guid: 50968a4552340f3468aec73489bdefb1,
-    type: 2}
-  m_PrefabInternal: {fileID: 6566648}
-  m_Script: {fileID: 11500000, guid: 0dcee8f59fb72004dbe24eaeee483fcf, type: 3}
 --- !u!1001 &263373168
 Prefab:
   m_ObjectHideFlags: 0

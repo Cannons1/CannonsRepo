@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class CanvasMgr : MonoBehaviour {
 
+    public GameObject[] Canvas {
+        get { return canvas; }
+        set { canvas = value; }
+    }
+
     [SerializeField] GameObject[] canvas;
     [SerializeField] AudioUI mAduioUI;
     public static int unnpause;
@@ -20,13 +25,11 @@ public class CanvasMgr : MonoBehaviour {
             switch (unnpause) {
                 case 1:
                     PauseButton();
-                    mAduioUI.AudioButtonDefault();
                     break;
                 case 2:
                     ResumeButton();
                     break;
                 default:
-                    unnpause = 0;
                     break;
             }
         }
@@ -40,12 +43,22 @@ public class CanvasMgr : MonoBehaviour {
             MenuCancel();
             PauseButton();
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape) && canvas[4].activeInHierarchy) {
+            canvas[0].SetActive(false);
+            canvas[1].SetActive(false);
+            unnpause = 3;
+            IGLevelManager.unpause = false;
+        }
 	}
 
     private void PauseButton()
     {
-        canvas[0].SetActive(false);
-        canvas[1].SetActive(true);
+        if (canvas[0].activeInHierarchy) {
+            mAduioUI.AudioButtonDefault();
+            canvas[0].SetActive(false);
+            canvas[1].SetActive(true);
+        }
         IGLevelManager.unpause = false;
         Time.timeScale = 0;
     }
@@ -71,5 +84,4 @@ public class CanvasMgr : MonoBehaviour {
         canvas[3].SetActive(false);
         mAduioUI.AudioButtonBack();
     }
-
 }

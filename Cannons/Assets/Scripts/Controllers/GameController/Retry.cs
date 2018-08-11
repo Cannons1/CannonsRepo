@@ -1,11 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Retry : MonoBehaviour {
+
     [SerializeField] GameObject canvasRetry;
     [SerializeField] WriteVbles mWriteVbles;
+    [SerializeField] CanvasMgr mCanvasMgr;
     Scene mScene;
     private void Start()
     {
@@ -13,12 +13,12 @@ public class Retry : MonoBehaviour {
     }
 
     public void RetryLvl() {
-        Time.timeScale = 1;
         SceneManager.LoadScene(mScene.name);
     }
 
     public void ActiveCanvas() {
         mWriteVbles.WriteCoinInRetry();
         canvasRetry.SetActive(true);
+        mCanvasMgr.Canvas[0].SetActive(false);
     }
 }

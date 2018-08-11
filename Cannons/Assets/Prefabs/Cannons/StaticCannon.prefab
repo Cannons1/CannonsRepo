@@ -194,6 +194,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wickTime: 5
+  shootForce: 22
+  cannonType: 0
 --- !u!135 &135466357097900426
 SphereCollider:
   m_ObjectHideFlags: 1

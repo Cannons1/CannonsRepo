@@ -13,6 +13,7 @@ public class IGLevelManager : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
         loadingScreen.SetActive(false);
         slider.value = 0;
         unpause = true;
@@ -20,7 +21,6 @@ public class IGLevelManager : MonoBehaviour
 
     public void MenuButton()
     {
-        Time.timeScale = 1;
         StartCoroutine(LoadAsynchronously(menuButton));
     }
     public void PauseButton()
@@ -47,7 +47,7 @@ public class IGLevelManager : MonoBehaviour
     {
         loadingScreen.SetActive(true);
         AsyncOperation operation = SceneManager.LoadSceneAsync(_sceneName);
-
+        
         while (!operation.isDone)
         {
             float progress = Mathf.Clamp01(operation.progress * 0.9f);

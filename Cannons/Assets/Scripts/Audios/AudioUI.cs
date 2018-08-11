@@ -60,7 +60,6 @@ public class AudioUI : MonoBehaviour
     }
     public void AudioMenuButton()
     {
-        Time.timeScale = 1;//Unnpause the game
         uIAudioSource.clip = buttonBack;
         uIAudioSource.Play();
         if (mExperience.SavedLastExp)

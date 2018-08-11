@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour, ICoins, IExperience
 {
-    [SerializeField] WriteVbles mWriteVbles;
+    WriteVbles mWriteVbles;
     MeshRenderer mMeshRenderer;
     BoxCollider mBoxCollider;
     [SerializeField] GameObject coinPlus;
 
     private void Start()
     {
+        mWriteVbles = (WriteVbles)FindObjectOfType(typeof(WriteVbles));
         mMeshRenderer = GetComponent<MeshRenderer>();
         mBoxCollider = GetComponent<BoxCollider>();
     }
