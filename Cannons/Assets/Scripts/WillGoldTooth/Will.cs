@@ -14,8 +14,8 @@ public class Will : MonoBehaviour
     public static Will will = null;
 
     [HideInInspector] public bool inCannon = false;
-    static float speed = 2f;
     float velocity;
+    float time = 0.1f;
 
     private void Awake()
     {
@@ -80,27 +80,31 @@ public class Will : MonoBehaviour
     }
     IEnumerator MoveToCannon()
     {
-        float step = (speed / (transform.position - reference.position).magnitude) * Time.fixedDeltaTime;
-        float t = 0;
-        while (t <= 1.0f)
+        Vector3 startingRotation = transform.eulerAngles;
+        Vector3 targetRotation = reference.eulerAngles;
+        float elapsedTime = 0f;
+
+
+        while (elapsedTime < time)
         {
-            t += step;
-            transform.position = Vector3.Lerp(transform.position, reference.position, t);
-            transform.rotation = Quaternion.Lerp(transform.rotation, reference.rotation, t);
+            elapsedTime += Time.deltaTime;
+            transform.eulerAngles = Vector3.LerpUnclamped(startingRotation, targetRotation, (elapsedTime / time));
+            transform.position = Vector3.Lerp(transform.position, reference.position, (elapsedTime / time));
             yield return new WaitForFixedUpdate();
         }
+        transform.eulerAngles = targetRotation;
         transform.position = reference.position;
 
-        anim.SetBool("InCannon", true);
+        inCannon = true;
+        AlredyinCannon();
 
+        anim.SetBool("InCannon", true);
+        /*
         yield return new WaitForSeconds(0.001f);
         var playerClip = _anim.GetCurrentAnimatorClipInfo(0);
         Debug.Log(playerClip[0].clip.name);
         yield return new WaitForSeconds(playerClip[0].clip.length);
-
-        inCannon = true;
-
-        AlredyinCannon();
+        */
     }
 
     public IEnumerator FlyAnimation()

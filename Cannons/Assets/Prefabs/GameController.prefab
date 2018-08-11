@@ -19,8 +19,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4292791729357622}
-  - component: {fileID: 114256811862882682}
-  - component: {fileID: 114791736690340684}
+  - component: {fileID: 114213983827099630}
+  - component: {fileID: 114145357987713844}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -41,7 +41,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114256811862882682
+--- !u!114 &114145357987713844
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1312094183602112}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45f73fd7fcbc08d4cb84bfc4fd869cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114213983827099630
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -49,22 +60,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1312094183602112}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6edd97758e935b4ab7854d7cdc0d6ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c86a883cfad5a24cb0f9f6768941be7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playButton: "Alarc\xF3n 1"
-  menuButton: Menu
-  rouletteScene: Roulette
-  lvl1: Lvl1
-  lvl2: Lvl2
---- !u!114 &114791736690340684
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1312094183602112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6469f061701802e499db572e10c7f997, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  currentSkin: 0
+  skinAvailability: 2

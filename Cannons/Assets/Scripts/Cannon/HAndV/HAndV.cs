@@ -5,10 +5,10 @@ public class HAndV : CannonParent
 {
     Transform target;
 
-    private float speed = 2.5f;
-    float time = 0.5f;
+    private float speed = 3f;
+    float time = 0.2f;
     private Vector3 start, end, lastPos;
-    [Range(-90, 180)]
+    [Range(-180, 180)]
     [SerializeField] int firstRotation;
 
     private void Start()

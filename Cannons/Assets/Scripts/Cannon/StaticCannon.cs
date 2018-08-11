@@ -8,9 +8,4 @@ public class StaticCannon : CannonParent
     {
         cannonType = CannonType.staticCannon;
     }
-
-    protected override void Update ()
-    {
-        base.Update();
-    }
 }

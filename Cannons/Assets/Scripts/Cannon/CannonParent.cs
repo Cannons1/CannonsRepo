@@ -15,7 +15,7 @@ public abstract class CannonParent : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (Input.GetButtonUp("Fire1") && canShoot && LvlMgr.unpause)
+        if (Input.GetButtonUp("Fire1") && canShoot && IGLevelManager.unpause)
         {
             Shoot();
         }

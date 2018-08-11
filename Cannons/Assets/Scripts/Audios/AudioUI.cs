@@ -6,6 +6,7 @@ public class AudioUI : MonoBehaviour
     [SerializeField] AudioSource uIAudioSource;
     [SerializeField] AudioClip buttonDefault, buttonBack, buttonPlay, claimAGift;
     [SerializeField] LvlMgr mLvlMgr;
+    [SerializeField] IGLevelManager igLevelManager;
     [SerializeField] Coin mCoinsInGame;
     [SerializeField] ExpCoinPoinMgr mExperience;
     int i = 0;
@@ -72,6 +73,6 @@ public class AudioUI : MonoBehaviour
             mExperience.MinusExperienceInGame();//If the user press menu in a middle of a game, the experience wont count
         }
         mCoinsInGame.MinusCoinsInGame();//If the user press menu in a middle of a game, the coins wont count
-        mLvlMgr.MenuButton();//Returns to menu
+        igLevelManager.MenuButton();//Returns to menu
     }
 }

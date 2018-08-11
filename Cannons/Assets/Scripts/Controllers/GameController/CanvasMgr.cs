@@ -46,7 +46,7 @@ public class CanvasMgr : MonoBehaviour {
     {
         canvas[0].SetActive(false);
         canvas[1].SetActive(true);
-        LvlMgr.unpause = false;
+        IGLevelManager.unpause = false;
         Time.timeScale = 0;
     }
 
@@ -55,7 +55,7 @@ public class CanvasMgr : MonoBehaviour {
         mAduioUI.AudioButtonBack();
         canvas[0].SetActive(true);
         canvas[1].SetActive(false);
-        LvlMgr.unpause = true;
+        IGLevelManager.unpause = true;
         Time.timeScale = 1;
         unnpause = 0;
     }
