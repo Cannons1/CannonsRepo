@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CanvasMgr : MonoBehaviour {
 
@@ -46,7 +44,11 @@ public class CanvasMgr : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Escape) && canvas[4].activeInHierarchy) {
             canvas[0].SetActive(false);
-            canvas[1].SetActive(false);
+            unnpause = 3;
+            IGLevelManager.unpause = false;
+        }
+        if (Input.GetKeyDown(KeyCode.Escape) && canvas[5].activeInHierarchy) {
+            canvas[0].SetActive(false);
             unnpause = 3;
             IGLevelManager.unpause = false;
         }

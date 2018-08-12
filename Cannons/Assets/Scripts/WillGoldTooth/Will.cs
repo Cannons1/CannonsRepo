@@ -51,6 +51,12 @@ public class Will : MonoBehaviour
             dieEvent = cannonTriggered.GetComponent<DieEvent>();
             dieEvent.ChargeMenuLevel();
         }
+
+        if (cannonTriggered.GetComponent<WinCondition>() != null) {
+            WinCondition winCondition;
+            winCondition = cannonTriggered.GetComponent<WinCondition>();
+            winCondition.Win();
+        }
     }
 
     void StuckOnCannon()

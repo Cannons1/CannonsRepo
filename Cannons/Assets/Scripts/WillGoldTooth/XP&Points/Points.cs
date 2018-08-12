@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class Points : MonoBehaviour, IPoints
 {
-    [SerializeField] WriteVbles mWriteCoins;
+    WriteVbles mWriteCoins;
+
+    private void Start()
+    {
+        mWriteCoins = (WriteVbles)FindObjectOfType(typeof(WriteVbles));
+    }
 
     public void GettingPoints(int _points)
     {

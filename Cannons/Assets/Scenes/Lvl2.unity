@@ -2932,6 +2932,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasRetry: {fileID: 1901905148}
   mWriteVbles: {fileID: 1208496318}
+  mCanvasMgr: {fileID: 0}
 --- !u!1 &1035175102
 GameObject:
   m_ObjectHideFlags: 0
@@ -6566,7 +6567,8 @@ MonoBehaviour:
   buttonBack: {fileID: 8300000, guid: b2fb1d81966181f458c882e6a63fd51a, type: 3}
   buttonPlay: {fileID: 8300000, guid: d18496a6fc1dca746aad89e40c383ec9, type: 3}
   claimAGift: {fileID: 8300000, guid: 30b5963dba8acd645aba5201fab7c7d8, type: 3}
-  mLvlMgr: {fileID: 114256811862882682, guid: 8f21b9231e4310e42958acf7365a67bc, type: 2}
+  mLvlMgr: {fileID: 0}
+  igLevelManager: {fileID: 0}
   mCoinsInGame: {fileID: 114178305663971862, guid: 542e907df1a7c8a44b969ed4adce0769,
     type: 2}
   mExperience: {fileID: 948174013}
@@ -6613,7 +6615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicAudiosource: {fileID: 625824085}
   menuMusic: {fileID: 0}
-  atmosphereMenu: {fileID: 8300000, guid: 6c20265f7f4efcf43b8aefe80f61fc60, type: 3}
+  atmosphereMenu: {fileID: 8300000, guid: b795256492e74544280c4c781a2de961, type: 3}
 --- !u!114 &2138740459
 MonoBehaviour:
   m_ObjectHideFlags: 0

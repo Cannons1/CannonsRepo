@@ -1,10 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CanvasMenu : MonoBehaviour {
     [SerializeField] GameObject[] canvas;
     [SerializeField] AudioUI mAudioUI;
+    [SerializeField] GameObject decorateCannon;
+
+    private void Start()
+    {
+        if (IGLevelManager.nxtButton)
+        {
+            decorateCannon.SetActive(false);
+            canvas[0].SetActive(false);
+            canvas[5].SetActive(true);
+        }
+        else {
+            canvas[0].SetActive(true);
+        }
+    }
+
     void Update () {
         if (Input.GetKeyDown(KeyCode.Escape)) {
 

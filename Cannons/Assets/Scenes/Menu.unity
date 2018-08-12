@@ -6635,6 +6635,7 @@ MonoBehaviour:
   - {fileID: 648388676}
   - {fileID: 1781330668}
   mAudioUI: {fileID: 1436810330}
+  decorateCannon: {fileID: 1253235877}
 --- !u!4 &1337719650
 Transform:
   m_ObjectHideFlags: 0
@@ -6969,7 +6970,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicAudiosource: {fileID: 1222981268}
   menuMusic: {fileID: 8300000, guid: 6c352fdb672d18841acebf8d8e65218e, type: 3}
-  atmosphereMenu: {fileID: 8300000, guid: 6c20265f7f4efcf43b8aefe80f61fc60, type: 3}
+  atmosphereMenu: {fileID: 8300000, guid: b795256492e74544280c4c781a2de961, type: 3}
 --- !u!114 &1436810329
 MonoBehaviour:
   m_ObjectHideFlags: 0

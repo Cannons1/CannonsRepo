@@ -11,12 +11,15 @@ public class IGLevelManager : MonoBehaviour
 
     public static bool unpause;
 
+    public static bool nxtButton;
+
     private void Start()
     {
         Time.timeScale = 1;
         loadingScreen.SetActive(false);
         slider.value = 0;
         unpause = true;
+        nxtButton = false;
     }
 
     public void MenuButton()
@@ -41,6 +44,11 @@ public class IGLevelManager : MonoBehaviour
     void waitForShoot()
     {
         unpause = true;
+    }
+
+    public void NxtButton() {
+        nxtButton = true;
+        StartCoroutine(LoadAsynchronously(menuButton));
     }
 
     IEnumerator LoadAsynchronously(string _sceneName)

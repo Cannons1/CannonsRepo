@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
 public class CollectingCoinExpPoints : MonoBehaviour
 {
@@ -9,8 +6,7 @@ public class CollectingCoinExpPoints : MonoBehaviour
     private int point = 1;
     private int exp;
     private bool rouletteCoin;
-
-    [SerializeField] AudioItems mAudioItems;
+    AudioItems mAudioItems;
 
     private void Start()
     {
