@@ -4337,7 +4337,8 @@ MonoBehaviour:
   claimAGift: {fileID: 8300000, guid: 30b5963dba8acd645aba5201fab7c7d8, type: 3}
   mLvlMgr: {fileID: 0}
   igLevelManager: {fileID: 114414949778851446}
-  mCoinsInGame: {fileID: 0}
+  mCoinsInGame: {fileID: 114178305663971862, guid: 542e907df1a7c8a44b969ed4adce0769,
+    type: 2}
   mExperience: {fileID: 114941041641308804}
 --- !u!114 &114762572802025816
 MonoBehaviour:
