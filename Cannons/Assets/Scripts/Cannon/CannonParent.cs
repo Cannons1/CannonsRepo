@@ -12,6 +12,7 @@ public abstract class CannonParent : MonoBehaviour
     GameObject reference;
     [HideInInspector] public CannonType cannonType;
     protected bool canShoot;
+    Renderer mRenderer;
 
     protected virtual void Update()
     {
@@ -34,10 +35,14 @@ public abstract class CannonParent : MonoBehaviour
   
     public IEnumerator Wick()
     {
+        mRenderer = GetComponentInChildren<Renderer>();
+        Color startingColor = mRenderer.material.color;
         float i = 0;
         while (i < wickTime && Will.will.inCannon)
         {
             i += Time.deltaTime;
+            Debug.Log(i);
+            mRenderer.material.color = Color.Lerp(startingColor, Color.red, i / wickTime);
             yield return null;
         }
         if(Will.will.inCannon)
