@@ -13,6 +13,7 @@ public abstract class CannonParent : MonoBehaviour
     [HideInInspector] public CannonType cannonType;
     protected bool canShoot;
 
+
     protected virtual void Update()
     {
         if (Input.GetButtonUp("Fire1") && canShoot && IGLevelManager.unpause)
