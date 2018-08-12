@@ -14,6 +14,7 @@ public abstract class CannonParent : MonoBehaviour
     protected bool canShoot;
     Renderer mRenderer;
 
+
     protected virtual void Update()
     {
         if (Input.GetButtonUp("Fire1") && canShoot && IGLevelManager.unpause)
