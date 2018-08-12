@@ -210,10 +210,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e832d8cc20bdc0498caef8715a843cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wickTime: 4
+  wickTime: 3
   shootForce: 22
   cannonType: 0
-  firstRotation: 180
+  firstRotation: -180
 --- !u!114 &114926680306399650
 MonoBehaviour:
   m_ObjectHideFlags: 1

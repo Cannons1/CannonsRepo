@@ -82,15 +82,15 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1382577356442720}
-  m_LocalRotation: {x: -0, y: -0, z: 0.33936232, w: 0.94065577}
-  m_LocalPosition: {x: 2.55, y: 3.6100006, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -6.67, z: 0}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children:
   - {fileID: 4883892963589306}
   - {fileID: 4316784560876808}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 39.676003}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4883892963589306
 Transform:
   m_ObjectHideFlags: 1
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa05d0590c7f0ba4a8c285d766cf2247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wickTime: 5
+  wickTime: 0.2
   shootForce: 22
   cannonType: 0
 --- !u!135 &135466357097900426
