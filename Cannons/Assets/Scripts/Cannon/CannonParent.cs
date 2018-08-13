@@ -29,7 +29,7 @@ public abstract class CannonParent : MonoBehaviour
         willBody.isKinematic = false;     
         canShoot = false;
         willBody.velocity = Will.will.transform.up * shootForce;
-        CameraShaker.Instance.ShakeOnce(5f, 1f, 0.2f, 0.2f);
+        CameraShaker.Instance.ShakeOnce(1f, 1.5f, 0.1f, 0.3f);
         Will.will.inCannon = false;
         Will.will.cannonTriggered.SetActive(false);
         Will.will.StartCoroutine(Will.will.FlyAnimation());
