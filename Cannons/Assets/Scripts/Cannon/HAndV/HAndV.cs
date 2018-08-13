@@ -5,7 +5,7 @@ public class HAndV : CannonParent
 {
     Transform target;
 
-    private float speed = 5f;
+    [SerializeField] private float speed = 5f;
     float time = 0.2f;
     private Vector3 start, end, lastPos;
     [Range(-180, 180)]
@@ -14,9 +14,7 @@ public class HAndV : CannonParent
     private void Start()
     {
         cannonType = CannonType.targetCannon;
-
         target = transform.GetChild(2).transform;
-
     }
 
     protected override void Update()

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using EZCameraShake;
 
 [RequireComponent(typeof(Points))]
 public abstract class CannonParent : MonoBehaviour
@@ -26,9 +27,10 @@ public abstract class CannonParent : MonoBehaviour
         willBody = Will.will.gameObject.GetComponent<Rigidbody>();
         Will.will.gameObject.transform.SetParent(null);
         willBody.isKinematic = false;     
-        willBody.velocity = Will.will.transform.up * shootForce;
-        Will.will.inCannon = false;
         canShoot = false;
+        willBody.velocity = Will.will.transform.up * shootForce;
+        CameraShaker.Instance.ShakeOnce(5f, 1f, 0.2f, 0.2f);
+        Will.will.inCannon = false;
         Will.will.cannonTriggered.SetActive(false);
         Will.will.StartCoroutine(Will.will.FlyAnimation());
     }

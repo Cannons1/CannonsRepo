@@ -5,10 +5,11 @@ public class CameraMovement : MonoBehaviour
     Transform target;
 
     [SerializeField] float smoothSpeed;
-    [SerializeField] Vector3 offset;
+    Vector3 offset;
 
     private void Start()
     {
+        offset = new Vector3(0, 3, -14);
         target = Will.will.gameObject.transform;
     }
 
