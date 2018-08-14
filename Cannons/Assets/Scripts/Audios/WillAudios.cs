@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class WillAudios : MonoBehaviour
 {
-    [SerializeField] AudioClip expressionDie, expressionBeingShootAndFlying, expressionLands;
+    [SerializeField] AudioClip expressionDie, expressionBeingShootAndFlying, expressionLands, hitsAWall, flying;
     [SerializeField] AudioSource willAudioSource;
 
     public void DieAudio() {

@@ -3,6 +3,7 @@ using UnityEngine;
 using EZCameraShake;
 
 [RequireComponent(typeof(Points))]
+[RequireComponent(typeof(AudioCannons))]
 public abstract class CannonParent : MonoBehaviour
 {
     [Header("Shooting")]
@@ -24,6 +25,7 @@ public abstract class CannonParent : MonoBehaviour
     }
     public void Shoot()
     {
+        GetComponent<AudioCannons>().AudioShoot();
         willBody = Will.will.gameObject.GetComponent<Rigidbody>();
         Will.will.gameObject.transform.SetParent(null);
         willBody.isKinematic = false;     

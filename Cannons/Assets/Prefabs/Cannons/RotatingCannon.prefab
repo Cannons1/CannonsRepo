@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 4376864371846394}
   - component: {fileID: 65671529473027242}
   - component: {fileID: 114517613381731680}
+  - component: {fileID: 114528305022932004}
   m_Layer: 0
   m_Name: RotatingCannon
   m_TagString: Cannon
@@ -185,6 +186,22 @@ MonoBehaviour:
   cannonType: 0
   rotationSpeed: 2
   angleRotation: 50
+--- !u!114 &114528305022932004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1839672641818092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04fd11bde437bd3438cc141f774cb93f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shoot: {fileID: 8300000, guid: 2b0b133ca26d4e242968f8a30dc25801, type: 3}
+  ignite: {fileID: 0}
+  wick: {fileID: 0}
+  wickOff: {fileID: 0}
+  cannonsAudioSource: {fileID: 0}
 --- !u!135 &135943786767000638
 SphereCollider:
   m_ObjectHideFlags: 1

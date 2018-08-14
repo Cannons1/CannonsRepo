@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 39440563}
   - component: {fileID: 39440562}
   m_Layer: 0
-  m_Name: WorldAudioSourceFx
+  m_Name: AudioSourceCannonsFx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7021,8 +7021,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1436810331}
   - component: {fileID: 1436810330}
-  - component: {fileID: 1436810333}
-  - component: {fileID: 1436810332}
   - component: {fileID: 1436810329}
   - component: {fileID: 1436810328}
   m_Layer: 0
@@ -7093,40 +7091,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1436810332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1436810327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04fd11bde437bd3438cc141f774cb93f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shoot: {fileID: 8300000, guid: 0868dfa92375bb945be8a6b04fb8d0dc, type: 3}
-  ignite: {fileID: 0}
-  wick: {fileID: 0}
-  wickOff: {fileID: 0}
-  hitsAWall: {fileID: 0}
-  flying: {fileID: 0}
-  worldAudioSource: {fileID: 39440562}
---- !u!114 &1436810333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1436810327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0dcee8f59fb72004dbe24eaeee483fcf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  expressionDie: {fileID: 0}
-  expressionBeingShootAndFlying: {fileID: 8300000, guid: c86dd73e895708e439475d697151305f,
-    type: 3}
-  expressionLands: {fileID: 0}
-  willAudioSource: {fileID: 1148583206}
 --- !u!1 &1441923469
 GameObject:
   m_ObjectHideFlags: 0

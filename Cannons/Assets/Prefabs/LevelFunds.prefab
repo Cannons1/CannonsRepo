@@ -715,7 +715,7 @@ GameObject:
   - component: {fileID: 4524045513825166}
   - component: {fileID: 82787061887273484}
   m_Layer: 0
-  m_Name: WorldAudioSourceFx
+  m_Name: AudioSourceCannonsFx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1270,8 +1270,6 @@ GameObject:
   - component: {fileID: 4330607884371746}
   - component: {fileID: 114727729698650408}
   - component: {fileID: 114241946081230184}
-  - component: {fileID: 114803597176318448}
-  - component: {fileID: 114030128987124546}
   - component: {fileID: 114190323194240022}
   - component: {fileID: 114327244420737742}
   m_Layer: 0
@@ -2415,24 +2413,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &114030128987124546
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1852983393483382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04fd11bde437bd3438cc141f774cb93f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shoot: {fileID: 8300000, guid: 0868dfa92375bb945be8a6b04fb8d0dc, type: 3}
-  ignite: {fileID: 8300000, guid: 8479c0fa014ca924eb0f741e4eb69d68, type: 3}
-  wick: {fileID: 8300000, guid: e7f1193eae2306b419be85261d984659, type: 3}
-  wickOff: {fileID: 8300000, guid: 139e19a421142584491f78df5cb0f0b5, type: 3}
-  hitsAWall: {fileID: 8300000, guid: 4944edac79470424ea9bcba9c749780c, type: 3}
-  flying: {fileID: 8300000, guid: 14304f2885541f84d98a73ba3569d613, type: 3}
-  worldAudioSource: {fileID: 82787061887273484}
 --- !u!114 &114050614939259542
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4667,22 +4647,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Coins
---- !u!114 &114803597176318448
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1852983393483382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0dcee8f59fb72004dbe24eaeee483fcf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  expressionDie: {fileID: 8300000, guid: fc016a6aa2114744b8aa5ac4c9bab958, type: 3}
-  expressionBeingShootAndFlying: {fileID: 8300000, guid: c86dd73e895708e439475d697151305f,
-    type: 3}
-  expressionLands: {fileID: 8300000, guid: 267bc9a515b2dcb4a993d53b4183f049, type: 3}
-  willAudioSource: {fileID: 82039294617649426}
 --- !u!114 &114815318553717678
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4797,7 +4761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e98bc13e589bd1744abd99bb6f1fc1c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  willAudios: {fileID: 114803597176318448}
+  willAudios: {fileID: 0}
   mRetry: {fileID: 114108315363862360}
 --- !u!114 &114883679289095914
 MonoBehaviour:
