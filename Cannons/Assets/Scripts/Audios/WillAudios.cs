@@ -1,15 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
 public class WillAudios : MonoBehaviour
 {
-    [SerializeField] AudioClip expressionDie, expressionBeingShootAndFlying, expressionLands, hitsAWall, flying;
-    [SerializeField] AudioSource willAudioSource;
+    AudioClip[] willAudios;
+
+    private void Start()
+    {
+        willAudios = Resources.LoadAll<AudioClip>("Sounds/Fx/WillGoldTooth");
+    }
 
     public void DieAudio() {
-        willAudioSource.clip = expressionDie;
-        willAudioSource.Play();
+        GetComponent<AudioSource>().clip = willAudios[0];
+        GetComponent<AudioSource>().Play();
     }
 }

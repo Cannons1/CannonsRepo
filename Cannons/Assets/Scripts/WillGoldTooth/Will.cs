@@ -4,6 +4,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(CollectingCoinExpPoints))]
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(WillAudios))]
+[RequireComponent(typeof(AudioSource))]
 public class Will : MonoBehaviour
 {
     [HideInInspector] public GameObject cannonTriggered;
@@ -50,6 +52,7 @@ public class Will : MonoBehaviour
             DieEvent dieEvent;
             dieEvent = cannonTriggered.GetComponent<DieEvent>();
             dieEvent.ChargeMenuLevel();
+            GetComponent<WillAudios>().DieAudio();
         }
 
         if (cannonTriggered.GetComponent<WinCondition>() != null) {

@@ -2,7 +2,6 @@
 using UnityEngine;
 
 public class DieEvent : MonoBehaviour {
-    [SerializeField] WillAudios willAudios;
     [SerializeField] Retry mRetry;
     Collider mCollider;
 
@@ -19,7 +18,6 @@ public class DieEvent : MonoBehaviour {
     WaitForSeconds dieLength = new WaitForSeconds(0.5472562f);
     IEnumerator EndDieAudio()
     {
-        willAudios.DieAudio();
         yield return dieLength;
         mRetry.ActiveCanvas();
         Time.timeScale = 0;
