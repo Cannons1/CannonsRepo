@@ -20,7 +20,6 @@ public class ExpCoinPoinMgr : MonoBehaviour
         saved = Singleton.instance.Experience;
         Singleton.instance.PointsInGame = 0;
         Singleton.instance.CoinsInGame = 0;
-        Debug.Log(saved + "saved");
     }
     /*public void EarningExperience(int _Experience)
     {

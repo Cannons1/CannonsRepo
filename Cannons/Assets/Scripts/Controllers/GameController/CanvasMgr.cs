@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class CanvasMgr : MonoBehaviour {
 
@@ -11,12 +13,29 @@ public class CanvasMgr : MonoBehaviour {
     [SerializeField] AudioUI mAduioUI;
     public static int unnpause;
 
+    [SerializeField] GameObject txtTapToShoot;
+    WaitForSeconds txtActive = new WaitForSeconds(3f);
+    static int countTxtActive;
+
     private void Start()
     {
         unnpause = 0;
+
+        if(SceneManager.GetActiveScene().name == "Lvl1")
+            if(countTxtActive <1)
+                StartCoroutine(TimeTxtActive());
+    }
+
+    IEnumerator TimeTxtActive()
+    {
+        countTxtActive++;
+        txtTapToShoot.SetActive(true);
+        yield return txtActive;
+        txtTapToShoot.SetActive(false);
     }
 
     void Update () {
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             unnpause ++;

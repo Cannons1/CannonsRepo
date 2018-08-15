@@ -23,8 +23,9 @@ public class DateTimeController : MonoBehaviour
             if (differenceDaily.Days >= 1)
             {
                 Debug.Log("one day has passed");
+                //OnDailyGifts();
                 Singleton.instance.DailyGifts++;
-                OnDailyGifts();
+                PlayerPrefs.SetString("DailyCount", Singleton.instance.DailyGifts.ToString());
             }
         }
         else
