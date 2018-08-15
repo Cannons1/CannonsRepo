@@ -75,7 +75,7 @@ public class Will : MonoBehaviour
         switch (cannonTriggered.GetComponent<CannonParent>().cannonType)
         {
             case CannonType.staticCannon:
-                StartCoroutine(cannonTriggered.GetComponent<CannonParent>().Wick());
+                StartCoroutine(cannonTriggered.GetComponent<StaticCannon>().Preparation());
                 break;
             case CannonType.targetCannon:
                 StartCoroutine(cannonTriggered.GetComponent<HAndV>().Preparation());
