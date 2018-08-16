@@ -31,8 +31,6 @@ public class StaticCannon : CannonParent
             yield return new WaitForFixedUpdate();
         }
         transform.eulerAngles = targetRotation;
-
-        canShoot = true;
         StartCoroutine(Wick());
     }
 }

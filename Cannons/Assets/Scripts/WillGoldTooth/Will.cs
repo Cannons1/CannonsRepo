@@ -67,7 +67,7 @@ public class Will : MonoBehaviour
         GetComponent<Rigidbody>().isKinematic = true;
         reference = cannonTriggered.transform.GetChild(0).gameObject.transform;
         StartCoroutine(MoveToCannon());
-        transform.SetParent(cannonTriggered.gameObject.transform);  
+        transform.SetParent(cannonTriggered.transform);  
     }
 
     void AlredyinCannon()
@@ -93,11 +93,10 @@ public class Will : MonoBehaviour
         Vector3 targetRotation = reference.eulerAngles;
         float elapsedTime = 0f;
 
-
         while (elapsedTime < time)
         {
             elapsedTime += Time.deltaTime;
-            transform.eulerAngles = Vector3.LerpUnclamped(startingRotation, targetRotation, (elapsedTime / time));
+            transform.eulerAngles = Vector3.Lerp(startingRotation, targetRotation, (elapsedTime / time));
             transform.position = Vector3.Lerp(transform.position, reference.position, (elapsedTime / time));
             yield return new WaitForFixedUpdate();
         }
