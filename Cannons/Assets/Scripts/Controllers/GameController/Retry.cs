@@ -15,6 +15,7 @@ public class Retry : MonoBehaviour {
     }
 
     public void RetryLvl() {
+        expCoinPoinMgr.Mgr();
         SceneManager.LoadScene(mScene.name);
     }
 

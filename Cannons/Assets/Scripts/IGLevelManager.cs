@@ -8,6 +8,7 @@ public class IGLevelManager : MonoBehaviour
     [SerializeField] string menuButton;
     [SerializeField] GameObject loadingScreen;
     [SerializeField] Slider slider;
+    ExpCoinPoinMgr expCoinMgr;
 
     public static bool unpause;
 
@@ -20,10 +21,12 @@ public class IGLevelManager : MonoBehaviour
         slider.value = 0;
         unpause = true;
         nxtButton = false;
+        expCoinMgr = (ExpCoinPoinMgr)FindObjectOfType(typeof(ExpCoinPoinMgr));
     }
 
     public void MenuButton()
     {
+        expCoinMgr.Mgr();
         StartCoroutine(LoadAsynchronously(menuButton));
     }
     public void PauseButton()

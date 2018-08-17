@@ -61,7 +61,7 @@ public class AudioUI : MonoBehaviour
     {
         uIAudioSource.clip = buttonBack;
         uIAudioSource.Play();
-        expCoinPoinMgr.Mgr();
+        //expCoinPoinMgr.Mgr();
         igLevelManager.MenuButton();//Returns to menu
         /*if (expCoinPoinMgr.SavedLastExp)
         {

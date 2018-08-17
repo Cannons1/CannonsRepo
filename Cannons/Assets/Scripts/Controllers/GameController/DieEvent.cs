@@ -4,17 +4,14 @@ using UnityEngine;
 public class DieEvent : MonoBehaviour {
     [SerializeField] Retry mRetry;
     Collider mCollider;
-    ExpCoinPoinMgr expCoinPoinMgr;
 
     private void Start()
     {
-        expCoinPoinMgr = (ExpCoinPoinMgr)FindObjectOfType(typeof(ExpCoinPoinMgr));
         mCollider = GetComponent<Collider>();
     }
 
     public void ChargeMenuLevel()
     {
-        expCoinPoinMgr.Mgr();
         StartCoroutine(EndDieAudio());
         mCollider.enabled = false;
     }
