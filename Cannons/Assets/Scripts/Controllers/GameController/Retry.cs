@@ -7,12 +7,15 @@ public class Retry : MonoBehaviour {
     [SerializeField] WriteVbles mWriteVbles;
     [SerializeField] CanvasMgr mCanvasMgr;
     Scene mScene;
+    ExpCoinPoinMgr expCoinPoinMgr;
     private void Start()
     {
+        expCoinPoinMgr = (ExpCoinPoinMgr)FindObjectOfType(typeof(ExpCoinPoinMgr));
         mScene = SceneManager.GetActiveScene();
     }
 
     public void RetryLvl() {
+        expCoinPoinMgr.Mgr();//this will rest all the things the player earned in game
         SceneManager.LoadScene(mScene.name);
     }
 

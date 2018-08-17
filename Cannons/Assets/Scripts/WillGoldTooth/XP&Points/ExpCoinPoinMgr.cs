@@ -9,10 +9,12 @@ public class ExpCoinPoinMgr : MonoBehaviour
 
     int saved;
     bool saveLastExp;
+    IGLevelManager igLevelManager;
 
 
     private void Start()
     {
+        igLevelManager = (IGLevelManager)FindObjectOfType(typeof(IGLevelManager));
         saveLastExp = false;
         Singleton.instance.ExpInGame = 0;
         Singleton.instance.LvlInGame = 0;
@@ -53,5 +55,24 @@ public class ExpCoinPoinMgr : MonoBehaviour
         Singleton.instance.MaxValue -= Singleton.instance.MaxValueInGame;
     }
 
+    public void MinusCoinsInGame()
+    {
+        Singleton.instance.Coins -= Singleton.instance.CoinsInGame;
+    }
+
+    public void Mgr() {
+        if (SavedLastExp)
+        {
+            Singleton.instance.Experience = Saved;
+            MinusLvl();
+            Debug.Log(Saved + " Esto es lo que cargaré");
+        }
+        else
+        {
+            MinusExperienceInGame();//If the user press menu in a middle of a game, the experience wont count
+        }
+        MinusCoinsInGame();//If the user press menu in a middle of a game, the coins wont count
+        igLevelManager.MenuButton();//Returns to menu
+    }
 
 }

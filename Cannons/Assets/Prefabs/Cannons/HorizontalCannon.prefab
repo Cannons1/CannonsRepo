@@ -84,7 +84,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4518935813123604}
   - component: {fileID: 65974667159079044}
-  - component: {fileID: 114721621167692290}
   - component: {fileID: 114500324696156620}
   - component: {fileID: 114503335896547790}
   m_Layer: 0
@@ -262,17 +261,6 @@ MonoBehaviour:
   wick: {fileID: 0}
   wickOff: {fileID: 0}
   cannonsAudioSource: {fileID: 0}
---- !u!114 &114721621167692290
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1964473785528256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f99095bee7969e42ab933ba7c7dd7b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!135 &135508653761140568
 SphereCollider:
   m_ObjectHideFlags: 1

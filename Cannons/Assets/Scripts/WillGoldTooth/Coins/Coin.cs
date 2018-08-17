@@ -23,11 +23,6 @@ public class Coin : MonoBehaviour, ICoins, IExperience
         DeactivatedCoin();//When you pick a coin it will deactivate its meshRenderer and box collider
     }
 
-    public void MinusCoinsInGame()
-    {
-        Singleton.instance.Coins -= Singleton.instance.CoinsInGame;
-    }
-
     public void DeactivatedCoin()
     {
         mMeshRenderer.enabled = false;

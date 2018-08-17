@@ -2,7 +2,7 @@
 using UnityEngine;
 using EZCameraShake;
 
-[RequireComponent(typeof(Points))]
+//[RequireComponent(typeof(Points))]
 [RequireComponent(typeof(AudioCannons))]
 public abstract class CannonParent : MonoBehaviour
 {

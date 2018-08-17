@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
 public class Points : MonoBehaviour, IPoints
 {
     WriteVbles mWriteCoins;
@@ -16,4 +16,4 @@ public class Points : MonoBehaviour, IPoints
         Singleton.instance.PointsInGame += _points;
         mWriteCoins.WritingPoints();//Will write the number of points in a text
     }
-}
+}*/

@@ -7,8 +7,7 @@ public class AudioUI : MonoBehaviour
     [SerializeField] AudioClip buttonDefault, buttonBack, buttonPlay, claimAGift;
     [SerializeField] LvlMgr mLvlMgr;
     [SerializeField] IGLevelManager igLevelManager;
-    [SerializeField] Coin mCoinsInGame;
-    [SerializeField] ExpCoinPoinMgr mExperience;
+    [SerializeField] ExpCoinPoinMgr expCoinPoinMgr;
     int i = 0;
     public void SoundClaimGift() {
         uIAudioSource.clip = claimAGift;
@@ -62,16 +61,17 @@ public class AudioUI : MonoBehaviour
     {
         uIAudioSource.clip = buttonBack;
         uIAudioSource.Play();
-        if (mExperience.SavedLastExp)
+        expCoinPoinMgr.Mgr();
+        /*if (expCoinPoinMgr.SavedLastExp)
         {
-            Singleton.instance.Experience = mExperience.Saved;
-            mExperience.MinusLvl();
-            Debug.Log(mExperience.Saved + " Esto es lo que cargaré");
+            Singleton.instance.Experience = expCoinPoinMgr.Saved;
+            expCoinPoinMgr.MinusLvl();
+            Debug.Log(expCoinPoinMgr.Saved + " Esto es lo que cargaré");
         }
         else {
-            mExperience.MinusExperienceInGame();//If the user press menu in a middle of a game, the experience wont count
+            expCoinPoinMgr.MinusExperienceInGame();//If the user press menu in a middle of a game, the experience wont count
         }
-        mCoinsInGame.MinusCoinsInGame();//If the user press menu in a middle of a game, the coins wont count
-        igLevelManager.MenuButton();//Returns to menu
+        expCoinPoinMgr.MinusCoinsInGame();//If the user press menu in a middle of a game, the coins wont count
+        igLevelManager.MenuButton();//Returns to menu*/
     }
 }
