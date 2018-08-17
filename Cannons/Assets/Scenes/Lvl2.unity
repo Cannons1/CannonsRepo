@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -250,6 +250,10 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 41.52
       objectReference: {fileID: 0}
+    - target: {fileID: 4080461698112696, guid: 50968a4552340f3468aec73489bdefb1, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -14
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50968a4552340f3468aec73489bdefb1, type: 2}
   m_IsPrefabAsset: 0
@@ -313,7 +317,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4376864371846394, guid: fe21117e4f7b9e74fbebc90c651b7357, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.34
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4376864371846394, guid: fe21117e4f7b9e74fbebc90c651b7357, type: 2}
       propertyPath: m_LocalPosition.y
@@ -427,6 +431,18 @@ Prefab:
       propertyPath: instaShot
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4421103292140236, guid: 9dc87026920fb5d4ea7361aff61540a5, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421103292140236, guid: 9dc87026920fb5d4ea7361aff61540a5, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421103292140236, guid: 9dc87026920fb5d4ea7361aff61540a5, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9dc87026920fb5d4ea7361aff61540a5, type: 2}
   m_IsPrefabAsset: 0
@@ -439,7 +455,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4376864371846394, guid: fe21117e4f7b9e74fbebc90c651b7357, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.34
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4376864371846394, guid: fe21117e4f7b9e74fbebc90c651b7357, type: 2}
       propertyPath: m_LocalPosition.y
@@ -487,6 +503,18 @@ Prefab:
         type: 2}
       propertyPath: shootForce
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376864371846394, guid: fe21117e4f7b9e74fbebc90c651b7357, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376864371846394, guid: fe21117e4f7b9e74fbebc90c651b7357, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376864371846394, guid: fe21117e4f7b9e74fbebc90c651b7357, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe21117e4f7b9e74fbebc90c651b7357, type: 2}
@@ -557,6 +585,18 @@ Prefab:
         type: 2}
       propertyPath: wickTime
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518935813123604, guid: cc657c91867499045866d7dfc00dfbbc, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518935813123604, guid: cc657c91867499045866d7dfc00dfbbc, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518935813123604, guid: cc657c91867499045866d7dfc00dfbbc, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc657c91867499045866d7dfc00dfbbc, type: 2}
@@ -665,6 +705,18 @@ Prefab:
       propertyPath: cannonsAudioSource
       value: 
       objectReference: {fileID: 262344426}
+    - target: {fileID: 4421103292140236, guid: 9dc87026920fb5d4ea7361aff61540a5, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421103292140236, guid: 9dc87026920fb5d4ea7361aff61540a5, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421103292140236, guid: 9dc87026920fb5d4ea7361aff61540a5, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9dc87026920fb5d4ea7361aff61540a5, type: 2}
   m_IsPrefabAsset: 0
@@ -743,7 +795,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4376864371846394, guid: fe21117e4f7b9e74fbebc90c651b7357, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.07
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 4376864371846394, guid: fe21117e4f7b9e74fbebc90c651b7357, type: 2}
       propertyPath: m_LocalPosition.y
@@ -796,6 +848,18 @@ Prefab:
       propertyPath: m_Name
       value: RotatingCannon (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4376864371846394, guid: fe21117e4f7b9e74fbebc90c651b7357, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376864371846394, guid: fe21117e4f7b9e74fbebc90c651b7357, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376864371846394, guid: fe21117e4f7b9e74fbebc90c651b7357, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe21117e4f7b9e74fbebc90c651b7357, type: 2}
   m_IsPrefabAsset: 0
@@ -812,7 +876,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4421103292140236, guid: 9dc87026920fb5d4ea7361aff61540a5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 19.17
+      value: 19.49
       objectReference: {fileID: 0}
     - target: {fileID: 4421103292140236, guid: 9dc87026920fb5d4ea7361aff61540a5, type: 2}
       propertyPath: m_LocalPosition.z
@@ -861,6 +925,18 @@ Prefab:
       propertyPath: cannonsAudioSource
       value: 
       objectReference: {fileID: 262344426}
+    - target: {fileID: 4421103292140236, guid: 9dc87026920fb5d4ea7361aff61540a5, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421103292140236, guid: 9dc87026920fb5d4ea7361aff61540a5, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421103292140236, guid: 9dc87026920fb5d4ea7361aff61540a5, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9dc87026920fb5d4ea7361aff61540a5, type: 2}
   m_IsPrefabAsset: 0

@@ -22,7 +22,7 @@ public class HAndV : CannonParent
 
         if (initMoving)
         {
-            StartCoroutine(Move());
+            StartCoroutine(InitMove());
         }
     }
 
@@ -31,16 +31,9 @@ public class HAndV : CannonParent
         base.Update();
     }
 
-    IEnumerator Move()
+    IEnumerator InitMove()
     {
         while (initMoving)
-        {
-            timer += Time.deltaTime;
-            transform.position = Vector3.Lerp(target1, target2, (Mathf.Sin(speed * timer - (Mathf.PI / 2)) + 1.0f) / 2.0f);
-            yield return null;
-        }
-
-        while (Will.will.inCannon)
         {
             timer += Time.deltaTime;
             transform.position = Vector3.Lerp(target1, target2, (Mathf.Sin(speed * timer - (Mathf.PI / 2)) + 1.0f) / 2.0f);
@@ -50,8 +43,11 @@ public class HAndV : CannonParent
 
     public IEnumerator Preparation()
     {
-        initMoving = false;
-        StartCoroutine(MoveToFirstTarget());
+
+        if (!initMoving)
+        {
+            StartCoroutine(MoveToFirstTarget()); 
+        }
 
         Vector3 startingRotation = transform.localEulerAngles;
         Vector3 targetRotation = new Vector3(0, 0, startingRotation.z + firstRotation);
@@ -81,5 +77,15 @@ public class HAndV : CannonParent
         }
         //transform.position = target1;
         StartCoroutine(Move()); 
+    }
+
+    IEnumerator Move()
+    {
+        while (Will.will.inCannon)
+        {
+            timer += Time.deltaTime;
+            transform.position = Vector3.Lerp(target1, target2, (Mathf.Sin(speed * timer - (Mathf.PI / 2)) + 1.0f) / 2.0f);
+            yield return null;
+        }
     }
 }
