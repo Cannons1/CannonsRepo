@@ -72,7 +72,7 @@ public class ExpCoinPoinMgr : MonoBehaviour
             MinusExperienceInGame();//If the user press menu in a middle of a game, the experience wont count
         }
         MinusCoinsInGame();//If the user press menu in a middle of a game, the coins wont count
-        igLevelManager.MenuButton();//Returns to menu
+        //igLevelManager.MenuButton();//Returns to menu
     }
 
 }

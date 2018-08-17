@@ -15,6 +15,10 @@ public class Retry : MonoBehaviour {
     }
 
     public void RetryLvl() {
+        SceneManager.LoadScene(mScene.name);
+    }
+
+    public void RestartLvl() {
         expCoinPoinMgr.Mgr();//this will rest all the things the player earned in game
         SceneManager.LoadScene(mScene.name);
     }
