@@ -21,4 +21,14 @@ public class WillAudios : MonoBehaviour
         willA.clip = willAudios[0];
         willA.Play();
     }
+
+    public void FlyingAudio() {
+        willA.clip = willAudios[3];
+        willA.Play();
+    }
+
+    public void HitsAWallAudio() {
+        willA.clip = willAudios[4];
+        willA.Play();
+    }
 }
