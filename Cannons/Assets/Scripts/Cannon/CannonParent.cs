@@ -35,6 +35,7 @@ public abstract class CannonParent : MonoBehaviour
         Will.will.inCannon = false;
         Will.will.cannonTriggered.SetActive(false);
         Will.will.StartCoroutine(Will.will.FlyAnimation());
+        //Will.will.GetComponent<WillAudios>().BeingShot();
     }
   
     public IEnumerator Wick()

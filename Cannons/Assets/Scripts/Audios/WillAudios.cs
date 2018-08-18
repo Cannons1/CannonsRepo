@@ -22,6 +22,17 @@ public class WillAudios : MonoBehaviour
         willA.Play();
     }
 
+    public void LandsInCannon() {
+        //int clip = Random.Range(1, 3);
+        willA.clip = willAudios[2];
+        willA.Play();
+    }
+
+    public void BeingShot() {
+        willA.clip = willAudios[3];
+        willA.Play();
+    }
+
     public void FlyingAudio() {
         willA.clip = willAudios[3];
         willA.Play();
