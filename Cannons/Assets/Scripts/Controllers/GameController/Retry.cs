@@ -19,11 +19,6 @@ public class Retry : MonoBehaviour {
         SceneManager.LoadScene(mScene.name);
     }
 
-    public void RestartLvl() {
-        expCoinPoinMgr.Mgr();//this will rest all the things the player earned in game
-        SceneManager.LoadScene(mScene.name);
-    }
-
     public void ActiveCanvas() {
         mWriteVbles.WriteCoinInRetry();
         canvasRetry.SetActive(true);

@@ -8,20 +8,27 @@ public class WinCondition : MonoBehaviour {
     [SerializeField] Text winCoinsTxt, winExpTxt;
     [SerializeField] GameObject canvasWin;
     CanvasMgr mCanvasMgr;
+    WriteVbles mWriteVbles;
 
     private void Start()
     {
+        mWriteVbles = (WriteVbles)FindObjectOfType(typeof(WriteVbles));
         mCanvasMgr = (CanvasMgr)FindObjectOfType(typeof(CanvasMgr));
     }
 
     public void Win() {
         mCanvasMgr.Canvas[0].SetActive(false);
+        canvasWin.SetActive(true);
+        ExpCoinsMgr();
+        Time.timeScale = 0;
+    }
+
+    private void ExpCoinsMgr() {
         Singleton.instance.Coins += coins;
         Singleton.instance.Experience += exp;
-
-        canvasWin.SetActive(true);
+        mWriteVbles.WriteExp();
+        mWriteVbles.WritingNumberOfCoins();
         winCoinsTxt.text = coins.ToString("+0");
         winExpTxt.text = exp.ToString("+0");
-        Time.timeScale = 0;
     }
 }

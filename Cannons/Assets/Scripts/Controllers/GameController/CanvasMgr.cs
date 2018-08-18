@@ -105,4 +105,8 @@ public class CanvasMgr : MonoBehaviour {
         canvas[3].SetActive(false);
         mAduioUI.AudioButtonBack();
     }
+
+    public void WinCanvasOff() {
+        canvas[5].SetActive(false);
+    }
 }

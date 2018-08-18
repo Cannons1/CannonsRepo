@@ -6,6 +6,7 @@ public class Coin : MonoBehaviour, ICoins, IExperience
     WriteVbles mWriteVbles;
     MeshRenderer mMeshRenderer;
     BoxCollider mBoxCollider;
+    [Header("Object when player picks up")]
     [SerializeField] GameObject coinPlus;
 
     private void Start()
