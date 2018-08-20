@@ -85,25 +85,25 @@ public class Singleton : MonoBehaviour
     #endregion
 
     #region shop boosts
-    public byte ExpBoost {
+    public int ExpBoost {
         get { return expBoost; }
         set { expBoost = value; }
     }
-    private byte expBoost;
+    private int expBoost;
     #endregion
 
     #region dailyGifts
-    public byte DailyGifts
+    public int DailyGifts
     {
         get { return dailyGifts; }
         set { dailyGifts = value; }
     }
-    public byte ActiveToggles {
+    public int ActiveToggles {
         get { return activeToggles; }
         set { activeToggles = value; }
     }
-    private byte dailyGifts;
-    private byte activeToggles;
+    private int dailyGifts;
+    private int activeToggles;
     #endregion
 
     void Awake()

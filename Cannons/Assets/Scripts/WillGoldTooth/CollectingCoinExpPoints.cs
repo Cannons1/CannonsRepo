@@ -54,24 +54,4 @@ public class CollectingCoinExpPoints : MonoBehaviour
             iPoints.GettingPoints(point);
         }
     }
-
-   /* private void OnCollisionEnter(Collision collision)
-    {
-        GameObject collisioned = collision.gameObject;
-
-        if (collisioned.GetComponent<IExperience>() != null)
-        {
-            exp = Random.Range(0.05f, 0.15f);
-            IExperience iExperience;
-            iExperience = collisioned.GetComponent<IExperience>();
-            iExperience.EarningExperience(exp);
-        }
-
-        if (collisioned.GetComponent<IPoints>() != null)
-        {
-            IPoints iPoints;
-            iPoints = collisioned.GetComponent<IPoints>();
-            iPoints.GettingPoints(point);
-        }
-    }*/
 }

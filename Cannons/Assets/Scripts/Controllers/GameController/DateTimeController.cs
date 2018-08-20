@@ -9,11 +9,10 @@ public class DateTimeController : MonoBehaviour
     DateTime currentTimeBoostExp, currentTimeDaily;
 
     public delegate void DateTimeDelegate();
-    public static event DateTimeDelegate OnExpBoostReady, OnDailyGifts;
+    public static event DateTimeDelegate OnExpBoostReady;
 
 	void Start ()
     {
-        //currentTime = DateTime.Now;
         #region dailyChallenge
         if (PlayerPrefs.HasKey("Daily"))
         {
@@ -23,14 +22,11 @@ public class DateTimeController : MonoBehaviour
             if (differenceDaily.Days >= 1)
             {
                 Debug.Log("one day has passed");
-                //OnDailyGifts();
                 Singleton.instance.DailyGifts++;
-                PlayerPrefs.SetString("DailyCount", Singleton.instance.DailyGifts.ToString());
+                PlayerPrefs.SetInt("DailyCount", Singleton.instance.DailyGifts);
+                Debug.Log(Singleton.instance.DailyGifts);
+                SaveDateTime();
             }
-        }
-        else
-        {
-            Debug.Log("Can't load DateTime");
         }
         #endregion
 
@@ -47,9 +43,6 @@ public class DateTimeController : MonoBehaviour
                 {
                     OnExpBoostReady();
                 }
-                else {
-                    Debug.Log("IDK");
-                }
             }
         }
         #endregion
@@ -64,6 +57,5 @@ public class DateTimeController : MonoBehaviour
     public static void SaveExpBoostTime()
     {
         PlayerPrefs.SetString("ExpBoostTime", DateTime.Now.ToString());
-        Debug.Log("DateTime saved");
     }
 }

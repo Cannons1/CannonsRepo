@@ -3356,6 +3356,7 @@ GameObject:
   - component: {fileID: 732049268}
   - component: {fileID: 732049269}
   - component: {fileID: 732049270}
+  - component: {fileID: 732049271}
   m_Layer: 5
   m_Name: ShopController
   m_TagString: Untagged
@@ -3429,6 +3430,17 @@ MonoBehaviour:
   - {fileID: 437973284}
   mWriteVbles: {fileID: 1675345756}
   mAudioUI: {fileID: 1436810330}
+--- !u!114 &732049271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 732049266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44717589406cf6342be3eab0ea54bca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &783731506
 GameObject:
   m_ObjectHideFlags: 0

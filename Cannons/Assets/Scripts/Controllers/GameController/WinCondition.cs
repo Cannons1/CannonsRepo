@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 public class WinCondition : MonoBehaviour {
     [Header("Win prize")]
@@ -30,5 +29,13 @@ public class WinCondition : MonoBehaviour {
         mWriteVbles.WritingNumberOfCoins();
         winCoinsTxt.text = coins.ToString("+0");
         winExpTxt.text = exp.ToString("+0");
+        SavePlayerStatus();
+    }
+
+    public void SavePlayerStatus() {
+        PlayerPrefs.SetInt("Coins", Singleton.instance.Coins);
+        PlayerPrefs.SetInt("Exp", Singleton.instance.Experience);
+        PlayerPrefs.SetInt("Lvl", Singleton.instance.Lvl);
+
     }
 }
