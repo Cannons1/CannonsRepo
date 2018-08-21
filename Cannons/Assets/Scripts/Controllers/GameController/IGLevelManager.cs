@@ -11,7 +11,6 @@ public class IGLevelManager : MonoBehaviour
     ExpCoinPoinMgr expCoinMgr;
 
     public static bool unpause;
-
     public static bool nxtButton;
 
     private void Start()
@@ -54,7 +53,7 @@ public class IGLevelManager : MonoBehaviour
         StartCoroutine(LoadAsynchronously(menuButton));
     }
 
-    IEnumerator LoadAsynchronously(string _sceneName)
+    public IEnumerator LoadAsynchronously(string _sceneName)
     {
         loadingScreen.SetActive(true);
         //if(_sceneName == "Menu")

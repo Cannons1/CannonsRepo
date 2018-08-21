@@ -10,4 +10,10 @@ public class Currency : MonoBehaviour {
         if (PlayerPrefs.HasKey("Lvl"))
             Singleton.instance.Lvl = PlayerPrefs.GetInt("Lvl");
 	}
+
+    public void ResetCurr() {
+        PlayerPrefs.DeleteKey("Coins");
+        PlayerPrefs.DeleteKey("Exp");
+        PlayerPrefs.DeleteKey("Lvl");
+    }
 }

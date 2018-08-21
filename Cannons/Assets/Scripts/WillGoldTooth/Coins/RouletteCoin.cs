@@ -1,19 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class RouletteCoin : MonoBehaviour, IRouletteCoin
 {
-    [SerializeField] LvlMgr mLvlMgr;
+    BoxCollider mBox;
+    Renderer mRend;
 
-    public void RoulletteCoinCollected(bool _RouletteCoin)
+    private void Start()
     {
-        StartCoroutine(DieWillAnim());
+        mBox = GetComponent<BoxCollider>();
+        mRend = GetComponent<Renderer>();
     }
 
-    IEnumerator DieWillAnim()
+    public void RoulletteCoinCollected()
     {
-        yield return new WaitForSeconds(4);//this will be the time of will's dead animation
-        mLvlMgr.RouletteScene();
+        DeactivateCoin();
+    }
+
+    public void DeactivateCoin() {
+        mBox.enabled = false;
+        mRend.enabled = false;
     }
 }

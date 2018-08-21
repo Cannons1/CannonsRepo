@@ -64,7 +64,7 @@ public class Will : MonoBehaviour
 
     void StuckOnCannon()
     {
-        GetComponent<WillAudios>().LandsInCannon();
+        //GetComponent<WillAudios>().LandsInCannon(); //this is the audio of will landing in a cannon
         GetComponent<Rigidbody>().isKinematic = true;
         reference = cannonTriggered.transform.GetChild(0).gameObject.transform;
         StartCoroutine(MoveToCannon());

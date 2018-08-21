@@ -8,6 +8,14 @@ public class CollectingCoinExpPoints : MonoBehaviour
     private bool rouletteCoin;
     AudioItems mAudioItems;
 
+    public bool RouletteCoin
+    {
+        get
+        {
+            return rouletteCoin;
+        }
+    }
+
     private void Start()
     {
         mAudioItems = FindObjectOfType<AudioItems>();
@@ -33,11 +41,11 @@ public class CollectingCoinExpPoints : MonoBehaviour
 
         if (collisioned.GetComponent<IRouletteCoin>() != null)
         {
-            mAudioItems.AudioRouletteCoin();
             rouletteCoin = true;
+            mAudioItems.AudioRouletteCoin();
             IRouletteCoin iRouletteCoin;
             iRouletteCoin = collisioned.GetComponent<IRouletteCoin>();
-            iRouletteCoin.RoulletteCoinCollected(rouletteCoin);
+            iRouletteCoin.RoulletteCoinCollected();
         }
 
         if (collisioned.GetComponent<IExperience>() != null)

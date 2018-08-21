@@ -9,7 +9,7 @@ public interface ICoins
 
 public interface IRouletteCoin
 {
-    void RoulletteCoinCollected(bool _RouletteCoin);
+    void RoulletteCoinCollected();
 }
 
 
