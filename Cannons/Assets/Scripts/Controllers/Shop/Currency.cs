@@ -9,6 +9,7 @@ public class Currency : MonoBehaviour {
             Singleton.instance.Experience = PlayerPrefs.GetInt("Exp");
         if (PlayerPrefs.HasKey("Lvl"))
             Singleton.instance.Lvl = PlayerPrefs.GetInt("Lvl");
+
 	}
 
     public void ResetCurr() {

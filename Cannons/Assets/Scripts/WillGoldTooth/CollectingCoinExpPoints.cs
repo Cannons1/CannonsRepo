@@ -5,26 +5,16 @@ public class CollectingCoinExpPoints : MonoBehaviour
     private int coin = 1;
     private int point = 1;
     private int exp;
-    private bool rouletteCoin;
     AudioItems mAudioItems;
-
-    public bool RouletteCoin
-    {
-        get
-        {
-            return rouletteCoin;
-        }
-    }
 
     private void Start()
     {
         mAudioItems = FindObjectOfType<AudioItems>();
-        rouletteCoin = false; //Always starts in false, unless you get the RouletteCoin;
 
         if (Singleton.instance.ExpBoost == 0)
             exp = Random.Range(1, 4);
         else
-            exp = Random.Range(4, 7);
+            exp = Random.Range(3, 6);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -37,15 +27,6 @@ public class CollectingCoinExpPoints : MonoBehaviour
             ICoins iCoins;
             iCoins = collisioned.GetComponent<ICoins>();
             iCoins.CoinsCollected(coin);
-        }
-
-        if (collisioned.GetComponent<IRouletteCoin>() != null)
-        {
-            rouletteCoin = true;
-            mAudioItems.AudioRouletteCoin();
-            IRouletteCoin iRouletteCoin;
-            iRouletteCoin = collisioned.GetComponent<IRouletteCoin>();
-            iRouletteCoin.RoulletteCoinCollected();
         }
 
         if (collisioned.GetComponent<IExperience>() != null)
