@@ -41,7 +41,7 @@ public abstract class CannonParent : MonoBehaviour
     public IEnumerator Wick()
     {
         canShoot = true;
-        mRenderer = GetComponentInChildren<Renderer>();
+        mRenderer = transform.GetChild(1).GetComponentInChildren<Renderer>();
         Color startingColor = mRenderer.material.color;
         float i = 0;
         while (i < wickTime && Will.will.inCannon)

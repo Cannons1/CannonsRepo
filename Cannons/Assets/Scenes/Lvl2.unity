@@ -446,7 +446,7 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9dc87026920fb5d4ea7361aff61540a5, type: 2}
   m_IsPrefabAsset: 0
---- !u!1001 &1160280923
+--- !u!1001 &850965143
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -490,32 +490,6 @@ Prefab:
       propertyPath: cannonsAudioSource
       value: 
       objectReference: {fileID: 262344426}
-    - target: {fileID: 4376864371846394, guid: fe21117e4f7b9e74fbebc90c651b7357, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 114517613381731680, guid: fe21117e4f7b9e74fbebc90c651b7357,
-        type: 2}
-      propertyPath: angleRotation
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 114517613381731680, guid: fe21117e4f7b9e74fbebc90c651b7357,
-        type: 2}
-      propertyPath: shootForce
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376864371846394, guid: fe21117e4f7b9e74fbebc90c651b7357, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376864371846394, guid: fe21117e4f7b9e74fbebc90c651b7357, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376864371846394, guid: fe21117e4f7b9e74fbebc90c651b7357, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1.2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe21117e4f7b9e74fbebc90c651b7357, type: 2}
   m_IsPrefabAsset: 0
