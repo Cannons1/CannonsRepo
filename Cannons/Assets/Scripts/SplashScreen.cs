@@ -9,25 +9,17 @@ public class SplashScreen : MonoBehaviour
     [SerializeField] Slider slider;
     [SerializeField] VideoClip videoLogo;
     [SerializeField] VideoPlayer videoPlayerLogo;
-    [SerializeField] GameObject Canvas;
-    static bool init;
-    WaitForSeconds videoLenght;
-    float t = 0;
+    [SerializeField] GameObject canvas;
 
     private void Start()
     {
-        videoLenght = new WaitForSeconds((float)videoLogo.length);
-        if (!init) {
-            Canvas.SetActive(false);
-            StartCoroutine(VideoPlayer());
-        }
-        else
-            StartCoroutine(LoadAsynchronously());
+        videoPlayerLogo.Play();
+        videoPlayerLogo.loopPointReached += LoadScene;
     }
 
     IEnumerator LoadAsynchronously()
     {
-        Canvas.SetActive(true);
+        canvas.SetActive(true);
         AsyncOperation operation = SceneManager.LoadSceneAsync("Menu");
 
         while(!operation.isDone)
@@ -37,12 +29,9 @@ public class SplashScreen : MonoBehaviour
             yield return null;
         }
     }
-    
 
-    IEnumerator VideoPlayer() {
-        videoPlayerLogo.Play();
-        init = true;
-        yield return videoLenght;
+    void LoadScene(VideoPlayer videoPlayer)
+    {
         StartCoroutine(LoadAsynchronously());
     }
 }
