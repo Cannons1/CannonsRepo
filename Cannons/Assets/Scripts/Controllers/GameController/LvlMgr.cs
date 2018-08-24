@@ -5,7 +5,7 @@ using System.Collections;
 
 public class LvlMgr : MonoBehaviour
 {
-    [SerializeField] string playButton, menuButton, rouletteScene, lvl1, lvl2;
+    [SerializeField] string playButton, menuButton;
     [SerializeField] GameObject loadingScreen;
     [SerializeField] Slider slider;
 
@@ -14,19 +14,9 @@ public class LvlMgr : MonoBehaviour
         StartCoroutine(LoadAsynchronously(playButton));
     }
 
-    public void RouletteScene()
+    public void Levels(string levelName)
     {
-        StartCoroutine(LoadAsynchronously(rouletteScene)); ;
-    }
-
-    public void FirstLvl()
-    {
-        StartCoroutine(LoadAsynchronously(lvl1));
-    }
-
-    public void SecondLvl()
-    {
-        StartCoroutine(LoadAsynchronously(lvl2));
+        StartCoroutine(LoadAsynchronously(levelName));
     }
 
     IEnumerator LoadAsynchronously(string _sceneName)
