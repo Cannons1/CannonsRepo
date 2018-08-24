@@ -31,7 +31,6 @@ public class IGLevelManager : MonoBehaviour
     public void PauseButton()
     {
         unpause = false;
-        Debug.Log(unpause);
         Time.timeScale = 0;
         CanvasMgr.unnpause = 1;
     }

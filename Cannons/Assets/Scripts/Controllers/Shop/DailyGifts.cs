@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
-using System;
 
 public class DailyGifts : MonoBehaviour
 {
@@ -151,7 +148,8 @@ public class DailyGifts : MonoBehaviour
         DateTimeController.SaveDateTime();
         dailyToggles[Singleton.instance.DailyGifts].enabled = false;
         Singleton.instance.ActiveToggles++;
-        PlayerPrefs.SetInt("TogglesActive", Singleton.instance.ActiveToggles);
+        DateTimeController.SaveActiveToggles();
+        //PlayerPrefs.SetInt("TogglesActive", Singleton.instance.ActiveToggles);
     }
 
     #region Gifts of Toggles
@@ -200,8 +198,10 @@ public class DailyGifts : MonoBehaviour
         Debug.Log("Seventh Gift");
         Singleton.instance.DailyGifts = -1;
         Singleton.instance.ActiveToggles = 0;
-        PlayerPrefs.SetInt("DailyCount", Singleton.instance.DailyGifts);
-        PlayerPrefs.SetInt("TogglesActive", Singleton.instance.ActiveToggles);
+        DateTimeController.SaveDailyCount();
+        DateTimeController.SaveActiveToggles();
+        //PlayerPrefs.SetInt("DailyCount", Singleton.instance.DailyGifts);
+        //PlayerPrefs.SetInt("TogglesActive", Singleton.instance.ActiveToggles);
     }
     #endregion
 }
