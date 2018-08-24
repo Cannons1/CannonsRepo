@@ -9,7 +9,7 @@ public class DateTimeController : MonoBehaviour
     public delegate void DateTimeDelegate();
     public static event DateTimeDelegate OnExpBoostReady;
 
-	void Start ()
+	void Awake ()
     {
         #region dailyChallenge
         if (PlayerPrefs.HasKey("Daily"))
@@ -21,7 +21,7 @@ public class DateTimeController : MonoBehaviour
             {
                 Debug.Log("one day has passed");
                 Singleton.instance.DailyGifts++;
-                PlayerPrefs.SetInt("DailyCount", Singleton.instance.DailyGifts);
+                SaveDailyCount();
                 Debug.Log(Singleton.instance.DailyGifts);
                 SaveDateTime();
             }
@@ -55,5 +55,13 @@ public class DateTimeController : MonoBehaviour
     public static void SaveExpBoostTime()
     {
         PlayerPrefs.SetString("ExpBoostTime", DateTime.Now.ToString());
+    }
+
+    public static void SaveDailyCount() {
+        PlayerPrefs.SetInt("DailyCount", Singleton.instance.DailyGifts);
+    }
+
+    public static void SaveActiveToggles() {
+        PlayerPrefs.SetInt("TogglesActive", Singleton.instance.ActiveToggles);
     }
 }

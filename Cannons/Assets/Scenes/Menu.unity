@@ -6780,8 +6780,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uIAudioSource: {fileID: 1807529757}
-  buttonDefault: {fileID: 8300000, guid: dac2047519c83d04987e28bc960749cb, type: 3}
-  buttonBack: {fileID: 8300000, guid: b2fb1d81966181f458c882e6a63fd51a, type: 3}
+  buttonDefault: {fileID: 8300000, guid: fb59202644333ae41abf873438156eb8, type: 3}
+  buttonBack: {fileID: 8300000, guid: 72bf3fd66fcfa28419e6b6cdce1f8e4c, type: 3}
   buttonPlay: {fileID: 8300000, guid: d18496a6fc1dca746aad89e40c383ec9, type: 3}
   claimAGift: {fileID: 8300000, guid: 30b5963dba8acd645aba5201fab7c7d8, type: 3}
   mLvlMgr: {fileID: 0}
