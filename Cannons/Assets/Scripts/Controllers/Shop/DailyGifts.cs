@@ -26,6 +26,14 @@ public class DailyGifts : MonoBehaviour
         }
     }
 
+    public void DeleteKeysAfterTwoDays() {
+        Singleton.instance.DailyGifts = 0;
+        Singleton.instance.ActiveToggles = 0;
+        DateTimeController.SaveDailyCount();
+        DateTimeController.SaveActiveToggles();
+        Debug.Log("Han pasado dos días");
+    }
+
     private void VerifyActiveToggles() {
         switch (Singleton.instance.ActiveToggles)
         {

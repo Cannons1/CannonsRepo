@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class WriteVbles : MonoBehaviour
@@ -15,7 +13,7 @@ public class WriteVbles : MonoBehaviour
     
     private void Start()
     {
-        percentaje = 3;
+        percentaje = 15;
         numberOfCoins.text = Singleton.instance.Coins.ToString("0");
         characterLvl.text = Singleton.instance.Lvl.ToString("0");
         //highScore.text = Singleton.instance.Points.ToString("0");

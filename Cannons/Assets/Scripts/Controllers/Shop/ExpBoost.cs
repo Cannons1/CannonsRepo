@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class ExpBoost : DateTimeController
+public class ExpBoost : MonoBehaviour
 {
     [SerializeField] Button expBoostButton;
     public static int cost = 150;
@@ -17,7 +17,6 @@ public class ExpBoost : DateTimeController
                 expBoostButton.interactable = false;
             }
         }
-        OnExpBoostReady += ExpBoostReady;
     }
 
     public void BuyExpBoost()
@@ -26,7 +25,7 @@ public class ExpBoost : DateTimeController
         {
             Singleton.instance.Coins -= cost;
             Singleton.instance.ExpBoost = 1;
-            SaveExpBoostTime();
+            DateTimeController.SaveExpBoostTime();
             expBoostButton.interactable = false;
             PlayerPrefs.SetInt("BoostExp", Singleton.instance.ExpBoost);
             mWriteVbles.WritingNumberOfCoins();
@@ -36,6 +35,8 @@ public class ExpBoost : DateTimeController
     public void ExpBoostReady()
     {
         Singleton.instance.ExpBoost = 0;
+        PlayerPrefs.SetInt("BoostExp", Singleton.instance.ExpBoost);
         expBoostButton.interactable = true;
+        Debug.Log("Ready");
     }
 }

@@ -12,15 +12,14 @@ public class CollectingCoinExpPoints : MonoBehaviour
         mAudioItems = FindObjectOfType<AudioItems>();
 
         if (Singleton.instance.ExpBoost == 0)
-            exp = Random.Range(1, 4);
+            Debug.Log("SinBoost");
         else
-            exp = Random.Range(3, 6);
+            Debug.Log("ConBoost");
     }
 
     private void OnTriggerEnter(Collider other)
     {
         GameObject collisioned = other.gameObject;
-
         if (collisioned.GetComponent<ICoins>() != null)
         {
             mAudioItems.AudioCoin();
@@ -31,6 +30,10 @@ public class CollectingCoinExpPoints : MonoBehaviour
 
         if (collisioned.GetComponent<IExperience>() != null)
         {
+            if (Singleton.instance.ExpBoost == 0)
+                exp = Random.Range(1, 4);
+            else
+                exp = Random.Range(3, 6);
             IExperience iExperience;
             iExperience = collisioned.GetComponent<IExperience>();
             iExperience.EarningExperience(exp);

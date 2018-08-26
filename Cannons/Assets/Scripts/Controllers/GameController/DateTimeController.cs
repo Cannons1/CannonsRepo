@@ -5,25 +5,32 @@ public class DateTimeController : MonoBehaviour
 {
     TimeSpan differenceExp, differenceDaily;
     DateTime currentTimeBoostExp, currentTimeDaily;
-
-    public delegate void DateTimeDelegate();
-    public static event DateTimeDelegate OnExpBoostReady;
+    [SerializeField] ExpBoost mExpBoost;
+    [SerializeField] DailyGifts dailyGifts;
 
 	void Awake ()
     {
         #region dailyChallenge
         if (PlayerPrefs.HasKey("Daily"))
         {
+            Debug.Log("Tengo kayDaily");
             currentTimeDaily = Convert.ToDateTime(PlayerPrefs.GetString("Daily"));
             differenceDaily = DateTime.Now - currentTimeDaily;
 
-            if (differenceDaily.Days >= 1)
+            if (PlayerPrefs.HasKey("DailyCount"))
             {
-                Debug.Log("one day has passed");
+                Singleton.instance.DailyGifts = PlayerPrefs.GetInt("DailyCount");
+            }
+
+            if (differenceDaily.Days >= 1 )
+            {
+                Debug.Log("un día ha pasado");
                 Singleton.instance.DailyGifts++;
                 SaveDailyCount();
                 Debug.Log(Singleton.instance.DailyGifts);
-                SaveDateTime();
+            }
+            if (differenceDaily.Days >= 2) {
+                dailyGifts.DeleteKeysAfterTwoDays();
             }
         }
         #endregion
@@ -36,11 +43,7 @@ public class DateTimeController : MonoBehaviour
 
             if (differenceExp.Hours >= 2)
             {
-                Debug.Log("The boost for Exp is over");
-                if (OnExpBoostReady != null)
-                {
-                    OnExpBoostReady();
-                }
+                mExpBoost.ExpBoostReady();
             }
         }
         #endregion

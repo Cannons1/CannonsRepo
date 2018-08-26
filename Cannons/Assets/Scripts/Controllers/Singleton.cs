@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Singleton : MonoBehaviour
 {
@@ -108,6 +106,7 @@ public class Singleton : MonoBehaviour
 
     void Awake()
     {
+        lvl = 1;
         if (instance == null)
         {
             instance = this;
@@ -117,6 +116,5 @@ public class Singleton : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        lvl = 1;
     }
 }
