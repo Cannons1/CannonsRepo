@@ -3,20 +3,32 @@ using UnityEngine;
 
 public class HAndV : CannonParent
 {
-    Vector3 target1;
-    Vector3 target2;
+    Vector3 target1, target2;
 
     [SerializeField] private float speed = 5f;
     float time = 0.2f;
     [Range(-180, 180)]
     [SerializeField] int firstRotation;
     [SerializeField] bool initMoving;
+    [Tooltip("False for horizontal, true for vertical")]
+    [SerializeField] bool verticalOrHorizontal;
+    [Range(-2.7f, 2.7f)]
+    [SerializeField] float horizontalTarget1, horizontalTarget2;
+    [SerializeField] float verticalTarget1, verticalTarget2;
     float timer = 0f;
 
     private void Start()
     {
-        target1 = transform.GetChild(2).transform.position;
-        target2 = transform.GetChild(3).transform.position;
+        if(!verticalOrHorizontal)
+        {
+            target1 = new Vector3(horizontalTarget1, transform.localPosition.y, 0);
+            target2 = new Vector3(horizontalTarget2, transform.localPosition.y, 0);
+        }
+        else
+        {
+            target1 = new Vector3(transform.localPosition.x, verticalTarget1, 0);
+            target2 = new Vector3(transform.localPosition.x, verticalTarget2, 0);
+        }
 
         cannonType = CannonType.targetCannon;
 
@@ -35,7 +47,7 @@ public class HAndV : CannonParent
     {
         while (initMoving)
         {
-            timer += Time.deltaTime;
+            timer += Time.fixedDeltaTime;
             transform.position = Vector3.Lerp(target1, target2, (Mathf.Sin(speed * timer - (Mathf.PI / 2)) + 1.0f) / 2.0f);
             yield return null;
         }
@@ -43,7 +55,6 @@ public class HAndV : CannonParent
 
     public IEnumerator Preparation()
     {
-
         if (!initMoving)
         {
             StartCoroutine(MoveToFirstTarget()); 
@@ -55,7 +66,7 @@ public class HAndV : CannonParent
 
         while (elapsedTime < time)
         {
-            elapsedTime += Time.deltaTime;
+            elapsedTime += Time.fixedDeltaTime;
             transform.eulerAngles = Vector3.Lerp(startingRotation, targetRotation, (elapsedTime / time));
             yield return new WaitForFixedUpdate();
         }
@@ -66,26 +77,43 @@ public class HAndV : CannonParent
 
     IEnumerator MoveToFirstTarget()
     {
-        float elapsedTime = 0;
-        float targetTime = Vector3.Distance(transform.position, target1) / speed;
-
-        while (elapsedTime < targetTime)
+        if (Vector3.Distance(transform.localPosition, target1) > 0.5f)
         {
-            elapsedTime += Time.deltaTime;
-            transform.position = Vector3.Lerp(transform.position, target1, speed * Time.deltaTime);
-            yield return null;
+            float t = ((2 * Mathf.PI) / (speed * 2)) / 2;
+            iTween.MoveTo(gameObject, iTween.Hash("position", target1, "time", t, "easetype", iTween.EaseType.easeOutSine));
+            yield return new WaitForSeconds(t);
         }
-        //transform.position = target1;
-        StartCoroutine(Move()); 
+        else
+        {
+            iTween.MoveTo(gameObject, iTween.Hash("position", target1, "time", 0.15f, "easetype", iTween.EaseType.easeOutSine));
+            yield return new WaitForSeconds(0.15f);
+        }
+        StartCoroutine(Move());  
     }
 
     IEnumerator Move()
     {
         while (Will.will.inCannon)
         {
-            timer += Time.deltaTime;
+            timer += Time.fixedDeltaTime;
             transform.position = Vector3.Lerp(target1, target2, (Mathf.Sin(speed * timer - (Mathf.PI / 2)) + 1.0f) / 2.0f);
             yield return null;
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (!verticalOrHorizontal)
+        {
+            target1 = new Vector3(horizontalTarget1, transform.localPosition.y, 0);
+            target2 = new Vector3(horizontalTarget2, transform.localPosition.y, 0);
+        }
+        else
+        {
+            target1 = new Vector3(transform.localPosition.x, verticalTarget1, 0);
+            target2 = new Vector3(transform.localPosition.x, verticalTarget2, 0);
+        }
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(target1, target2);
     }
 }
