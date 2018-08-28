@@ -5,7 +5,7 @@ public class Coin : MonoBehaviour, ICoins, IExperience
 {
     WriteVbles mWriteVbles;
     MeshRenderer mMeshRenderer;
-    BoxCollider mBoxCollider;
+    CapsuleCollider mCapsuleCollider;
     [Header("Object when player picks up")]
     [SerializeField] GameObject coinPlus;
 
@@ -13,7 +13,7 @@ public class Coin : MonoBehaviour, ICoins, IExperience
     {
         mWriteVbles = (WriteVbles)FindObjectOfType(typeof(WriteVbles));
         mMeshRenderer = GetComponent<MeshRenderer>();
-        mBoxCollider = GetComponent<BoxCollider>();
+        mCapsuleCollider = GetComponent<CapsuleCollider>();
     }
 
     public void CoinsCollected(int _Coin)
@@ -27,7 +27,7 @@ public class Coin : MonoBehaviour, ICoins, IExperience
     public void DeactivatedCoin()
     {
         mMeshRenderer.enabled = false;
-        mBoxCollider.enabled = false;
+        mCapsuleCollider.enabled = false;
         StartCoroutine(CoinPlus());
     }
 
