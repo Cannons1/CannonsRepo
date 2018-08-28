@@ -8,9 +8,10 @@ public class StaticCannon : CannonParent
     [SerializeField] int firstRotation;
     float time = 0.2f;
 
-    private void Start()
+    protected override void Start()
     {
-        cannonType = CannonType.staticCannon;
+        base.Start();
+        cannonType = CannonType.staticCannon;      
     }
 
     protected override void Update()

@@ -17,8 +17,10 @@ public class HAndV : CannonParent
     [SerializeField] float verticalTarget1, verticalTarget2;
     float timer = 0f;
 
-    private void Start()
+    protected override void Start()
     {
+
+        base.Start();
         if(!verticalOrHorizontal)
         {
             target1 = new Vector3(horizontalTarget1, transform.localPosition.y, 0);
