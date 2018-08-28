@@ -431,7 +431,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1891536565715166}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 1.3, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 4518935813123604}
@@ -583,7 +583,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1964473785528256}
   m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
-  m_LocalPosition: {x: 8.1, y: -0.8099996, z: 0}
+  m_LocalPosition: {x: 0, y: -0.8099996, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children:
   - {fileID: 4244816941948370}
@@ -698,6 +698,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wickTime: 3
   wick: {fileID: 0}
+  wickParticle: {fileID: 0}
   pathWick: {fileID: 0}
   shootForce: 22
   cannonType: 0
