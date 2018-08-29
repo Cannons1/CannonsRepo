@@ -22,6 +22,7 @@ public class RotatingCannon : CannonParent
         float angleOffset = transform.eulerAngles.z;
 
         canShoot = true;
+        StartCoroutine(Wick());
 
         while (Will.will.inCannon)
         {
@@ -29,5 +30,7 @@ public class RotatingCannon : CannonParent
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             yield return null;
         }
+
+        
     }
 }

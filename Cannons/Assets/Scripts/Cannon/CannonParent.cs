@@ -8,8 +8,8 @@ public abstract class CannonParent : MonoBehaviour
 {
     [Header("Shooting")]
     [SerializeField] float wickTime;
-    [SerializeField] protected GameObject wick, wickParticle;
-    [SerializeField] protected PathWick pathWick;
+    protected GameObject wick, wickParticle;
+    protected PathWick pathWick;
     int pathPoint = 0;
     Vector3 direction;
     [SerializeField] protected float shootForce = 22f;
@@ -33,10 +33,11 @@ public abstract class CannonParent : MonoBehaviour
             Shoot();
         }
         */
+        
     }
     public void Shoot()
     {
-        GetComponent<AudioCannons>().AudioShoot();
+        //GetComponent<AudioCannons>().AudioShoot();
         willBody = Will.will.gameObject.GetComponent<Rigidbody>();
         Will.will.gameObject.transform.SetParent(null);
         willBody.isKinematic = false;     
@@ -51,6 +52,7 @@ public abstract class CannonParent : MonoBehaviour
   
     public IEnumerator Wick()
     {
+        StartCoroutine(Tap());
         canShoot = true;
         mRenderer = GetComponentInChildren<Renderer>();
         Color startingColor = mRenderer.material.color;
@@ -61,7 +63,7 @@ public abstract class CannonParent : MonoBehaviour
         float i = 0;
         while (i < wickTime && Will.will.inCannon)
         {
-            StartCoroutine(Tap());
+            
             i += Time.deltaTime;
             mRenderer.material.color = Color.Lerp(startingColor, Color.red, i / wickTime);
 
