@@ -37,7 +37,7 @@ public abstract class CannonParent : MonoBehaviour
     }
     public void Shoot()
     {
-        //GetComponent<AudioCannons>().AudioShoot();
+        GetComponent<AudioCannons>().AudioShoot();
         willBody = Will.will.gameObject.GetComponent<Rigidbody>();
         Will.will.gameObject.transform.SetParent(null);
         willBody.isKinematic = false;     
