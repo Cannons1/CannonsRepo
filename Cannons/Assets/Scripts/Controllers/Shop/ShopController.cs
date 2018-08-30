@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.UI;
+﻿using UnityEngine.UI;
 using UnityEngine;
 
 public class ShopController : MonoBehaviour {
@@ -8,6 +6,8 @@ public class ShopController : MonoBehaviour {
     [SerializeField] GameObject skinButtonPref;
     [SerializeField] GameObject skinContainer;
     [SerializeField] SkinData skinInfo;
+    [SerializeField] WriteVbles writeVbles;
+    [SerializeField] AudioUI audioUI;
     
     private void Start()
     {
@@ -46,6 +46,8 @@ public class ShopController : MonoBehaviour {
             if (Singleton.instance.Coins >= value)
             {
                 Singleton.instance.Coins -= value;
+                PlayerPrefs.SetInt("Coins", Singleton.instance.Coins);
+                writeVbles.WritingNumberOfCoins();
                 GameManager.Instance.skinAvailability += 1 << skinIndex;
                 GameManager.Instance.Save();
                 skinContainer.transform.GetChild(skinIndex).GetChild(0).gameObject.SetActive(false);
@@ -59,6 +61,7 @@ public class ShopController : MonoBehaviour {
         skinContainer.transform.GetChild(GameManager.Instance.currentSkin).GetChild(4).gameObject.SetActive(false);
         if ((GameManager.Instance.skinAvailability & 1 << skinIndex) == 1 << skinIndex)
         {
+            audioUI.AudioButtonDefault();
             skinContainer.transform.GetChild(skinIndex).GetChild(4).gameObject.SetActive(true);
             GameManager.Instance.currentSkin = skinIndex;
             GameManager.Instance.Save();

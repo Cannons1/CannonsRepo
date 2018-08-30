@@ -107,6 +107,8 @@ public class Singleton : MonoBehaviour
     void Awake()
     {
         lvl = 1;
+        dailyGifts = 0;
+        PlayerPrefs.SetInt("DailyCount", dailyGifts);
         if (instance == null)
         {
             instance = this;

@@ -13,7 +13,7 @@ public class WriteVbles : MonoBehaviour
     
     private void Start()
     {
-        percentaje = 15;
+        percentaje = 30;
         numberOfCoins.text = Singleton.instance.Coins.ToString("0");
         characterLvl.text = Singleton.instance.Lvl.ToString("0");
         //highScore.text = Singleton.instance.Points.ToString("0");
