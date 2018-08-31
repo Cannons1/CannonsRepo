@@ -12,6 +12,7 @@ public class IAPManager : MonoBehaviour, IStoreListener
     public static string THIRD_PRODUCT = "thirdProduct";
     public static string FOURTH_PRODUCT = "fourthProduct";
     public static string FIFTH_PRODUCT = "fifthProduct";
+
     [SerializeField] WriteVbles writeVbles;
 
     void Start()
@@ -54,6 +55,7 @@ public class IAPManager : MonoBehaviour, IStoreListener
         return m_StoreController != null && m_StoreExtensionProvider != null;
     }
 
+    #region Buying products
     public void BuyFirstProduct()
     {
         BuyProductID(FIRST_PRODUCT);
@@ -76,6 +78,7 @@ public class IAPManager : MonoBehaviour, IStoreListener
     {
         BuyProductID(FIFTH_PRODUCT);
     }
+    #endregion
 
     void BuyProductID(string productId)
     {
