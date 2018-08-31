@@ -988,7 +988,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 206891128}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 732049273}
+        m_MethodName: ButtonBuyIAP
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &206891128
@@ -2085,7 +2096,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 450276108}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 732049273}
+        m_MethodName: ButtonBuyIAP
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &450276108
@@ -3766,6 +3788,8 @@ GameObject:
   - component: {fileID: 732049269}
   - component: {fileID: 732049270}
   - component: {fileID: 732049271}
+  - component: {fileID: 732049272}
+  - component: {fileID: 732049273}
   m_Layer: 5
   m_Name: ShopController
   m_TagString: Untagged
@@ -3852,6 +3876,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44717589406cf6342be3eab0ea54bca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &732049272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 732049266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 052fc8a86e1d7a34b8f37decb78f817c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  writeVbles: {fileID: 1675345756}
+--- !u!114 &732049273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 732049266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c740ca15b73ef4b9c2aedc2ae18ba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioUI: {fileID: 1436810330}
 --- !u!1 &783731506
 GameObject:
   m_ObjectHideFlags: 0
@@ -5236,7 +5284,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1026629175}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 732049273}
+        m_MethodName: ButtonBuyIAP
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1026629175
@@ -7066,7 +7125,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1331858500}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 732049273}
+        m_MethodName: ButtonBuyIAP
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1331858500
@@ -10485,7 +10555,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1956235010}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 732049273}
+        m_MethodName: ButtonBuyIAP
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1956235010

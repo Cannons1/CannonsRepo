@@ -107,7 +107,8 @@ public class Singleton : MonoBehaviour
     void Awake()
     {
         lvl = 1;
-        if (!PlayerPrefs.HasKey("DailyCount")) {
+        if (!PlayerPrefs.HasKey("DailyCount"))
+        {
             dailyGifts = 0;
             PlayerPrefs.SetInt("DailyCount", dailyGifts);
         }

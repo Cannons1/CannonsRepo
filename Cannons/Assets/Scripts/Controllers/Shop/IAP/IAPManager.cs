@@ -1,15 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Purchasing;
 
-public class Purchaser : MonoBehaviour, IStoreListener
+public class IAPManager : MonoBehaviour, IStoreListener
 {
     private static IStoreController m_StoreController;          // The Unity Purchasing system.
     private static IExtensionProvider m_StoreExtensionProvider; // The store-specific Purchasing subsystems.
 
-    public static string FIRST_PRODUCT = "consumable";
-    public static string SECOND_PRODUCT = "nonconsumable";
+    public static string FIRST_PRODUCT = "firstProduct";
+    public static string SECOND_PRODUCT = "secondProduct";
+    public static string THIRD_PRODUCT = "thirdProduct";
+    public static string FOURTH_PRODUCT = "fourthProduct";
+    public static string FIFTH_PRODUCT = "fifthProduct";
+    [SerializeField] WriteVbles writeVbles;
 
     void Start()
     {
@@ -36,6 +39,9 @@ public class Purchaser : MonoBehaviour, IStoreListener
 
         builder.AddProduct(FIRST_PRODUCT, ProductType.Consumable);
         builder.AddProduct(SECOND_PRODUCT, ProductType.Consumable);
+        builder.AddProduct(THIRD_PRODUCT, ProductType.Consumable);
+        builder.AddProduct(FOURTH_PRODUCT, ProductType.Consumable);
+        builder.AddProduct(FIFTH_PRODUCT, ProductType.Consumable);
 
         UnityPurchasing.Initialize(this, builder);
         
@@ -56,6 +62,19 @@ public class Purchaser : MonoBehaviour, IStoreListener
     public void BuySecondProduct()
     {
         BuyProductID(SECOND_PRODUCT);
+    }
+
+    public void BuyThirdProduct()
+    {
+        BuyProductID(THIRD_PRODUCT);
+    }
+    public void BuyFourthProduct()
+    {
+        BuyProductID(FOURTH_PRODUCT);
+    }
+    public void BuyFifthProduct()
+    {
+        BuyProductID(FIFTH_PRODUCT);
     }
 
     void BuyProductID(string productId)
@@ -118,10 +137,37 @@ public class Purchaser : MonoBehaviour, IStoreListener
         {
             // The consumable item has been successfully purchased
             Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
+            Singleton.instance.Coins += 150;
+            PlayerPrefs.SetInt("Coins", Singleton.instance.Coins);
+            writeVbles.WritingNumberOfCoins();
         }
         else if (String.Equals(args.purchasedProduct.definition.id, SECOND_PRODUCT, StringComparison.Ordinal))
         {
             Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
+            Singleton.instance.Coins += 950;
+            PlayerPrefs.SetInt("Coins", Singleton.instance.Coins);
+            writeVbles.WritingNumberOfCoins();
+        }
+        else if (String.Equals(args.purchasedProduct.definition.id, THIRD_PRODUCT, StringComparison.Ordinal))
+        {
+            Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
+            Singleton.instance.Coins += 1800;
+            PlayerPrefs.SetInt("Coins", Singleton.instance.Coins);
+            writeVbles.WritingNumberOfCoins();
+        }
+        else if (String.Equals(args.purchasedProduct.definition.id, FOURTH_PRODUCT, StringComparison.Ordinal))
+        {
+            Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
+            Singleton.instance.Coins += 3800;
+            PlayerPrefs.SetInt("Coins", Singleton.instance.Coins);
+            writeVbles.WritingNumberOfCoins();
+        }
+        else if (String.Equals(args.purchasedProduct.definition.id, FIFTH_PRODUCT, StringComparison.Ordinal))
+        {
+            Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
+            Singleton.instance.Coins += 10000;
+            PlayerPrefs.SetInt("Coins", Singleton.instance.Coins);
+            writeVbles.WritingNumberOfCoins();
         }
         // Or ... an unknown product has been purchased by this user. Fill in additional products here....
         else
