@@ -31,12 +31,14 @@ public class Purchaser : MonoBehaviour, IStoreListener
         }
 
         // Create a builder, first passing in a suite of Unity provided stores.
+        
         var builder = ConfigurationBuilder.Instance(StandardPurchasingModule.Instance());
 
         builder.AddProduct(FIRST_PRODUCT, ProductType.Consumable);
         builder.AddProduct(SECOND_PRODUCT, ProductType.Consumable);
 
         UnityPurchasing.Initialize(this, builder);
+        
     }
 
 
