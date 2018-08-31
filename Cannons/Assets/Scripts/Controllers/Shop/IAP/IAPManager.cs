@@ -140,37 +140,27 @@ public class IAPManager : MonoBehaviour, IStoreListener
         {
             // The consumable item has been successfully purchased
             Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
-            Singleton.instance.Coins += 150;
-            PlayerPrefs.SetInt("Coins", Singleton.instance.Coins);
-            writeVbles.WritingNumberOfCoins();
+            Coins(150);
         }
         else if (String.Equals(args.purchasedProduct.definition.id, SECOND_PRODUCT, StringComparison.Ordinal))
         {
             Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
-            Singleton.instance.Coins += 950;
-            PlayerPrefs.SetInt("Coins", Singleton.instance.Coins);
-            writeVbles.WritingNumberOfCoins();
+            Coins(950);
         }
         else if (String.Equals(args.purchasedProduct.definition.id, THIRD_PRODUCT, StringComparison.Ordinal))
         {
             Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
-            Singleton.instance.Coins += 1800;
-            PlayerPrefs.SetInt("Coins", Singleton.instance.Coins);
-            writeVbles.WritingNumberOfCoins();
+            Coins(1800);
         }
         else if (String.Equals(args.purchasedProduct.definition.id, FOURTH_PRODUCT, StringComparison.Ordinal))
         {
             Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
-            Singleton.instance.Coins += 3800;
-            PlayerPrefs.SetInt("Coins", Singleton.instance.Coins);
-            writeVbles.WritingNumberOfCoins();
+            Coins(3800);
         }
         else if (String.Equals(args.purchasedProduct.definition.id, FIFTH_PRODUCT, StringComparison.Ordinal))
         {
             Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
-            Singleton.instance.Coins += 10000;
-            PlayerPrefs.SetInt("Coins", Singleton.instance.Coins);
-            writeVbles.WritingNumberOfCoins();
+            Coins(10000);
         }
         // Or ... an unknown product has been purchased by this user. Fill in additional products here....
         else
@@ -189,6 +179,12 @@ public class IAPManager : MonoBehaviour, IStoreListener
         // A product purchase attempt did not succeed. Check failureReason for more detail. Consider sharing 
         // this reason with the user to guide their troubleshooting actions.
         Debug.Log(string.Format("OnPurchaseFailed: FAIL. Product: '{0}', PurchaseFailureReason: {1}", product.definition.storeSpecificId, failureReason));
+    }
+
+    private void Coins(int _coins) {
+        Singleton.instance.Coins += _coins;
+        PlayerPrefs.SetInt("Coins", Singleton.instance.Coins);
+        writeVbles.WritingNumberOfCoins();
     }
 }
 
