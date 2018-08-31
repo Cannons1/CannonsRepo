@@ -380,7 +380,7 @@ Transform:
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 4524519099416910}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4176149388312500
 Transform:
@@ -475,7 +475,6 @@ Transform:
   - {fileID: 4690345244700916}
   - {fileID: 4598349395677922}
   - {fileID: 4873997954329500}
-  - {fileID: 4822050181365846}
   - {fileID: 4120602345496962}
   m_Father: {fileID: 4832186808157266}
   m_RootOrder: 1
@@ -560,6 +559,7 @@ Transform:
   m_Children:
   - {fileID: 4703728386783778}
   - {fileID: 4744446134919924}
+  - {fileID: 4822050181365846}
   m_Father: {fileID: 4832186808157266}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -611,12 +611,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1549587072108814}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0.0010044482, y: 0.0048899464, z: -0.18200374}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalRotation: {x: -0.000000029802322, y: 0.86602545, z: 0.00000008940697, w: 0.49999994}
+  m_LocalPosition: {x: -0.19105269, y: -1.2045991, z: -0.0003150217}
+  m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children: []
-  m_Father: {fileID: 4524519099416910}
-  m_RootOrder: 4
+  m_Father: {fileID: 4762709246308018}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4832186808157266
 Transform:
@@ -745,8 +745,7 @@ MonoBehaviour:
   ignite: {fileID: 0}
   wick: {fileID: 0}
   wickOff: {fileID: 0}
-  cannonsAudioSource: {fileID: 82787061887273484, guid: 50968a4552340f3468aec73489bdefb1,
-    type: 2}
+  cannonsAudioSource: {fileID: 0}
 --- !u!114 &114406671851458524
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -761,6 +760,7 @@ MonoBehaviour:
   wickTime: 4
   shootForce: 26
   cannonType: 0
+  fadeShader: {fileID: 4800000, guid: 988d8629e6f249747ad5a0f1952cea6f, type: 3}
   speed: 3
   firstRotation: 180
   initMoving: 0

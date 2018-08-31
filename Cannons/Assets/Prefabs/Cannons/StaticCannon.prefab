@@ -380,7 +380,7 @@ Transform:
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 4085586858487466}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4085586858487466
 Transform:
@@ -396,7 +396,6 @@ Transform:
   - {fileID: 4286436061013484}
   - {fileID: 4271860478784068}
   - {fileID: 4718215242003152}
-  - {fileID: 4159089646587700}
   - {fileID: 4074842394541470}
   m_Father: {fileID: 4421103292140236}
   m_RootOrder: 1
@@ -407,12 +406,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1020358482658084}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0.0010044482, y: 0.0048899464, z: -0.18200374}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalRotation: {x: -0.000000029802322, y: 0.86602545, z: 0.00000008940697, w: 0.49999994}
+  m_LocalPosition: {x: -0.3290526, y: -0.7435994, z: -0.0003150217}
+  m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children: []
-  m_Father: {fileID: 4085586858487466}
-  m_RootOrder: 4
+  m_Father: {fileID: 4526969770040226}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4172438732411294
 Transform:
@@ -562,6 +561,7 @@ Transform:
   m_Children:
   - {fileID: 4824053970841104}
   - {fileID: 4724670155487172}
+  - {fileID: 4159089646587700}
   m_Father: {fileID: 4421103292140236}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -729,8 +729,7 @@ MonoBehaviour:
   ignite: {fileID: 0}
   wick: {fileID: 0}
   wickOff: {fileID: 0}
-  cannonsAudioSource: {fileID: 82787061887273484, guid: 50968a4552340f3468aec73489bdefb1,
-    type: 2}
+  cannonsAudioSource: {fileID: 0}
 --- !u!114 &114288024660656546
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -773,6 +772,7 @@ MonoBehaviour:
   wickTime: 2.5
   shootForce: 30
   cannonType: 0
+  fadeShader: {fileID: 4800000, guid: 988d8629e6f249747ad5a0f1952cea6f, type: 3}
   firstRotation: 0
 --- !u!135 &135466357097900426
 SphereCollider:

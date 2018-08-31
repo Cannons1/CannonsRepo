@@ -391,12 +391,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1954718452114610}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0.0010044482, y: 0.0048899464, z: -0.18200374}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalRotation: {x: -0.00000004470348, y: 0.8660254, z: 0.00000008940696, w: 0.49999994}
+  m_LocalPosition: {x: -0.14905253, y: -1.230599, z: -0.000315018}
+  m_LocalScale: {x: 20.000013, y: 20, z: 20}
   m_Children: []
-  m_Father: {fileID: 4920916351236164}
-  m_RootOrder: 4
+  m_Father: {fileID: 4446756858273126}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4254075871832864
 Transform:
@@ -409,7 +409,7 @@ Transform:
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 4920916351236164}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4376864371846394
 Transform:
@@ -417,8 +417,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1839672641818092}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 2.5, y: 10, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.17081141, w: 0.98530376}
+  m_LocalPosition: {x: 2.50383, y: -5.2800717, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children:
   - {fileID: 4796914401714406}
@@ -426,7 +426,7 @@ Transform:
   - {fileID: 4446756858273126}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 19.67}
 --- !u!4 &4381137589555546
 Transform:
   m_ObjectHideFlags: 1
@@ -492,6 +492,7 @@ Transform:
   m_Children:
   - {fileID: 4801722560201028}
   - {fileID: 4241890366690036}
+  - {fileID: 4248717240934674}
   m_Father: {fileID: 4376864371846394}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -658,7 +659,6 @@ Transform:
   - {fileID: 4624508783867610}
   - {fileID: 4682212250848900}
   - {fileID: 4692845507310018}
-  - {fileID: 4248717240934674}
   - {fileID: 4254075871832864}
   m_Father: {fileID: 4376864371846394}
   m_RootOrder: 1
@@ -725,11 +725,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 021ec762d1e88124db1f979ad12159e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wickTime: 4
-  shootForce: 22
+  wickTime: 5
+  shootForce: 29
   cannonType: 0
+  fadeShader: {fileID: 4800000, guid: 988d8629e6f249747ad5a0f1952cea6f, type: 3}
   rotationSpeed: 2
-  angleRotation: 70
+  angleRotation: 40
 --- !u!114 &114528305022932004
 MonoBehaviour:
   m_ObjectHideFlags: 1
