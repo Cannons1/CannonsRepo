@@ -19,6 +19,9 @@ public class Will : MonoBehaviour
     float velocity;
     float time = 0.1f;
 
+    public delegate void WillDelegate(Vector3 _mTransform);
+    public static event WillDelegate OnProgressLvl;
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -45,6 +48,7 @@ public class Will : MonoBehaviour
         {
             other.enabled = false;
             StuckOnCannon();
+            OnProgressLvl(transform.position);
         }
 
         if (cannonTriggered.GetComponent<DieEvent>() != null)
