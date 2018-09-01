@@ -20,7 +20,7 @@ public class Will : MonoBehaviour
     float time = 0.1f;
 
     public delegate void WillDelegate(Vector3 _mTransform);
-    public static event WillDelegate OnProgressLvl;
+    public event WillDelegate OnProgressLvl;
 
     private void Awake()
     {
