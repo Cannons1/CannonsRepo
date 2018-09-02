@@ -2234,7 +2234,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243070854274189250, guid: fa6623a82736c034cbd2d20a97c7b71e,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 2b0b133ca26d4e242968f8a30dc25801, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3862,6 +3862,7 @@ MonoBehaviour:
   winCoinsTxt: {fileID: 114331335146964408}
   winExpTxt: {fileID: 114420052298092048}
   canvasWin: {fileID: 1003669130554568}
+  level: 1
 --- !u!114 &114553475621259660
 MonoBehaviour:
   m_ObjectHideFlags: 1

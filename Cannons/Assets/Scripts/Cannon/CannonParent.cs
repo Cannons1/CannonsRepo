@@ -57,6 +57,8 @@ public abstract class CannonParent : MonoBehaviour
 
     public IEnumerator Wick()
     {
+        //StartCoroutine(GetComponent<AudioCannons>().Fade());
+        GetComponent<AudioCannons>().AudioWick();
         StartCoroutine(Tap());
         canShoot = true;
         mRenderer = GetComponentInChildren<Renderer>();
@@ -77,8 +79,6 @@ public abstract class CannonParent : MonoBehaviour
 
             if (distance < 0.1f && pathPoint != pathWick.points.Length - 1)
                 pathPoint++;
-
-
             yield return null;
         }
 
