@@ -9,6 +9,7 @@ public class WinCondition : MonoBehaviour {
     CanvasMgr mCanvasMgr;
     WriteVbles mWriteVbles;
     IGLevelManager igLvlMgr;
+    public int level;
 
     private void Start()
     {
@@ -22,6 +23,10 @@ public class WinCondition : MonoBehaviour {
         canvasWin.SetActive(true);
         ExpCoinsMgr();
         Time.timeScale = 0;
+        if (level > Singleton.instance.LvlsUnlocked) {
+            Singleton.instance.LvlsUnlocked = level;
+            PlayerPrefs.SetInt("LvlUnlocked", Singleton.instance.LvlsUnlocked);
+        }
     }
 
     private void ExpCoinsMgr() {

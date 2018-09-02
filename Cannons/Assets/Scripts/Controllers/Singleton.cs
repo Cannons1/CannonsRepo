@@ -64,7 +64,20 @@ public class Singleton : MonoBehaviour
         get { return lvl; }
         set { lvl = value; }
     }
+    public int LvlsUnlocked
+    {
+        get
+        {
+            return lvlsUnlocked;
+        }
+
+        set
+        {
+            lvlsUnlocked = value;
+        }
+    }
     private int lvl;
+    private int lvlsUnlocked;
     #endregion
 
     #region ints for points
@@ -100,13 +113,22 @@ public class Singleton : MonoBehaviour
         get { return activeToggles; }
         set { activeToggles = value; }
     }
+
+
     private int dailyGifts;
     private int activeToggles;
     #endregion
 
     void Awake()
     {
-        lvl = 1;
+        if (!PlayerPrefs.HasKey("Lvl")) {
+            lvl = 1;
+            PlayerPrefs.SetInt("Lvl", lvl);
+        }
+        if (!PlayerPrefs.HasKey("LvlUnlocked")) {
+            lvlsUnlocked = 0;
+            PlayerPrefs.SetInt("LvlUnlocked", lvlsUnlocked);
+        }
         if (!PlayerPrefs.HasKey("DailyCount"))
         {
             dailyGifts = 0;
