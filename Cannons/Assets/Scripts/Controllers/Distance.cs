@@ -4,7 +4,6 @@ using System.Collections;
 
 public class Distance : MonoBehaviour
 {
-
     [SerializeField] Slider sliderDistance;
     [SerializeField] Transform instanceT, winConditionT;
     Transform willTransform;
@@ -17,11 +16,11 @@ public class Distance : MonoBehaviour
     private void Start()
     {
         will = (Will)FindObjectOfType(typeof(Will));
-        //Recibe evento de Will
         initialDistance = Vector3.Distance(instanceT.localPosition, winConditionT.localPosition);
         sliderDistance.maxValue = initialDistance;
         lastDistance = sliderDistance.minValue;
 
+        //Recibe evento de Will
         will.OnProgressLvl += CalulateDistance;
     }
 
