@@ -6,7 +6,7 @@ public class ButtonsLocked : MonoBehaviour {
     Button mButton;
     Image[] cImg;
 
-	void Start () {
+	void Awake () {
         mButton = GetComponent<Button>();
         cImg = GetComponentsInChildren<Image>();
 	}

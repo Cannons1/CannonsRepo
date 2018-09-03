@@ -144,4 +144,13 @@ public class Singleton : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void ResetStats()
+    {
+        PlayerPrefs.DeleteKey("LvlUnlocked");
+        PlayerPrefs.DeleteKey("Coins");
+        PlayerPrefs.DeleteKey("Exp");
+        PlayerPrefs.DeleteKey("Lvl");
+        PlayerPrefs.DeleteKey("DailyCount");
+    }
 }

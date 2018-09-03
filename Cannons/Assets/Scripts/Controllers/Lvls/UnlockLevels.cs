@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class UnlockLevels : MonoBehaviour {
 
@@ -12,6 +11,7 @@ public class UnlockLevels : MonoBehaviour {
 
         if (PlayerPrefs.HasKey("LvlUnlocked")) {
             lvlsToUnlock = PlayerPrefs.GetInt("LvlUnlocked");
+            Debug.Log(lvlsToUnlock);
         }
 
         foreach (ButtonsLocked a in lvlsUnlocked) {
