@@ -4,6 +4,7 @@ public class TapToPlay : MonoBehaviour
 {
     CanvasMenu mcanvasMenu;
     [SerializeField] AudioUI audioUI;
+    [SerializeField] GameObject cannonDecorate;
 
     private void Start()
     {
@@ -24,8 +25,7 @@ public class TapToPlay : MonoBehaviour
                     audioUI.AudioButtonDefault();
                     mcanvasMenu.Canvas[0].SetActive(false);
                     mcanvasMenu.Canvas[5].SetActive(true);
-                    mcanvasMenu.DecorateCannon.SetActive(false);
-                    mcanvasMenu.CapusleTapToPlay.SetActive(false);
+                    cannonDecorate.SetActive(false);
                 }
             }
         }
