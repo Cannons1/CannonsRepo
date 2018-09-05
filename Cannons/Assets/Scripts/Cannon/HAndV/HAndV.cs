@@ -32,7 +32,9 @@ public class HAndV : CannonParent
             target2 = new Vector3(transform.localPosition.x, verticalTarget2, 0);
         }
 
-        Debug.DrawLine(target1, target2, Color.black);
+        Vector3[] positions = { target1, target2 };
+
+        GetComponent<LineRenderer>().SetPositions(positions);
 
         cannonType = CannonType.targetCannon;
 

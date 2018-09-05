@@ -1101,16 +1101,6 @@ Prefab:
       propertyPath: cannonsAudioSource
       value: 
       objectReference: {fileID: 1886469043}
-    - target: {fileID: 114500324696156620, guid: cc657c91867499045866d7dfc00dfbbc,
-        type: 2}
-      propertyPath: horizontalTarget1
-      value: -2.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114500324696156620, guid: cc657c91867499045866d7dfc00dfbbc,
-        type: 2}
-      propertyPath: horizontalTarget2
-      value: 2.3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc657c91867499045866d7dfc00dfbbc, type: 2}
   m_IsPrefabAsset: 0
@@ -1758,6 +1748,21 @@ Prefab:
         type: 2}
       propertyPath: m_AnchoredPosition.x
       value: -1.2000122
+      objectReference: {fileID: 0}
+    - target: {fileID: 20830262944824986, guid: 50968a4552340f3468aec73489bdefb1,
+        type: 2}
+      propertyPath: orthographic size
+      value: 5.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 224523481678997536, guid: 50968a4552340f3468aec73489bdefb1,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 65655644856110808, guid: 50968a4552340f3468aec73489bdefb1,
+        type: 2}
+      propertyPath: m_Size.z
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50968a4552340f3468aec73489bdefb1, type: 2}

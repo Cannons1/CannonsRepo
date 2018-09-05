@@ -9,7 +9,7 @@ public class CameraMovement : MonoBehaviour
 
     private void Start()
     {
-        offset = new Vector3(0, 3, -14);
+        offset = new Vector3(0, 2, -10);
         target = Will.will.gameObject.transform;
     }
 
