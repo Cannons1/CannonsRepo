@@ -106,10 +106,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4155962803815774}
-  - component: {fileID: 65655644856110808}
   - component: {fileID: 114870357315579276}
   - component: {fileID: 136917743706450844}
   - component: {fileID: 136292806526920716}
+  - component: {fileID: 136277217074555214}
   m_Layer: 0
   m_Name: DieEvent
   m_TagString: Untagged
@@ -1484,7 +1484,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1428430806146792}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 113.98, z: 0}
+  m_LocalPosition: {x: 0, y: 64, z: 0}
   m_LocalScale: {x: 2.412962, y: 1.4514, z: 1.4624}
   m_Children:
   - {fileID: 4779363245297258}
@@ -1577,7 +1577,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1036424639191088}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.83, y: -2.73, z: 0}
+  m_LocalPosition: {x: 0, y: -2.73, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4848279867700980}
@@ -1826,18 +1826,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!65 &65655644856110808
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1063596472066898}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 20, y: 1, z: 5}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!81 &81045788986756568
 AudioListener:
   m_ObjectHideFlags: 1
@@ -3722,7 +3710,7 @@ MonoBehaviour:
   winCoinsTxt: {fileID: 114331335146964408}
   winExpTxt: {fileID: 114420052298092048}
   canvasWin: {fileID: 1003669130554568}
-  level: 3
+  level: 1
 --- !u!114 &114553475621259660
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4307,7 +4295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.4}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5040,6 +5028,19 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1827393649764692}
   m_Enabled: 1
+--- !u!136 &136277217074555214
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1063596472066898}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 2.57
+  m_Height: 20.29
+  m_Direction: 0
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136292806526920716
 CapsuleCollider:
   m_ObjectHideFlags: 1
