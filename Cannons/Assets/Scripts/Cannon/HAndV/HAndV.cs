@@ -12,7 +12,7 @@ public class HAndV : CannonParent
     [SerializeField] bool initMoving;
     [Tooltip("False for horizontal, true for vertical")]
     [SerializeField] bool verticalOrHorizontal;
-    [Range(-2.7f, 2.7f)]
+    [Range(-2.3f, 2.3f)]
     [SerializeField] float horizontalTarget1, horizontalTarget2;
     [SerializeField] float verticalTarget1, verticalTarget2;
     float timer = 0f;
@@ -31,6 +31,8 @@ public class HAndV : CannonParent
             target1 = new Vector3(transform.localPosition.x, verticalTarget1, 0);
             target2 = new Vector3(transform.localPosition.x, verticalTarget2, 0);
         }
+
+        Debug.DrawLine(target1, target2, Color.black);
 
         cannonType = CannonType.targetCannon;
 
