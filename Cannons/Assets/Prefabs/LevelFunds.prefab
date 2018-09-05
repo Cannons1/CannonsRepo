@@ -108,6 +108,8 @@ GameObject:
   - component: {fileID: 4155962803815774}
   - component: {fileID: 65655644856110808}
   - component: {fileID: 114870357315579276}
+  - component: {fileID: 136917743706450844}
+  - component: {fileID: 136292806526920716}
   m_Layer: 0
   m_Name: DieEvent
   m_TagString: Untagged
@@ -1482,7 +1484,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1428430806146792}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 74.95, z: 0}
+  m_LocalPosition: {x: 0, y: 113.98, z: 0}
   m_LocalScale: {x: 2.412962, y: 1.4514, z: 1.4624}
   m_Children:
   - {fileID: 4779363245297258}
@@ -1509,13 +1511,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1063596472066898}
-  m_LocalRotation: {x: -0.08001121, y: -0, z: -0, w: 0.996794}
-  m_LocalPosition: {x: 0, y: -8.5, z: 15.29}
-  m_LocalScale: {x: 41.077908, y: 1, z: 5.6237}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -8.5, z: 9.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4535560889344278}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -9.178, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4174930813722576
 Transform:
   m_ObjectHideFlags: 1
@@ -1575,7 +1577,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1036424639191088}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -3, z: 0}
+  m_LocalPosition: {x: 1.83, y: -2.73, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4848279867700980}
@@ -1808,7 +1810,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.5
+  orthographic size: 5.65
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1834,7 +1836,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 20, y: 1, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!81 &81045788986756568
 AudioListener:
@@ -3720,7 +3722,7 @@ MonoBehaviour:
   winCoinsTxt: {fileID: 114331335146964408}
   winExpTxt: {fileID: 114420052298092048}
   canvasWin: {fileID: 1003669130554568}
-  level: 1
+  level: 3
 --- !u!114 &114553475621259660
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5038,6 +5040,19 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1827393649764692}
   m_Enabled: 1
+--- !u!136 &136292806526920716
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1063596472066898}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 2.5036883
+  m_Height: 20
+  m_Direction: 1
+  m_Center: {x: -10, y: 11, z: 0.03149927}
 --- !u!136 &136656103712073610
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -5051,6 +5066,19 @@ CapsuleCollider:
   m_Height: 1.3
   m_Direction: 0
   m_Center: {x: 0, y: 0.01, z: 0}
+--- !u!136 &136917743706450844
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1063596472066898}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 2.5036883
+  m_Height: 20
+  m_Direction: 1
+  m_Center: {x: 10, y: 11, z: 0.03149927}
 --- !u!212 &212947162472103646
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -6103,7 +6131,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.199997, y: -24}
+  m_AnchoredPosition: {x: -1.2000122, y: -24}
   m_SizeDelta: {x: -50.5, y: -298.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224443839547009272
@@ -6234,7 +6262,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -8}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224533769467813460

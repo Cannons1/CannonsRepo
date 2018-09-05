@@ -61,7 +61,7 @@ public abstract class CannonParent : MonoBehaviour
         GetComponent<AudioCannons>().AudioWick();
         StartCoroutine(Tap());
         canShoot = true;
-        mRenderer = GetComponentInChildren<Renderer>();
+        mRenderer = transform.GetChild(1).GetComponentInChildren<Renderer>();
         Color startingColor = mRenderer.material.color;
 
         wickParticle.SetActive(true);
