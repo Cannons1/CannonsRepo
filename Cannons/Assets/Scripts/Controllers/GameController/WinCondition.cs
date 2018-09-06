@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class WinCondition : MonoBehaviour {
     [Header("Win prize")]
     [SerializeField] int coins, exp;
-    [SerializeField] Text winCoinsTxt, winExpTxt;
+    [SerializeField] Text winCoinsTxt;
     [SerializeField] GameObject canvasWin;
     CanvasMgr mCanvasMgr;
     WriteVbles mWriteVbles;
@@ -34,8 +34,7 @@ public class WinCondition : MonoBehaviour {
         Singleton.instance.Experience += exp;
         mWriteVbles.WriteExp();
         mWriteVbles.WritingNumberOfCoins();
-        winCoinsTxt.text = coins.ToString("+0");
-        winExpTxt.text = exp.ToString("+0");
+        winCoinsTxt.text = coins.ToString("+0 Coins");
         SavePlayerStatus();
     }
 

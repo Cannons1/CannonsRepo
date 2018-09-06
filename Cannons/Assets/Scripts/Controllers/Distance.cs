@@ -35,11 +35,11 @@ public class Distance : MonoBehaviour
 
     IEnumerator UpdateValue(float _actualDistance)
     {
-        float i = 0;
+        float i = 0f;
         while (lastDistance < _actualDistance)
         {
-            i += Time.time;
-            lastDistance += i / _actualDistance;
+            i += Time.deltaTime;
+            lastDistance += i;
             sliderDistance.value = lastDistance;
             yield return null;
         }

@@ -19,6 +19,7 @@ public class WriteVbles : MonoBehaviour
         //highScore.text = Singleton.instance.Points.ToString("0");
         experience.maxValue += Singleton.instance.MaxValue;
         experience.value = Singleton.instance.Experience;
+        WriteExp();
     }
 
     public void WritingNumberOfCoins()

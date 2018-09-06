@@ -15,6 +15,12 @@ public class Retry : MonoBehaviour {
     }
 
     public void RetryLvl() {
+        expCoinPoinMgr.MinusExperienceInGame();
+        expCoinPoinMgr.MinusLvl();
+        SceneManager.LoadScene(mScene.name);
+    }
+
+    public void Restart() {
         expCoinPoinMgr.Mgr();
         SceneManager.LoadScene(mScene.name);
     }
