@@ -1,29 +1,35 @@
 fileFormatVersion: 2
-guid: 54843d2d5c8417f4bae53c012ebae951
+guid: eaff4d813ec7ae74ea9e86f5389cda54
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: Armature
     100002: Body_Cannon
-    100004: BoomController
-    100006: Cannon_Controller
-    100008: Cannon_Controller_001
-    100010: //RootNode
-    100012: Circle
-    100014: Cube
-    100016: Root
-    100018: ShapeControllers
+    100004: Body_Cannon_end
+    100006: BoomController
+    100008: Cannon_Controller
+    100010: Cannon_Controller.001
+    100012: Cannon_Controller.001_end
+    100014: Cannon_Controller_end
+    100016: //RootNode
+    100018: Circle
+    100020: Cube
+    100022: Root
+    100024: ShapeControllers
     400000: Armature
     400002: Body_Cannon
-    400004: BoomController
-    400006: Cannon_Controller
-    400008: Cannon_Controller_001
-    400010: //RootNode
-    400012: Circle
-    400014: Cube
-    400016: Root
-    400018: ShapeControllers
-    2100000: unnamed
+    400004: Body_Cannon_end
+    400006: BoomController
+    400008: Cannon_Controller
+    400010: Cannon_Controller.001
+    400012: Cannon_Controller.001_end
+    400014: Cannon_Controller_end
+    400016: //RootNode
+    400018: Circle
+    400020: Cube
+    400022: Root
+    400024: ShapeControllers
+    2100000: No Name
     2300000: BoomController
     2300002: Circle
     2300004: ShapeControllers
@@ -34,10 +40,15 @@ ModelImporter:
     4300002: ShapeControllers
     4300004: BoomController
     4300006: Cube
-    7400000: Default Take
-    7400002: Enter
-    7400004: Exit
-    7400006: Standard_Pose
+    7400000: Enter
+    7400002: Exit
+    7400004: Standard Pose
+    7400006: Exit.001
+    7400008: Standard Pose.001
+    7400010: Armature|Enter
+    7400012: Armature|Exit
+    7400014: Armature|Standard Pose
+    7400016: Cube|Exit
     9500000: //RootNode
     13700000: Cube
     2186277476908879412: ImportLogs
@@ -92,7 +103,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.7
+    previousCalculatedGlobalScale: 0.01
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
