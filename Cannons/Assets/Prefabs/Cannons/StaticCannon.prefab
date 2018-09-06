@@ -423,7 +423,7 @@ Transform:
   m_GameObject: {fileID: 1382577356442720}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -6.67, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4883892963589306}
   - {fileID: 4809044127968404}
@@ -628,8 +628,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa05d0590c7f0ba4a8c285d766cf2247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wickTime: 7
-  shootForce: 30
+  wickTime: 0.2
+  shootForce: 35
   cannonType: 0
   fadeShader: {fileID: 4800000, guid: 988d8629e6f249747ad5a0f1952cea6f, type: 3}
   firstRotation: 0
@@ -673,7 +673,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: eaff4d813ec7ae74ea9e86f5389cda54, type: 3}
+  - {fileID: 2100000, guid: a89ae3c6fa26f3a458b416c0c2d10948, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
