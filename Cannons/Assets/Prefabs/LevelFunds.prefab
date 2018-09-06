@@ -1484,7 +1484,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1428430806146792}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 64, z: 0}
+  m_LocalPosition: {x: 0, y: 83, z: 0}
   m_LocalScale: {x: 2.412962, y: 1.4514, z: 1.4624}
   m_Children:
   - {fileID: 4779363245297258}
@@ -1577,7 +1577,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1036424639191088}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.73, z: 0}
+  m_LocalPosition: {x: 0, y: -2.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4848279867700980}
@@ -2751,7 +2751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b62c0971b518efa4890bf7116d308b8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoothSpeed: 0.025
+  smoothSpeed: 0.075
 --- !u!114 &114239587355788382
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3710,7 +3710,7 @@ MonoBehaviour:
   winCoinsTxt: {fileID: 114331335146964408}
   winExpTxt: {fileID: 114420052298092048}
   canvasWin: {fileID: 1003669130554568}
-  level: 1
+  level: 2
 --- !u!114 &114553475621259660
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5035,7 +5035,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1063596472066898}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 2.57
   m_Height: 20.29

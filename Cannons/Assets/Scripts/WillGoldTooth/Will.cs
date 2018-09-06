@@ -27,6 +27,7 @@ public class Will : MonoBehaviour
         anim = GetComponent<Animator>();
         anim.runtimeAnimatorController = Resources.Load("AnimControllers/PlayerController") as RuntimeAnimatorController;
         mRigid = GetComponent<Rigidbody>();
+        mRigid.constraints = RigidbodyConstraints.FreezePositionZ;
 
         if (will == null)
         {
