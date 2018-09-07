@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b19f4877a6884f246af56fbe67120024
+guid: 1ff25772a5b59b348883a4eaeae78d23
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -14,9 +14,8 @@ ModelImporter:
     100016: //RootNode
     100018: Circle
     100020: Cube
-    100022: Cube.001
-    100024: Root
-    100026: ShapeControllers
+    100022: Root
+    100024: ShapeControllers
     400000: Armature
     400002: Body_Cannon
     400004: Body_Cannon_end
@@ -28,9 +27,8 @@ ModelImporter:
     400016: //RootNode
     400018: Circle
     400020: Cube
-    400022: Cube.001
-    400024: Root
-    400026: ShapeControllers
+    400022: Root
+    400024: ShapeControllers
     2100000: No Name
     2300000: BoomController
     2300002: Circle
@@ -41,11 +39,17 @@ ModelImporter:
     4300000: Circle
     4300002: ShapeControllers
     4300004: BoomController
-    4300006: Cube.001
-    4300008: Cube
+    4300006: Cube
+    7400000: Enter
+    7400002: Exit
+    7400004: Standard Pose
+    7400006: Exit.001
+    7400008: Standard Pose.001
+    7400010: Armature|Enter
+    7400012: Armature|Exit
+    7400014: Armature|Standard Pose
     9500000: //RootNode
     13700000: Cube
-    13700002: Cube.001
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
