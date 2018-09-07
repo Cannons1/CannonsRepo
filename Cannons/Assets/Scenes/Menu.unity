@@ -3709,7 +3709,8 @@ MonoBehaviour:
   numberOfCoins: {fileID: 552766234}
   numCoinsInRetry: {fileID: 0}
   characterLvl: {fileID: 1776873013}
-  mExperience: {fileID: 0}
+  mExperience: {fileID: 114941041641308804, guid: 50968a4552340f3468aec73489bdefb1,
+    type: 2}
   mAudioUI: {fileID: 1436810330}
 --- !u!1 &783731506
 GameObject:
