@@ -121,18 +121,29 @@ public class Singleton : MonoBehaviour
 
     void Awake()
     {
-        if (!PlayerPrefs.HasKey("Lvl")) {
+        if (!PlayerPrefs.HasKey("Lvl"))
+        {
             lvl = 1;
             PlayerPrefs.SetInt("Lvl", lvl);
         }
-        if (!PlayerPrefs.HasKey("LvlUnlocked")) {
+        else {
+            lvl = PlayerPrefs.GetInt("Lvl");
+        }
+        if (!PlayerPrefs.HasKey("LvlUnlocked"))
+        {
             lvlsUnlocked = 0;
             PlayerPrefs.SetInt("LvlUnlocked", lvlsUnlocked);
+        }
+        else {
+            lvlsUnlocked = PlayerPrefs.GetInt("LvlUnlocked");
         }
         if (!PlayerPrefs.HasKey("DailyCount"))
         {
             dailyGifts = 0;
             PlayerPrefs.SetInt("DailyCount", dailyGifts);
+        }
+        else {
+            dailyGifts = PlayerPrefs.GetInt("DailyCount");
         }
         if (instance == null)
         {

@@ -24,7 +24,7 @@ public class TapToPlay : MonoBehaviour
                 if (collisioned != null) {
                     audioUI.AudioButtonDefault();
                     mcanvasMenu.Canvas[0].SetActive(false);
-                    mcanvasMenu.Canvas[5].SetActive(true);
+                    mcanvasMenu.Canvas[4].SetActive(true);
                     cannonDecorate.SetActive(false);
                 }
             }

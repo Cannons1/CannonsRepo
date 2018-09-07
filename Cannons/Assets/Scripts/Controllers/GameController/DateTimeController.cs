@@ -5,11 +5,13 @@ public class DateTimeController : MonoBehaviour
 {
     TimeSpan differenceExp, differenceDaily;
     DateTime currentTimeBoostExp, currentTimeDaily;
-    [SerializeField] ExpBoost mExpBoost;
-    [SerializeField] DailyGifts dailyGifts;
+    ExpBoost mExpBoost;
+    DailyGifts dailyGifts;
 
 	void Awake ()
     {
+        mExpBoost = GetComponent<ExpBoost>();
+        dailyGifts = GetComponent<DailyGifts>();
         #region dailyChallenge
         if (PlayerPrefs.HasKey("Daily"))
         {

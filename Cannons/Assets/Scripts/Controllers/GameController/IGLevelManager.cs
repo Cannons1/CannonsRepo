@@ -55,10 +55,6 @@ public class IGLevelManager : MonoBehaviour
     public IEnumerator LoadAsynchronously(string _sceneName)
     {
         loadingScreen.SetActive(true);
-        //if(_sceneName == "Menu")
-        //{
-        //    Debug.Break();
-        //}
         AsyncOperation operation = SceneManager.LoadSceneAsync(_sceneName);
         
         while (!operation.isDone)

@@ -4,8 +4,7 @@ using UnityEngine.UI;
 public class WriteVbles : MonoBehaviour
 {
     public Slider experience;
-    [SerializeField] Text numberOfCoins, numCoinsInRetry, characterLvl, numberOfPoints; 
-       // highScore;
+    [SerializeField] Text numberOfCoins, numCoinsInRetry, characterLvl; 
     [SerializeField] ExpCoinPoinMgr mExperience;
     [SerializeField] AudioUI mAudioUI;
 
@@ -16,7 +15,6 @@ public class WriteVbles : MonoBehaviour
         percentaje = 30;
         numberOfCoins.text = Singleton.instance.Coins.ToString("0");
         characterLvl.text = Singleton.instance.Lvl.ToString("0");
-        //highScore.text = Singleton.instance.Points.ToString("0");
         experience.maxValue += Singleton.instance.MaxValue;
         experience.value = Singleton.instance.Experience;
         WriteExp();
@@ -29,15 +27,6 @@ public class WriteVbles : MonoBehaviour
     public void WriteCoinInRetry() {
         numCoinsInRetry.text = Singleton.instance.Coins.ToString("0");
     }
-    /*public void WritingPoints()
-    {
-        numberOfPoints.text = Singleton.instance.PointsInGame.ToString("0");
-        if (Singleton.instance.PointsInGame > Singleton.instance.Points)
-        {
-            Singleton.instance.Points = Singleton.instance.PointsInGame;
-            highScore.text = Singleton.instance.Points.ToString("0");
-        }
-    }*/
     public void WriteCharacterLvl() {
         characterLvl.text = Singleton.instance.Lvl.ToString("0");
     }

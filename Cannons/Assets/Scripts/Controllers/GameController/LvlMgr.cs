@@ -5,14 +5,8 @@ using System.Collections;
 
 public class LvlMgr : MonoBehaviour
 {
-    [SerializeField] string playButton, menuButton;
     [SerializeField] GameObject loadingScreen;
     [SerializeField] Slider slider;
-
-    public void PlayButton()
-    {
-        StartCoroutine(LoadAsynchronously(playButton));
-    }
 
     public void Levels(string levelName)
     {

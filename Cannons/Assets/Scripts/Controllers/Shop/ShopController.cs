@@ -6,11 +6,12 @@ public class ShopController : MonoBehaviour {
     [SerializeField] GameObject skinButtonPref;
     [SerializeField] GameObject skinContainer;
     [SerializeField] SkinData skinInfo;
-    [SerializeField] WriteVbles writeVbles;
     [SerializeField] AudioUI audioUI;
+    WriteVbles writeVbles;
     
     private void Start()
     {
+        writeVbles = GetComponent<WriteVbles>();
         //Singleton.coins = 5000;
         buySkin(GameManager.Instance.currentSkin, 0);      
         for (int i = 0; i < skinInfo.skins.Count; i++)

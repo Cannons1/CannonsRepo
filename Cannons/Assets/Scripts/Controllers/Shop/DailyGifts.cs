@@ -4,11 +4,12 @@ using UnityEngine.UI;
 public class DailyGifts : MonoBehaviour
 {
     [SerializeField] Toggle[] dailyToggles = new Toggle[7];
-    [SerializeField] WriteVbles mWriteVbles;
+    WriteVbles mWriteVbles;
     [SerializeField] AudioUI mAudioUI;
 
     private void Start()
     {
+        mWriteVbles = GetComponent<WriteVbles>();
         foreach (Toggle a in dailyToggles)
         {
             a.interactable = false;

@@ -1,13 +1,11 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class AudioUI : MonoBehaviour
 {
     [SerializeField] AudioSource uIAudioSource;
     [SerializeField] AudioClip buttonDefault, buttonBack, buttonPlay, claimAGift;
-    [SerializeField] LvlMgr mLvlMgr;
     [SerializeField] IGLevelManager igLevelManager;
-    [SerializeField] ExpCoinPoinMgr expCoinPoinMgr;
+
     int i = 0;
     public void SoundClaimGift() {
         uIAudioSource.clip = claimAGift;
@@ -36,17 +34,6 @@ public class AudioUI : MonoBehaviour
         }
 
     }
-    public void AudioPlayButton()
-    {
-        uIAudioSource.clip = buttonPlay;
-        uIAudioSource.Play();
-        //StartCoroutine(AudioPlayFinished());
-    }
-    IEnumerator AudioPlayFinished()
-    {
-        yield return new WaitForSeconds(buttonPlay.length); //After sound of the play button will continue to next level
-        mLvlMgr.PlayButton();
-    }
     public void AudioButtonDefault()
     {
         uIAudioSource.clip = buttonDefault;
@@ -61,18 +48,6 @@ public class AudioUI : MonoBehaviour
     {
         uIAudioSource.clip = buttonBack;
         uIAudioSource.Play();
-        //expCoinPoinMgr.Mgr();
         igLevelManager.MenuButton();//Returns to menu
-        /*if (expCoinPoinMgr.SavedLastExp)
-        {
-            Singleton.instance.Experience = expCoinPoinMgr.Saved;
-            expCoinPoinMgr.MinusLvl();
-            Debug.Log(expCoinPoinMgr.Saved + " Esto es lo que cargaré");
-        }
-        else {
-            expCoinPoinMgr.MinusExperienceInGame();//If the user press menu in a middle of a game, the experience wont count
-        }
-        expCoinPoinMgr.MinusCoinsInGame();//If the user press menu in a middle of a game, the coins wont count
-        igLevelManager.MenuButton();//Returns to menu*/
     }
 }

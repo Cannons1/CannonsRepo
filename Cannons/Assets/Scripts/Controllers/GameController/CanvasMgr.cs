@@ -51,11 +51,6 @@ public class CanvasMgr : MonoBehaviour {
             }
         }
 
-        /*if (Input.GetKeyDown(KeyCode.Escape) && canvas[2].activeInHierarchy) {
-            SettingsBack();
-            PauseButton();
-        }*/
-
         if (Input.GetKeyDown(KeyCode.Escape) && canvas[2].activeInHierarchy) {
             MenuCancel();
             PauseButton();
@@ -93,12 +88,6 @@ public class CanvasMgr : MonoBehaviour {
         Time.timeScale = 1;
         unnpause = 0;
     }
-
-    /*private void SettingsBack() {
-        unnpause = 1;
-        canvas[2].SetActive(false);
-        mAduioUI.AudioButtonBack();
-    }*/
 
     private void MenuCancel() {
         unnpause = 1;

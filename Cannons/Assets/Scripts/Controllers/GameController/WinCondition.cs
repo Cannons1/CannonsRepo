@@ -4,8 +4,8 @@ using UnityEngine.UI;
 public class WinCondition : MonoBehaviour {
     [Header("Win prize")]
     [SerializeField] int coins, exp;
-    [SerializeField] Text winCoinsTxt;
     [SerializeField] GameObject canvasWin;
+    [SerializeField] Text winCoinsTxt;
     CanvasMgr mCanvasMgr;
     WriteVbles mWriteVbles;
     IGLevelManager igLvlMgr;
@@ -21,8 +21,8 @@ public class WinCondition : MonoBehaviour {
     public void Win() {
         mCanvasMgr.Canvas[0].SetActive(false);
         canvasWin.SetActive(true);
-        ExpCoinsMgr();
         Time.timeScale = 0;
+        ExpCoinsMgr();
         if (level > Singleton.instance.LvlsUnlocked) {
             Singleton.instance.LvlsUnlocked = level;
             PlayerPrefs.SetInt("LvlUnlocked", Singleton.instance.LvlsUnlocked);

@@ -2627,7 +2627,6 @@ MonoBehaviour:
   numberOfCoins: {fileID: 114706270733754352}
   numCoinsInRetry: {fileID: 114423848890473412}
   characterLvl: {fileID: 114933345400403548}
-  numberOfPoints: {fileID: 0}
   mExperience: {fileID: 114941041641308804}
   mAudioUI: {fileID: 114727729698650408}
 --- !u!114 &114190323194240022
@@ -3657,8 +3656,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coins: 5
   exp: 5
-  winCoinsTxt: {fileID: 114331335146964408}
   canvasWin: {fileID: 1003669130554568}
+  winCoinsTxt: {fileID: 114331335146964408}
   level: 1
 --- !u!114 &114553475621259660
 MonoBehaviour:
@@ -4229,9 +4228,7 @@ MonoBehaviour:
   buttonBack: {fileID: 8300000, guid: 72bf3fd66fcfa28419e6b6cdce1f8e4c, type: 3}
   buttonPlay: {fileID: 8300000, guid: d18496a6fc1dca746aad89e40c383ec9, type: 3}
   claimAGift: {fileID: 8300000, guid: 30b5963dba8acd645aba5201fab7c7d8, type: 3}
-  mLvlMgr: {fileID: 0}
   igLevelManager: {fileID: 114414949778851446}
-  expCoinPoinMgr: {fileID: 114941041641308804}
 --- !u!114 &114761219377744784
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4244,7 +4241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.4}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5921569}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4635,14 +4632,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.92156863}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: b9fdcfce93f381742916d2da8e3c6759, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cc2fd281fc57640458c1ae5fb345f729, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4881,7 +4878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.3755169, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5807,8 +5804,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -49.5, y: -43.7}
-  m_SizeDelta: {x: 57.1, y: 57.5}
+  m_AnchoredPosition: {x: -43.1, y: -26.99}
+  m_SizeDelta: {x: 66.3, y: 34.52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224221355568934522
 RectTransform:
@@ -6455,7 +6452,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224737767417188968
