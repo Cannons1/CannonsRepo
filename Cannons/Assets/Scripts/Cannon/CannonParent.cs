@@ -18,12 +18,15 @@ public abstract class CannonParent : MonoBehaviour
     [HideInInspector] public CannonType cannonType;
     protected bool canShoot;
     Renderer mRenderer;
+    public Animator mAnimator;
+
 
     float fadeTime;
     [SerializeField] Shader fadeShader;
 
     protected virtual void Start()
     {
+        mAnimator = transform.GetChild(1).GetComponent<Animator>();
         fadeTime = 3.5f;
         wick = transform.GetChild(2).gameObject;
         wickParticle = wick.transform.GetChild(0).gameObject;
@@ -47,7 +50,7 @@ public abstract class CannonParent : MonoBehaviour
         willBody.isKinematic = false;
         canShoot = false;
         willBody.velocity = Will.will.transform.up * shootForce;
-        CameraShaker.Instance.ShakeOnce(2.6f, 2f, 0.1f, 0.3f);
+        CameraShaker.Instance.ShakeOnce(2.6f, 2f, 0.1f, 0.3f);        
         Will.will.inCannon = false;
         //Will.will.cannonTriggered.SetActive(false);
         Will.will.cannonTriggered.transform.GetChild(1).GetComponent<Collider>().enabled = false;
@@ -57,7 +60,7 @@ public abstract class CannonParent : MonoBehaviour
 
     public IEnumerator Wick()
     {
-        //StartCoroutine(GetComponent<AudioCannons>().Fade());
+        //StartCoroutine(GetComponent<AudioCannons>().Fade());        
         GetComponent<AudioCannons>().AudioWick();
         StartCoroutine(Tap());
         canShoot = true;
@@ -122,8 +125,10 @@ public abstract class CannonParent : MonoBehaviour
         while (Will.will.inCannon)
         {
             if (Input.GetButtonUp("Fire1") && canShoot && IGLevelManager.unpause)
+            {
+                mAnimator.SetTrigger("Shoot");
                 Shoot();
-
+            }
             yield return null;
         }
     }

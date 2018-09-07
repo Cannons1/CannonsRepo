@@ -49,6 +49,7 @@ public class Will : MonoBehaviour
         {
             other.enabled = false;
             StuckOnCannon();
+            cannonTriggered.GetComponent<CannonParent>().mAnimator.SetTrigger("Entering");
             OnProgressLvl(transform.position);
         }
 

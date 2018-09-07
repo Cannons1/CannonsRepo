@@ -649,7 +649,7 @@ Prefab:
     - target: {fileID: 114517613381731680, guid: fe21117e4f7b9e74fbebc90c651b7357,
         type: 2}
       propertyPath: shootForce
-      value: 23
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1839672641818092, guid: fe21117e4f7b9e74fbebc90c651b7357, type: 2}
       propertyPath: m_Name
@@ -1030,6 +1030,11 @@ Prefab:
       propertyPath: cannonsAudioSource
       value: 
       objectReference: {fileID: 262344426}
+    - target: {fileID: 114406671851458524, guid: bfdabc52a7b3edf4281d41bc8c239c27,
+        type: 2}
+      propertyPath: initMoving
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfdabc52a7b3edf4281d41bc8c239c27, type: 2}
   m_IsPrefabAsset: 0
