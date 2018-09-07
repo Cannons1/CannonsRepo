@@ -15,7 +15,7 @@ public class WriteVbles : MonoBehaviour
         percentaje = 30;
         numberOfCoins.text = Singleton.instance.Coins.ToString("0");
         characterLvl.text = Singleton.instance.Lvl.ToString("0");
-        experience.maxValue += Singleton.instance.MaxValue;
+        experience.maxValue = Singleton.instance.MaxValue;
         experience.value = Singleton.instance.Experience;
         WriteExp();
     }

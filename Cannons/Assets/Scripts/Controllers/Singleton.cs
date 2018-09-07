@@ -145,6 +145,14 @@ public class Singleton : MonoBehaviour
         else {
             dailyGifts = PlayerPrefs.GetInt("DailyCount");
         }
+        if (!PlayerPrefs.HasKey("MaxValue"))
+        {
+            maxValue = 15;
+            PlayerPrefs.SetInt("MaxValue", maxValue);
+        }
+        else {
+            maxValue = PlayerPrefs.GetInt("MaxValue");
+        }
         if (instance == null)
         {
             instance = this;
@@ -154,6 +162,8 @@ public class Singleton : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+
     }
 
     private void ResetStats()
@@ -163,5 +173,6 @@ public class Singleton : MonoBehaviour
         PlayerPrefs.DeleteKey("Exp");
         PlayerPrefs.DeleteKey("Lvl");
         PlayerPrefs.DeleteKey("DailyCount");
+        PlayerPrefs.DeleteKey("");
     }
 }

@@ -42,5 +42,6 @@ public class WinCondition : MonoBehaviour {
         PlayerPrefs.SetInt("Coins", Singleton.instance.Coins);
         PlayerPrefs.SetInt("Exp", Singleton.instance.Experience);
         PlayerPrefs.SetInt("Lvl", Singleton.instance.Lvl);
+        PlayerPrefs.SetInt("MaxValue", Singleton.instance.MaxValue);
     }
 }
