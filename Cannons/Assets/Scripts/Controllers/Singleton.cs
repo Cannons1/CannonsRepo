@@ -30,40 +30,7 @@ public class Singleton : MonoBehaviour
     private int coinsInGame;
     #endregion
 
-    #region Experience
-    public int Experience {
-        get { return experience; }
-        set { experience = value; }
-    }
-    public int ExpInGame {
-        get { return expInGame; }
-        set { expInGame = value; }
-    }
-    public int LvlInGame {
-        get { return lvlInGame; }
-        set { lvlInGame = value; }
-    }
-    public int MaxValue {
-        get { return maxValue; }
-        set { maxValue = value; }
-    }
-    public int MaxValueInGame {
-        get { return maxValueInGame; }
-        set { maxValueInGame = value; }
-    }
-    private int experience;
-    private int expInGame;
-    private int lvlInGame;
-    private int maxValue;
-    private int maxValueInGame;
-    #endregion
-
     #region lvl
-    public int Lvl
-    {
-        get { return lvl; }
-        set { lvl = value; }
-    }
     public int LvlsUnlocked
     {
         get
@@ -76,31 +43,7 @@ public class Singleton : MonoBehaviour
             lvlsUnlocked = value;
         }
     }
-    private int lvl;
     private int lvlsUnlocked;
-    #endregion
-
-    #region ints for points
-    public int Points
-    {
-        get { return points; }
-        set { points = value; }
-    }
-    public int PointsInGame
-    {
-        get { return pointsInGame; }
-        set { pointsInGame = value; }
-    }
-    private int points;
-    private int pointsInGame;
-    #endregion
-
-    #region shop boosts
-    public int ExpBoost {
-        get { return expBoost; }
-        set { expBoost = value; }
-    }
-    private int expBoost;
     #endregion
 
     #region dailyGifts
@@ -121,14 +64,6 @@ public class Singleton : MonoBehaviour
 
     void Awake()
     {
-        if (!PlayerPrefs.HasKey("Lvl"))
-        {
-            lvl = 1;
-            PlayerPrefs.SetInt("Lvl", lvl);
-        }
-        else {
-            lvl = PlayerPrefs.GetInt("Lvl");
-        }
         if (!PlayerPrefs.HasKey("LvlUnlocked"))
         {
             lvlsUnlocked = 0;
@@ -144,14 +79,6 @@ public class Singleton : MonoBehaviour
         }
         else {
             dailyGifts = PlayerPrefs.GetInt("DailyCount");
-        }
-        if (!PlayerPrefs.HasKey("MaxValue"))
-        {
-            maxValue = 15;
-            PlayerPrefs.SetInt("MaxValue", maxValue);
-        }
-        else {
-            maxValue = PlayerPrefs.GetInt("MaxValue");
         }
         if (instance == null)
         {
@@ -170,9 +97,6 @@ public class Singleton : MonoBehaviour
     {
         PlayerPrefs.DeleteKey("LvlUnlocked");
         PlayerPrefs.DeleteKey("Coins");
-        PlayerPrefs.DeleteKey("Exp");
-        PlayerPrefs.DeleteKey("Lvl");
         PlayerPrefs.DeleteKey("DailyCount");
-        PlayerPrefs.DeleteKey("");
     }
 }

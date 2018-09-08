@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class Coin : MonoBehaviour, ICoins, IExperience
+public class Coin : MonoBehaviour, ICoins
 {
     WriteVbles mWriteVbles;
     SphereCollider mSphereCollider;
@@ -44,12 +44,5 @@ public class Coin : MonoBehaviour, ICoins, IExperience
             yield return null;
         }
         _Sprite.color = tmpColor;
-    }
-
-    public void EarningExperience(int _Experience)
-    {
-        Singleton.instance.Experience += _Experience;
-        Singleton.instance.ExpInGame += _Experience;
-        mWriteVbles.WriteExp();
     }
 }
