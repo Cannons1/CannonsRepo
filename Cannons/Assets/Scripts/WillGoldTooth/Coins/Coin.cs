@@ -4,15 +4,20 @@ using UnityEngine;
 public class Coin : MonoBehaviour, ICoins, IExperience
 {
     WriteVbles mWriteVbles;
-    MeshRenderer mMeshRenderer;
     CapsuleCollider mCapsuleCollider;
-    [Header("Object when player picks up")]
-    [SerializeField] GameObject coinPlus;
+    SpriteRenderer spriteRenderer;
+    Animator anim;
+
+    Color color;
 
     private void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        color = spriteRenderer.color;
+        color.a = 255f;
+        spriteRenderer.color = color;
+        anim = GetComponent<Animator>();
         mWriteVbles = (WriteVbles)FindObjectOfType(typeof(WriteVbles));
-        mMeshRenderer = GetComponent<MeshRenderer>();
         mCapsuleCollider = GetComponent<CapsuleCollider>();
     }
 
@@ -26,18 +31,19 @@ public class Coin : MonoBehaviour, ICoins, IExperience
 
     public void DeactivatedCoin()
     {
-        mMeshRenderer.enabled = false;
+        anim.SetBool("Get", true);
         mCapsuleCollider.enabled = false;
         StartCoroutine(CoinPlus());
     }
 
-    WaitForSeconds lifeTimeCoin = new WaitForSeconds(0.75f);
-
     IEnumerator CoinPlus()
     {
-        GameObject a = Instantiate(coinPlus, transform.position, Quaternion.identity);
-        yield return lifeTimeCoin;
-        Destroy(a);
+        while (color.a > 0f) {
+            color.a -= Time.time;
+            Debug.Log(color.a);
+            yield return null;
+        }
+        spriteRenderer.enabled = false;
     }
 
     public void EarningExperience(int _Experience)
