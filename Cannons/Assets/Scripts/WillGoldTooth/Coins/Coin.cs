@@ -4,21 +4,14 @@ using UnityEngine;
 public class Coin : MonoBehaviour, ICoins, IExperience
 {
     WriteVbles mWriteVbles;
-    CapsuleCollider mCapsuleCollider;
-    SpriteRenderer spriteRenderer;
+    SphereCollider mSphereCollider;
     Animator anim;
-
-    Color color;
 
     private void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        color = spriteRenderer.color;
-        color.a = 255f;
-        spriteRenderer.color = color;
         anim = GetComponent<Animator>();
         mWriteVbles = (WriteVbles)FindObjectOfType(typeof(WriteVbles));
-        mCapsuleCollider = GetComponent<CapsuleCollider>();
+        mSphereCollider = GetComponent<SphereCollider>();
     }
 
     public void CoinsCollected(int _Coin)
@@ -32,18 +25,25 @@ public class Coin : MonoBehaviour, ICoins, IExperience
     public void DeactivatedCoin()
     {
         anim.SetBool("Get", true);
-        mCapsuleCollider.enabled = false;
-        StartCoroutine(CoinPlus());
+        mSphereCollider.enabled = false;
+        StartCoroutine(FadeOut(GetComponent<SpriteRenderer>()));
     }
+    WaitForSeconds wait = new WaitForSeconds(0.5f);
 
-    IEnumerator CoinPlus()
+    IEnumerator FadeOut(SpriteRenderer _Sprite)
     {
-        while (color.a > 0f) {
-            color.a -= Time.time;
-            Debug.Log(color.a);
+        yield return wait;
+        Color tmpColor = _Sprite.color;
+        while (tmpColor.a > 0f) {
+            tmpColor.a -= Time.deltaTime * 5f;
+            _Sprite.color = tmpColor;
+
+            if (tmpColor.a <= 0f)
+                tmpColor.a = 0f;
+
             yield return null;
         }
-        spriteRenderer.enabled = false;
+        _Sprite.color = tmpColor;
     }
 
     public void EarningExperience(int _Experience)

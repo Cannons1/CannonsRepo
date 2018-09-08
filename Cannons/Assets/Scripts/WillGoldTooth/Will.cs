@@ -64,7 +64,7 @@ public class Will : MonoBehaviour
         if (cannonTriggered.GetComponent<WinCondition>() != null) {
             WinCondition winCondition;
             winCondition = cannonTriggered.GetComponent<WinCondition>();
-            winCondition.Win();
+            winCondition.Win(mRigid);
         }
     }
 

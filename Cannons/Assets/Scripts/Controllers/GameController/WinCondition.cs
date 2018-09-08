@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class WinCondition : MonoBehaviour {
     [Header("Win prize")]
@@ -11,22 +12,33 @@ public class WinCondition : MonoBehaviour {
     IGLevelManager igLvlMgr;
     public int level;
 
+    Animator anim;
+
     private void Start()
     {
+        anim = GetComponent<Animator>();
         igLvlMgr = (IGLevelManager)FindObjectOfType(typeof(IGLevelManager));
         mWriteVbles = (WriteVbles)FindObjectOfType(typeof(WriteVbles));
         mCanvasMgr = (CanvasMgr)FindObjectOfType(typeof(CanvasMgr));
     }
 
-    public void Win() {
-        mCanvasMgr.Canvas[0].SetActive(false);
-        canvasWin.SetActive(true);
-        Time.timeScale = 0;
+    public void Win(Rigidbody _wills) {
+        anim.SetBool("Opened", true);
+        _wills.constraints = RigidbodyConstraints.FreezeAll;
+        StartCoroutine(OpeningChest());
         ExpCoinsMgr();
         if (level > Singleton.instance.LvlsUnlocked) {
             Singleton.instance.LvlsUnlocked = level;
             PlayerPrefs.SetInt("LvlUnlocked", Singleton.instance.LvlsUnlocked);
         }
+    }
+
+    WaitForSeconds animLength = new WaitForSeconds(2f);//anim openChestLength
+
+    IEnumerator OpeningChest() {
+        yield return animLength;
+        mCanvasMgr.Canvas[0].SetActive(false);
+        canvasWin.SetActive(true);
     }
 
     private void ExpCoinsMgr() {
