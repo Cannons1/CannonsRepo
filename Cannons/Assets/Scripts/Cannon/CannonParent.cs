@@ -80,7 +80,7 @@ public abstract class CannonParent : MonoBehaviour
             float distance = Vector3.Distance(wickParticle.transform.position, pathWick.points[pathPoint].position);
             wickParticle.transform.position = Vector3.MoveTowards(wickParticle.transform.position, pathWick.points[pathPoint].position, (Time.deltaTime / wickTime));
 
-            if (distance < 0.1f && pathPoint != pathWick.points.Length - 1)
+            if (distance < 0.1f && pathPoint != pathWick.points.Length - 2)
                 pathPoint++;
             yield return null;
         }
