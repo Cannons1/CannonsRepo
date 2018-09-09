@@ -614,8 +614,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1616314143689344}
-  m_LocalRotation: {x: 0, y: -0, z: -0.8607421, w: 0.50904137}
-  m_LocalPosition: {x: -2.3, y: 0.22, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 2.5665417, y: 56.208145, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4543120896969640}
@@ -623,7 +623,7 @@ Transform:
   - {fileID: 4061450131043674}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -118.8}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!4 &4849589519125628
 Transform:
   m_ObjectHideFlags: 1
@@ -784,13 +784,15 @@ MonoBehaviour:
   wickTime: 4
   shootForce: 30
   cannonType: 0
+  mRenderer: {fileID: 0}
+  wickRenderer: {fileID: 0}
   mAnimator: {fileID: 0}
   fadeShader: {fileID: 4800000, guid: 988d8629e6f249747ad5a0f1952cea6f, type: 3}
   speed: 3
-  firstRotation: 118
+  firstRotation: 0
   initMoving: 0
   verticalOrHorizontal: 0
-  horizontalTarget1: -2.7
+  horizontalTarget1: -0.74
   horizontalTarget2: 2.7
   verticalTarget1: 8
   verticalTarget2: 13
@@ -996,7 +998,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: f6e24b138aeca374381fdad64f448999, type: 3}
+  - {fileID: 2100000, guid: 1194ff8bfd3f85d43b4bb64e47dc0dbb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

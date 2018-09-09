@@ -767,6 +767,8 @@ MonoBehaviour:
   wickTime: 5
   shootForce: 23
   cannonType: 0
+  mRenderer: {fileID: 0}
+  wickRenderer: {fileID: 0}
   mAnimator: {fileID: 0}
   fadeShader: {fileID: 4800000, guid: 988d8629e6f249747ad5a0f1952cea6f, type: 3}
   rotationSpeed: 2
@@ -897,7 +899,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: f6e24b138aeca374381fdad64f448999, type: 3}
+  - {fileID: 2100000, guid: 1194ff8bfd3f85d43b4bb64e47dc0dbb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

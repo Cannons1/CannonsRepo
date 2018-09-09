@@ -3,11 +3,14 @@ using UnityEngine;
 using EZCameraShake;
 
 //[RequireComponent(typeof(Points))]
+
+//[ExecuteInEditMode]
 [RequireComponent(typeof(AudioCannons))]
 public abstract class CannonParent : MonoBehaviour
 {
     [Header("Shooting")]
     [SerializeField] float wickTime;
+    float wickScaleFactor = 10f, wickMaxScale = 1.5f;
     protected GameObject wick, wickParticle;
     protected PathWick pathWick;
     int pathPoint = 0;
@@ -17,20 +20,20 @@ public abstract class CannonParent : MonoBehaviour
     GameObject reference;
     [HideInInspector] public CannonType cannonType;
     protected bool canShoot;
-    Renderer mRenderer;
+    [SerializeField]
+    Renderer mRenderer, wickRenderer;
     public Animator mAnimator;
 
-
-    float fadeTime;
     [SerializeField] Shader fadeShader;
+    float fadeTime = 3.5f;
 
     protected virtual void Start()
-    {
+    {        
         mAnimator = transform.GetChild(1).GetComponent<Animator>();
-        fadeTime = 3.5f;
         wick = transform.GetChild(2).gameObject;
+        wick.transform.localScale = new Vector3(wick.transform.localScale.x, (wickMaxScale / wickScaleFactor) * wickTime, transform.localScale.z);
         wickParticle = wick.transform.GetChild(0).gameObject;
-        pathWick = wick.transform.GetChild(1).gameObject.GetComponent<PathWick>();
+        pathWick = wick.transform.GetChild(1).gameObject.GetComponent<PathWick>();       
     }
     protected virtual void Update()
     {
@@ -65,6 +68,8 @@ public abstract class CannonParent : MonoBehaviour
         StartCoroutine(Tap());
         canShoot = true;
         mRenderer = transform.GetChild(1).GetComponentInChildren<Renderer>();
+        wickRenderer = wick.transform.GetComponentInChildren<Renderer>();
+
         Color startingColor = mRenderer.material.color;
 
         wickParticle.SetActive(true);
@@ -76,11 +81,12 @@ public abstract class CannonParent : MonoBehaviour
 
             i += Time.deltaTime;
             mRenderer.material.color = Color.Lerp(startingColor, Color.red, i / wickTime);
+            wickRenderer.material.SetFloat("_fadeFactor", i/wickTime);
 
             float distance = Vector3.Distance(wickParticle.transform.position, pathWick.points[pathPoint].position);
-            wickParticle.transform.position = Vector3.MoveTowards(wickParticle.transform.position, pathWick.points[pathPoint].position, (Time.deltaTime / wickTime));
-
-            if (distance < 0.1f && pathPoint != pathWick.points.Length - 2)
+            wickParticle.transform.position = Vector3.Lerp(wickParticle.transform.position, pathWick.points[pathPoint].position, Time.deltaTime / (wickTime/( pathWick.points.Length - 1)));
+            
+            if (distance < 0.1f && pathPoint != pathWick.points.Length - 1)
                 pathPoint++;
             yield return null;
         }

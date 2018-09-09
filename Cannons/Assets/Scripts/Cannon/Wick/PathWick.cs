@@ -18,7 +18,6 @@ public class PathWick : MonoBehaviour {
         Array.Reverse(points);
         for (int i = 0; i < points.Length - 1; i++)
         {
-            //if(i == 2)
             Gizmos.color = Color.red;
             Vector3 position = points[i].position;                      
             Gizmos.DrawSphere(position, 0.05f);
