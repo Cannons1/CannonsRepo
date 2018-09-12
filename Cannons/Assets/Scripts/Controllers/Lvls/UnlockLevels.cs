@@ -21,4 +21,9 @@ public class UnlockLevels : MonoBehaviour {
             lvlsUnlocked[i].Unlocked();
         }
     }
+
+    private void Unlock() {
+        Singleton.instance.LvlsUnlocked = 4;
+        PlayerPrefs.SetInt("LvlUnlocked", Singleton.instance.LvlsUnlocked);
+    }
 }

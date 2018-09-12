@@ -1937,11 +1937,11 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243070854274189250, guid: fa6623a82736c034cbd2d20a97c7b71e,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 2b0b133ca26d4e242968f8a30dc25801, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e7f1193eae2306b419be85261d984659, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.18446207
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
