@@ -27,7 +27,8 @@ public class WinCondition : MonoBehaviour {
         CoinsMgr();
         if (level > Singleton.instance.LvlsUnlocked) {
             Singleton.instance.LvlsUnlocked = level;
-            PlayerPrefs.SetInt("LvlUnlocked", Singleton.instance.LvlsUnlocked);
+            //PlayerPrefs.SetInt("LvlUnlocked", Singleton.instance.LvlsUnlocked);
+            Singleton.SaveUnlockLevels();
         }
     }
 
@@ -43,7 +44,8 @@ public class WinCondition : MonoBehaviour {
         Singleton.instance.Coins += coins;
         mWriteVbles.WritingNumberOfCoins();
         winCoinsTxt.text = coins.ToString("+0 Coins");
-        SavePlayerStatus();
+        Singleton.SaveCoins();
+        //SavePlayerStatus();
     }
 
     public void SavePlayerStatus() {

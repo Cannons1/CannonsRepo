@@ -184,7 +184,8 @@ public class IAPManager : MonoBehaviour, IStoreListener
 
     private void Coins(int _coins) {
         Singleton.instance.Coins += _coins;
-        PlayerPrefs.SetInt("Coins", Singleton.instance.Coins);
+        Singleton.SaveCoins();
+        //PlayerPrefs.SetInt("Coins", Singleton.instance.Coins);
         writeVbles.WritingNumberOfCoins();
     }
 }

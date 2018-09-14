@@ -104,4 +104,8 @@ public class Singleton : MonoBehaviour
     {
         PlayerPrefs.SetInt("Coins", instance.coins);
     }
+
+    public static void SaveUnlockLevels() {
+        PlayerPrefs.SetInt("LvlUnlocked", instance.lvlsUnlocked);
+    }
 }
