@@ -28,14 +28,12 @@ public class Coin : MonoBehaviour, ICoins
         mSphereCollider.enabled = false;
         StartCoroutine(FadeOut(GetComponent<SpriteRenderer>()));
     }
-    WaitForSeconds wait = new WaitForSeconds(0.5f);
 
     IEnumerator FadeOut(SpriteRenderer _Sprite)
     {
-        yield return wait;
         Color tmpColor = _Sprite.color;
         while (tmpColor.a > 0f) {
-            tmpColor.a -= Time.deltaTime * 5f;
+            tmpColor.a -= Time.deltaTime * 2f;
             _Sprite.color = tmpColor;
 
             if (tmpColor.a <= 0f)
