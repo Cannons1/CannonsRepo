@@ -99,4 +99,9 @@ public class Singleton : MonoBehaviour
         PlayerPrefs.DeleteKey("Coins");
         PlayerPrefs.DeleteKey("DailyCount");
     }
+
+    public static void SaveCoins()
+    {
+        PlayerPrefs.SetInt("Coins", instance.coins);
+    }
 }

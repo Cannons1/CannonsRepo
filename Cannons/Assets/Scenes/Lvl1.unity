@@ -345,7 +345,7 @@ Prefab:
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114178787721354798, guid: 50968a4552340f3468aec73489bdefb1,
     type: 2}
-  m_PrefabInternal: {fileID: 1122100468}
+  m_PrefabInternal: {fileID: 1062334268}
   m_Script: {fileID: 11500000, guid: 5e4af0ae83e0d8e4ca9d32a7ab21a537, type: 3}
 --- !u!1001 &595235219
 Prefab:
@@ -940,7 +940,7 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc657c91867499045866d7dfc00dfbbc, type: 2}
   m_IsPrefabAsset: 0
---- !u!1001 &1122100468
+--- !u!1001 &1062334268
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -977,15 +977,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4848279867700980, guid: 50968a4552340f3468aec73489bdefb1, type: 2}
       propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114534144998237950, guid: 50968a4552340f3468aec73489bdefb1,
-        type: 2}
-      propertyPath: level
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1740902955629352, guid: 50968a4552340f3468aec73489bdefb1, type: 2}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1647,7 +1638,7 @@ Prefab:
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 82787061887273484, guid: 50968a4552340f3468aec73489bdefb1,
     type: 2}
-  m_PrefabInternal: {fileID: 1122100468}
+  m_PrefabInternal: {fileID: 1062334268}
 --- !u!1001 &1906427677
 Prefab:
   m_ObjectHideFlags: 0
