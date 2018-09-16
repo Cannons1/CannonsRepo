@@ -276,7 +276,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1328184190}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe21117e4f7b9e74fbebc90c651b7357, type: 2}
   m_IsPrefabAsset: 0
@@ -337,7 +337,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1328184190}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc657c91867499045866d7dfc00dfbbc, type: 2}
   m_IsPrefabAsset: 0
@@ -416,7 +416,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1328184190}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe21117e4f7b9e74fbebc90c651b7357, type: 2}
   m_IsPrefabAsset: 0
@@ -463,7 +463,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1328184190}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe21117e4f7b9e74fbebc90c651b7357, type: 2}
   m_IsPrefabAsset: 0
@@ -538,7 +538,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1328184190}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe21117e4f7b9e74fbebc90c651b7357, type: 2}
   m_IsPrefabAsset: 0
@@ -705,7 +705,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1328184190}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe21117e4f7b9e74fbebc90c651b7357, type: 2}
   m_IsPrefabAsset: 0
@@ -776,7 +776,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1328184190}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc657c91867499045866d7dfc00dfbbc, type: 2}
   m_IsPrefabAsset: 0
@@ -856,7 +856,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1328184190}
     - target: {fileID: 114406671851458524, guid: bfdabc52a7b3edf4281d41bc8c239c27,
         type: 2}
       propertyPath: initMoving
@@ -913,7 +913,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1328184190}
     - target: {fileID: 114940085951682866, guid: 9dc87026920fb5d4ea7361aff61540a5,
         type: 2}
       propertyPath: wickTime
@@ -993,7 +993,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1328184190}
     - target: {fileID: 114517613381731680, guid: fe21117e4f7b9e74fbebc90c651b7357,
         type: 2}
       propertyPath: angleRotation
@@ -1069,7 +1069,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1328184190}
     - target: {fileID: 4518935813123604, guid: cc657c91867499045866d7dfc00dfbbc, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
@@ -1125,7 +1125,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1328184190}
     - target: {fileID: 1964473785528256, guid: cc657c91867499045866d7dfc00dfbbc, type: 2}
       propertyPath: m_Name
       value: HorizontalCannon (3)
@@ -1269,7 +1269,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1328184190}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfdabc52a7b3edf4281d41bc8c239c27, type: 2}
   m_IsPrefabAsset: 0
@@ -1362,7 +1362,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1328184190}
     - target: {fileID: 114940085951682866, guid: 9dc87026920fb5d4ea7361aff61540a5,
         type: 2}
       propertyPath: shootForce
@@ -1427,7 +1427,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1328184190}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc657c91867499045866d7dfc00dfbbc, type: 2}
   m_IsPrefabAsset: 0
@@ -1512,9 +1512,19 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114534144998237950, guid: 50968a4552340f3468aec73489bdefb1,
+        type: 2}
+      propertyPath: level
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50968a4552340f3468aec73489bdefb1, type: 2}
   m_IsPrefabAsset: 0
+--- !u!82 &1328184190 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 82787061887273484, guid: 50968a4552340f3468aec73489bdefb1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1328184189}
 --- !u!1001 &1449393280
 Prefab:
   m_ObjectHideFlags: 0
@@ -1581,7 +1591,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1328184190}
     - target: {fileID: 114517613381731680, guid: fe21117e4f7b9e74fbebc90c651b7357,
         type: 2}
       propertyPath: angleRotation
@@ -1658,7 +1668,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1328184190}
     - target: {fileID: 114406671851458524, guid: bfdabc52a7b3edf4281d41bc8c239c27,
         type: 2}
       propertyPath: wickTime
@@ -1751,7 +1761,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1328184190}
     - target: {fileID: 114406671851458524, guid: bfdabc52a7b3edf4281d41bc8c239c27,
         type: 2}
       propertyPath: initMoving
@@ -1882,7 +1892,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1328184190}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe21117e4f7b9e74fbebc90c651b7357, type: 2}
   m_IsPrefabAsset: 0
@@ -1957,7 +1967,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1328184190}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe21117e4f7b9e74fbebc90c651b7357, type: 2}
   m_IsPrefabAsset: 0
@@ -2008,7 +2018,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1328184190}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc657c91867499045866d7dfc00dfbbc, type: 2}
   m_IsPrefabAsset: 0
@@ -2055,7 +2065,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1328184190}
     - target: {fileID: 114940085951682866, guid: 9dc87026920fb5d4ea7361aff61540a5,
         type: 2}
       propertyPath: shootForce
@@ -2153,7 +2163,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1328184190}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfdabc52a7b3edf4281d41bc8c239c27, type: 2}
   m_IsPrefabAsset: 0
@@ -2363,7 +2373,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1328184190}
     - target: {fileID: 114406671851458524, guid: bfdabc52a7b3edf4281d41bc8c239c27,
         type: 2}
       propertyPath: wickTime
