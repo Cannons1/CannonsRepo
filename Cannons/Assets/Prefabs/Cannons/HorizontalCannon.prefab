@@ -816,7 +816,8 @@ MonoBehaviour:
   ignite: {fileID: 8300000, guid: 8479c0fa014ca924eb0f741e4eb69d68, type: 3}
   wick: {fileID: 8300000, guid: e7f1193eae2306b419be85261d984659, type: 3}
   wickOff: {fileID: 0}
-  cannonsAudioSource: {fileID: 0}
+  cannonsAudioSource: {fileID: 82787061887273484, guid: 50968a4552340f3468aec73489bdefb1,
+    type: 2}
 --- !u!120 &120130489853545300
 LineRenderer:
   m_ObjectHideFlags: 1

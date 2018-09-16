@@ -160,7 +160,7 @@ Prefab:
         type: 2}
       propertyPath: mWriteCoins
       value: 
-      objectReference: {fileID: 544143326}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.y
       value: 0
@@ -204,7 +204,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 1886469043}
+      objectReference: {fileID: 1571547365}
     - target: {fileID: 114500324696156620, guid: cc657c91867499045866d7dfc00dfbbc,
         type: 2}
       propertyPath: initMoving
@@ -274,7 +274,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 1886469043}
+      objectReference: {fileID: 1571547365}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc657c91867499045866d7dfc00dfbbc, type: 2}
   m_IsPrefabAsset: 0
@@ -336,12 +336,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 542e907df1a7c8a44b969ed4adce0769, type: 2}
   m_IsPrefabAsset: 0
---- !u!114 &544143326 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114178787721354798, guid: 50968a4552340f3468aec73489bdefb1,
-    type: 2}
-  m_PrefabInternal: {fileID: 1996723176}
-  m_Script: {fileID: 11500000, guid: 5e4af0ae83e0d8e4ca9d32a7ab21a537, type: 3}
 --- !u!1001 &595235219
 Prefab:
   m_ObjectHideFlags: 0
@@ -389,7 +383,7 @@ Prefab:
         type: 2}
       propertyPath: mWriteCoins
       value: 
-      objectReference: {fileID: 544143326}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.y
       value: 0
@@ -433,7 +427,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 1886469043}
+      objectReference: {fileID: 1571547365}
     - target: {fileID: 114500324696156620, guid: cc657c91867499045866d7dfc00dfbbc,
         type: 2}
       propertyPath: initMoving
@@ -507,7 +501,7 @@ Prefab:
         type: 2}
       propertyPath: mWriteVbles
       value: 
-      objectReference: {fileID: 544143326}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 542e907df1a7c8a44b969ed4adce0769, type: 2}
   m_IsPrefabAsset: 0
@@ -554,7 +548,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 1886469043}
+      objectReference: {fileID: 1571547365}
     - target: {fileID: 4883892963589306, guid: 9dc87026920fb5d4ea7361aff61540a5, type: 2}
       propertyPath: m_LocalPosition.y
       value: 1.1
@@ -609,7 +603,7 @@ Prefab:
         type: 2}
       propertyPath: mWriteCoins
       value: 
-      objectReference: {fileID: 544143326}
+      objectReference: {fileID: 0}
     - target: {fileID: 4421103292140236, guid: 9dc87026920fb5d4ea7361aff61540a5, type: 2}
       propertyPath: m_LocalScale.x
       value: 1
@@ -640,7 +634,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 1886469043}
+      objectReference: {fileID: 1571547365}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9dc87026920fb5d4ea7361aff61540a5, type: 2}
   m_IsPrefabAsset: 0
@@ -691,7 +685,7 @@ Prefab:
         type: 2}
       propertyPath: mWriteCoins
       value: 
-      objectReference: {fileID: 544143326}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.y
       value: 0
@@ -735,7 +729,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 1886469043}
+      objectReference: {fileID: 1571547365}
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.x
       value: -3.99
@@ -910,7 +904,7 @@ Prefab:
         type: 2}
       propertyPath: mWriteCoins
       value: 
-      objectReference: {fileID: 544143326}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.y
       value: 0
@@ -954,7 +948,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 1886469043}
+      objectReference: {fileID: 1571547365}
     - target: {fileID: 114500324696156620, guid: cc657c91867499045866d7dfc00dfbbc,
         type: 2}
       propertyPath: initMoving
@@ -1028,7 +1022,7 @@ Prefab:
         type: 2}
       propertyPath: mWriteVbles
       value: 
-      objectReference: {fileID: 544143326}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 542e907df1a7c8a44b969ed4adce0769, type: 2}
   m_IsPrefabAsset: 0
@@ -1079,7 +1073,7 @@ Prefab:
         type: 2}
       propertyPath: mWriteCoins
       value: 
-      objectReference: {fileID: 544143326}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.y
       value: 0
@@ -1123,7 +1117,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 1886469043}
+      objectReference: {fileID: 1571547365}
     - target: {fileID: 114500324696156620, guid: cc657c91867499045866d7dfc00dfbbc,
         type: 2}
       propertyPath: initMoving
@@ -1155,6 +1149,53 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc657c91867499045866d7dfc00dfbbc, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1001 &1571547364
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4848279867700980, guid: 50968a4552340f3468aec73489bdefb1, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848279867700980, guid: 50968a4552340f3468aec73489bdefb1, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848279867700980, guid: 50968a4552340f3468aec73489bdefb1, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848279867700980, guid: 50968a4552340f3468aec73489bdefb1, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848279867700980, guid: 50968a4552340f3468aec73489bdefb1, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848279867700980, guid: 50968a4552340f3468aec73489bdefb1, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848279867700980, guid: 50968a4552340f3468aec73489bdefb1, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848279867700980, guid: 50968a4552340f3468aec73489bdefb1, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 50968a4552340f3468aec73489bdefb1, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!82 &1571547365 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 82787061887273484, guid: 50968a4552340f3468aec73489bdefb1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1571547364}
 --- !u!1001 &1645870345
 Prefab:
   m_ObjectHideFlags: 0
@@ -1202,7 +1243,7 @@ Prefab:
         type: 2}
       propertyPath: mWriteVbles
       value: 
-      objectReference: {fileID: 544143326}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 542e907df1a7c8a44b969ed4adce0769, type: 2}
   m_IsPrefabAsset: 0
@@ -1253,7 +1294,7 @@ Prefab:
         type: 2}
       propertyPath: mWriteCoins
       value: 
-      objectReference: {fileID: 544143326}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.y
       value: 0
@@ -1297,7 +1338,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 1886469043}
+      objectReference: {fileID: 1571547365}
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.x
       value: 2.89
@@ -1387,7 +1428,7 @@ Prefab:
         type: 2}
       propertyPath: mWriteCoins
       value: 
-      objectReference: {fileID: 544143326}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.y
       value: 0
@@ -1431,7 +1472,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 1886469043}
+      objectReference: {fileID: 1571547365}
     - target: {fileID: 114500324696156620, guid: cc657c91867499045866d7dfc00dfbbc,
         type: 2}
       propertyPath: initMoving
@@ -1510,7 +1551,7 @@ Prefab:
         type: 2}
       propertyPath: mWriteCoins
       value: 
-      objectReference: {fileID: 544143326}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.y
       value: 0
@@ -1554,7 +1595,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 1886469043}
+      objectReference: {fileID: 1571547365}
     - target: {fileID: 114500324696156620, guid: cc657c91867499045866d7dfc00dfbbc,
         type: 2}
       propertyPath: initMoving
@@ -1581,11 +1622,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc657c91867499045866d7dfc00dfbbc, type: 2}
   m_IsPrefabAsset: 0
---- !u!82 &1886469043 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 82787061887273484, guid: 50968a4552340f3468aec73489bdefb1,
-    type: 2}
-  m_PrefabInternal: {fileID: 1996723176}
 --- !u!1001 &1906427677
 Prefab:
   m_ObjectHideFlags: 0
@@ -1633,7 +1669,7 @@ Prefab:
         type: 2}
       propertyPath: mWriteCoins
       value: 
-      objectReference: {fileID: 544143326}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.y
       value: 0
@@ -1677,7 +1713,7 @@ Prefab:
         type: 2}
       propertyPath: cannonsAudioSource
       value: 
-      objectReference: {fileID: 1886469043}
+      objectReference: {fileID: 1571547365}
     - target: {fileID: 114500324696156620, guid: cc657c91867499045866d7dfc00dfbbc,
         type: 2}
       propertyPath: initMoving
@@ -1703,46 +1739,4 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc657c91867499045866d7dfc00dfbbc, type: 2}
-  m_IsPrefabAsset: 0
---- !u!1001 &1996723176
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4848279867700980, guid: 50968a4552340f3468aec73489bdefb1, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4848279867700980, guid: 50968a4552340f3468aec73489bdefb1, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4848279867700980, guid: 50968a4552340f3468aec73489bdefb1, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4848279867700980, guid: 50968a4552340f3468aec73489bdefb1, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4848279867700980, guid: 50968a4552340f3468aec73489bdefb1, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4848279867700980, guid: 50968a4552340f3468aec73489bdefb1, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4848279867700980, guid: 50968a4552340f3468aec73489bdefb1, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4848279867700980, guid: 50968a4552340f3468aec73489bdefb1, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 50968a4552340f3468aec73489bdefb1, type: 2}
   m_IsPrefabAsset: 0
