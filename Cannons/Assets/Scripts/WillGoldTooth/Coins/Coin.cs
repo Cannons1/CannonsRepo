@@ -17,7 +17,6 @@ public class Coin : MonoBehaviour, ICoins
     public void CoinsCollected(int _Coin)
     {
         Singleton.instance.Coins += _Coin;
-        Singleton.instance.CoinsInGame += _Coin;
         mWriteVbles.WritingNumberOfCoins();//Will write the number of coins in a text
         DeactivatedCoin();//When you pick a coin it will deactivate its meshRenderer and box collider
     }

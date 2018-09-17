@@ -15,6 +15,7 @@ public class Retry : MonoBehaviour {
 
     public void RetryLvl() {
         SceneManager.LoadScene(mScene.name);
+        Singleton.SaveCoins();
     }
 
     public void ActiveCanvas() {

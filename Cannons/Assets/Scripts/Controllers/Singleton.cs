@@ -22,12 +22,7 @@ public class Singleton : MonoBehaviour
         get { return coins; }
         set { coins = value; }
     }
-    public int CoinsInGame {
-        get { return coinsInGame; }
-        set { coinsInGame = value; }
-    }
     private int coins;
-    private int coinsInGame;
     #endregion
 
     #region lvl

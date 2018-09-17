@@ -50,10 +50,5 @@ public class WinCondition : MonoBehaviour {
         mWriteVbles.WritingNumberOfCoins();
         winCoinsTxt.text = coins.ToString("+0 Coins");
         Singleton.SaveCoins();
-        //SavePlayerStatus();
-    }
-
-    public void SavePlayerStatus() {
-        PlayerPrefs.SetInt("Coins", Singleton.instance.Coins);
     }
 }

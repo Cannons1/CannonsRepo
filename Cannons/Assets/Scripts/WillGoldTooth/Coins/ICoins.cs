@@ -2,5 +2,3 @@
 {
     void CoinsCollected(int _Coin); 
 }
-
-

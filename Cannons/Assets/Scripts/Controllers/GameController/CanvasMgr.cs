@@ -52,16 +52,11 @@ public class CanvasMgr : MonoBehaviour {
         }
 
         if (Input.GetKeyDown(KeyCode.Escape) && canvas[2].activeInHierarchy) {
-            MenuCancel();
-            PauseButton();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Escape) && canvas[3].activeInHierarchy) {
             canvas[0].SetActive(false);
             unnpause = 3;
             IGLevelManager.unpause = false;
         }
-        if (Input.GetKeyDown(KeyCode.Escape) && canvas[4].activeInHierarchy) {
+        if (Input.GetKeyDown(KeyCode.Escape) && canvas[3].activeInHierarchy) {
             canvas[0].SetActive(false);
             unnpause = 3;
             IGLevelManager.unpause = false;
@@ -89,13 +84,7 @@ public class CanvasMgr : MonoBehaviour {
         unnpause = 0;
     }
 
-    private void MenuCancel() {
-        unnpause = 1;
-        canvas[2].SetActive(false);
-        mAduioUI.AudioButtonBack();
-    }
-
     public void WinCanvasOff() {
-        canvas[4].SetActive(false);
+        canvas[3].SetActive(false);
     }
 }

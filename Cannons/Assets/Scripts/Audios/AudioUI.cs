@@ -4,7 +4,6 @@ public class AudioUI : MonoBehaviour
 {
     [SerializeField] AudioSource uIAudioSource;
     [SerializeField] AudioClip buttonDefault, buttonBack, buttonPlay, claimAGift;
-    [SerializeField] IGLevelManager igLevelManager;
 
     int i = 0;
     public void SoundClaimGift() {
@@ -43,11 +42,5 @@ public class AudioUI : MonoBehaviour
     {
         uIAudioSource.clip = buttonBack;
         uIAudioSource.Play();
-    }
-    public void AudioMenuButton()
-    {
-        uIAudioSource.clip = buttonBack;
-        uIAudioSource.Play();
-        igLevelManager.MenuButton();//Returns to menu
     }
 }
