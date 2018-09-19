@@ -7,7 +7,7 @@ public class DateTimeController : MonoBehaviour
     DateTime currentTimeBoostExp, currentTimeDaily;
     DailyGifts dailyGifts;
 
-	void Awake ()
+	void Start ()
     {
         dailyGifts = GetComponent<DailyGifts>();
         #region dailyChallenge
@@ -17,14 +17,10 @@ public class DateTimeController : MonoBehaviour
             currentTimeDaily = Convert.ToDateTime(PlayerPrefs.GetString("Daily"));
             differenceDaily = DateTime.Now - currentTimeDaily;
 
-            if (PlayerPrefs.HasKey("DailyCount"))
-            {
-                Singleton.instance.DailyGifts = PlayerPrefs.GetInt("DailyCount");
-            }
-
             if (differenceDaily.Days >= 1 )
             {
                 Debug.Log("un día ha pasado");
+                SaveDateTime();
                 Singleton.instance.DailyGifts++;
                 SaveDailyCount();
                 Debug.Log(Singleton.instance.DailyGifts);

@@ -93,6 +93,8 @@ public class Singleton : MonoBehaviour
         PlayerPrefs.DeleteKey("LvlUnlocked");
         PlayerPrefs.DeleteKey("Coins");
         PlayerPrefs.DeleteKey("DailyCount");
+        PlayerPrefs.DeleteKey("TogglesActive");
+        PlayerPrefs.DeleteKey("Daily");
     }
 
     public static void SaveCoins()
