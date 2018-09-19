@@ -14,7 +14,7 @@ public class CanvasMgr : MonoBehaviour {
     public static int unnpause;
 
     [SerializeField] GameObject txtTapToShoot;
-    WaitForSeconds txtActive = new WaitForSeconds(3f);
+    WaitForSeconds txtActive = new WaitForSeconds(6f);
     static int countTxtActive;
 
     private void Start()
