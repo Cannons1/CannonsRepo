@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Lvl5.unity
     guid: 30fb3b019b2a1d147890926e46463148
+  - enabled: 1
+    path: "Assets/Scenes/Alarc\xF3n1.unity"
+    guid: fba534765bb3d2d49ad11b28413bf449
   m_configObjects: {}
