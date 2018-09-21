@@ -109,6 +109,7 @@ public class Singleton : MonoBehaviour
         PlayerPrefs.DeleteKey("DailyCount");
         PlayerPrefs.DeleteKey("TogglesActive");
         PlayerPrefs.DeleteKey("Daily");
+        PlayerPrefs.DeleteKey("Stars");
     }
 
     public static void SaveCoins()
@@ -118,9 +119,5 @@ public class Singleton : MonoBehaviour
 
     public static void SaveUnlockLevels() {
         PlayerPrefs.SetInt("LvlUnlocked", instance.lvlsUnlocked);
-    }
-
-    public static void SaveStars() {
-        PlayerPrefs.SetString("Stars", instance.stars.ToString());
     }
 }

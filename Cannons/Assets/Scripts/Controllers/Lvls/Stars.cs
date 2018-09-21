@@ -35,5 +35,6 @@ public class Stars : MonoBehaviour {
                 Singleton.instance.Stars[mWinCondition.level - 1] = 1;
             print("One Star");
         }
+        PlayerPrefsX.SetIntArray("Stars", Singleton.instance.Stars);
     }
 }

@@ -3,7 +3,6 @@
 public class StarsMgr : MonoBehaviour {
 
     public UnlockStars[] unlockStars;
-
     static bool getArray = false;
 
     private void OnEnable()
@@ -15,6 +14,13 @@ public class StarsMgr : MonoBehaviour {
             getArray = true;
         }
 
+        if (PlayerPrefs.HasKey("Stars")) {
+            int[] starsValueArray = PlayerPrefsX.GetIntArray("Stars");
+            for (int i = 0; i < starsValueArray.Length; i++)
+            {
+                Singleton.instance.Stars[i] = starsValueArray[i];
+            }
+        }
         for (int i = 0; i < Singleton.instance.Stars.Length; i++)
         {
             if (Singleton.instance.Stars[i] == 3)
