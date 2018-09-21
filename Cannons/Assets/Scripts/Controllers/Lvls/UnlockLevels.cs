@@ -11,7 +11,6 @@ public class UnlockLevels : MonoBehaviour {
 
         if (PlayerPrefs.HasKey("LvlUnlocked")) {
             lvlsToUnlock = PlayerPrefs.GetInt("LvlUnlocked");
-            Debug.Log(lvlsToUnlock);
         }
 
         foreach (ButtonsLocked a in lvlsUnlocked) {

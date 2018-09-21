@@ -2,35 +2,37 @@
 
 public class Stars : MonoBehaviour {
 
-    [SerializeField] float time3Stars, time2Stars, time1Star;
+    [SerializeField] float time3Stars, time2Stars;
     private float currentTime;
 
-    public static bool threeStars, twoStars, oneStar;
+    WinCondition mWinCondition;
 
     private void Start()
     {
-        threeStars = false;
-        twoStars = false;
-        oneStar = false;
+        mWinCondition = GetComponent<WinCondition>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter(Collider other)
     {
-        currentTime = Time.timeSinceLevelLoad;
-        GiveStars(currentTime);
+        if (other.gameObject.GetComponent<Will>() != null) {
+            currentTime = Time.timeSinceLevelLoad;
+            GiveStars(currentTime);
+        }
     }
 
     public void GiveStars(float _currentTime) {
         if (_currentTime < time3Stars) {
-            threeStars = true;
+            Singleton.instance.Stars[mWinCondition.level - 1] = 3;
             print("Three Stars");
         }
         else if (_currentTime < time2Stars) {
-            twoStars = true;
+            if(Singleton.instance.Stars[mWinCondition.level -1] < 2)
+                Singleton.instance.Stars[mWinCondition.level - 1] = 2;
             print("Two Stars");
         }
         else if (_currentTime > time2Stars) {
-            oneStar = true;
+            if (Singleton.instance.Stars[mWinCondition.level - 1] < 1)
+                Singleton.instance.Stars[mWinCondition.level - 1] = 1;
             print("One Star");
         }
     }

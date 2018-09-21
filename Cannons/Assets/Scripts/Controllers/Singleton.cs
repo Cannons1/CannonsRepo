@@ -52,10 +52,24 @@ public class Singleton : MonoBehaviour
         set { activeToggles = value; }
     }
 
-
     private int dailyGifts;
     private int activeToggles;
     #endregion
+
+    public int[] Stars
+    {
+        get
+        {
+            return stars;
+        }
+
+        set
+        {
+            stars = value;
+        }
+    }
+
+    int[] stars;
 
     void Awake()
     {
@@ -104,5 +118,9 @@ public class Singleton : MonoBehaviour
 
     public static void SaveUnlockLevels() {
         PlayerPrefs.SetInt("LvlUnlocked", instance.lvlsUnlocked);
+    }
+
+    public static void SaveStars() {
+        PlayerPrefs.SetString("Stars", instance.stars.ToString());
     }
 }
