@@ -14,10 +14,8 @@ public class UnlockStars : MonoBehaviour
     }
 
     public void TwoStars() {
-        for (int i = 0; i < 2; i++)
-        {
-            imgStarsLocked[i].enabled = false;
-        }
+        imgStarsLocked[0].enabled = false;
+        imgStarsLocked[1].enabled = false;
     }
 
     public void OneStar() {
