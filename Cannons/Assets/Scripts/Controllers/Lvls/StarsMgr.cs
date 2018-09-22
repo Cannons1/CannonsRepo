@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class StarsMgr : MonoBehaviour {
 
     public UnlockStars[] unlockStars;
     static bool getArray = false;
+    [SerializeField] Text txtTotalStars;
+    int totalStars;
 
     private void OnEnable()
     {
@@ -18,8 +21,10 @@ public class StarsMgr : MonoBehaviour {
             int[] starsValueArray = PlayerPrefsX.GetIntArray("Stars");
             for (int i = 0; i < starsValueArray.Length; i++)
             {
+                totalStars += starsValueArray[i];
                 Singleton.instance.Stars[i] = starsValueArray[i];
             }
+            txtTotalStars.text = totalStars.ToString() + "/" + (unlockStars.Length * 3).ToString();
         }
         for (int i = 0; i < Singleton.instance.Stars.Length; i++)
         {
