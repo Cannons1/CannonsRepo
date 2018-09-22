@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class StarsMgr : MonoBehaviour {
 
-    public UnlockStars[] unlockStars;
+    UnlockStars[] unlockStars;
     static bool getArray = false;
     [SerializeField] Text txtTotalStars;
     int totalStars;
