@@ -48,7 +48,7 @@ public class ShopController : MonoBehaviour {
             {
                 Singleton.instance.Coins -= value;
                 PlayerPrefs.SetInt("Coins", Singleton.instance.Coins);
-                writeVbles.WritingNumberOfCoins();
+                writeVbles.WriteOnPurchase();
                 GameManager.Instance.skinAvailability += 1 << skinIndex;
                 GameManager.Instance.Save();
                 skinContainer.transform.GetChild(skinIndex).GetChild(0).gameObject.SetActive(false);
