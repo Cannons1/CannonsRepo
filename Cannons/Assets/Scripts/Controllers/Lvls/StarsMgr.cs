@@ -5,12 +5,26 @@ public class StarsMgr : MonoBehaviour {
 
     UnlockStars[] unlockStars;
     static bool getArray = false;
-    [SerializeField] Text txtTotalStars;
     int totalStars;
+
+    public int TotalStars
+    {
+        get
+        {
+            return totalStars;
+        }
+
+        set
+        {
+            totalStars = value;
+        }
+    }
+
+    [SerializeField] Text txtTotalStars;
 
     private void OnEnable()
     {
-        totalStars = 0;
+        TotalStars = 0;
         unlockStars = GetComponentsInChildren<UnlockStars>();
 
         if (!getArray) {
@@ -22,12 +36,12 @@ public class StarsMgr : MonoBehaviour {
             int[] starsValueArray = PlayerPrefsX.GetIntArray("Stars");
             for (int i = 0; i < starsValueArray.Length; i++)
             {
-                totalStars += starsValueArray[i];
+                TotalStars += starsValueArray[i];
                 Singleton.instance.Stars[i] = starsValueArray[i];
             }
         }
 
-        txtTotalStars.text = totalStars.ToString() + "/" + (unlockStars.Length * 3).ToString();
+        txtTotalStars.text = TotalStars.ToString() + "/" + (unlockStars.Length * 3).ToString();
 
         for (int i = 0; i < Singleton.instance.Stars.Length; i++)
         {
