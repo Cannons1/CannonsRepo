@@ -47,15 +47,15 @@ public class StarsMgr : MonoBehaviour {
         {
             if (Singleton.instance.Stars[i] == 3)
             {
-                unlockStars[i].ThreeStars();
+                unlockStars[i].StarsToUnlock(3);
             }
             if (Singleton.instance.Stars[i] == 2)
             {
-                unlockStars[i].TwoStars();
+                unlockStars[i].StarsToUnlock(2);
             }
             if (Singleton.instance.Stars[i] == 1)
             {
-                unlockStars[i].OneStar();
+                unlockStars[i].StarsToUnlock(1);
             }
         }
     }

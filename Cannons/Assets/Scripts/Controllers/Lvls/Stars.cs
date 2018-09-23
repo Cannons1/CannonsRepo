@@ -50,7 +50,7 @@ public class Stars : MonoBehaviour {
         for (int i = 0; i < starsImg.Length; i++) {
             if (i < _num)
                 starsImg[i].enabled = false;
-            yield return new WaitForSeconds(1.4f);
+            yield return new WaitForSeconds(0.7f);
         }
     }
 }
