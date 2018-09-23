@@ -33,7 +33,7 @@ public class CanvasMenu : MonoBehaviour {
 
     private void Start()
     {
-        if (IGLevelManager.nxtButton)
+        if (IGLevelManager.campaignBtn)
         {
             DecorateCannon.SetActive(false);
             Canvas[0].SetActive(false);

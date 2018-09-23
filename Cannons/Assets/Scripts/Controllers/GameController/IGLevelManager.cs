@@ -10,7 +10,7 @@ public class IGLevelManager : MonoBehaviour
     [SerializeField] Slider slider;
 
     public static bool unpause;
-    public static bool nxtButton;
+    public static bool campaignBtn;
 
     private void Start()
     {
@@ -18,7 +18,7 @@ public class IGLevelManager : MonoBehaviour
         loadingScreen.SetActive(false);
         slider.value = 0;
         unpause = true;
-        nxtButton = false;
+        campaignBtn = false;
     }
 
     public void MenuButton()
@@ -45,16 +45,35 @@ public class IGLevelManager : MonoBehaviour
         unpause = true;
     }
 
-    public void NxtButton() {
-        nxtButton = true;
+    public void CampaignButton() {
+        campaignBtn = true;
         StartCoroutine(LoadAsynchronously(menuButton));
     }
+
+    public void NextButton() {
+        Scene activeScene = SceneManager.GetActiveScene();
+        StartCoroutine(LoadAsynchronously(activeScene.buildIndex + 1));
+    }
+
 
     public IEnumerator LoadAsynchronously(string _sceneName)
     {
         loadingScreen.SetActive(true);
         AsyncOperation operation = SceneManager.LoadSceneAsync(_sceneName);
         
+        while (!operation.isDone)
+        {
+            float progress = Mathf.Clamp01(operation.progress * 0.9f);
+            slider.value = progress;
+            yield return null;
+        }
+    }
+
+    public IEnumerator LoadAsynchronously(int index)
+    {
+        loadingScreen.SetActive(true);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(index);
+
         while (!operation.isDone)
         {
             float progress = Mathf.Clamp01(operation.progress * 0.9f);
