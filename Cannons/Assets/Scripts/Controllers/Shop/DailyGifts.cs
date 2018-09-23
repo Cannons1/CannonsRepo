@@ -168,7 +168,7 @@ public class DailyGifts : MonoBehaviour
         GettingGift();
         Singleton.instance.Coins += 5;
         Singleton.SaveCoins();
-        mWriteVbles.WritingNumberOfCoins();
+        mWriteVbles.WriteOnPurchase();
         Debug.Log("First Gift");
     }
 
