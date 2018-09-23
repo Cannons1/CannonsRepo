@@ -4867,7 +4867,7 @@ RectTransform:
   m_LocalScale: {x: 1.0000005, y: 1.0000005, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 1781330669}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -9566,17 +9566,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 921704943}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1781330669}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000072792, y: -261.2}
-  m_SizeDelta: {x: 160, y: 31.39}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 40.453247}
+  m_SizeDelta: {x: 160, y: 31.390015}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &921704945
 MonoBehaviour:
@@ -14118,7 +14118,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -14, y: -284.47}
+  m_AnchoredPosition: {x: -14, y: -289}
   m_SizeDelta: {x: 18.35, y: 18.35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1368220838
@@ -16615,7 +16615,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 14, y: -284.47}
+  m_AnchoredPosition: {x: 14, y: -289}
   m_SizeDelta: {x: 18.35, y: 18.35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1522311853
@@ -19040,7 +19040,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1781330669}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -20211,7 +20211,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1781330669}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -20458,8 +20458,6 @@ GameObject:
   - component: {fileID: 1781330669}
   - component: {fileID: 1781330672}
   - component: {fileID: 1781330670}
-  - component: {fileID: 1781330671}
-  - component: {fileID: 1781330673}
   m_Layer: 5
   m_Name: CanvasCampaign
   m_TagString: Untagged
@@ -20478,10 +20476,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1528435553}
-  - {fileID: 921704944}
   - {fileID: 1703825746}
   - {fileID: 1771099047}
   - {fileID: 454198733}
+  - {fileID: 921704944}
   - {fileID: 1193586983}
   m_Father: {fileID: 316187122}
   m_RootOrder: 4
@@ -20507,17 +20505,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1781330671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1781330668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32364079c797ede40aa1e90e12af7be5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!223 &1781330672
 Canvas:
   m_ObjectHideFlags: 0
@@ -20538,18 +20525,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &1781330673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1781330668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9599b0906ae70f74d9d819e3a9a84042, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  txtTotalStars: {fileID: 921704945}
 --- !u!1 &1785263349
 GameObject:
   m_ObjectHideFlags: 0
@@ -22509,6 +22484,8 @@ GameObject:
   - component: {fileID: 1984958521}
   - component: {fileID: 1984958520}
   - component: {fileID: 1984958522}
+  - component: {fileID: 1984958524}
+  - component: {fileID: 1984958523}
   m_Layer: 5
   m_Name: FirstWorld
   m_TagString: Untagged
@@ -22600,6 +22577,29 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &1984958523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1984958518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32364079c797ede40aa1e90e12af7be5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1984958524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1984958518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9599b0906ae70f74d9d819e3a9a84042, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txtTotalStars: {fileID: 921704945}
 --- !u!1 &1987787256
 GameObject:
   m_ObjectHideFlags: 0

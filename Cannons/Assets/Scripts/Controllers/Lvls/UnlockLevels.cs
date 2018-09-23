@@ -16,7 +16,7 @@ public class UnlockLevels : MonoBehaviour {
         foreach (ButtonsLocked a in lvlsUnlocked) {
             a.Locked();
         }
-        for (int i = 0; i <= lvlsToUnlock; i++) {
+        for (int i = 0; i < lvlsToUnlock + 1; i++) {
             lvlsUnlocked[i].Unlocked();
         }
     }
