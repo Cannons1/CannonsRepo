@@ -10,6 +10,7 @@ public class UnlockLevels : MonoBehaviour {
 
     private StarsMgr starsMgr;
     public static bool secondWorld;
+    public static bool writeMinStarsWorldTwo;
 
     public int MinStarsWorldOne
     {
@@ -21,6 +22,7 @@ public class UnlockLevels : MonoBehaviour {
 
     private void Start()
     {
+        writeMinStarsWorldTwo = false;
         secondWorld = false;
         starsMgr = GetComponent<StarsMgr>();
         lvlsUnlocked = GetComponentsInChildren<ButtonsLocked>();
@@ -30,6 +32,10 @@ public class UnlockLevels : MonoBehaviour {
 
             if (lvlsToUnlock >= levelsFirstWorld && starsMgr.TotalStars >= MinStarsWorldOne) {
                 secondWorld = true;
+            }
+
+            if (starsMgr.TotalStars >= MinStarsWorldOne) {
+                writeMinStarsWorldTwo = true;
             }
         }
 

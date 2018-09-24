@@ -10,7 +10,7 @@ public class MinStarsRequired : MonoBehaviour {
         minStarsRequiredTxt = GetComponent<Text>();
         pUnlockLevels = GetComponentInParent<UnlockLevels>();
 
-        if (UnlockLevels.secondWorld)
+        if (UnlockLevels.writeMinStarsWorldTwo)
             minStarsRequiredTxt.text = " ";
         else 
             minStarsRequiredTxt.text = pUnlockLevels.MinStarsWorldOne.ToString() + " stars required";

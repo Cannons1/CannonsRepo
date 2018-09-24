@@ -3,7 +3,7 @@
 public class CanvasMenu : MonoBehaviour {
     [SerializeField] GameObject[] canvas;
     [SerializeField] AudioUI mAudioUI;
-    [SerializeField] GameObject decorateCannon;
+    [SerializeField] GameObject capsuleTapToPlay;
 
     public GameObject[] Canvas
     {
@@ -18,16 +18,29 @@ public class CanvasMenu : MonoBehaviour {
         }
     }
 
-    public GameObject DecorateCannon
+    public GameObject CapsuleTapToPlay
     {
         get
         {
-            return decorateCannon;
+            return capsuleTapToPlay;
         }
 
         set
         {
-            decorateCannon = value;
+            capsuleTapToPlay = value;
+        }
+    }
+
+    public AudioUI MAudioUI
+    {
+        get
+        {
+            return mAudioUI;
+        }
+
+        set
+        {
+            mAudioUI = value;
         }
     }
 
@@ -35,7 +48,7 @@ public class CanvasMenu : MonoBehaviour {
     {
         if (IGLevelManager.campaignBtn)
         {
-            DecorateCannon.SetActive(false);
+            CapsuleTapToPlay.SetActive(false);
             Canvas[0].SetActive(false);
             Canvas[4].SetActive(true);
         }
@@ -74,35 +87,35 @@ public class CanvasMenu : MonoBehaviour {
     private void BackSettings() {
         Canvas[1].SetActive(false);
         PrincipalCanvasActive();
-        mAudioUI.AudioButtonBack();
-        DecorateCannon.SetActive(true);
+        MAudioUI.AudioButtonBack();
+        CapsuleTapToPlay.SetActive(true);
     }
 
     private void BackLeaderboard() {
         Canvas[2].SetActive(false);
         PrincipalCanvasActive();
-        mAudioUI.AudioButtonBack();
+        MAudioUI.AudioButtonBack();
 
     }
 
     private void BackCharacter() {
         Canvas[2].SetActive(false);
         PrincipalCanvasActive();
-        mAudioUI.AudioButtonBack();
-        DecorateCannon.SetActive(true);
+        MAudioUI.AudioButtonBack();
+        CapsuleTapToPlay.SetActive(true);
     }
 
     private void BackShop() {
         Canvas[3].SetActive(false);
         PrincipalCanvasActive();
-        mAudioUI.AudioButtonBack();
-        DecorateCannon.SetActive(true);
+        MAudioUI.AudioButtonBack();
+        CapsuleTapToPlay.SetActive(true);
     }
 
     private void BackCampaing() {
         Canvas[4].SetActive(false);
         PrincipalCanvasActive();
-        mAudioUI.AudioButtonBack();
-        DecorateCannon.SetActive(true);
+        MAudioUI.AudioButtonBack();
+        CapsuleTapToPlay.SetActive(true);
     }
 }

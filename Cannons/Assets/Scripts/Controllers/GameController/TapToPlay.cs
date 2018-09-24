@@ -3,8 +3,6 @@
 public class TapToPlay : MonoBehaviour
 {
     CanvasMenu mcanvasMenu;
-    [SerializeField] AudioUI audioUI;
-    [SerializeField] GameObject cannonDecorate;
 
     private void Start()
     {
@@ -22,10 +20,10 @@ public class TapToPlay : MonoBehaviour
                 GameObject collisioned = hit.collider.gameObject;
 
                 if (collisioned != null) {
-                    audioUI.AudioButtonDefault();
+                    mcanvasMenu.MAudioUI.AudioButtonDefault();
                     mcanvasMenu.Canvas[0].SetActive(false);
                     mcanvasMenu.Canvas[4].SetActive(true);
-                    cannonDecorate.SetActive(false);
+                    mcanvasMenu.CapsuleTapToPlay.SetActive(false);
                 }
             }
         }
