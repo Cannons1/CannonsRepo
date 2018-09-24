@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MusicAudios : MonoBehaviour {
     [SerializeField] AudioSource musicAudiosource;
-    [SerializeField] AudioClip menuMusic, atmosphereMenu;
+    [SerializeField] AudioClip menuMusic;
 
     private void Start()
     {
@@ -12,13 +10,9 @@ public class MusicAudios : MonoBehaviour {
     }
 
     public void MenuMusic() {
-
-        //musicAudiosource.clip = menuMusic;
-        //musicAudiosource.Play();
-      
         if (!musicAudiosource.isPlaying)
         {
-            musicAudiosource.clip = atmosphereMenu;
+            musicAudiosource.clip = menuMusic;
             musicAudiosource.Play();
             musicAudiosource.loop = true;
         }
