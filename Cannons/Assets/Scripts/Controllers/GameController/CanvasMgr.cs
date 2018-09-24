@@ -83,8 +83,4 @@ public class CanvasMgr : MonoBehaviour {
         Time.timeScale = 1;
         unnpause = 0;
     }
-
-    public void WinCanvasOff() {
-        canvas[3].SetActive(false);
-    }
 }

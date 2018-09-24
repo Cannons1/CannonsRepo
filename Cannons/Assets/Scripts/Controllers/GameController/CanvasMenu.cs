@@ -46,6 +46,7 @@ public class CanvasMenu : MonoBehaviour {
 
     private void Start()
     {
+        Time.timeScale = 1;
         if (IGLevelManager.campaignBtn)
         {
             CapsuleTapToPlay.SetActive(false);
