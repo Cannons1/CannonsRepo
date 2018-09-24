@@ -14154,8 +14154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e58bd6049349bc04484f9a2dc9f37296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioUI: {fileID: 1436810330}
-  capsuleTapToPlay: {fileID: 1524203967}
 --- !u!1 &1355558301
 GameObject:
   m_ObjectHideFlags: 0
@@ -16432,7 +16430,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1511023872}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.44}
+  m_LocalPosition: {x: 0, y: 0, z: 4.6}
   m_LocalScale: {x: 0.022043038, y: 0.022677878, z: 0.022043038}
   m_Children:
   - {fileID: 1824056748}
@@ -20857,7 +20855,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 038e72d928b2ca447891b45dfeabd867, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5ef4945220985f446800fc10713d2fdb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
