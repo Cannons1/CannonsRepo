@@ -9,8 +9,8 @@ public class UnlockLevels : MonoBehaviour {
     private int lvlsToUnlock;
 
     private StarsMgr starsMgr;
-    public static bool secondWorld;
     public static bool writeMinStarsWorldTwo;
+    bool secondWorld;
 
     public int MinStarsWorldOne
     {
