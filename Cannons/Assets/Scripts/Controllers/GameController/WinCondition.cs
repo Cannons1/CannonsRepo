@@ -6,7 +6,7 @@ public class WinCondition : MonoBehaviour {
     [Header("Win prize")]
     [SerializeField] int coins;
     [SerializeField] GameObject canvasWin;
-    [SerializeField] Text winCoinsTxt;
+    [SerializeField] Text[] winTxt;
     CanvasMgr mCanvasMgr;
     WriteVbles mWriteVbles;
     public int level;
@@ -42,13 +42,14 @@ public class WinCondition : MonoBehaviour {
         yield return animLength;
         mCanvasMgr.Canvas[0].SetActive(false);
         canvasWin.SetActive(true);
+        winTxt[1].text = "Level " + level.ToString() + " Complete"; 
         cParticle.Stop();
     }
 
     private void CoinsMgr() {
         Singleton.instance.Coins += coins;
         mWriteVbles.WritingNumberOfCoins();
-        winCoinsTxt.text = coins.ToString("+0 Coins");
+        winTxt[0].text = coins.ToString("+0 Coins");
         Singleton.SaveCoins();
     }
 }

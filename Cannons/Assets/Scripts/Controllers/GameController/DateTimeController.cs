@@ -13,13 +13,11 @@ public class DateTimeController : MonoBehaviour
         #region dailyChallenge
         if (PlayerPrefs.HasKey("Daily"))
         {
-            Debug.Log("Tengo kayDaily");
             currentTimeDaily = Convert.ToDateTime(PlayerPrefs.GetString("Daily"));
             differenceDaily = DateTime.Now - currentTimeDaily;
 
             if (differenceDaily.Days >= 1 )
             {
-                Debug.Log("un día ha pasado");
                 SaveDateTime();
                 Singleton.instance.DailyGifts++;
                 SaveDailyCount();
