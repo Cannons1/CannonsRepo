@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CanvasMgr : MonoBehaviour {
 
@@ -9,12 +10,16 @@ public class CanvasMgr : MonoBehaviour {
         set { canvas = value; }
     }
 
-    [SerializeField] GameObject[] canvas;
-    [SerializeField] AudioUI mAduioUI;
     public static int unnpause;
 
+    [SerializeField] GameObject[] canvas;
+    [SerializeField] AudioUI mAduioUI;
     [SerializeField] GameObject txtTapToShoot;
+    [SerializeField] Text lvlName;
+    [SerializeField] WinCondition winCondition;
+
     WaitForSeconds txtActive = new WaitForSeconds(6f);
+
     static int countTxtActive;
 
     private void Start()
@@ -24,6 +29,14 @@ public class CanvasMgr : MonoBehaviour {
         if(SceneManager.GetActiveScene().name == "Lvl1")
             if(countTxtActive <1)
                 StartCoroutine(TimeTxtActive());
+
+        StartCoroutine(LvlName());
+    }
+
+    IEnumerator LvlName() {
+        lvlName.text = "Level " + winCondition.level.ToString();
+        yield return new WaitForSeconds(2);
+        lvlName.text = " ";
     }
 
     IEnumerator TimeTxtActive()
