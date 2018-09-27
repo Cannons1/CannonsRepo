@@ -3,12 +3,11 @@
 public class AudioUI : MonoBehaviour
 {
     [SerializeField] AudioSource uIAudioSource;
-    [SerializeField] AudioClip buttonDefault, buttonBack, buttonPlay, claimAGift;
+    [SerializeField] AudioClip buttonDefault, buttonBack, claimAGift, coin;
 
     int i = 0;
     public void SoundClaimGift() {
-        uIAudioSource.clip = claimAGift;
-        uIAudioSource.Play();
+        uIAudioSource.PlayOneShot(claimAGift);
     }
     public void MusicButton()
     {
@@ -35,12 +34,14 @@ public class AudioUI : MonoBehaviour
     }
     public void AudioButtonDefault()
     {
-        uIAudioSource.clip = buttonDefault;
-        uIAudioSource.Play();
+        uIAudioSource.PlayOneShot(buttonDefault);
     }
     public void AudioButtonBack()
     {
-        uIAudioSource.clip = buttonBack;
-        uIAudioSource.Play();
+        uIAudioSource.PlayOneShot(buttonBack);
+    }
+
+    public void AudioCoins() {
+        uIAudioSource.PlayOneShot(coin);
     }
 }

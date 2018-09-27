@@ -2,40 +2,67 @@
 
 public class UnlockLevels : MonoBehaviour {
 
-    [SerializeField] int levelsFirstWorld;
-    [SerializeField] int minStarsWorldOne;
+    [SerializeField] int levelsFirstWorld, levelsOnePlusTwo;
+    [SerializeField] int minStarsToWorldTwo;
+    [SerializeField] int minStarsToWorldThree;
 
     ButtonsLocked[] lvlsUnlocked;
     private int lvlsToUnlock;
 
     private StarsMgr starsMgr;
     public static bool writeMinStarsWorldTwo;
+    public static bool writeMinStarsWorldThree;
     bool secondWorld;
+    bool thirdWorld;
 
-    public int MinStarsWorldOne
+    public int MinStarsToWorldTwo
     {
         get
         {
-            return minStarsWorldOne;
+            return minStarsToWorldTwo;
+        }
+    }
+
+    public int MinStarsToWorldThree
+    {
+        get
+        {
+            return minStarsToWorldThree;
+        }
+
+        set
+        {
+            minStarsToWorldThree = value;
         }
     }
 
     private void Start()
     {
         writeMinStarsWorldTwo = false;
+        writeMinStarsWorldThree = false;
         secondWorld = false;
+        thirdWorld = false;
         starsMgr = GetComponent<StarsMgr>();
         lvlsUnlocked = GetComponentsInChildren<ButtonsLocked>();
 
         if (PlayerPrefs.HasKey("LvlUnlocked")) {
             lvlsToUnlock = PlayerPrefs.GetInt("LvlUnlocked");
 
-            if (lvlsToUnlock >= levelsFirstWorld && starsMgr.TotalStars >= MinStarsWorldOne) {
+            if (lvlsToUnlock >= levelsFirstWorld && starsMgr.TotalStars >= MinStarsToWorldTwo) {
                 secondWorld = true;
             }
 
-            if (starsMgr.TotalStars >= MinStarsWorldOne) {
+            if (lvlsToUnlock >= levelsOnePlusTwo && starsMgr.TotalStars >= MinStarsToWorldThree) {
+                thirdWorld = true;
+            }
+
+            if (starsMgr.TotalStars >= MinStarsToWorldTwo) {
                 writeMinStarsWorldTwo = true;
+            }
+
+            if (starsMgr.TotalStars >= MinStarsToWorldThree)
+            {
+                writeMinStarsWorldThree = true;
             }
         }
 
@@ -45,13 +72,10 @@ public class UnlockLevels : MonoBehaviour {
         for (int i = 0; i < lvlsToUnlock + 1; i++) {
             if (i < levelsFirstWorld)
                 lvlsUnlocked[i].Unlocked();
-            if (secondWorld)
+            if (secondWorld && i < levelsOnePlusTwo)
+                lvlsUnlocked[i].Unlocked();
+            if (thirdWorld)
                 lvlsUnlocked[i].Unlocked();
         }
-    }
-
-    private void Unlock() {
-        Singleton.instance.LvlsUnlocked =11;
-        PlayerPrefs.SetInt("LvlUnlocked", Singleton.instance.LvlsUnlocked);
     }
 }
