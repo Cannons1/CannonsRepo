@@ -81,11 +81,12 @@ public abstract class CannonParent : MonoBehaviour
 
             i += Time.deltaTime;
             mRenderer.material.color = Color.Lerp(startingColor, Color.red, i / wickTime);
-            wickRenderer.material.SetFloat("_fadeFactor", i/wickTime);
+            wickRenderer.material.SetFloat("_fadeFactor", i / wickTime);
 
             float distance = Vector3.Distance(wickParticle.transform.position, pathWick.points[pathPoint].position);
-            wickParticle.transform.position = Vector3.Lerp(wickParticle.transform.position, pathWick.points[pathPoint].position, Time.deltaTime / (wickTime/( pathWick.points.Length - 1)));
-            
+            wickParticle.transform.position = new Vector3(wickParticle.transform.position.x, wickParticle.transform.position.y, pathWick.points[pathPoint].position.z - 0.01f);
+            wickParticle.transform.position = Vector3.Lerp(wickParticle.transform.position, pathWick.points[pathPoint].position, Time.deltaTime / (wickTime / (pathWick.points.Length - 1)));            
+
             if (distance < 0.1f && pathPoint != pathWick.points.Length - 1)
                 pathPoint++;
             yield return null;
