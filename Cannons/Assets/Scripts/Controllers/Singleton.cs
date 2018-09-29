@@ -47,13 +47,7 @@ public class Singleton : MonoBehaviour
         get { return dailyGifts; }
         set { dailyGifts = value; }
     }
-    public int ActiveToggles {
-        get { return activeToggles; }
-        set { activeToggles = value; }
-    }
-
     private int dailyGifts;
-    private int activeToggles;
     #endregion
 
     public int[] Stars
@@ -81,14 +75,6 @@ public class Singleton : MonoBehaviour
         else {
             lvlsUnlocked = PlayerPrefs.GetInt("LvlUnlocked");
         }
-        if (!PlayerPrefs.HasKey("DailyCount"))
-        {
-            dailyGifts = 0;
-            PlayerPrefs.SetInt("DailyCount", dailyGifts);
-        }
-        else {
-            dailyGifts = PlayerPrefs.GetInt("DailyCount");
-        }
         if (instance == null)
         {
             instance = this;
@@ -98,8 +84,6 @@ public class Singleton : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-
     }
 
     private void ResetStats()
@@ -107,9 +91,8 @@ public class Singleton : MonoBehaviour
         PlayerPrefs.DeleteKey("LvlUnlocked");
         PlayerPrefs.DeleteKey("Coins");
         PlayerPrefs.DeleteKey("DailyCount");
-        PlayerPrefs.DeleteKey("TogglesActive");
-        PlayerPrefs.DeleteKey("Daily");
         PlayerPrefs.DeleteKey("Stars");
+        PlayerPrefs.DeleteKey("ButtonDaily");
     }
 
     public static void SaveCoins()

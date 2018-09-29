@@ -4,7 +4,7 @@ using System;
 public class DateTimeController : MonoBehaviour
 {
     TimeSpan differenceExp, differenceDaily;
-    DateTime currentTimeBoostExp, currentTimeDaily;
+    DateTime currentTimeDaily;
     DailyGifts dailyGifts;
 
 	void Start ()
@@ -16,12 +16,13 @@ public class DateTimeController : MonoBehaviour
             currentTimeDaily = Convert.ToDateTime(PlayerPrefs.GetString("Daily"));
             differenceDaily = DateTime.Now - currentTimeDaily;
 
-            if (differenceDaily.Days >= 1 )
+            if (differenceDaily.Days >= 1 && differenceDaily.Days <= 2)
             {
+                dailyGifts.buttonDaily.SetActive(true);
                 SaveDateTime();
                 Singleton.instance.DailyGifts++;
                 SaveDailyCount();
-                Debug.Log(Singleton.instance.DailyGifts);
+                PlayerPrefs.SetInt("ButtonDaily", 1);
             }
             if (differenceDaily.Days >= 2) {
                 dailyGifts.DeleteKeysAfterTwoDays();
@@ -40,7 +41,5 @@ public class DateTimeController : MonoBehaviour
         PlayerPrefs.SetInt("DailyCount", Singleton.instance.DailyGifts);
     }
 
-    public static void SaveActiveToggles() {
-        PlayerPrefs.SetInt("TogglesActive", Singleton.instance.ActiveToggles);
-    }
+
 }
