@@ -10824,7 +10824,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOfCoins: {fileID: 552766234}
-  numCoinsInRetry: {fileID: 0}
   mAudioUI: {fileID: 1436810330}
   menuCoinsTxt:
   - {fileID: 1469921664}
@@ -19336,10 +19335,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uIAudioSource: {fileID: 1807529757}
-  buttonDefault: {fileID: 8300000, guid: fb59202644333ae41abf873438156eb8, type: 3}
-  buttonBack: {fileID: 8300000, guid: 72bf3fd66fcfa28419e6b6cdce1f8e4c, type: 3}
-  claimAGift: {fileID: 8300000, guid: 30b5963dba8acd645aba5201fab7c7d8, type: 3}
-  coin: {fileID: 0}
+  buttonDefault: {fileID: 8300000, guid: efba30219f11d594d8c10ee04a378cc1, type: 3}
+  buttonBack: {fileID: 8300000, guid: bfc852f860e657f4390defebf9a81161, type: 3}
+  claimAGift: {fileID: 8300000, guid: d1d5a020c6212264986e28aa2530de91, type: 3}
+  coin: {fileID: 8300000, guid: 26ba0a6e45a93a3459f80edebb5cd411, type: 3}
 --- !u!4 &1436810331
 Transform:
   m_ObjectHideFlags: 0
@@ -21577,6 +21576,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1524203969}
   - component: {fileID: 1524203968}
+  - component: {fileID: 1524203970}
   m_Layer: 0
   m_Name: CapsuleTapToPlay
   m_TagString: Untagged
@@ -21584,8 +21584,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &1524203968
-CapsuleCollider:
+--- !u!65 &1524203968
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -21593,10 +21593,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.7
-  m_Height: 0
-  m_Direction: 1
-  m_Center: {x: 0, y: -0.63, z: 0}
+  serializedVersion: 2
+  m_Size: {x: 1.29, y: 7.7, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1524203969
 Transform:
   m_ObjectHideFlags: 0
@@ -21604,12 +21603,24 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1524203967}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.010643128, y: 2.2071, z: 0.38744736}
+  m_LocalPosition: {x: 0.010643128, y: 1.18, z: 0.38744736}
   m_LocalScale: {x: 4.7831426, y: 1.0084851, z: 1.51}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1524203970
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1524203967}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8, y: 1, z: 1}
+  m_Center: {x: 0.17, y: -4.34, z: 0}
 --- !u!1 &1528435552
 GameObject:
   m_ObjectHideFlags: 0

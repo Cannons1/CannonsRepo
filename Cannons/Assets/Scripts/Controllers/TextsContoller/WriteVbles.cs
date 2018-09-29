@@ -4,7 +4,6 @@ using UnityEngine.UI;
 public class WriteVbles : MonoBehaviour
 {
     [SerializeField] Text numberOfCoins; 
-    [SerializeField] Text numCoinsInRetry;
     [SerializeField] AudioUI mAudioUI;
     [SerializeField] Text[] menuCoinsTxt;
 
@@ -17,10 +16,6 @@ public class WriteVbles : MonoBehaviour
     {
         numberOfCoins.text = Singleton.instance.Coins.ToString("0");
     }
-    public void WriteCoinInRetry() {
-        numCoinsInRetry.text = Singleton.instance.Coins.ToString("0");
-    }
-
     public void WriteOnPurchase() {
         for (int i = 0; i < menuCoinsTxt.Length; i++) {
             menuCoinsTxt[i].text = Singleton.instance.Coins.ToString();

@@ -6,12 +6,15 @@ public class Distance : MonoBehaviour
 {
     [SerializeField] Slider sliderDistance;
     [SerializeField] Transform instanceT, winConditionT;
+    [SerializeField] Text percentText;
     Transform willTransform;
     Will will;
 
     private float actualDistance;
     private float initialDistance;
     private float lastDistance;
+
+    float percentOfLevel;
 
     private void Start()
     {
@@ -31,6 +34,8 @@ public class Distance : MonoBehaviour
     {
         actualDistance = Vector3.Distance(instanceT.localPosition, _Transform);
         StartCoroutine(UpdateValue(actualDistance));
+        percentOfLevel = (actualDistance*100)/initialDistance;
+        percentText.text = percentOfLevel.ToString("0")+ " %";
     }
 
     IEnumerator UpdateValue(float _actualDistance)

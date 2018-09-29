@@ -11,20 +11,20 @@ public class WinCondition : MonoBehaviour {
     WriteVbles mWriteVbles;
     public int level;
 
-    Animator anim;
+    Animator[] anim;
 
     ParticleSystem cParticle;
 
     private void Start()
     {
         cParticle = GetComponentInChildren<ParticleSystem>();
-        anim = GetComponent<Animator>();
+        anim = GetComponentsInChildren<Animator>();
         mWriteVbles = (WriteVbles)FindObjectOfType(typeof(WriteVbles));
         mCanvasMgr = (CanvasMgr)FindObjectOfType(typeof(CanvasMgr));
     }
 
     public void Win(Rigidbody _wills) {
-        anim.SetBool("Opened", true);
+        anim[0].SetBool("Opened", true);
         _wills.constraints = RigidbodyConstraints.FreezeAll;
         StartCoroutine(ActivatingCanvas());
         CoinsMgr();
@@ -40,6 +40,8 @@ public class WinCondition : MonoBehaviour {
         yield return new WaitForSeconds(0.8f);
         cParticle.Play();
         yield return animLength;
+        anim[1].SetBool("Win", true);
+        yield return new WaitForSeconds(1f);
         mCanvasMgr.Canvas[0].SetActive(false);
         canvasWin.SetActive(true);
         winTxt[1].text = "Level " + level.ToString() + " Complete"; 

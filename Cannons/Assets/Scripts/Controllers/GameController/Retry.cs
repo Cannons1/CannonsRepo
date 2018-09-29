@@ -19,7 +19,6 @@ public class Retry : MonoBehaviour {
     }
 
     public void ActiveCanvas() {
-        mWriteVbles.WriteCoinInRetry();
         canvasRetry.SetActive(true);
         mCanvasMgr.Canvas[0].SetActive(false);
     }
