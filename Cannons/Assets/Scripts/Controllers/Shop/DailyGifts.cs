@@ -74,7 +74,7 @@ public class DailyGifts : MonoBehaviour
     void SeventhDay()
     {
         Debug.Log("Seventh Gift");
-        Singleton.instance.DailyGifts = 1;
+        Singleton.instance.DailyGifts = 0;
         DateTimeController.SaveDailyCount();
     }
 }
