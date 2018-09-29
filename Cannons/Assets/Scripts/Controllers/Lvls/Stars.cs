@@ -46,7 +46,7 @@ public class Stars : MonoBehaviour {
     }
 
     IEnumerator UnlockingStars(int _num) {
-        yield return new WaitForSeconds(3.2f);
+        yield return new WaitForSeconds(3f);
         for (int i = 0; i < starsImg.Length; i++) {
             if (i < _num)
                 starsImg[i].enabled = false;

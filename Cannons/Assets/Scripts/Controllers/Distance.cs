@@ -35,7 +35,7 @@ public class Distance : MonoBehaviour
         actualDistance = Vector3.Distance(instanceT.localPosition, _Transform);
         StartCoroutine(UpdateValue(actualDistance));
         percentOfLevel = (actualDistance*100)/initialDistance;
-        percentText.text = percentOfLevel.ToString("0")+ " %";
+        percentText.text = percentOfLevel.ToString("0")+ "%";
     }
 
     IEnumerator UpdateValue(float _actualDistance)
