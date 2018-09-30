@@ -73,7 +73,7 @@ public abstract class CannonParent : MonoBehaviour
 
         Color startingColor = mRenderer.material.color;
 
-        VFX.wickParticle.transform.SetParent(wick.transform);
+        VFX.wickParticle.transform.SetParent(wick.transform, false);
         VFX.wickParticle.SetActive(true);
         VFX.wickParticle.transform.position = pathWick.points[pathPoint].position;
 
