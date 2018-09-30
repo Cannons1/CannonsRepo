@@ -7,6 +7,7 @@ public class ShopController : MonoBehaviour {
     [SerializeField] GameObject skinContainer;
     [SerializeField] SkinData skinInfo;
     [SerializeField] AudioUI audioUI;
+    [SerializeField] CanvasMenu canvasManager;
     WriteVbles writeVbles;
     
     private void Start()
@@ -54,6 +55,12 @@ public class ShopController : MonoBehaviour {
                 skinContainer.transform.GetChild(skinIndex).GetChild(0).gameObject.SetActive(false);
                 skinContainer.transform.GetChild(skinIndex).GetChild(1).gameObject.SetActive(true);
                 skinContainer.transform.GetChild(skinIndex).GetChild(3).gameObject.SetActive(false);
+                audioUI.SoundClaimGift();
+            }
+            else {
+                canvasManager.Canvas[2].SetActive(false);
+                canvasManager.Canvas[3].SetActive(true);
+                audioUI.AudioButtonDefault();
             }
         }
     }    

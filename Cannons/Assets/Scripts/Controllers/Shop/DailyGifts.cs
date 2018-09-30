@@ -25,9 +25,9 @@ public class DailyGifts : MonoBehaviour
             activeBtn = PlayerPrefs.GetInt("ButtonDaily");
 
             if (activeBtn == 0)
-                buttonDaily.SetActive(false);
+                buttonDaily.GetComponent<Button>().interactable = false;
             else
-                buttonDaily.SetActive(true);
+                buttonDaily.GetComponent<Button>().interactable = true;
         }
     }
 
@@ -67,7 +67,7 @@ public class DailyGifts : MonoBehaviour
         DateTimeController.SaveDateTime();
         Singleton.SaveCoins();
         mWriteVbles.WriteOnPurchase();
-        buttonDaily.SetActive(false);
+        buttonDaily.GetComponent<Button>().interactable = false;
         PlayerPrefs.SetInt("ButtonDaily", 0);
     }
 

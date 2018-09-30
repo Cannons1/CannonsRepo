@@ -15,7 +15,7 @@ public class CanvasMgr : MonoBehaviour {
     [SerializeField] GameObject[] canvas;
     [SerializeField] AudioUI mAduioUI;
     [SerializeField] GameObject txtTapToShoot;
-    [SerializeField] Text lvlName;
+    [SerializeField] Text lvlName, lvlNamePaused;
     [SerializeField] WinCondition winCondition;
 
     WaitForSeconds txtActive = new WaitForSeconds(6f);
@@ -31,6 +31,7 @@ public class CanvasMgr : MonoBehaviour {
                 StartCoroutine(TimeTxtActive());
 
         StartCoroutine(LvlName());
+        lvlNamePaused.text = "Level " + winCondition.level.ToString();
     }
 
     IEnumerator LvlName() {

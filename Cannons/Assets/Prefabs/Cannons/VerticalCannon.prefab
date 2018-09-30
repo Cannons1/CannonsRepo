@@ -765,7 +765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04fd11bde437bd3438cc141f774cb93f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shoot: {fileID: 8300000, guid: d2f1cafbd5a8a8b428ab27d8e6eb7bf4, type: 3}
+  shoot: {fileID: 8300000, guid: 6450f58cb38db5e4db44892367dc5a1e, type: 3}
   wick: {fileID: 8300000, guid: e7f1193eae2306b419be85261d984659, type: 3}
   cannonsAudioSource: {fileID: 82787061887273484, guid: 50968a4552340f3468aec73489bdefb1,
     type: 2}
@@ -787,8 +787,6 @@ MonoBehaviour:
   wickRenderer: {fileID: 0}
   mAnimator: {fileID: 0}
   fadeShader: {fileID: 4800000, guid: 988d8629e6f249747ad5a0f1952cea6f, type: 3}
-  fxExplosion: {fileID: 1536153307382034, guid: 0735d724a050e67488e7bba8c9bb6329,
-    type: 2}
   speed: 3
   firstRotation: 180
   initMoving: 0

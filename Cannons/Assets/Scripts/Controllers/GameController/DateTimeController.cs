@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 public class DateTimeController : MonoBehaviour
 {
@@ -18,14 +19,14 @@ public class DateTimeController : MonoBehaviour
 
             if (differenceDaily.Days >= 1 && differenceDaily.Days < 2)
             {
-                dailyGifts.buttonDaily.SetActive(true);
+                dailyGifts.buttonDaily.GetComponent<Button>().interactable =true;
                 SaveDateTime();
                 Singleton.instance.DailyGifts++;
                 SaveDailyCount();
                 PlayerPrefs.SetInt("ButtonDaily", 1);
             }
             if (differenceDaily.Days >= 2) {
-                dailyGifts.buttonDaily.SetActive(true);
+                dailyGifts.buttonDaily.GetComponent<Button>().interactable = true;
                 dailyGifts.DeleteKeysAfterTwoDays();
                 PlayerPrefs.SetInt("ButtonDaily", 1);
             }
