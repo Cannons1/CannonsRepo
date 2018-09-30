@@ -14,7 +14,7 @@ MonoBehaviour:
   skins:
   - skinName: Will
     skinDescription: Is will gold tooth!!
-    skinSprite: {fileID: 21300000, guid: dc5f9cd59dbc14c46a5199b2100c1151, type: 3}
+    skinSprite: {fileID: 21300000, guid: 104a2d9236e128244a652a6180d8489d, type: 3}
     skinValue: 0
     skinModel: {fileID: 1274854319799740, guid: e4bd94df92fe2fb438a451c6a1b39001,
       type: 2}
