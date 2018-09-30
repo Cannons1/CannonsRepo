@@ -787,6 +787,8 @@ MonoBehaviour:
   wickRenderer: {fileID: 0}
   mAnimator: {fileID: 0}
   fadeShader: {fileID: 4800000, guid: 988d8629e6f249747ad5a0f1952cea6f, type: 3}
+  fxExplosion: {fileID: 1536153307382034, guid: 0735d724a050e67488e7bba8c9bb6329,
+    type: 2}
   speed: 3
   firstRotation: 180
   initMoving: 0

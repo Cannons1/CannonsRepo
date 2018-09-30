@@ -23,26 +23,21 @@ public abstract class CannonParent : MonoBehaviour
     [SerializeField]
     Renderer mRenderer, wickRenderer;
     public Animator mAnimator;
+    
 
     [SerializeField] Shader fadeShader;
     float fadeTime = 3.5f;
 
     protected virtual void Start()
-    {        
+    {
         mAnimator = transform.GetChild(1).GetComponent<Animator>();
         wick = transform.GetChild(2).gameObject;
         wick.transform.localScale = new Vector3(wick.transform.localScale.x, (wickMaxScale / wickScaleFactor) * wickTime, transform.localScale.z);
-        wickParticle = wick.transform.GetChild(0).gameObject;
+        //wickParticle = wick.transform.GetChild(0).gameObject;
         pathWick = wick.transform.GetChild(1).gameObject.GetComponent<PathWick>();       
     }
     protected virtual void Update()
     {
-        /*
-        if (Input.GetButtonUp("Fire1") && canShoot && IGLevelManager.unpause)
-        {
-            Shoot();
-        }
-        */
 
     }
     public void Shoot()
@@ -58,6 +53,7 @@ public abstract class CannonParent : MonoBehaviour
         //Will.will.cannonTriggered.SetActive(false);
         Will.will.cannonTriggered.transform.GetChild(1).GetComponent<Collider>().enabled = false;
         Will.will.StartCoroutine(Will.will.FlyAnimation());
+        VFX.explosion.GetComponent<Animator>().SetTrigger("explosion");
         //Will.will.GetComponent<WillAudios>().BeingShot();
     }
 
@@ -65,6 +61,11 @@ public abstract class CannonParent : MonoBehaviour
     {
         //StartCoroutine(GetComponent<AudioCannons>().Fade());        
         GetComponent<AudioCannons>().AudioWick();
+        reference = transform.GetChild(0).gameObject;
+
+        VFX.explosion.transform.SetParent(reference.transform, false);
+        VFX.explosion.transform.position = new Vector3(reference.transform.position.x, reference.transform.position.y + 0.1f, -1f);
+
         StartCoroutine(Tap());
         canShoot = true;
         mRenderer = transform.GetChild(1).GetComponentInChildren<Renderer>();
@@ -72,8 +73,9 @@ public abstract class CannonParent : MonoBehaviour
 
         Color startingColor = mRenderer.material.color;
 
-        wickParticle.SetActive(true);
-        wickParticle.transform.position = pathWick.points[pathPoint].position;
+        VFX.wickParticle.transform.SetParent(wick.transform);
+        VFX.wickParticle.SetActive(true);
+        VFX.wickParticle.transform.position = pathWick.points[pathPoint].position;
 
         float i = 0;
         while (i < wickTime && Will.will.inCannon)
@@ -83,9 +85,9 @@ public abstract class CannonParent : MonoBehaviour
             mRenderer.material.color = Color.Lerp(startingColor, Color.red, i / wickTime);
             wickRenderer.material.SetFloat("_fadeFactor", i / wickTime);
 
-            float distance = Vector3.Distance(wickParticle.transform.position, pathWick.points[pathPoint].position);
-            wickParticle.transform.position = new Vector3(wickParticle.transform.position.x, wickParticle.transform.position.y, pathWick.points[pathPoint].position.z - 0.01f);
-            wickParticle.transform.position = Vector3.Lerp(wickParticle.transform.position, pathWick.points[pathPoint].position, Time.deltaTime / (wickTime / (pathWick.points.Length - 1)));            
+            float distance = Vector3.Distance(VFX.wickParticle.transform.position, pathWick.points[pathPoint].position);
+            VFX.wickParticle.transform.position = new Vector3(VFX.wickParticle.transform.position.x, VFX.wickParticle.transform.position.y, pathWick.points[pathPoint].position.z - 0.01f);
+            VFX.wickParticle.transform.position = Vector3.Lerp(VFX.wickParticle.transform.position, pathWick.points[pathPoint].position, Time.deltaTime / (wickTime / (pathWick.points.Length - 1)));            
 
             if (distance < 0.1f && pathPoint != pathWick.points.Length - 1)
                 pathPoint++;
@@ -97,34 +99,17 @@ public abstract class CannonParent : MonoBehaviour
         {
             Shoot();
         }
-
+        wick.SetActive(false);
         mRenderer.material.shader = fadeShader;
         i = 1;
-
+        yield return new WaitForSeconds(0.1f);
         while (mRenderer.material.GetFloat("_alpha") > 0)
         {
             i -= Time.deltaTime * fadeTime;
             mRenderer.material.SetFloat("_alpha", i);
             yield return null;
         }
-
-        wick.SetActive(false);
-
-        /*
-        mRenderer.material.SetFloat("_Surface", 1);
-        i = 0;
-        Color currentColor = mRenderer.material.color;
-        Color zeroAlpha = mRenderer.material.color;
-        zeroAlpha.a = 0f;      
-        while (mRenderer.material.color.a > 0f)
-        {           
-            i += Time.deltaTime;
-            material.color = Color.Lerp(currentColor, zeroAlpha, i/fadeTime);
-            mRenderer.UpdateGIMaterials();
-            DynamicGI.UpdateEnvironment();
-            yield return null;
-        }
-        */
+        
     }
 
     public IEnumerator Tap()
@@ -132,9 +117,9 @@ public abstract class CannonParent : MonoBehaviour
         while (Will.will.inCannon)
         {
             if (Input.GetButtonUp("Fire1") && canShoot && IGLevelManager.unpause)
-            {
+            {               
                 mAnimator.SetTrigger("Shoot");
-                Shoot();
+                Shoot();               
             }
             yield return null;
         }
