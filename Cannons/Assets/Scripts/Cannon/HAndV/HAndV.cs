@@ -55,7 +55,7 @@ public class HAndV : CannonParent
         {
             timer += Time.fixedDeltaTime;
             transform.position = Vector3.Lerp(target1, target2, (Mathf.Sin(speed * timer - (Mathf.PI / 2)) + 1.0f) / 2.0f);
-            yield return null;
+            yield return new WaitUntil(delegate { return IGLevelManager.unpause == true; });
         }
     }
 
@@ -103,7 +103,7 @@ public class HAndV : CannonParent
         {
             timer += Time.fixedDeltaTime;
             transform.position = Vector3.Lerp(target1, target2, (Mathf.Sin(speed * timer - (Mathf.PI / 2)) + 1.0f) / 2.0f);
-            yield return null;
+            yield return new WaitUntil(delegate { return IGLevelManager.unpause == true; });
         }
     }
 
