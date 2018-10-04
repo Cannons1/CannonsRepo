@@ -8,6 +8,9 @@ public class DateTimeController : MonoBehaviour
     DateTime currentTimeDaily;
     DailyGifts dailyGifts;
 
+    public delegate void Notifications();
+    public event Notifications OnNotify;
+
 	void Start ()
     {
         dailyGifts = GetComponent<DailyGifts>();
@@ -24,11 +27,13 @@ public class DateTimeController : MonoBehaviour
                 Singleton.instance.DailyGifts++;
                 SaveDailyCount();
                 PlayerPrefs.SetInt("ButtonDaily", 1);
+                OnNotify();
             }
             if (differenceDaily.Days >= 2) {
                 dailyGifts.buttonDaily.GetComponent<Button>().interactable = true;
                 dailyGifts.DeleteKeysAfterTwoDays();
                 PlayerPrefs.SetInt("ButtonDaily", 1);
+                OnNotify();
             }
         }
         #endregion

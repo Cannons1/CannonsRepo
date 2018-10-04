@@ -9,6 +9,9 @@ public class DailyGifts : MonoBehaviour
 
     int activeBtn;
 
+    public delegate void Notifications();
+    public event Notifications OnNotifyFalse;
+
     private void Start()
     {
         mWriteVbles = GetComponent<WriteVbles>();
@@ -69,6 +72,7 @@ public class DailyGifts : MonoBehaviour
         mWriteVbles.WriteOnPurchase();
         buttonDaily.GetComponent<Button>().interactable = false;
         PlayerPrefs.SetInt("ButtonDaily", 0);
+        OnNotifyFalse();
     }
 
     void SeventhDay()
