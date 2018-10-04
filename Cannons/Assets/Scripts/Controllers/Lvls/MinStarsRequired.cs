@@ -19,13 +19,13 @@ public class MinStarsRequired : MonoBehaviour {
         switch (_world) {
             case 2:
                 if (UnlockLevels.writeMinStarsWorldTwo)
-                    minStarsRequiredTxt.text = " ";
+                    minStarsRequiredTxt.gameObject.SetActive(false);
                 else
                     minStarsRequiredTxt.text = pUnlockLevels.MinStarsToWorldTwo.ToString() + " stars required";
                 break;
             case 3:
                 if (UnlockLevels.writeMinStarsWorldThree)
-                    minStarsRequiredTxt.text = " ";
+                    minStarsRequiredTxt.gameObject.SetActive(false);
                 else
                     minStarsRequiredTxt.text = pUnlockLevels.MinStarsToWorldThree.ToString() + " stars required";
                 break;
