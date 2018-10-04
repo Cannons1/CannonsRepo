@@ -14,6 +14,9 @@ public class DateTimeController : MonoBehaviour
 	void Start ()
     {
         dailyGifts = GetComponent<DailyGifts>();
+        if (dailyGifts.buttonDaily.GetComponent<Button>().interactable) {
+            OnNotify();
+        }
         #region dailyChallenge
         if (PlayerPrefs.HasKey("Daily"))
         {

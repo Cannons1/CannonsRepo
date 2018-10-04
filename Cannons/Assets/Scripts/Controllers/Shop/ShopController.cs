@@ -10,8 +10,24 @@ public class ShopController : MonoBehaviour {
     [SerializeField] CanvasMenu canvasManager;
     WriteVbles writeVbles;
 
+    bool isInShop;
+
+    public bool IsInShop
+    {
+        get
+        {
+            return isInShop;
+        }
+
+        set
+        {
+            isInShop = value;
+        }
+    }
+
     private void Start()
     {
+        isInShop = false;
         writeVbles = GetComponent<WriteVbles>();
         //Singleton.coins = 5000;
         buySkin(GameManager.Instance.currentSkin, 0);      
@@ -58,6 +74,7 @@ public class ShopController : MonoBehaviour {
                 audioUI.SoundClaimGift();
             }
             else {
+                isInShop = true;
                 canvasManager.Canvas[2].SetActive(false);
                 canvasManager.Canvas[3].SetActive(true);
                 audioUI.AudioButtonDefault();

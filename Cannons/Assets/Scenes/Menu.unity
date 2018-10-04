@@ -9160,6 +9160,7 @@ GameObject:
   - component: {fileID: 648388677}
   - component: {fileID: 648388680}
   - component: {fileID: 648388678}
+  - component: {fileID: 648388679}
   m_Layer: 5
   m_Name: CanvasShop
   m_TagString: Untagged
@@ -9211,6 +9212,21 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &648388679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 648388676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b30a77aa5b2e54e89d6fde0052699e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backButtons:
+  - {fileID: 1268999591}
+  - {fileID: 1036070140}
+  shopController: {fileID: 732049268}
 --- !u!223 &648388680
 Canvas:
   m_ObjectHideFlags: 0
@@ -10147,6 +10163,7 @@ GameObject:
   - component: {fileID: 732049273}
   - component: {fileID: 732049274}
   - component: {fileID: 732049275}
+  - component: {fileID: 732049269}
   m_Layer: 5
   m_Name: ShopController
   m_TagString: Untagged
@@ -10165,7 +10182,7 @@ RectTransform:
   m_LocalScale: {x: 0.70666665, y: 0.70666665, z: 0.70666665}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10189,6 +10206,20 @@ MonoBehaviour:
   skinInfo: {fileID: 11400000, guid: 7da9cebc7aff51c44ab67a68293cc97f, type: 2}
   audioUI: {fileID: 1436810330}
   canvasManager: {fileID: 1337719649}
+--- !u!114 &732049269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 732049266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f99fdad5d8936164ba2174e321e9da2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  notificationImg: {fileID: 657527205}
+  dateTime: {fileID: 0}
+  dailyGifts: {fileID: 0}
 --- !u!114 &732049270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13981,7 +14012,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1513074071}
-        m_MethodName: 
+        m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17032,7 +17063,6 @@ GameObject:
   - component: {fileID: 1337719650}
   - component: {fileID: 1337719649}
   - component: {fileID: 1337719651}
-  - component: {fileID: 1337719652}
   m_Layer: 0
   m_Name: CanvasMgr
   m_TagString: Untagged
@@ -17059,6 +17089,7 @@ MonoBehaviour:
   - {fileID: 1781330668}
   mAudioUI: {fileID: 1436810330}
   capsuleTapToPlay: {fileID: 1524203967}
+  shopController: {fileID: 732049268}
 --- !u!4 &1337719650
 Transform:
   m_ObjectHideFlags: 0
@@ -17070,7 +17101,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1337719651
 MonoBehaviour:
@@ -17083,20 +17114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e58bd6049349bc04484f9a2dc9f37296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1337719652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1337719648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f99fdad5d8936164ba2174e321e9da2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  notificationImg: {fileID: 657527205}
-  dateTime: {fileID: 732049274}
-  dailyGifts: {fileID: 732049270}
 --- !u!1 &1349283320
 GameObject:
   m_ObjectHideFlags: 0
@@ -18260,6 +18277,39 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 732049268}
+        m_MethodName: set_IsInShop
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1436810330}
+        m_MethodName: AudioButtonDefault
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1524203967}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 848141814}
         m_MethodName: SetActive
         m_Mode: 6
@@ -18281,28 +18331,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1524203967}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1436810330}
-        m_MethodName: AudioButtonDefault
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -20517,7 +20545,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1559218888
 GameObject:

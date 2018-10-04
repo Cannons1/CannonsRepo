@@ -4,6 +4,7 @@ public class CanvasMenu : MonoBehaviour {
     [SerializeField] GameObject[] canvas;
     [SerializeField] AudioUI mAudioUI;
     [SerializeField] GameObject capsuleTapToPlay;
+    [SerializeField] ShopController shopController;
 
     public GameObject[] Canvas
     {
@@ -70,7 +71,7 @@ public class CanvasMenu : MonoBehaviour {
             if (Canvas[2].activeInHierarchy) {
                 BackCharacter();
             }
-            if (Canvas[3].activeInHierarchy)
+            if (Canvas[3].activeInHierarchy && !shopController.IsInShop)
             {
                 BackShop();
             }
@@ -78,6 +79,12 @@ public class CanvasMenu : MonoBehaviour {
             {
                 BackCampaing();
             }
+            if (canvas[3].activeInHierarchy && shopController.IsInShop) {
+                canvas[2].SetActive(true);
+                canvas[3].SetActive(false);
+                mAudioUI.AudioButtonBack();
+            }
+
         }
 	}
 

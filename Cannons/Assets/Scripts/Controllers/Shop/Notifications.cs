@@ -3,10 +3,12 @@
 public class Notifications : MonoBehaviour {
 
     [SerializeField] GameObject notificationImg;
-    [SerializeField] DateTimeController dateTime;
-    [SerializeField] DailyGifts dailyGifts;
+    DateTimeController dateTime;
+    DailyGifts dailyGifts;
 
 	void Start () {
+        dateTime = GetComponent<DateTimeController>();
+        dailyGifts = GetComponent<DailyGifts>();
         notificationImg.SetActive(false);
         dateTime.OnNotify += ActiveNotifications;
         dailyGifts.OnNotifyFalse += SetFalseNotifications;
