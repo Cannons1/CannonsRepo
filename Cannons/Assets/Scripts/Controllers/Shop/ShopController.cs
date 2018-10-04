@@ -9,7 +9,7 @@ public class ShopController : MonoBehaviour {
     [SerializeField] AudioUI audioUI;
     [SerializeField] CanvasMenu canvasManager;
     WriteVbles writeVbles;
-    
+
     private void Start()
     {
         writeVbles = GetComponent<WriteVbles>();
