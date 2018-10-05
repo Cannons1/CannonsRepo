@@ -6,6 +6,7 @@ public class DailyGifts : MonoBehaviour
     WriteVbles mWriteVbles;
     [SerializeField] AudioUI mAudioUI;
     public GameObject buttonDaily;
+    [SerializeField] GameObject[] textAvailable;
 
     int activeBtn;
 
@@ -28,9 +29,16 @@ public class DailyGifts : MonoBehaviour
             activeBtn = PlayerPrefs.GetInt("ButtonDaily");
 
             if (activeBtn == 0)
+            {
                 buttonDaily.GetComponent<Button>().interactable = false;
-            else
+                textAvailable[0].SetActive(false);
+                textAvailable[1].SetActive(true);
+            }
+            else {
                 buttonDaily.GetComponent<Button>().interactable = true;
+                textAvailable[0].SetActive(true);
+                textAvailable[1].SetActive(false);
+            }
         }
     }
 
@@ -44,25 +52,25 @@ public class DailyGifts : MonoBehaviour
     {
         switch (Singleton.instance.DailyGifts) {
             case 1:
-                Singleton.instance.Coins += 10;
-                break;
-            case 2:
-                Singleton.instance.Coins += 15;
-                break;
-            case 3:
-                Singleton.instance.Coins += 20;
-                break;
-            case 4:
-                Singleton.instance.Coins += 30;
-                break;
-            case 5:
                 Singleton.instance.Coins += 50;
                 break;
+            case 2:
+                Singleton.instance.Coins += 150;
+                break;
+            case 3:
+                Singleton.instance.Coins += 300;
+                break;
+            case 4:
+                Singleton.instance.Coins += 500;
+                break;
+            case 5:
+                Singleton.instance.Coins += 600;
+                break;
             case 6:
-                Singleton.instance.Coins += 100;
+                Singleton.instance.Coins += 900;
                 break;
             case 7:
-                Singleton.instance.Coins += 500;
+                Singleton.instance.Coins += 1500;
                 SeventhDay();
                 break;
         }

@@ -6,6 +6,7 @@ public class Coin : MonoBehaviour, ICoins
     WriteVbles mWriteVbles;
     SphereCollider mSphereCollider;
     Animator anim;
+    [SerializeField] AudioUI audioUI;
 
     private void Start()
     {
@@ -19,6 +20,7 @@ public class Coin : MonoBehaviour, ICoins
         Singleton.instance.Coins += _Coin;
         mWriteVbles.WritingNumberOfCoins();//Will write the number of coins in a text
         DeactivatedCoin();//When you pick a coin it will deactivate its meshRenderer and box collider
+        audioUI.AudioCoins();
     }
 
     public void DeactivatedCoin()
