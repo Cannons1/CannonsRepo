@@ -5,6 +5,7 @@ public class CanvasMenu : MonoBehaviour {
     [SerializeField] AudioUI mAudioUI;
     [SerializeField] GameObject capsuleTapToPlay;
     [SerializeField] ShopController shopController;
+    [SerializeField] GameObject panelCredits;
 
     public GameObject[] Canvas
     {
@@ -65,8 +66,13 @@ public class CanvasMenu : MonoBehaviour {
             if (Canvas[0].activeInHierarchy) {
                 Application.Quit();
             }
-            if (Canvas[1].activeInHierarchy) {
+            if (Canvas[1].activeInHierarchy && !panelCredits.activeInHierarchy)
+            {
                 BackSettings();
+            }
+            else {
+                panelCredits.SetActive(false);
+                mAudioUI.AudioButtonBack();
             }
             if (Canvas[2].activeInHierarchy) {
                 BackCharacter();
@@ -84,7 +90,6 @@ public class CanvasMenu : MonoBehaviour {
                 canvas[3].SetActive(false);
                 mAudioUI.AudioButtonBack();
             }
-
         }
 	}
 

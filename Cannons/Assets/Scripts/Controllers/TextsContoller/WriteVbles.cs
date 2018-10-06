@@ -10,6 +10,7 @@ public class WriteVbles : MonoBehaviour
     private void Start()
     {
         numberOfCoins.text = Singleton.instance.Coins.ToString("0");
+        WriteOnPurchase();
     }
 
     public void WritingNumberOfCoins()
@@ -17,8 +18,8 @@ public class WriteVbles : MonoBehaviour
         numberOfCoins.text = Singleton.instance.Coins.ToString("0");
     }
     public void WriteOnPurchase() {
-        for (int i = 0; i < menuCoinsTxt.Length; i++) {
-            menuCoinsTxt[i].text = Singleton.instance.Coins.ToString();
+        foreach (Text coinsTxt in menuCoinsTxt) {
+            coinsTxt.text = Singleton.instance.Coins.ToString();
         }
     }
 }
