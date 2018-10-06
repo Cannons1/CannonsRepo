@@ -17,9 +17,9 @@ public class HAndV : CannonParent
     [SerializeField] float verticalTarget1, verticalTarget2;
     float timer = 0f;
 
+
     protected override void Start()
     {
-
         base.Start();
         if(!verticalOrHorizontal)
         {
@@ -35,8 +35,9 @@ public class HAndV : CannonParent
         Vector3[] positions = { target1, target2 };
 
         GetComponent<LineRenderer>().SetPositions(positions);
-
+        GetComponentInChildren<SkinnedMeshRenderer>().material = GameManager.Instance.Handv;
         cannonType = CannonType.targetCannon;
+
 
         if (initMoving)
         {

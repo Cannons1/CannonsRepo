@@ -9,6 +9,7 @@ public class RotatingCannon : CannonParent
     {
         base.Start();
         cannonType = CannonType.rotatingCannon;
+        GetComponentInChildren<SkinnedMeshRenderer>().material = GameManager.Instance.Rotating;
     }
 
     protected override void Update()

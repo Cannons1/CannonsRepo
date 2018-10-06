@@ -11,7 +11,8 @@ public class StaticCannon : CannonParent
     protected override void Start()
     {
         base.Start();
-        cannonType = CannonType.staticCannon;      
+        cannonType = CannonType.staticCannon;
+        GetComponentInChildren<SkinnedMeshRenderer>().material = GameManager.Instance.StaticCannon;
     }
 
     protected override void Update()
