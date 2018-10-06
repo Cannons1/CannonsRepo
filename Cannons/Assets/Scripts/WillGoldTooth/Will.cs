@@ -10,10 +10,18 @@ public class Will : MonoBehaviour
 {
     [HideInInspector] public GameObject cannonTriggered;
     Transform reference;
-    private Rigidbody mRigid;
+    private Rigidbody m_Rigidbody;
+    public Rigidbody Rigidbody
+    {
+        get
+        {
+            return m_Rigidbody;
+        }
+    }
     Animator anim;
     public Animator _anim { get { return anim; } set { anim = value; } }
     public static Will will = null;
+    private SpriteRenderer m_SpriteRenderer;
 
     [HideInInspector] public bool inCannon = false;
     float velocity;
@@ -26,8 +34,10 @@ public class Will : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         anim.runtimeAnimatorController = Resources.Load("AnimControllers/PlayerController") as RuntimeAnimatorController;
-        mRigid = GetComponent<Rigidbody>();
-        mRigid.constraints = RigidbodyConstraints.FreezePositionZ;
+
+        m_SpriteRenderer = GetComponent<SpriteRenderer>();
+        m_Rigidbody = GetComponent<Rigidbody>();
+        m_Rigidbody.constraints = RigidbodyConstraints.FreezePositionZ;
 
         if (will == null)
         {
@@ -64,15 +74,15 @@ public class Will : MonoBehaviour
         if (cannonTriggered.GetComponent<WinCondition>() != null) {
             WinCondition winCondition;
             winCondition = cannonTriggered.GetComponent<WinCondition>();
-            GetComponent<SpriteRenderer>().enabled = false;
-            winCondition.Win(mRigid);
+            m_SpriteRenderer.enabled = false;
+            winCondition.Win(m_Rigidbody);
         }
     }
 
     void StuckOnCannon()
     {
         //GetComponent<WillAudios>().LandsInCannon(); //this is the audio of will landing in a cannon
-        GetComponent<Rigidbody>().isKinematic = true;
+        m_Rigidbody.isKinematic = true;
         reference = cannonTriggered.transform.GetChild(0).gameObject.transform;
         StartCoroutine(MoveToCannon());
         transform.SetParent(cannonTriggered.transform);  
@@ -128,7 +138,7 @@ public class Will : MonoBehaviour
         anim.SetBool("InCannon", inCannon);
         while (!inCannon)
         {
-            velocity = (Mathf.Sign(mRigid.velocity.y) > 0) ? velocity = 1 : velocity = -1;
+            velocity = (Mathf.Sign(m_Rigidbody.velocity.y) > 0) ? velocity = 1 : velocity = -1;
             anim.SetFloat("Velocity", velocity);
             yield return null;
         }

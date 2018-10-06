@@ -7,12 +7,14 @@ public class Coin : MonoBehaviour, ICoins
     SphereCollider mSphereCollider;
     Animator anim;
     [SerializeField] AudioUI audioUI;
+    private SpriteRenderer spriteRenderer;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
         mWriteVbles = (WriteVbles)FindObjectOfType(typeof(WriteVbles));
         mSphereCollider = GetComponent<SphereCollider>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     public void CoinsCollected(int _Coin)
@@ -27,7 +29,7 @@ public class Coin : MonoBehaviour, ICoins
     {
         anim.SetBool("Get", true);
         mSphereCollider.enabled = false;
-        StartCoroutine(FadeOut(GetComponent<SpriteRenderer>()));
+        StartCoroutine(FadeOut(spriteRenderer));
     }
 
     IEnumerator FadeOut(SpriteRenderer _Sprite)

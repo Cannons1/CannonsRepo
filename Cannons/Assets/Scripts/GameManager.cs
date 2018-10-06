@@ -5,8 +5,35 @@ public class GameManager : MonoBehaviour {
     private static GameManager instance;
     public static GameManager Instance { get { return instance; } }
 
+    public Material Handv
+    {
+        get
+        {
+            return handv;
+        }
+    }
+
+    public Material Rotating
+    {
+        get
+        {
+            return rotating;
+        }
+    }
+
+    public Material StaticCannon
+    {
+        get
+        {
+            return staticCannon;
+        }
+    }
+
     public int currentSkin = 0;
     public int skinAvailability = 1;
+
+    [SerializeField] Material handv, rotating, staticCannon;
+
     private void Awake()
     {
         if (instance == null)

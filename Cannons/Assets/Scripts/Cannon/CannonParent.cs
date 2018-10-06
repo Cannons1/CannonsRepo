@@ -23,6 +23,7 @@ public abstract class CannonParent : MonoBehaviour
     [SerializeField]
     Renderer mRenderer, wickRenderer;
     public Animator mAnimator;
+    private AudioCannons m_AudioCannons;
     
 
     [SerializeField] Shader fadeShader;
@@ -34,16 +35,21 @@ public abstract class CannonParent : MonoBehaviour
         wick = transform.GetChild(2).gameObject;
         wick.transform.localScale = new Vector3(wick.transform.localScale.x, (wickMaxScale / wickScaleFactor) * wickTime, transform.localScale.z);
         //wickParticle = wick.transform.GetChild(0).gameObject;
-        pathWick = wick.transform.GetChild(1).gameObject.GetComponent<PathWick>();       
+        pathWick = wick.transform.GetChild(1).gameObject.GetComponent<PathWick>();
+        m_AudioCannons = GetComponent<AudioCannons>();
     }
     protected virtual void Update()
     {
-
+        if (Input.GetButtonUp("Fire1") && canShoot && IGLevelManager.unpause)
+        {
+            mAnimator.SetTrigger("Shoot");
+            Shoot();
+        }
     }
     public void Shoot()
     {
-        GetComponent<AudioCannons>().AudioShoot();
-        willBody = Will.will.gameObject.GetComponent<Rigidbody>();
+        m_AudioCannons.AudioShoot();
+        willBody = Will.will.Rigidbody;
         Will.will.gameObject.transform.SetParent(null);
         willBody.isKinematic = false;
         canShoot = false;
@@ -60,13 +66,12 @@ public abstract class CannonParent : MonoBehaviour
     public IEnumerator Wick()
     {
         //StartCoroutine(GetComponent<AudioCannons>().Fade());        
-        GetComponent<AudioCannons>().AudioWick();
+        m_AudioCannons.AudioWick();
         reference = transform.GetChild(0).gameObject;
 
         VFX.explosion.transform.SetParent(reference.transform, false);
         VFX.explosion.transform.position = new Vector3(reference.transform.position.x, reference.transform.position.y + 0.1f, -1f);
 
-        StartCoroutine(Tap());
         canShoot = true;
         mRenderer = transform.GetChild(1).GetComponentInChildren<Renderer>();
         wickRenderer = wick.transform.GetComponentInChildren<Renderer>();
@@ -112,16 +117,16 @@ public abstract class CannonParent : MonoBehaviour
         
     }
 
-    public IEnumerator Tap()
-    {
-        while (Will.will.inCannon)
-        {
-            if (Input.GetButtonUp("Fire1") && canShoot && IGLevelManager.unpause)
-            {               
-                mAnimator.SetTrigger("Shoot");
-                Shoot();               
-            }
-            yield return null;
-        }
-    }
+    //public IEnumerator Tap()
+    //{
+    //    while (Will.will.inCannon)
+    //    {
+    //        if (Input.GetButtonUp("Fire1") && canShoot && IGLevelManager.unpause)
+    //        {               
+    //            mAnimator.SetTrigger("Shoot");
+    //            Shoot();               
+    //        }
+    //        yield return null;
+    //    }
+    //}
 }
