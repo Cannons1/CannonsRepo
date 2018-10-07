@@ -6,7 +6,7 @@ public class DailyGifts : MonoBehaviour
     WriteVbles mWriteVbles;
     [SerializeField] AudioUI mAudioUI;
     public GameObject buttonDaily;
-    [SerializeField] GameObject[] textAvailable;
+    public GameObject[] textAvailable;
 
     int activeBtn;
 

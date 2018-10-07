@@ -23,6 +23,8 @@ public class DateTimeController : MonoBehaviour
             if (differenceDaily.Days >= 1 && differenceDaily.Days < 2)
             {
                 dailyGifts.buttonDaily.GetComponent<Button>().interactable =true;
+                dailyGifts.textAvailable[0].SetActive(true);
+                dailyGifts.textAvailable[1].SetActive(false);
                 SaveDateTime();
                 Singleton.instance.DailyGifts++;
                 SaveDailyCount();
@@ -32,6 +34,8 @@ public class DateTimeController : MonoBehaviour
                 dailyGifts.buttonDaily.GetComponent<Button>().interactable = true;
                 dailyGifts.DeleteKeysAfterTwoDays();
                 PlayerPrefs.SetInt("ButtonDaily", 1);
+                dailyGifts.textAvailable[0].SetActive(true);
+                dailyGifts.textAvailable[1].SetActive(false);
             }
         }
         #endregion
