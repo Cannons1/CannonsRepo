@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(CollectingCoinExpPoints))]
 [RequireComponent(typeof(Animator))]
-[RequireComponent(typeof(WillAudios))]
+//[RequireComponent(typeof(WillAudios))]
 [RequireComponent(typeof(AudioSource))]
 public class Will : MonoBehaviour
 {

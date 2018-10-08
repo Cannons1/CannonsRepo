@@ -4,12 +4,11 @@ using UnityEngine.UI;
 
 public class ChestAnimatedUI : MonoBehaviour {
 
-    Image image;
+    [SerializeField] Image image;
     public Sprite[] sprites;
 
     private void Start()
     {
-        image = GetComponent<Image>();
         StartCoroutine(SpriteAnim());
     }
 

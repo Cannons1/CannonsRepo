@@ -7,21 +7,12 @@ public class WinCondition : MonoBehaviour {
     [SerializeField] int coins;
     [SerializeField] GameObject canvasWin;
     [SerializeField] Text[] winTxt;
-    CanvasMgr mCanvasMgr;
-    WriteVbles mWriteVbles;
+    [SerializeField] CanvasMgr mCanvasMgr;
+    [SerializeField] WriteVbles mWriteVbles;
     public int level;
 
-    Animator[] anim;
-
-    ParticleSystem cParticle;
-
-    private void Start()
-    {
-        cParticle = GetComponentInChildren<ParticleSystem>();
-        anim = GetComponentsInChildren<Animator>();
-        mWriteVbles = (WriteVbles)FindObjectOfType(typeof(WriteVbles));
-        mCanvasMgr = (CanvasMgr)FindObjectOfType(typeof(CanvasMgr));
-    }
+    [SerializeField] Animator[] anim;
+    [SerializeField] ParticleSystem cParticle;
 
     public void Win(Rigidbody _wills) {
         anim[0].SetBool("Opened", true);

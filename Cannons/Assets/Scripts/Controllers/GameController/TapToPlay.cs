@@ -2,12 +2,7 @@
 
 public class TapToPlay : MonoBehaviour
 {
-    CanvasMenu mcanvasMenu;
-
-    private void Start()
-    {
-        mcanvasMenu = GetComponent<CanvasMenu>();
-    }
+    [SerializeField] CanvasMenu mcanvasMenu;
 
     void Update()
     {

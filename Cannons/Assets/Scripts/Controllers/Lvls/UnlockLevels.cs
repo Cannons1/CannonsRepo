@@ -9,7 +9,7 @@ public class UnlockLevels : MonoBehaviour {
     ButtonsLocked[] lvlsUnlocked;
     private int lvlsToUnlock;
 
-    private StarsMgr starsMgr;
+    [SerializeField] StarsMgr starsMgr;
     public static bool writeMinStarsWorldTwo;
     public static bool writeMinStarsWorldThree;
     bool secondWorld;
@@ -42,7 +42,6 @@ public class UnlockLevels : MonoBehaviour {
         writeMinStarsWorldThree = false;
         secondWorld = false;
         thirdWorld = false;
-        starsMgr = GetComponent<StarsMgr>();
         lvlsUnlocked = GetComponentsInChildren<ButtonsLocked>();
 
         if (PlayerPrefs.HasKey("LvlUnlocked")) {

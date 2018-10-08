@@ -2721,6 +2721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cae5155ced345f64996a8f7fefaa4abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  image: {fileID: 114464730403964612}
   sprites:
   - {fileID: 21300000, guid: fd24a9adeee38e84cae79bcc9be3743d, type: 3}
   - {fileID: 21300000, guid: a73a193ea455a50489e0db4bc05c935f, type: 3}
@@ -3526,7 +3527,13 @@ MonoBehaviour:
   winTxt:
   - {fileID: 114331335146964408}
   - {fileID: 114097358041064298}
+  mCanvasMgr: {fileID: 114767750575057606}
+  mWriteVbles: {fileID: 114178787721354798}
   level: 1
+  anim:
+  - {fileID: 95869698766652540}
+  - {fileID: 95029255879154480}
+  cParticle: {fileID: 198034215770497476}
 --- !u!114 &114559748078416638
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4296,6 +4303,7 @@ MonoBehaviour:
   - {fileID: 114829360124962596}
   time3Stars: 11
   time2Stars: 15
+  mWinCondition: {fileID: 114534144998237950}
 --- !u!114 &114864330336271670
 MonoBehaviour:
   m_ObjectHideFlags: 1

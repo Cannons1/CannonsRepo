@@ -6,14 +6,13 @@ public class DateTimeController : MonoBehaviour
 {
     TimeSpan differenceExp, differenceDaily;
     DateTime currentTimeDaily;
-    DailyGifts dailyGifts;
+    [SerializeField] DailyGifts dailyGifts;
 
     public delegate void Notifications();
     public event Notifications OnNotify;
 
 	void Start ()
     {
-        dailyGifts = GetComponent<DailyGifts>();
         #region dailyChallenge
         if (PlayerPrefs.HasKey("Daily"))
         {

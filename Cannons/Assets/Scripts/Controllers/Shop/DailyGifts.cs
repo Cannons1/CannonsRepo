@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class DailyGifts : MonoBehaviour
 {
-    WriteVbles mWriteVbles;
+    [SerializeField] WriteVbles mWriteVbles;
     [SerializeField] AudioUI mAudioUI;
     public GameObject buttonDaily;
     public GameObject[] textAvailable;
@@ -15,8 +15,6 @@ public class DailyGifts : MonoBehaviour
 
     private void Start()
     {
-        mWriteVbles = GetComponent<WriteVbles>();
-
         if (PlayerPrefs.HasKey("DailyCount"))
         {
             Singleton.instance.DailyGifts = PlayerPrefs.GetInt("DailyCount");

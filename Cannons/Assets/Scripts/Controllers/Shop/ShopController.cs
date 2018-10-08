@@ -8,7 +8,7 @@ public class ShopController : MonoBehaviour {
     [SerializeField] SkinData skinInfo;
     [SerializeField] AudioUI audioUI;
     [SerializeField] CanvasMenu canvasManager;
-    WriteVbles writeVbles;
+    [SerializeField] WriteVbles writeVbles;
 
     bool isInShop;
 
@@ -28,7 +28,6 @@ public class ShopController : MonoBehaviour {
     private void Start()
     {
         isInShop = false;
-        writeVbles = GetComponent<WriteVbles>();
         //Singleton.coins = 5000;
         buySkin(GameManager.Instance.currentSkin, 0);      
         for (int i = 0; i < skinInfo.skins.Count; i++)

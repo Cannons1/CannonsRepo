@@ -7792,6 +7792,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abf38bc633542cc4ab6f3c824279d15c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minStarsRequiredTxt: {fileID: 551317384}
   world: 3
 --- !u!114 &551317384
 MonoBehaviour:
@@ -8337,7 +8338,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0000019073, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &595304887
@@ -9147,6 +9148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abf38bc633542cc4ab6f3c824279d15c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minStarsRequiredTxt: {fileID: 607558886}
   world: 2
 --- !u!1 &613115221
 GameObject:
@@ -11051,7 +11053,6 @@ GameObject:
   - component: {fileID: 732049267}
   - component: {fileID: 732049268}
   - component: {fileID: 732049270}
-  - component: {fileID: 732049271}
   - component: {fileID: 732049272}
   - component: {fileID: 732049273}
   - component: {fileID: 732049274}
@@ -11099,6 +11100,7 @@ MonoBehaviour:
   skinInfo: {fileID: 11400000, guid: 7da9cebc7aff51c44ab67a68293cc97f, type: 2}
   audioUI: {fileID: 1436810330}
   canvasManager: {fileID: 1337719649}
+  writeVbles: {fileID: 732049275}
 --- !u!114 &732049269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11111,6 +11113,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notificationImg: {fileID: 657527205}
+  dateTime: {fileID: 732049274}
+  dailyGifts: {fileID: 732049270}
 --- !u!114 &732049270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11122,22 +11126,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 235b6de91a65d6d41921a27b90daf079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mWriteVbles: {fileID: 732049275}
   mAudioUI: {fileID: 1436810330}
   buttonDaily: {fileID: 780505904}
   textAvailable:
   - {fileID: 2138768171}
   - {fileID: 642683734}
---- !u!114 &732049271
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 732049266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44717589406cf6342be3eab0ea54bca7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &732049272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11149,6 +11143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 052fc8a86e1d7a34b8f37decb78f817c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  writeVbles: {fileID: 732049275}
 --- !u!114 &732049273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11160,6 +11155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9c740ca15b73ef4b9c2aedc2ae18ba9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mIAP: {fileID: 732049272}
   audioUI: {fileID: 1436810330}
 --- !u!114 &732049274
 MonoBehaviour:
@@ -11172,6 +11168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6469f061701802e499db572e10c7f997, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dailyGifts: {fileID: 732049270}
 --- !u!114 &732049275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18249,6 +18246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e58bd6049349bc04484f9a2dc9f37296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mcanvasMenu: {fileID: 1337719649}
 --- !u!1 &1349283320
 GameObject:
   m_ObjectHideFlags: 0
@@ -25908,6 +25906,7 @@ MonoBehaviour:
   levelsOnePlusTwo: 20
   minStarsToWorldTwo: 24
   minStarsToWorldThree: 45
+  starsMgr: {fileID: 1781330673}
 --- !u!223 &1781330672
 Canvas:
   m_ObjectHideFlags: 0

@@ -3,19 +3,11 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour, ICoins
 {
-    WriteVbles mWriteVbles;
-    SphereCollider mSphereCollider;
-    Animator anim;
+    [SerializeField] WriteVbles mWriteVbles;
+    [SerializeField] SphereCollider mSphereCollider;
+    [SerializeField] Animator anim;
     [SerializeField] AudioUI audioUI;
-    private SpriteRenderer spriteRenderer;
-
-    private void Start()
-    {
-        anim = GetComponent<Animator>();
-        mWriteVbles = (WriteVbles)FindObjectOfType(typeof(WriteVbles));
-        mSphereCollider = GetComponent<SphereCollider>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-    }
+    [SerializeField] SpriteRenderer spriteRenderer;
 
     public void CoinsCollected(int _Coin)
     {

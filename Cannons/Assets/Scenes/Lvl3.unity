@@ -349,6 +349,11 @@ Prefab:
       propertyPath: audioUI
       value: 
       objectReference: {fileID: 1635853747}
+    - target: {fileID: 114178305663971862, guid: 542e907df1a7c8a44b969ed4adce0769,
+        type: 2}
+      propertyPath: mWriteVbles
+      value: 
+      objectReference: {fileID: 1635853748}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 542e907df1a7c8a44b969ed4adce0769, type: 2}
   m_IsPrefabAsset: 0
@@ -517,7 +522,7 @@ Prefab:
         type: 2}
       propertyPath: mWriteVbles
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1635853748}
     - target: {fileID: 114178305663971862, guid: 542e907df1a7c8a44b969ed4adce0769,
         type: 2}
       propertyPath: audioUI
@@ -827,6 +832,11 @@ Prefab:
       propertyPath: audioUI
       value: 
       objectReference: {fileID: 1635853747}
+    - target: {fileID: 114178305663971862, guid: 542e907df1a7c8a44b969ed4adce0769,
+        type: 2}
+      propertyPath: mWriteVbles
+      value: 
+      objectReference: {fileID: 1635853748}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 542e907df1a7c8a44b969ed4adce0769, type: 2}
   m_IsPrefabAsset: 0
@@ -890,6 +900,11 @@ Prefab:
       propertyPath: audioUI
       value: 
       objectReference: {fileID: 1635853747}
+    - target: {fileID: 114178305663971862, guid: 542e907df1a7c8a44b969ed4adce0769,
+        type: 2}
+      propertyPath: mWriteVbles
+      value: 
+      objectReference: {fileID: 1635853748}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 542e907df1a7c8a44b969ed4adce0769, type: 2}
   m_IsPrefabAsset: 0
@@ -1058,7 +1073,7 @@ Prefab:
         type: 2}
       propertyPath: mWriteVbles
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1635853748}
     - target: {fileID: 114178305663971862, guid: 542e907df1a7c8a44b969ed4adce0769,
         type: 2}
       propertyPath: audioUI
@@ -1278,7 +1293,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4379827689838980, guid: 50968a4552340f3468aec73489bdefb1, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 18.2
+      value: 18.5
       objectReference: {fileID: 0}
     - target: {fileID: 224721013907752534, guid: 50968a4552340f3468aec73489bdefb1,
         type: 2}
@@ -1294,6 +1309,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1635853746}
   m_Script: {fileID: 11500000, guid: bf89a0e0493929348b046182dd7e3f7b, type: 3}
+--- !u!114 &1635853748 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114178787721354798, guid: 50968a4552340f3468aec73489bdefb1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1635853746}
+  m_Script: {fileID: 11500000, guid: 5e4af0ae83e0d8e4ca9d32a7ab21a537, type: 3}
 --- !u!1001 &1645870345
 Prefab:
   m_ObjectHideFlags: 0
@@ -1341,7 +1362,7 @@ Prefab:
         type: 2}
       propertyPath: mWriteVbles
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1635853748}
     - target: {fileID: 114178305663971862, guid: 542e907df1a7c8a44b969ed4adce0769,
         type: 2}
       propertyPath: audioUI

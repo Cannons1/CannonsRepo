@@ -9,6 +9,9 @@ public class WriteVbles : MonoBehaviour
 
     private void Start()
     {
+        if (PlayerPrefs.HasKey("Coins"))
+            Singleton.instance.Coins = PlayerPrefs.GetInt("Coins");
+
         numberOfCoins.text = Singleton.instance.Coins.ToString("0");
         WriteOnPurchase();
     }

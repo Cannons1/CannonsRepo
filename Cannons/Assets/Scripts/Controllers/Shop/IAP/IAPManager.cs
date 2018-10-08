@@ -13,11 +13,10 @@ public class IAPManager : MonoBehaviour, IStoreListener
     public static string FOURTH_PRODUCT = "fourth_product4.";
     public static string FIFTH_PRODUCT = "fifth_product5.";
 
-    WriteVbles writeVbles;
+    [SerializeField] WriteVbles writeVbles;
 
     void Start()
     {
-        writeVbles = GetComponent<WriteVbles>();
         // If we haven't set up the Unity Purchasing reference
         if (m_StoreController == null)
         {

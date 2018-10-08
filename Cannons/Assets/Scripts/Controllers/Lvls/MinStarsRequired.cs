@@ -2,16 +2,14 @@
 using UnityEngine.UI;
 
 public class MinStarsRequired : MonoBehaviour {
-    Text minStarsRequiredTxt;
+    [SerializeField] Text minStarsRequiredTxt;
     UnlockLevels pUnlockLevels;
 
     [SerializeField] int world;
 
     private void Start()
     {
-        minStarsRequiredTxt = GetComponent<Text>();
         pUnlockLevels = GetComponentInParent<UnlockLevels>();
-
         TextMinStars(world);
     }
 

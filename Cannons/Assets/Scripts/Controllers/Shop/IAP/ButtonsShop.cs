@@ -3,13 +3,8 @@
 public class ButtonsShop : MonoBehaviour {
 
     int id;
-    IAPManager mIAP;
+    [SerializeField] IAPManager mIAP;
     [SerializeField] AudioUI audioUI;
-
-    private void Start()
-    {
-        mIAP = GetComponent<IAPManager>();
-    }
 
     public void ButtonBuyIAP(int _id) {
         id = _id;
