@@ -7,11 +7,11 @@ public class IAPManager : MonoBehaviour, IStoreListener
     private static IStoreController m_StoreController;          // The Unity Purchasing system.
     private static IExtensionProvider m_StoreExtensionProvider; // The store-specific Purchasing subsystems.
 
-    public static string FIRST_PRODUCT = "firstProduct";
-    public static string SECOND_PRODUCT = "secondProduct";
-    public static string THIRD_PRODUCT = "thirdProduct";
-    public static string FOURTH_PRODUCT = "fourthProduct";
-    public static string FIFTH_PRODUCT = "fifthProduct";
+    public static string FIRST_PRODUCT = "first_product1.";
+    public static string SECOND_PRODUCT = "second_product2.";
+    public static string THIRD_PRODUCT = "third_product3.";
+    public static string FOURTH_PRODUCT = "fourth_product4.";
+    public static string FIFTH_PRODUCT = "fifth_product5.";
 
     WriteVbles writeVbles;
 

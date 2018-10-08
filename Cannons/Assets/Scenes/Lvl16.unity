@@ -1023,7 +1023,7 @@ Prefab:
     - target: {fileID: 114406671851458524, guid: bfdabc52a7b3edf4281d41bc8c239c27,
         type: 2}
       propertyPath: verticalTarget2
-      value: 45
+      value: 37
       objectReference: {fileID: 0}
     - target: {fileID: 114406671851458524, guid: bfdabc52a7b3edf4281d41bc8c239c27,
         type: 2}
