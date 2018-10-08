@@ -6,9 +6,6 @@ public class AudioUI : MonoBehaviour
     [SerializeField] AudioClip buttonDefault, buttonBack, claimAGift, coin;
 
     int i = 0;
-    public void SoundClaimGift() {
-        uIAudioSource.PlayOneShot(claimAGift);
-    }
     public void MusicButton()
     {
         i += 1;
@@ -31,6 +28,9 @@ public class AudioUI : MonoBehaviour
             AudioButtonDefault();
         }
 
+    }
+    public void SoundClaimGift() {
+        uIAudioSource.PlayOneShot(claimAGift);
     }
     public void AudioButtonDefault()
     {
