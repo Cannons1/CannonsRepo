@@ -28,8 +28,7 @@ public class ShopController : MonoBehaviour {
     private void Start()
     {
         isInShop = false;
-        //Singleton.coins = 5000;
-        buySkin(GameManager.Instance.currentSkin, 0);      
+               
         for (int i = 0; i < skinInfo.skins.Count; i++)
         {
             GameObject container = Instantiate(skinButtonPref) as GameObject;
@@ -50,6 +49,7 @@ public class ShopController : MonoBehaviour {
                 container.transform.GetChild(3).gameObject.SetActive(false);
             }
         }
+        buySkin(GameManager.Instance.currentSkin, 0);
         skinContainer.transform.GetChild(GameManager.Instance.currentSkin).GetChild(4).gameObject.SetActive(true);
     }
 

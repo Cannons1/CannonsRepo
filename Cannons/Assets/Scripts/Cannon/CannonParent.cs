@@ -59,7 +59,7 @@ public abstract class CannonParent : MonoBehaviour
         //Will.will.cannonTriggered.SetActive(false);
         Will.will.cannonTriggered.transform.GetChild(1).GetComponent<Collider>().enabled = false;
         Will.will.StartCoroutine(Will.will.FlyAnimation());
-        VFX.explosion.GetComponent<Animator>().SetTrigger("explosion");
+        VFX.Instance.explosion[VFX.Instance.expIndex].GetComponent<Animator>().SetTrigger("explosion");
         //Will.will.GetComponent<WillAudios>().BeingShot();
     }
 
@@ -69,8 +69,9 @@ public abstract class CannonParent : MonoBehaviour
         m_AudioCannons.AudioWick();
         reference = transform.GetChild(0).gameObject;
 
-        VFX.explosion.transform.SetParent(reference.transform, false);
-        VFX.explosion.transform.position = new Vector3(reference.transform.position.x, reference.transform.position.y + 0.1f, -1f);
+        VFX.Instance.expIndex = (VFX.Instance.expIndex < 1) ? VFX.Instance.expIndex + 1 : 0 ;
+        VFX.Instance.explosion[VFX.Instance.expIndex].transform.SetParent(reference.transform, false);
+        VFX.Instance.explosion[VFX.Instance.expIndex].transform.position = new Vector3(reference.transform.position.x, reference.transform.position.y + 0.4f, -1f);
 
         canShoot = true;
         mRenderer = transform.GetChild(1).GetComponentInChildren<Renderer>();
@@ -78,9 +79,9 @@ public abstract class CannonParent : MonoBehaviour
 
         Color startingColor = mRenderer.material.color;
 
-        VFX.wickParticle.transform.SetParent(wick.transform, false);
-        VFX.wickParticle.SetActive(true);
-        VFX.wickParticle.transform.position = pathWick.points[pathPoint].position;
+        VFX.Instance.wickParticle.transform.SetParent(wick.transform, false);
+        VFX.Instance.wickParticle.SetActive(true);
+        VFX.Instance.wickParticle.transform.position = pathWick.points[pathPoint].position;
 
         float i = 0;
         while (i < wickTime && Will.will.inCannon)
@@ -90,9 +91,9 @@ public abstract class CannonParent : MonoBehaviour
             mRenderer.material.color = Color.Lerp(startingColor, Color.red, i / wickTime);
             wickRenderer.material.SetFloat("_fadeFactor", i / wickTime);
 
-            float distance = Vector3.Distance(VFX.wickParticle.transform.position, pathWick.points[pathPoint].position);
-            VFX.wickParticle.transform.position = new Vector3(VFX.wickParticle.transform.position.x, VFX.wickParticle.transform.position.y, pathWick.points[pathPoint].position.z - 0.01f);
-            VFX.wickParticle.transform.position = Vector3.Lerp(VFX.wickParticle.transform.position, pathWick.points[pathPoint].position, Time.deltaTime / (wickTime / (pathWick.points.Length - 1)));            
+            float distance = Vector3.Distance(VFX.Instance.wickParticle.transform.position, pathWick.points[pathPoint].position);
+            VFX.Instance.wickParticle.transform.position = new Vector3(VFX.Instance.wickParticle.transform.position.x, VFX.Instance.wickParticle.transform.position.y, pathWick.points[pathPoint].position.z - 0.01f);
+            VFX.Instance.wickParticle.transform.position = Vector3.Lerp(VFX.Instance.wickParticle.transform.position, pathWick.points[pathPoint].position, Time.deltaTime / (wickTime / (pathWick.points.Length - 1)));            
 
             if (distance < 0.1f && pathPoint != pathWick.points.Length - 1)
                 pathPoint++;

@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour {
         else {
             Destroy(gameObject);
         }
+
         if (PlayerPrefs.HasKey("CurrentSkin"))
         {
             currentSkin = PlayerPrefs.GetInt("CurrentSkin");
