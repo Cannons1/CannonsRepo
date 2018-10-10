@@ -18,21 +18,37 @@ MonoBehaviour:
     skinValue: 0
     skinModel: {fileID: 1274854319799740, guid: e4bd94df92fe2fb438a451c6a1b39001,
       type: 2}
+    animations:
+    - {fileID: 7400000, guid: 68a5fee9ebc544941a9f24e1c72a0526, type: 2}
+    - {fileID: 7400000, guid: 4c0b6282ed7ad704ea0a8d97170d38b8, type: 2}
+    - {fileID: 7400000, guid: b72a7810983e5a542baea461cae18c47, type: 2}
   - skinName: Red beard
     skinDescription: A pirate with a red beard
     skinSprite: {fileID: 21300002, guid: 5ae470a1a2d060b4eb3861e913e78e23, type: 3}
     skinValue: 100
     skinModel: {fileID: 1529388836188480, guid: 0eace1704495f5443890d653e61ac43c,
       type: 2}
+    animations:
+    - {fileID: 7400000, guid: 9190f9b792370dc44ae3f392477b9ae3, type: 2}
+    - {fileID: 7400000, guid: e6d8b895fcd7ae6469d2a56b2c320878, type: 2}
+    - {fileID: 7400000, guid: 761b7fa30eb57a342b7db1b13d5a7935, type: 2}
   - skinName: Black beard
     skinDescription: A pirate with a black beard
     skinSprite: {fileID: 21300004, guid: 5ae470a1a2d060b4eb3861e913e78e23, type: 3}
     skinValue: 200
     skinModel: {fileID: 1647704181162974, guid: a6f1b425ea491c1489e34fcfc43342aa,
       type: 2}
+    animations:
+    - {fileID: 7400000, guid: 3d11565a563268446b4ad7462a9a9e25, type: 2}
+    - {fileID: 7400000, guid: 191c753d099ee6c4dab019a4dd09c6c6, type: 2}
+    - {fileID: 7400000, guid: 545995dc655084e47b3518950daa4e98, type: 2}
   - skinName: Yellow beard
     skinDescription: A pirate with a yellow beard
     skinSprite: {fileID: 21300006, guid: 5ae470a1a2d060b4eb3861e913e78e23, type: 3}
     skinValue: 300
     skinModel: {fileID: 1471469473313762, guid: 2dab147a6b8fb574486371f77959df47,
       type: 2}
+    animations:
+    - {fileID: 7400000, guid: d142d6fd333a3b24cab9123fb77a11fb, type: 2}
+    - {fileID: 7400000, guid: 763d12b9f5a1fc646bb5b949c014ab21, type: 2}
+    - {fileID: 7400000, guid: 28d715a93008a124499635e0b889e627, type: 2}
