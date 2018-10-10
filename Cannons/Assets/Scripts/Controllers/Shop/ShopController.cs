@@ -72,12 +72,12 @@ public class ShopController : MonoBehaviour {
                 skinContainer.transform.GetChild(skinIndex).GetChild(3).gameObject.SetActive(false);
                 audioUI.SoundClaimGift();
             }
-            else {
+            /*else {
                 isInShop = true;
                 canvasManager.Canvas[2].SetActive(false);
                 canvasManager.Canvas[3].SetActive(true);
                 audioUI.AudioButtonDefault();
-            }
+            }*/
         }
     }    
     public void SelectSkin(int skinIndex)

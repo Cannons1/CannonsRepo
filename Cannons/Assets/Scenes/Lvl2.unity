@@ -1090,7 +1090,7 @@ Prefab:
     - target: {fileID: 114500324696156620, guid: cc657c91867499045866d7dfc00dfbbc,
         type: 2}
       propertyPath: initMoving
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1964473785528256, guid: cc657c91867499045866d7dfc00dfbbc, type: 2}
       propertyPath: m_Name

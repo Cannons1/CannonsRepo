@@ -256,7 +256,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lvl1
+  m_Text: Level 1
 --- !u!222 &10586644
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2237,7 +2237,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lvl1
+  m_Text: Level 11
 --- !u!222 &119951935
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2376,10 +2376,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 67e3990bdcfb6d24fab1c74b01f4087e, type: 3}
-    m_FontSize: 14
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -2387,7 +2387,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lvl8
+  m_Text: Level 8
 --- !u!222 &126101977
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3966,10 +3966,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 67e3990bdcfb6d24fab1c74b01f4087e, type: 3}
-    m_FontSize: 14
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -3977,7 +3977,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lvl6
+  m_Text: Level 16
 --- !u!222 &227679829
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4224,7 +4224,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lvl4
+  m_Text: Level 14
 --- !u!222 &245047239
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5345,6 +5345,11 @@ RectTransform:
   - {fileID: 648388677}
   - {fileID: 1781330669}
   - {fileID: 720195616}
+  - {fileID: 455556344}
+  - {fileID: 598238760}
+  - {fileID: 1602265897}
+  - {fileID: 1386257808}
+  - {fileID: 759916371}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6949,7 +6954,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &455556344
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6958,12 +6963,12 @@ RectTransform:
   m_GameObject: {fileID: 455556343}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 117122574}
   - {fileID: 551317382}
-  m_Father: {fileID: 2141967900}
-  m_RootOrder: 2
+  m_Father: {fileID: 316187122}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8646,7 +8651,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &598238760
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8662,12 +8667,12 @@ RectTransform:
   - {fileID: 649648965}
   - {fileID: 1900497758}
   - {fileID: 739268597}
-  m_Father: {fileID: 1084950023}
+  m_Father: {fileID: 316187122}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 93.99002, y: -244.43884}
+  m_AnchoredPosition: {x: 393.59003, y: 224.72095}
   m_SizeDelta: {x: 88.57901, y: 61.169983}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &598238761
@@ -9140,10 +9145,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 67e3990bdcfb6d24fab1c74b01f4087e, type: 3}
-    m_FontSize: 14
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -9151,7 +9156,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lvl10
+  m_Text: Level 10
 --- !u!222 &613115224
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10265,10 +10270,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 67e3990bdcfb6d24fab1c74b01f4087e, type: 3}
-    m_FontSize: 14
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -10276,7 +10281,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lvl7
+  m_Text: Level 17
 --- !u!222 &661143643
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11319,10 +11324,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 67e3990bdcfb6d24fab1c74b01f4087e, type: 3}
-    m_FontSize: 14
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -11330,7 +11335,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lvl8
+  m_Text: Level 18
 --- !u!222 &747726948
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11494,7 +11499,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &759916371
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11503,10 +11508,10 @@ RectTransform:
   m_GameObject: {fileID: 759916370}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1193586983}
-  m_RootOrder: 2
+  m_Father: {fileID: 316187122}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11758,10 +11763,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 67e3990bdcfb6d24fab1c74b01f4087e, type: 3}
-    m_FontSize: 14
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -11769,7 +11774,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lvl9
+  m_Text: Level 9
 --- !u!222 &777633822
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12490,10 +12495,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 67e3990bdcfb6d24fab1c74b01f4087e, type: 3}
-    m_FontSize: 14
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -12501,7 +12506,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lvl5
+  m_Text: Level 5
 --- !u!222 &855859834
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12714,7 +12719,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lvl2
+  m_Text: Level 2
 --- !u!222 &865019383
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13728,10 +13733,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 67e3990bdcfb6d24fab1c74b01f4087e, type: 3}
-    m_FontSize: 14
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -13739,7 +13744,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lvl7
+  m_Text: Level 7
 --- !u!222 &980338923
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15332,9 +15337,6 @@ RectTransform:
   - {fileID: 1707052830}
   - {fileID: 1638837183}
   - {fileID: 1014786426}
-  - {fileID: 598238760}
-  - {fileID: 1602265897}
-  - {fileID: 1386257808}
   m_Father: {fileID: 1974012830}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16378,7 +16380,6 @@ RectTransform:
   m_Children:
   - {fileID: 1368220837}
   - {fileID: 1522311852}
-  - {fileID: 759916371}
   m_Father: {fileID: 1781330669}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18616,7 +18617,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1386257808
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18632,12 +18633,12 @@ RectTransform:
   - {fileID: 748653562}
   - {fileID: 2063562832}
   - {fileID: 1629542107}
-  m_Father: {fileID: 1084950023}
+  m_Father: {fileID: 316187122}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 93.99002, y: -84.43884}
+  m_AnchoredPosition: {x: 393.59003, y: 384.721}
   m_SizeDelta: {x: 88.57901, y: 61.169983}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1386257809
@@ -19043,7 +19044,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lvl3
+  m_Text: Level 13
 --- !u!222 &1423109553
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19176,10 +19177,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 67e3990bdcfb6d24fab1c74b01f4087e, type: 3}
-    m_FontSize: 14
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -19187,7 +19188,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lvl9
+  m_Text: Level 19
 --- !u!222 &1431596754
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19286,7 +19287,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1439263495
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22339,7 +22340,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1602265897
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22355,12 +22356,12 @@ RectTransform:
   - {fileID: 1120465197}
   - {fileID: 888412562}
   - {fileID: 908611133}
-  m_Father: {fileID: 1084950023}
+  m_Father: {fileID: 316187122}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -75.989975, y: -169.43884}
+  m_AnchoredPosition: {x: 222.81001, y: 299.7209}
   m_SizeDelta: {x: 88.57901, y: 61.169983}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1602265898
@@ -22824,10 +22825,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 67e3990bdcfb6d24fab1c74b01f4087e, type: 3}
-    m_FontSize: 14
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -22835,7 +22836,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lvl5
+  m_Text: Level 15
 --- !u!222 &1628484889
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25289,10 +25290,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 67e3990bdcfb6d24fab1c74b01f4087e, type: 3}
-    m_FontSize: 14
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -25300,7 +25301,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lvl10
+  m_Text: Level 20
 --- !u!222 &1750834928
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25866,7 +25867,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelsFirstWorld: 10
-  levelsOnePlusTwo: 20
+  levelsOnePlusTwo: 17
   minStarsToWorldTwo: 24
   minStarsToWorldThree: 45
   starsMgr: {fileID: 1781330673}
@@ -26795,7 +26796,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lvl3
+  m_Text: Level 3
 --- !u!222 &1834117261
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -28174,7 +28175,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lvl2
+  m_Text: Level 12
 --- !u!222 &1972593179
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -29104,10 +29105,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 67e3990bdcfb6d24fab1c74b01f4087e, type: 3}
-    m_FontSize: 14
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -29115,7 +29116,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lvl6
+  m_Text: Level 6
 --- !u!222 &2049693652
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -30037,7 +30038,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lvl4
+  m_Text: Level 4
 --- !u!222 &2120568485
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -30348,7 +30349,6 @@ RectTransform:
   m_Children:
   - {fileID: 1984958519}
   - {fileID: 1974012830}
-  - {fileID: 455556344}
   m_Father: {fileID: 1528435553}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

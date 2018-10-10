@@ -24,7 +24,7 @@ MonoBehaviour:
     - {fileID: 7400000, guid: b72a7810983e5a542baea461cae18c47, type: 2}
   - skinName: Black beard
     skinDescription: A pirate with a red beard
-    skinSprite: {fileID: 21300002, guid: 5ae470a1a2d060b4eb3861e913e78e23, type: 3}
+    skinSprite: {fileID: 21300000, guid: 6b1937ee0846e75439e906bdce2795e5, type: 3}
     skinValue: 100
     skinModel: {fileID: 1529388836188480, guid: 0eace1704495f5443890d653e61ac43c,
       type: 2}
@@ -34,18 +34,18 @@ MonoBehaviour:
     - {fileID: 7400000, guid: 761b7fa30eb57a342b7db1b13d5a7935, type: 2}
   - skinName: Red beard
     skinDescription: A pirate with a black beard
-    skinSprite: {fileID: 21300004, guid: 5ae470a1a2d060b4eb3861e913e78e23, type: 3}
-    skinValue: 200
+    skinSprite: {fileID: 21300000, guid: 9b79c7d859d953b43b4dd757fd881003, type: 3}
+    skinValue: 3000
     skinModel: {fileID: 1647704181162974, guid: a6f1b425ea491c1489e34fcfc43342aa,
       type: 2}
     animations:
     - {fileID: 7400000, guid: 3d11565a563268446b4ad7462a9a9e25, type: 2}
     - {fileID: 7400000, guid: 191c753d099ee6c4dab019a4dd09c6c6, type: 2}
     - {fileID: 7400000, guid: 545995dc655084e47b3518950daa4e98, type: 2}
-  - skinName: Ocaso skin
+  - skinName: Disco!
     skinDescription: A pirate with a yellow beard
-    skinSprite: {fileID: 21300006, guid: 5ae470a1a2d060b4eb3861e913e78e23, type: 3}
-    skinValue: 300
+    skinSprite: {fileID: 21300000, guid: b7f830d2a0527f64fa8074d7f094ebe5, type: 3}
+    skinValue: 5000
     skinModel: {fileID: 1471469473313762, guid: 2dab147a6b8fb574486371f77959df47,
       type: 2}
     animations:
