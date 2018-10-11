@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -20873,7 +20873,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -26525,8 +26525,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.15, y: 88.3}
-  m_SizeDelta: {x: 432.3, y: 864.6}
+  m_AnchoredPosition: {x: 0, y: -93.021}
+  m_SizeDelta: {x: 867.9, y: 1608.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1824056749
 MonoBehaviour:
@@ -26547,7 +26547,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: fc2d8de5368804249b5fa7ac909b4066, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fd678a84df255ab4fbe8c94de955eb74, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
