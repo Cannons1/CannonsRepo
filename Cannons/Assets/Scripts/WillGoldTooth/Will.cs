@@ -67,7 +67,7 @@ public class Will : MonoBehaviour
         {
             DieEvent dieEvent;
             dieEvent = cannonTriggered.GetComponent<DieEvent>();
-            dieEvent.ChargeMenuLevel();
+            dieEvent.ActiveCanvasRetry();
             //GetComponent<WillAudios>().DieAudio(); // Will Die Audio
         }
 
