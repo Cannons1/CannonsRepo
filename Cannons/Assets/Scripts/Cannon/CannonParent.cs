@@ -69,6 +69,9 @@ public abstract class CannonParent : MonoBehaviour
         m_AudioCannons.AudioWick();
         reference = transform.GetChild(0).gameObject;
 
+        //VFX.Instance.enteringCannon.transform.SetParent(reference.transform, false);
+        //VFX.Instance.enteringParticle.Play();
+
         VFX.Instance.expIndex = (VFX.Instance.expIndex < 1) ? VFX.Instance.expIndex + 1 : 0 ;
         VFX.Instance.explosion[VFX.Instance.expIndex].transform.SetParent(reference.transform, false);
         VFX.Instance.explosion[VFX.Instance.expIndex].transform.position = new Vector3(reference.transform.position.x, reference.transform.position.y + 0.4f, -1f);

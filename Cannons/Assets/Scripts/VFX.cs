@@ -6,14 +6,11 @@ public class VFX : MonoBehaviour {
 
     private static VFX instance;
     public static VFX Instance { get { return instance; } }
-
-    //public static GameObject explosion, wickParticle;
-
-    [SerializeField] public GameObject[] explosion;
+   
     [HideInInspector] public int expIndex;
-    [SerializeField] public GameObject wickParticle;
 
-
+    public GameObject[] explosion;
+    public GameObject wickParticle, enteringCannon;
 
     private void Awake()
     {
@@ -29,8 +26,7 @@ public class VFX : MonoBehaviour {
 
     private void Start()
     {
-        //explosion = transform.Find("Explosion").gameObject;
-        //wickParticle = transform.Find("Wick").gameObject;
+        //enteringParticle = enteringCannon.GetComponent<ParticleSystem>();
     }
 
 }

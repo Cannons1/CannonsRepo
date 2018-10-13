@@ -13,8 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iOSAppId: 
   iOSAppSecret: 
-  androidAppId: 
-  androidAppSecret: 
+  androidAppId: 5bbc17f45ac84d0c841d21a0
+  androidAppSecret: 9012923c4015e7f93d458e4a75d91b2f15abac27
   amazonAppId: 
   amazonAppSecret: 
   isLoggingEnabled: 0
