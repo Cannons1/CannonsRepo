@@ -74,21 +74,22 @@ public class CanvasMenu : MonoBehaviour {
                 panelCredits.SetActive(false);
                 mAudioUI.AudioButtonBack();
             }
-            if (Canvas[2].activeInHierarchy) {
+            if (Canvas[2].activeInHierarchy && !canvas[3].activeInHierarchy) {
                 BackCharacter();
             }
-            if (Canvas[3].activeInHierarchy && !shopController.IsInShop)
+            if (Canvas[3].activeInHierarchy)
             {
-                BackShop();
+                if (!shopController.IsInShop)
+                    BackShop();
+                else
+                {
+                    canvas[3].SetActive(false);
+                    mAudioUI.AudioButtonBack();
+                }
             }
             if (Canvas[4].activeInHierarchy)
             {
                 BackCampaing();
-            }
-            if (canvas[3].activeInHierarchy && shopController.IsInShop) {
-                canvas[2].SetActive(true);
-                canvas[3].SetActive(false);
-                mAudioUI.AudioButtonBack();
             }
         }
 	}
