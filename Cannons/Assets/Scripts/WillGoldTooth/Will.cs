@@ -87,9 +87,9 @@ public class Will : MonoBehaviour
         m_Rigidbody.isKinematic = true;
         reference = cannonTriggered.transform.GetChild(0).gameObject.transform;
 
-        VFX.Instance.enteringCannon.transform.SetParent(reference.transform, false);
-        VFX.Instance.enteringCannon.transform.position = new Vector3(reference.transform.position.x, reference.transform.position.y, -5f);
-        VFX.Instance.enteringCannon.GetComponent<Animator>().SetTrigger("entering");
+        //VFX.Instance.enteringCannon.transform.SetParent(reference.transform, false);
+        //VFX.Instance.enteringCannon.transform.position = new Vector3(reference.transform.position.x, reference.transform.position.y, -5f);
+        //VFX.Instance.enteringCannon.GetComponent<Animator>().SetTrigger("entering");
 
         StartCoroutine(MoveToCannon());
         transform.SetParent(cannonTriggered.transform);  
