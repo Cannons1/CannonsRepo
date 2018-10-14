@@ -64,4 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSkin: 0
-  skinAvailability: 2
+  skinAvailability: 1
+  handv: {fileID: 2100000, guid: ecbf3d54eb22d334d923dcb77ad04d49, type: 2}
+  rotating: {fileID: 2100000, guid: 631d662beaf745341bbc01666cb6ea44, type: 2}
+  staticCannon: {fileID: 2100000, guid: ec8aee0c509a91547aeef0bf54512f9e, type: 2}

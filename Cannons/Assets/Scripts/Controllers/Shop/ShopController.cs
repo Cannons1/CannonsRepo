@@ -28,7 +28,7 @@ public class ShopController : MonoBehaviour {
     private void Start()
     {
         isInShop = false;
-               
+          
         for (int i = 0; i < skinInfo.skins.Count; i++)
         {
             GameObject container = Instantiate(skinButtonPref) as GameObject;
@@ -49,15 +49,13 @@ public class ShopController : MonoBehaviour {
                 container.transform.GetChild(3).gameObject.SetActive(false);
             }
         }
-        buySkin(GameManager.Instance.currentSkin, 0);
+        //buySkin(GameManager.Instance.currentSkin, 0);
         skinContainer.transform.GetChild(GameManager.Instance.currentSkin).GetChild(4).gameObject.SetActive(true);
     }
 
     public void buySkin(int skinIndex, int _value)
-    {
-        //(skinAvailability & 1) produces a value that is either 1 or 0, depending on the least significant bit of skinAvailability.
-        //1 << skinIndex  bytes representation of skinIndex.      
-        if (!((GameManager.Instance.skinAvailability & 1 << skinIndex) == 1 << skinIndex)) //Si la disponibilidad de skin no es igual a la skin a comprar
+    {  
+        if (!((GameManager.Instance.skinAvailability & 1 << skinIndex) == 1 << skinIndex)) 
         {
             int value = _value;
             if (Singleton.instance.Coins >= value)

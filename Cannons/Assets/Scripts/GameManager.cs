@@ -36,14 +36,14 @@ public class GameManager : MonoBehaviour {
 
     private void Awake()
     {
+       
         if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        else {
-            Destroy(gameObject);
-        }
+        else Destroy(gameObject);
+
 
         if (PlayerPrefs.HasKey("CurrentSkin"))
         {
@@ -51,6 +51,9 @@ public class GameManager : MonoBehaviour {
             skinAvailability = PlayerPrefs.GetInt("SkinAvailibility");
         }
         else Save();
+
+        skinAvailability = (skinAvailability == 0) ? 1 : PlayerPrefs.GetInt("SkinAvailibility");
+        Save();
 
         Application.targetFrameRate = 60;
         QualitySettings.vSyncCount = 0;

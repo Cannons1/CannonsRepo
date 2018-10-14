@@ -9,7 +9,7 @@ public class ButtonsShop : MonoBehaviour {
 
     private void Start()
     {
-        Chartboost.cacheRewardedVideo(CBLocation.HomeScreen);
+        //Chartboost.cacheRewardedVideo(CBLocation.Default);
         //Chartboost.didCompleteRewardedVideo += Reward;
     }
 
@@ -41,20 +41,24 @@ public class ButtonsShop : MonoBehaviour {
     {
         Singleton.instance.Coins += 10;
         Singleton.SaveCoins();
-        Chartboost.didCompleteRewardedVideo -= Reward;
+        //Chartboost.didCompleteRewardedVideo -= Reward;
     }
     
     public void ShowADS()
     {
-        Chartboost.cacheRewardedVideo(CBLocation.HomeScreen);
-        if (Chartboost.hasRewardedVideo(CBLocation.HomeScreen))
+        print("Llamado showADS");
+        Chartboost.showRewardedVideo(CBLocation.Default);
+        /*
+        Chartboost.cacheRewardedVideo(CBLocation.Default);
+        if (Chartboost.hasRewardedVideo(CBLocation.Default))
         {
-            Chartboost.showRewardedVideo(CBLocation.HomeScreen);
+            Chartboost.showRewardedVideo(CBLocation.Default);
             Chartboost.didCompleteRewardedVideo += Reward;
         }
         else
         {
-            Chartboost.cacheRewardedVideo(CBLocation.HomeScreen);
+            Chartboost.cacheRewardedVideo(CBLocation.Default);
         }
+        */
     }
 }

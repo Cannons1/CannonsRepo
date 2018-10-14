@@ -4025,21 +4025,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 114213983827099630, guid: 8f21b9231e4310e42958acf7365a67bc,
-        type: 2}
-      propertyPath: rotating
-      value: 
-      objectReference: {fileID: 2100000, guid: 631d662beaf745341bbc01666cb6ea44, type: 2}
-    - target: {fileID: 114213983827099630, guid: 8f21b9231e4310e42958acf7365a67bc,
-        type: 2}
-      propertyPath: handv
-      value: 
-      objectReference: {fileID: 2100000, guid: ecbf3d54eb22d334d923dcb77ad04d49, type: 2}
-    - target: {fileID: 114213983827099630, guid: 8f21b9231e4310e42958acf7365a67bc,
-        type: 2}
-      propertyPath: staticCannon
-      value: 
-      objectReference: {fileID: 2100000, guid: ec8aee0c509a91547aeef0bf54512f9e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f21b9231e4310e42958acf7365a67bc, type: 2}
   m_IsPrefabAsset: 0
