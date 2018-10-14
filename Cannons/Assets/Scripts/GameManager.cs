@@ -50,10 +50,11 @@ public class GameManager : MonoBehaviour {
             currentSkin = PlayerPrefs.GetInt("CurrentSkin");
             skinAvailability = PlayerPrefs.GetInt("SkinAvailibility");
         }
-        else Save();
-
-        skinAvailability = (skinAvailability == 0) ? 1 : PlayerPrefs.GetInt("SkinAvailibility");
-        Save();
+        else
+        {
+            if(skinAvailability == 0) skinAvailability = 1;
+            Save();
+        }
 
         Application.targetFrameRate = 60;
         QualitySettings.vSyncCount = 0;
