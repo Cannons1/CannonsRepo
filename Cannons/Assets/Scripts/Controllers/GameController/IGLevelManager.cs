@@ -8,6 +8,7 @@ public class IGLevelManager : MonoBehaviour
     [SerializeField] string menuButton;
     [SerializeField] GameObject loadingScreen;
     [SerializeField] Slider slider;
+    [SerializeField] ChestAnimatedUI chestAnimatedUI;
 
     public static bool unpause;
     public static bool campaignBtn;
@@ -35,8 +36,9 @@ public class IGLevelManager : MonoBehaviour
 
     public void ResumeButton()
     {
-        CanvasMgr.unnpause = 0;
         Time.timeScale = 1;
+        CanvasMgr.unnpause = 0;
+        StartCoroutine(chestAnimatedUI.SpriteAnim());
         Invoke("waitForShoot", 0.1f);
     }
 

@@ -5,9 +5,10 @@ using UnityEngine.UI;
 public class Stars : MonoBehaviour {
 
     [SerializeField] Image[] starsImg;
-    [SerializeField] float time3Stars, time2Stars;
     private float currentTime;
     [SerializeField] WinCondition mWinCondition;
+
+    public float time3Stars, time2Stars;
 
     private void OnTriggerEnter(Collider other)
     {

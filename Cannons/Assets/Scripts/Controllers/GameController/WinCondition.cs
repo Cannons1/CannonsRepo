@@ -14,6 +14,8 @@ public class WinCondition : MonoBehaviour {
     [SerializeField] Animator[] anim;
     [SerializeField] ParticleSystem cParticle;
 
+    public bool win = false;
+
     public void Win(Rigidbody _wills) {
         anim[0].SetBool("Opened", true);
         _wills.constraints = RigidbodyConstraints.FreezeAll;
@@ -28,12 +30,12 @@ public class WinCondition : MonoBehaviour {
     WaitForSeconds animLength = new WaitForSeconds(1.2f);//anim openChestLength
 
     IEnumerator ActivatingCanvas() {
+        mCanvasMgr.Canvas[0].SetActive(false);
         yield return new WaitForSeconds(0.8f);
         cParticle.Play();
         yield return animLength;
         anim[1].SetBool("Win", true);
         yield return new WaitForSeconds(0.32f);
-        mCanvasMgr.Canvas[0].SetActive(false);
         canvasWin.SetActive(true);
         winTxt[1].text = "Level " + level.ToString() + " Complete"; 
         cParticle.Stop();
