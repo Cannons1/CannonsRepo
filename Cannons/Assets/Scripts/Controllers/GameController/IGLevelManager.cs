@@ -9,6 +9,7 @@ public class IGLevelManager : MonoBehaviour
     [SerializeField] GameObject loadingScreen;
     [SerializeField] Slider slider;
     [SerializeField] ChestAnimatedUI chestAnimatedUI;
+    [SerializeField] AudioUI audioUI;
 
     public static bool unpause;
     public static bool campaignBtn;
@@ -60,6 +61,9 @@ public class IGLevelManager : MonoBehaviour
 
     public IEnumerator LoadAsynchronously(string _sceneName)
     {
+        audioUI.AudioButtonBack();
+        Time.timeScale = 1;
+        yield return new WaitForSeconds(0.13f);
         loadingScreen.SetActive(true);
         AsyncOperation operation = SceneManager.LoadSceneAsync(_sceneName);
         
@@ -73,6 +77,9 @@ public class IGLevelManager : MonoBehaviour
 
     public IEnumerator LoadAsynchronously(int index)
     {
+        audioUI.AudioButtonDefault();
+        Time.timeScale = 1;
+        yield return new WaitForSeconds(0.13f);
         loadingScreen.SetActive(true);
         AsyncOperation operation = SceneManager.LoadSceneAsync(index);
 

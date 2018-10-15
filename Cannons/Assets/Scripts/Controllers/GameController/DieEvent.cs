@@ -6,6 +6,7 @@ public class DieEvent : MonoBehaviour {
 
     Collider mCollider;
     [SerializeField] CanvasMgr canvasMgr;
+    [SerializeField] IGLevelManager iGLevelManager;
     Scene scene;
 
     private void Start()
@@ -23,7 +24,7 @@ public class DieEvent : MonoBehaviour {
 
     public void RetryLvl()
     {
-        SceneManager.LoadScene(scene.name);
+        StartCoroutine(iGLevelManager.LoadAsynchronously(scene.name));
         Singleton.SaveCoins();
     }
     

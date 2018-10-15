@@ -21,6 +21,7 @@ public class ChestAnimatedUI : MonoBehaviour {
             image.sprite = sprites[i];
             yield return animSpeed;
         }
-        StartCoroutine(SpriteAnim());
+        if(image.isActiveAndEnabled)
+            StartCoroutine(SpriteAnim());
     }
 }

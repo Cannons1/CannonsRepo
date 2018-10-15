@@ -3184,10 +3184,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 67e3990bdcfb6d24fab1c74b01f4087e, type: 3}
-    m_FontSize: 67
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 5
+    m_MinSize: 0
     m_MaxSize: 84
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -3394,6 +3394,7 @@ MonoBehaviour:
   loadingScreen: {fileID: 1131802442909612}
   slider: {fileID: 114048725796406560}
   chestAnimatedUI: {fileID: 114275165577332188}
+  audioUI: {fileID: 114727729698650408}
 --- !u!114 &114420936228864314
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3429,7 +3430,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: fd678a84df255ab4fbe8c94de955eb74, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e6b1717a0d6a15f459444edaaa0b2c71, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3778,19 +3779,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b05b7038dbbd6dc46b475fe3a62983cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coins: 5
+  level: 1
   canvasWin: {fileID: 1003669130554568}
   winTxt:
   - {fileID: 114331335146964408}
   - {fileID: 114097358041064298}
   mCanvasMgr: {fileID: 114767750575057606}
-  mWriteVbles: {fileID: 114178787721354798}
-  level: 1
   anim:
   - {fileID: 95869698766652540}
   - {fileID: 95029255879154480}
   cParticle: {fileID: 198034215770497476}
-  win: 0
+  audioUI: {fileID: 114727729698650408}
 --- !u!114 &114559748078416638
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4288,6 +4287,8 @@ MonoBehaviour:
   buttonBack: {fileID: 8300000, guid: bfc852f860e657f4390defebf9a81161, type: 3}
   claimAGift: {fileID: 8300000, guid: d1d5a020c6212264986e28aa2530de91, type: 3}
   coin: {fileID: 8300000, guid: 26ba0a6e45a93a3459f80edebb5cd411, type: 3}
+  openAChest: {fileID: 8300000, guid: f9a28a87f23211e488a99bd5b9e7510e, type: 3}
+  starAudio: {fileID: 8300000, guid: d9c70a1f2b0968043b9ea156ff0aa5cd, type: 3}
 --- !u!114 &114761219377744784
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4559,6 +4560,7 @@ MonoBehaviour:
   - {fileID: 114440169053136574}
   - {fileID: 114829360124962596}
   mWinCondition: {fileID: 114534144998237950}
+  audioUI: {fileID: 114727729698650408}
   time3Stars: 11
   time2Stars: 16
 --- !u!114 &114864330336271670
@@ -4600,6 +4602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasMgr: {fileID: 114767750575057606}
+  iGLevelManager: {fileID: 114414949778851446}
 --- !u!114 &114873946662038332
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19744,8 +19747,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.0000050068, y: -177.38}
-  m_SizeDelta: {x: 297.98, y: 119.24}
+  m_AnchoredPosition: {x: -0.00059128, y: -178.73}
+  m_SizeDelta: {x: 326.14, y: 122.88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224243302489043438
 RectTransform:

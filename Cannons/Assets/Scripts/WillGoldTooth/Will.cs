@@ -68,6 +68,8 @@ public class Will : MonoBehaviour
             DieEvent dieEvent;
             dieEvent = cannonTriggered.GetComponent<DieEvent>();
             dieEvent.ActiveCanvasRetry();
+            m_Rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+            m_SpriteRenderer.enabled = false;
             //GetComponent<WillAudios>().DieAudio(); // Will Die Audio
         }
 

@@ -3,9 +3,23 @@
 public class AudioUI : MonoBehaviour
 {
     [SerializeField] AudioSource uIAudioSource;
-    [SerializeField] AudioClip buttonDefault, buttonBack, claimAGift, coin;
+    [SerializeField] AudioClip buttonDefault, buttonBack, claimAGift, coin, openAChest, starAudio;
 
     int i = 0;
+
+    public AudioSource UIAudioSource
+    {
+        get
+        {
+            return uIAudioSource;
+        }
+
+        set
+        {
+            uIAudioSource = value;
+        }
+    }
+
     public void MusicButton()
     {
         i += 1;
@@ -13,9 +27,9 @@ public class AudioUI : MonoBehaviour
         {
             if (i == 1)
             {
-                if (uIAudioSource.isPlaying == true)
+                if (UIAudioSource.isPlaying == true)
                 {
-                    uIAudioSource.Stop();
+                    UIAudioSource.Stop();
                 }
             }
             else
@@ -30,18 +44,25 @@ public class AudioUI : MonoBehaviour
 
     }
     public void SoundClaimGift() {
-        uIAudioSource.PlayOneShot(claimAGift);
+        UIAudioSource.PlayOneShot(claimAGift);
     }
     public void AudioButtonDefault()
     {
-        uIAudioSource.PlayOneShot(buttonDefault);
+        UIAudioSource.PlayOneShot(buttonDefault);
     }
     public void AudioButtonBack()
     {
-        uIAudioSource.PlayOneShot(buttonBack);
+        UIAudioSource.PlayOneShot(buttonBack);
+    }
+    public void AudioCoins() {
+        UIAudioSource.PlayOneShot(coin);
     }
 
-    public void AudioCoins() {
-        uIAudioSource.PlayOneShot(coin);
+    public void AudioOpenChest() {
+        UIAudioSource.PlayOneShot(openAChest);
+    }
+
+    public void AudioStar() {
+        UIAudioSource.PlayOneShot(starAudio);
     }
 }

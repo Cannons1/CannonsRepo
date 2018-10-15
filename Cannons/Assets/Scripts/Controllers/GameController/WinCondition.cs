@@ -3,37 +3,36 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class WinCondition : MonoBehaviour {
-    [Header("Win prize")]
-    [SerializeField] int coins;
+    public int level;
+
     [SerializeField] GameObject canvasWin;
     [SerializeField] Text[] winTxt;
     [SerializeField] CanvasMgr mCanvasMgr;
-    [SerializeField] WriteVbles mWriteVbles;
-    public int level;
-
     [SerializeField] Animator[] anim;
     [SerializeField] ParticleSystem cParticle;
-
-    public bool win = false;
+    [SerializeField] AudioUI audioUI;
 
     public void Win(Rigidbody _wills) {
-        anim[0].SetBool("Opened", true);
         _wills.constraints = RigidbodyConstraints.FreezeAll;
         StartCoroutine(ActivatingCanvas());
-        CoinsMgr();
         if (level > Singleton.instance.LvlsUnlocked) {
             Singleton.instance.LvlsUnlocked = level;
             Singleton.SaveUnlockLevels();
         }
     }
 
-    WaitForSeconds animLength = new WaitForSeconds(1.2f);//anim openChestLength
-
     IEnumerator ActivatingCanvas() {
         mCanvasMgr.Canvas[0].SetActive(false);
-        yield return new WaitForSeconds(0.8f);
+        anim[0].SetBool("Opened", true);
+        yield return new WaitForSeconds(0.7f);
+        audioUI.AudioOpenChest();
+        yield return new WaitForSeconds(0.1f);
         cParticle.Play();
-        yield return animLength;
+        for (int i = 0; i < 3; i++) {
+            audioUI.AudioCoins();
+            yield return new WaitForSeconds(0.16f);
+        }
+        yield return new WaitForSeconds(1.2f);//anim openChestLength
         anim[1].SetBool("Win", true);
         yield return new WaitForSeconds(0.32f);
         canvasWin.SetActive(true);
@@ -41,10 +40,9 @@ public class WinCondition : MonoBehaviour {
         cParticle.Stop();
     }
 
-    private void CoinsMgr() {
-        Singleton.instance.Coins += coins;
-        mWriteVbles.WritingNumberOfCoins();
-        winTxt[0].text = coins.ToString("+0 Coins");
+    public void CoinsMgr(int _coins) {
+        Singleton.instance.Coins += _coins;
+        winTxt[0].text = _coins.ToString("+0 Coins");
         Singleton.SaveCoins();
     }
 }

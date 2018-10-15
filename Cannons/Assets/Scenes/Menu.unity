@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12304,6 +12304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingScreen: {fileID: 720195618}
   slider: {fileID: 720195617}
+  audioUI: {fileID: 1436810330}
 --- !u!1 &848141814
 GameObject:
   m_ObjectHideFlags: 0
@@ -19587,6 +19588,8 @@ MonoBehaviour:
   buttonBack: {fileID: 8300000, guid: bfc852f860e657f4390defebf9a81161, type: 3}
   claimAGift: {fileID: 8300000, guid: d1d5a020c6212264986e28aa2530de91, type: 3}
   coin: {fileID: 8300000, guid: 26ba0a6e45a93a3459f80edebb5cd411, type: 3}
+  openAChest: {fileID: 0}
+  starAudio: {fileID: 0}
 --- !u!4 &1436810331
 Transform:
   m_ObjectHideFlags: 0

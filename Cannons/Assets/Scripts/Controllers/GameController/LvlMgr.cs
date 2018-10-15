@@ -7,6 +7,7 @@ public class LvlMgr : MonoBehaviour
 {
     [SerializeField] GameObject loadingScreen;
     [SerializeField] Slider slider;
+    [SerializeField] AudioUI audioUI;
 
     public void Levels(string levelName)
     {
@@ -15,6 +16,9 @@ public class LvlMgr : MonoBehaviour
 
     IEnumerator LoadAsynchronously(string _sceneName)
     {
+        audioUI.AudioButtonDefault();
+        Time.timeScale = 1;
+        yield return new WaitForSeconds(0.13f);
         loadingScreen.SetActive(true);
         AsyncOperation operation = SceneManager.LoadSceneAsync(_sceneName);
 
