@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +6,8 @@ public class TimerStars : MonoBehaviour
 {
     [SerializeField] Stars stars;
     [SerializeField] Image[] starsImgs;
+    [SerializeField] AudioItems audioItems;
+    [SerializeField] WinCondition winCondition;
 
     float time = 0f;
 
@@ -15,6 +16,7 @@ public class TimerStars : MonoBehaviour
     private void Start()
     {
         Invoke("ActiveStars", 2.3f);
+        winCondition.StopCoroutines += StopAllCoroutines;
     }
 
     private void ActiveStars()
@@ -31,39 +33,33 @@ public class TimerStars : MonoBehaviour
         if (time > stars.time3Stars - 3f && time < stars.time3Stars)
         {
             if (!canDesapearThird)
-                StartCoroutine(ThirdStar());
+                StartCoroutine(DesapearStar(starsImgs.Length -1, stars.time3Stars));
             canDesapearThird = true;
         }
 
         if (time > stars.time2Stars - 3f && time < stars.time2Stars)
         {
             if (!canDesapearScnd)
-                StartCoroutine(SecondStar());
+                StartCoroutine(DesapearStar(starsImgs.Length - 2, stars.time2Stars));
             canDesapearScnd = true;
         }
     }
 
-    IEnumerator ThirdStar()
+    IEnumerator DesapearStar(int _star, float _timeStars)
     {
-        while (time < stars.time3Stars)
+        audioItems.ItemsAudioSource.pitch = 1;
+        while (time < _timeStars && !winCondition.WinBool)
         {
-            starsImgs[starsImgs.Length - 1].enabled = false;
+            starsImgs[_star].enabled = false;
             yield return new WaitForSeconds(0.5f);
-            starsImgs[starsImgs.Length - 1].enabled = true;
+            audioItems.AudioStar();
+            starsImgs[_star].enabled = true;
             yield return new WaitForSeconds(0.5f);
         }
-        starsImgs[starsImgs.Length - 1].enabled = false;
-    }
-
-    IEnumerator SecondStar()
-    {
-        while (time < stars.time2Stars)
-        {
-            starsImgs[starsImgs.Length - 2].enabled = false;
-            yield return new WaitForSeconds(0.5f);
-            starsImgs[starsImgs.Length - 2].enabled = true;
-            yield return new WaitForSeconds(0.5f);
+        if (!winCondition.WinBool) {
+            audioItems.ItemsAudioSource.pitch = 2;
+            audioItems.AudioStar();
         }
-        starsImgs[starsImgs.Length - 2].enabled = false;
+        starsImgs[_star].enabled = false;
     }
 }

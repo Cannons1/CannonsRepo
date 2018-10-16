@@ -2,8 +2,8 @@
 
 public class AudioUI : MonoBehaviour
 {
+    [SerializeField] AudioClip buttonDefault, buttonBack, claimAGift, coin;
     [SerializeField] AudioSource uIAudioSource;
-    [SerializeField] AudioClip buttonDefault, buttonBack, claimAGift, coin, openAChest, starAudio;
 
     int i = 0;
 
@@ -56,13 +56,5 @@ public class AudioUI : MonoBehaviour
     }
     public void AudioCoins() {
         UIAudioSource.PlayOneShot(coin);
-    }
-
-    public void AudioOpenChest() {
-        UIAudioSource.PlayOneShot(openAChest);
-    }
-
-    public void AudioStar() {
-        UIAudioSource.PlayOneShot(starAudio);
     }
 }

@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class WinCondition : MonoBehaviour {
+
     public int level;
 
     [SerializeField] GameObject canvasWin;
@@ -10,9 +11,21 @@ public class WinCondition : MonoBehaviour {
     [SerializeField] CanvasMgr mCanvasMgr;
     [SerializeField] Animator[] anim;
     [SerializeField] ParticleSystem cParticle;
+    [SerializeField] AudioItems audioItems;
     [SerializeField] AudioUI audioUI;
 
+    public delegate void Stop();
+    public event Stop StopCoroutines;
+
+    private bool win = false;
+
+    public bool WinBool {
+        get { return win; }
+    }
+
     public void Win(Rigidbody _wills) {
+        win = true;
+        StopCoroutines();
         _wills.constraints = RigidbodyConstraints.FreezeAll;
         StartCoroutine(ActivatingCanvas());
         if (level > Singleton.instance.LvlsUnlocked) {
@@ -25,7 +38,7 @@ public class WinCondition : MonoBehaviour {
         mCanvasMgr.Canvas[0].SetActive(false);
         anim[0].SetBool("Opened", true);
         yield return new WaitForSeconds(0.7f);
-        audioUI.AudioOpenChest();
+        audioItems.AudioOpenChest();
         yield return new WaitForSeconds(0.1f);
         cParticle.Play();
         for (int i = 0; i < 3; i++) {

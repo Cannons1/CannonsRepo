@@ -7,7 +7,7 @@ public class Stars : MonoBehaviour {
     [SerializeField] Image[] starsImg;
     private float currentTime;
     [SerializeField] WinCondition mWinCondition;
-    [SerializeField] AudioUI audioUI;
+    [SerializeField] AudioItems audioItems;
 
     public float time3Stars, time2Stars;
 
@@ -48,11 +48,11 @@ public class Stars : MonoBehaviour {
         for (int i = 0; i < starsImg.Length; i++) {
             if (i < _num) {
                 starsImg[i].enabled = false;
-                audioUI.AudioStar();
-                audioUI.UIAudioSource.pitch += 1;
+                audioItems.AudioStar();
+                audioItems.ItemsAudioSource.pitch += 1;
             }
             yield return new WaitForSeconds(0.15f);
         }
-        audioUI.UIAudioSource.pitch = 1;
+        audioItems.ItemsAudioSource.pitch = 1;
     }
 }
