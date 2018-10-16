@@ -15,15 +15,15 @@ public class TimerStars : MonoBehaviour
 
     private void Start()
     {
-        Invoke("ActiveStars", 2.3f);
-        winCondition.StopCoroutines += StopAllCoroutines;
+        StartCoroutine(ActiveStars());
     }
 
-    private void ActiveStars()
-    {
+    IEnumerator ActiveStars() {
+        yield return new WaitForSeconds(2.3f);
         foreach (Image star in starsImgs)
         {
             star.enabled = true;
+            yield return null;
         }
     }
 
@@ -57,7 +57,6 @@ public class TimerStars : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
         }
         if (!winCondition.WinBool) {
-            audioItems.ItemsAudioSource.pitch = -2;
             audioItems.AudioStar();
         }
         starsImgs[_star].enabled = false;

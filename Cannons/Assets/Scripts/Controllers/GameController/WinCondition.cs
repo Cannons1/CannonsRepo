@@ -14,9 +14,6 @@ public class WinCondition : MonoBehaviour {
     [SerializeField] AudioItems audioItems;
     [SerializeField] AudioUI audioUI;
 
-    public delegate void Stop();
-    public event Stop StopCoroutines;
-
     private bool win = false;
 
     public bool WinBool {
@@ -25,7 +22,6 @@ public class WinCondition : MonoBehaviour {
 
     public void Win(Rigidbody _wills) {
         win = true;
-        StopCoroutines();
         _wills.constraints = RigidbodyConstraints.FreezeAll;
         StartCoroutine(ActivatingCanvas());
         if (level > Singleton.instance.LvlsUnlocked) {

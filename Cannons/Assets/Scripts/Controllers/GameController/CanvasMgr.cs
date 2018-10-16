@@ -64,17 +64,6 @@ public class CanvasMgr : MonoBehaviour {
                     break;
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.Escape) && canvas[2].activeInHierarchy) {
-            canvas[0].SetActive(false);
-            unnpause = 3;
-            IGLevelManager.unpause = false;
-        }
-        if (Input.GetKeyDown(KeyCode.Escape) && canvas[3].activeInHierarchy) {
-            canvas[0].SetActive(false);
-            unnpause = 3;
-            IGLevelManager.unpause = false;
-        }
 	}
 
     private void PauseButton()
