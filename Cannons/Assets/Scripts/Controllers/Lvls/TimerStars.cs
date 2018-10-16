@@ -57,7 +57,7 @@ public class TimerStars : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
         }
         if (!winCondition.WinBool) {
-            audioItems.ItemsAudioSource.pitch = 2;
+            audioItems.ItemsAudioSource.pitch = -2;
             audioItems.AudioStar();
         }
         starsImgs[_star].enabled = false;

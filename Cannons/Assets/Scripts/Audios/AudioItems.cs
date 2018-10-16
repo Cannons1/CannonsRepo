@@ -19,6 +19,11 @@ public class AudioItems : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        itemsAudioSource.pitch = 1;    
+    }
+
     public void AudioOpenChest()
     {
         ItemsAudioSource.PlayOneShot(openAChest);
