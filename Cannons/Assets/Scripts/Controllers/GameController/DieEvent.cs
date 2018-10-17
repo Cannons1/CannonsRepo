@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 public class DieEvent : MonoBehaviour {
 
     Collider mCollider;
-    [SerializeField] CanvasMgr canvasMgr;
     [SerializeField] IGLevelManager iGLevelManager;
     Scene scene;
 
@@ -19,7 +18,7 @@ public class DieEvent : MonoBehaviour {
     {
         StartCoroutine(EndDieAudio());
         mCollider.enabled = false;
-        canvasMgr.Canvas[0].SetActive(false);
+        iGLevelManager.canvas[0].SetActive(false);
     }
 
     public void RetryLvl()
@@ -28,13 +27,11 @@ public class DieEvent : MonoBehaviour {
         Singleton.SaveCoins();
     }
     
-    WaitForSeconds dieLength = new WaitForSeconds(0.3f);
-
     IEnumerator EndDieAudio()
     {
-        yield return dieLength;
-        if (!canvasMgr.Canvas[2].activeInHierarchy) {
-            canvasMgr.Canvas[2].SetActive(true);
+        yield return new WaitForSeconds(0.3f);
+        if (!iGLevelManager.canvas[2].activeInHierarchy) {
+            iGLevelManager.canvas[2].SetActive(true);
         }
         Time.timeScale = 0;
     }

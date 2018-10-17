@@ -129,24 +129,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1085404979507502
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4794626314970920}
-  - component: {fileID: 114767750575057606}
-  - component: {fileID: 114158682304142656}
-  - component: {fileID: 114422865631868036}
-  m_Layer: 0
-  m_Name: CanvasMgr
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1085667814124382
 GameObject:
   m_ObjectHideFlags: 1
@@ -1208,6 +1190,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4571056869427328}
   - component: {fileID: 114414949778851446}
+  - component: {fileID: 114651438300736286}
+  - component: {fileID: 114097646507650376}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -1504,7 +1488,7 @@ Transform:
   - {fileID: 4049938988671534}
   - {fileID: 4687523008824776}
   m_Father: {fileID: 4848279867700980}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4049938988671534
 Transform:
@@ -1570,7 +1554,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4848279867700980}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!4 &4317112468736090
 Transform:
@@ -1583,7 +1567,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4848279867700980}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4330607884371746
 Transform:
@@ -1664,7 +1648,7 @@ Transform:
   - {fileID: 4395558658332668}
   - {fileID: 4997105714880508}
   m_Father: {fileID: 4848279867700980}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4524045513825166
 Transform:
@@ -1718,7 +1702,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4848279867700980}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4586417693754924
 Transform:
@@ -1772,19 +1756,6 @@ Transform:
   m_Father: {fileID: 4848279867700980}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4794626314970920
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1085404979507502}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4848279867700980}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4848279867700980
 Transform:
   m_ObjectHideFlags: 1
@@ -1806,7 +1777,6 @@ Transform:
   - {fileID: 4999594669841210}
   - {fileID: 4689262109859010}
   - {fileID: 4191026474547150}
-  - {fileID: 4794626314970920}
   - {fileID: 4317112468736090}
   - {fileID: 4571056869427328}
   - {fileID: 4423579425172248}
@@ -2589,6 +2559,24 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1.1
   m_Text: Level  1 Complete
+--- !u!114 &114097646507650376
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1821684419068654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c37084da234296a4e97a8ce2c1c207ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stars: {fileID: 114861857502814000}
+  starsImgs:
+  - {fileID: 114123231010721724}
+  - {fileID: 114436563910821378}
+  - {fileID: 114693807056074930}
+  audioItems: {fileID: 114439184960224102}
+  winCondition: {fileID: 114534144998237950}
 --- !u!114 &114108735873999364
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2697,21 +2685,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114158682304142656
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1085404979507502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9706c72cecc15344ab4d8fa7f81f76f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sliderDistance: {fileID: 114310134923865804}
-  instanceT: {fileID: 4317112468736090}
-  winConditionT: {fileID: 4423579425172248}
-  percentText: {fileID: 114423848890473412}
 --- !u!114 &114178787721354798
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3461,7 +3434,14 @@ MonoBehaviour:
   loadingScreen: {fileID: 1131802442909612}
   slider: {fileID: 114048725796406560}
   chestAnimatedUI: {fileID: 114275165577332188}
-  audioUI: {fileID: 114727729698650408}
+  lvlName: {fileID: 114202516206084058}
+  lvlNamePaused: {fileID: 114192619575331152}
+  txtTapToShoot: {fileID: 1214782714028226}
+  winCondition: {fileID: 114534144998237950}
+  canvas:
+  - {fileID: 1085667814124382}
+  - {fileID: 1698133515569210}
+  - {fileID: 1781367002245086}
 --- !u!114 &114420936228864314
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3505,24 +3485,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114422865631868036
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1085404979507502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c37084da234296a4e97a8ce2c1c207ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stars: {fileID: 114861857502814000}
-  starsImgs:
-  - {fileID: 114123231010721724}
-  - {fileID: 114436563910821378}
-  - {fileID: 114693807056074930}
-  audioItems: {fileID: 114439184960224102}
-  winCondition: {fileID: 114534144998237950}
 --- !u!114 &114423848890473412
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3856,13 +3818,13 @@ MonoBehaviour:
   winTxt:
   - {fileID: 114331335146964408}
   - {fileID: 114097358041064298}
-  mCanvasMgr: {fileID: 114767750575057606}
   anim:
   - {fileID: 95869698766652540}
   - {fileID: 95029255879154480}
   cParticle: {fileID: 198034215770497476}
   audioItems: {fileID: 114439184960224102}
   audioUI: {fileID: 114727729698650408}
+  iGLevelManager: {fileID: 114414949778851446}
 --- !u!114 &114559748078416638
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4136,6 +4098,21 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: SFx
+--- !u!114 &114651438300736286
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1821684419068654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9706c72cecc15344ab4d8fa7f81f76f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sliderDistance: {fileID: 114310134923865804}
+  instanceT: {fileID: 4317112468736090}
+  winConditionT: {fileID: 4423579425172248}
+  percentText: {fileID: 114423848890473412}
 --- !u!114 &114693807056074930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4440,25 +4417,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114767750575057606
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1085404979507502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 596450ec75b1bb748bf2f961db3fa682, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvas:
-  - {fileID: 1085667814124382}
-  - {fileID: 1698133515569210}
-  mAduioUI: {fileID: 114727729698650408}
-  txtTapToShoot: {fileID: 1214782714028226}
-  lvlName: {fileID: 114202516206084058}
-  lvlNamePaused: {fileID: 114192619575331152}
-  winCondition: {fileID: 114534144998237950}
 --- !u!114 &114778246237250754
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4622,7 +4580,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e98bc13e589bd1744abd99bb6f1fc1c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasMgr: {fileID: 114767750575057606}
   iGLevelManager: {fileID: 114414949778851446}
 --- !u!114 &114873946662038332
 MonoBehaviour:

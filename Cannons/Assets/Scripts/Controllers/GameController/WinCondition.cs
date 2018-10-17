@@ -8,11 +8,11 @@ public class WinCondition : MonoBehaviour {
 
     [SerializeField] GameObject canvasWin;
     [SerializeField] Text[] winTxt;
-    [SerializeField] CanvasMgr mCanvasMgr;
     [SerializeField] Animator[] anim;
     [SerializeField] ParticleSystem cParticle;
     [SerializeField] AudioItems audioItems;
     [SerializeField] AudioUI audioUI;
+    [SerializeField] IGLevelManager iGLevelManager;
 
     private bool win = false;
 
@@ -31,7 +31,7 @@ public class WinCondition : MonoBehaviour {
     }
 
     IEnumerator ActivatingCanvas() {
-        mCanvasMgr.Canvas[0].SetActive(false);
+        iGLevelManager.canvas[0].SetActive(false);
         anim[0].SetBool("Opened", true);
         yield return new WaitForSeconds(0.7f);
         audioItems.AudioOpenChest();

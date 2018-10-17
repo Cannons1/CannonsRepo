@@ -20,40 +20,34 @@ public class AudioUI : MonoBehaviour
         }
     }
 
-    public void MusicButton()
-    {
+    public void MusicButton() {
         i += 1;
         if (Singleton.instance.MusicMuted == true)
         {
             if (i == 1)
             {
                 if (UIAudioSource.isPlaying == true)
-                {
                     UIAudioSource.Stop();
-                }
             }
             else
-            {
                 AudioButtonDefault();
-            }
         }
         else
-        {
             AudioButtonDefault();
-        }
-
     }
+
     public void SoundClaimGift() {
         UIAudioSource.PlayOneShot(claimAGift);
     }
-    public void AudioButtonDefault()
-    {
+
+    public void AudioButtonDefault() {
         UIAudioSource.PlayOneShot(buttonDefault);
     }
-    public void AudioButtonBack()
-    {
+
+    public void AudioButtonBack() {
         UIAudioSource.PlayOneShot(buttonBack);
     }
+
     public void AudioCoins() {
         UIAudioSource.PlayOneShot(coin);
     }
