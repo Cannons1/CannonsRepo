@@ -71,10 +71,10 @@ public class ShopController : MonoBehaviour {
                 audioController.SoundClaimGift();
             }
             else {
-                isInShop = true;
-                canvasManager.Canvas[3].SetActive(true);
-                canvasManager.Canvas[3].GetComponentInChildren<Animator>().SetBool("OpenShop",true);
-                audioController.AudioBtnDef();
+                //isInShop = true;
+                //canvasManager.Canvas[3].SetActive(true);
+                //canvasManager.Canvas[3].GetComponentInChildren<Animator>().SetBool("OpenShop",true);
+                //audioController.AudioBtnDef();
             }
         }
     }    

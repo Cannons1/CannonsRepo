@@ -120,7 +120,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.22
+  bundleVersion: 0.24
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -151,12 +151,12 @@ PlayerSettings:
   m_ColorGamuts: 00000000
   targetPixelDensity: 30
   resolutionScalingMode: 0
-  androidSupportedAspectRatio: 0
+  androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 1.86
   applicationIdentifier:
     Android: com.OcasoGames.Cannons
   buildNumber: {}
-  AndroidBundleVersionCode: 4
+  AndroidBundleVersionCode: 6
   AndroidMinSdkVersion: 19
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
@@ -245,7 +245,7 @@ PlayerSettings:
   AndroidTargetArchitectures: 5
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/Asus/Desktop/ProyectosVideojuegos/Cannons/Build/MobileKey.keystore
+  AndroidKeystoreName: C:/Users/Juan David/Desktop/MobileKey.keystore
   AndroidKeyaliasName: cannonskey
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
@@ -263,7 +263,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 09a9105b12c09934f98c9d92b6243f77, type: 3}
+      m_Icon: {fileID: 2800000, guid: b54096f6c0342c34794221d11092e454, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
@@ -301,7 +301,7 @@ PlayerSettings:
       m_Kind: 2
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: 09a9105b12c09934f98c9d92b6243f77, type: 3}
+      - {fileID: 2800000, guid: b54096f6c0342c34794221d11092e454, type: 3}
       m_Width: 192
       m_Height: 192
       m_Kind: 1
@@ -337,7 +337,7 @@ PlayerSettings:
       m_Kind: 1
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: 09a9105b12c09934f98c9d92b6243f77, type: 3}
+      - {fileID: 2800000, guid: b54096f6c0342c34794221d11092e454, type: 3}
       m_Width: 192
       m_Height: 192
       m_Kind: 0
