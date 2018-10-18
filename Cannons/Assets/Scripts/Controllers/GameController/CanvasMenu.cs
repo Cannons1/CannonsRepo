@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 
 public class CanvasMenu : MonoBehaviour {
+
     [SerializeField] GameObject[] canvas;
-    [SerializeField] AudioUI mAudioUI;
+    [SerializeField] AudioController audioController;
     [SerializeField] GameObject capsuleTapToPlay;
     [SerializeField] ShopController shopController;
     [SerializeField] GameObject panelCredits;
@@ -33,19 +34,6 @@ public class CanvasMenu : MonoBehaviour {
         }
     }
 
-    public AudioUI MAudioUI
-    {
-        get
-        {
-            return mAudioUI;
-        }
-
-        set
-        {
-            mAudioUI = value;
-        }
-    }
-
     private void Start()
     {
         Time.timeScale = 1;
@@ -72,7 +60,7 @@ public class CanvasMenu : MonoBehaviour {
             }
             else {
                 panelCredits.SetActive(false);
-                mAudioUI.AudioButtonBack();
+                audioController.AudioBtnDef();
             }
             if (Canvas[2].activeInHierarchy && !canvas[3].activeInHierarchy) {
                 BackCharacter();
@@ -84,7 +72,7 @@ public class CanvasMenu : MonoBehaviour {
                 else
                 {
                     canvas[3].SetActive(false);
-                    mAudioUI.AudioButtonBack();
+                    audioController.AudioBtnBack();
                 }
             }
             if (Canvas[4].activeInHierarchy)
@@ -101,35 +89,34 @@ public class CanvasMenu : MonoBehaviour {
     private void BackSettings() {
         Canvas[1].SetActive(false);
         PrincipalCanvasActive();
-        MAudioUI.AudioButtonBack();
+        audioController.AudioBtnBack();
         CapsuleTapToPlay.SetActive(true);
     }
 
     private void BackLeaderboard() {
         Canvas[2].SetActive(false);
         PrincipalCanvasActive();
-        MAudioUI.AudioButtonBack();
-
+        audioController.AudioBtnBack();
     }
 
     private void BackCharacter() {
         Canvas[2].SetActive(false);
         PrincipalCanvasActive();
-        MAudioUI.AudioButtonBack();
+        audioController.AudioBtnBack();
         CapsuleTapToPlay.SetActive(true);
     }
 
     private void BackShop() {
         Canvas[3].SetActive(false);
         PrincipalCanvasActive();
-        MAudioUI.AudioButtonBack();
+        audioController.AudioBtnBack();
         CapsuleTapToPlay.SetActive(true);
     }
 
     private void BackCampaing() {
         Canvas[4].SetActive(false);
         PrincipalCanvasActive();
-        MAudioUI.AudioButtonBack();
+        audioController.AudioBtnBack();
         CapsuleTapToPlay.SetActive(true);
     }
 }

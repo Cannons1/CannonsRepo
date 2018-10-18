@@ -3,6 +3,7 @@
 public class TapToPlay : MonoBehaviour
 {
     [SerializeField] CanvasMenu mcanvasMenu;
+    [SerializeField] AudioController audioController;
 
     void Update()
     {
@@ -15,7 +16,7 @@ public class TapToPlay : MonoBehaviour
                 GameObject collisioned = hit.collider.gameObject;
 
                 if (collisioned != null) {
-                    mcanvasMenu.MAudioUI.AudioButtonDefault();
+                    audioController.AudioBtnDef();
                     mcanvasMenu.Canvas[0].SetActive(false);
                     mcanvasMenu.Canvas[4].SetActive(true);
                     mcanvasMenu.CapsuleTapToPlay.SetActive(false);

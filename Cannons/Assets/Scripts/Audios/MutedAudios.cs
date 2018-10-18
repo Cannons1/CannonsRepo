@@ -6,6 +6,9 @@ public class MutedAudios : MonoBehaviour
 {
     [SerializeField] AudioMixer masterMixer;
     [SerializeField] Toggle sFxToggle, musicToggle;
+    [SerializeField] AudioController audioController;
+
+    byte i = 0;
 
     private void Start()
     {
@@ -18,6 +21,25 @@ public class MutedAudios : MonoBehaviour
             sFxToggle.isOn = false;
         else
             sFxToggle.isOn = true;
+
+
+    }
+
+    public void MusicButton()
+    {
+        i += 1;
+        if (Singleton.instance.MusicMuted == true)
+        {
+            if (i == 1)
+            {
+                if (audioController.UIAudioSource.isPlaying == true)
+                    audioController.UIAudioSource.Stop();
+            }
+            else
+                audioController.AudioBtnDef();
+        }
+        else
+            audioController.AudioBtnDef();
     }
 
     public void MusicMuted(float _MusicVol)

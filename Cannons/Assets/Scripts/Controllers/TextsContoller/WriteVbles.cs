@@ -4,7 +4,6 @@ using UnityEngine.UI;
 public class WriteVbles : MonoBehaviour
 {
     [SerializeField] Text numberOfCoins; 
-    [SerializeField] AudioUI mAudioUI;
     [SerializeField] Text[] menuCoinsTxt;
 
     private void Start()

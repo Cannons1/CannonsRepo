@@ -3312,7 +3312,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &204650899
 GameObject:
@@ -3688,8 +3688,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1436810330}
-        m_MethodName: AudioButtonDefault
+      - m_Target: {fileID: 1436810328}
+        m_MethodName: AudioBtnDef
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4023,7 +4023,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4292791729357622, guid: 8f21b9231e4310e42958acf7365a67bc, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f21b9231e4310e42958acf7365a67bc, type: 2}
@@ -4186,8 +4186,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1436810330}
-        m_MethodName: AudioButtonDefault
+      - m_Target: {fileID: 1436810328}
+        m_MethodName: AudioBtnDef
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1436810329}
+        m_MethodName: MusicButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6364,7 +6375,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1436810330}
+      - m_Target: {fileID: 0}
         m_MethodName: AudioButtonDefault
         m_Mode: 1
         m_Arguments:
@@ -7174,8 +7185,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1436810330}
-        m_MethodName: AudioButtonDefault
+      - m_Target: {fileID: 1436810328}
+        m_MethodName: AudioBtnDef
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7400,8 +7411,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1436810330}
-        m_MethodName: AudioButtonBack
+      - m_Target: {fileID: 1436810328}
+        m_MethodName: AudioBtnBack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8160,8 +8171,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1436810330}
-        m_MethodName: AudioButtonBack
+      - m_Target: {fileID: 1436810328}
+        m_MethodName: AudioBtnBack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9229,8 +9240,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1436810330}
-        m_MethodName: AudioButtonBack
+      - m_Target: {fileID: 1436810328}
+        m_MethodName: AudioBtnBack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10903,7 +10914,7 @@ RectTransform:
   m_LocalScale: {x: 0.70666665, y: 0.70666665, z: 0.70666665}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10925,7 +10936,7 @@ MonoBehaviour:
     type: 2}
   skinContainer: {fileID: 1785263349}
   skinInfo: {fileID: 11400000, guid: 7da9cebc7aff51c44ab67a68293cc97f, type: 2}
-  audioUI: {fileID: 1436810330}
+  audioController: {fileID: 1436810328}
   canvasManager: {fileID: 1337719649}
   writeVbles: {fileID: 732049275}
 --- !u!114 &732049269
@@ -10954,7 +10965,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mWriteVbles: {fileID: 732049275}
-  mAudioUI: {fileID: 1436810330}
+  audioController: {fileID: 1436810328}
   buttonDaily: {fileID: 780505904}
   textAvailable:
   - {fileID: 2138768171}
@@ -10983,7 +10994,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mIAP: {fileID: 732049272}
-  audioUI: {fileID: 1436810330}
+  audioController: {fileID: 1436810328}
 --- !u!114 &732049274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11008,7 +11019,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOfCoins: {fileID: 552766234}
-  mAudioUI: {fileID: 1436810330}
   menuCoinsTxt:
   - {fileID: 552766234}
   - {fileID: 647241821}
@@ -12437,7 +12447,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &844690511
 MonoBehaviour:
@@ -12452,7 +12462,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingScreen: {fileID: 720195618}
   slider: {fileID: 720195617}
-  audioUI: {fileID: 1436810330}
+  audioController: {fileID: 1436810328}
 --- !u!1 &850237981
 GameObject:
   m_ObjectHideFlags: 0
@@ -15109,8 +15119,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1436810330}
-        m_MethodName: AudioButtonDefault
+      - m_Target: {fileID: 1436810328}
+        m_MethodName: AudioBtnDef
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17403,7 +17413,8 @@ AudioSource:
   m_GameObject: {fileID: 1222981267}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243737392688296644, guid: fa6623a82736c034cbd2d20a97c7b71e,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.084
@@ -18588,7 +18599,7 @@ MonoBehaviour:
   - {fileID: 703323837}
   - {fileID: 633698754}
   - {fileID: 1518370014}
-  mAudioUI: {fileID: 1436810330}
+  audioController: {fileID: 1436810328}
   capsuleTapToPlay: {fileID: 1524203967}
   shopController: {fileID: 732049268}
   panelCredits: {fileID: 887246301}
@@ -18603,7 +18614,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1337719651
 MonoBehaviour:
@@ -18617,6 +18628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mcanvasMenu: {fileID: 1337719649}
+  audioController: {fileID: 1436810328}
 --- !u!1 &1349283320
 GameObject:
   m_ObjectHideFlags: 0
@@ -19708,10 +19720,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1436810331}
-  - component: {fileID: 1436810330}
   - component: {fileID: 1436810329}
   - component: {fileID: 1436810328}
-  - component: {fileID: 1436810332}
   m_Layer: 0
   m_Name: AudioController
   m_TagString: Untagged
@@ -19727,11 +19737,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1436810327}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b68da2f2986dc4408ce52654f1ee0d7, type: 3}
+  m_Script: {fileID: 11500000, guid: 90af47fec54055f429b3dde70b1cff0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicAudiosource: {fileID: 1222981268}
-  menuMusic: {fileID: 8300000, guid: 04de96a420c867d4aa768242f36eeed8, type: 3}
+  buttonDefault: {fileID: 8300000, guid: efba30219f11d594d8c10ee04a378cc1, type: 3}
+  buttonBack: {fileID: 8300000, guid: bfc852f860e657f4390defebf9a81161, type: 3}
+  claimGift: {fileID: 8300000, guid: d1d5a020c6212264986e28aa2530de91, type: 3}
+  coin: {fileID: 8300000, guid: 26ba0a6e45a93a3459f80edebb5cd411, type: 3}
+  star: {fileID: 8300000, guid: d9c70a1f2b0968043b9ea156ff0aa5cd, type: 3}
+  openChest: {fileID: 8300000, guid: f9a28a87f23211e488a99bd5b9e7510e, type: 3}
+  music: {fileID: 8300000, guid: 04de96a420c867d4aa768242f36eeed8, type: 3}
+  uIAudioSource: {fileID: 2034892595}
+  itemAudioSource: {fileID: 0}
+  musicAudioSource: {fileID: 1222981268}
 --- !u!114 &1436810329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19746,22 +19764,7 @@ MonoBehaviour:
   masterMixer: {fileID: 24100000, guid: fa6623a82736c034cbd2d20a97c7b71e, type: 2}
   sFxToggle: {fileID: 228456405}
   musicToggle: {fileID: 270588495}
---- !u!114 &1436810330
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1436810327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf89a0e0493929348b046182dd7e3f7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonDefault: {fileID: 8300000, guid: efba30219f11d594d8c10ee04a378cc1, type: 3}
-  buttonBack: {fileID: 8300000, guid: bfc852f860e657f4390defebf9a81161, type: 3}
-  claimAGift: {fileID: 8300000, guid: d1d5a020c6212264986e28aa2530de91, type: 3}
-  coin: {fileID: 8300000, guid: 26ba0a6e45a93a3459f80edebb5cd411, type: 3}
-  uIAudioSource: {fileID: 1436810332}
+  audioController: {fileID: 1436810328}
 --- !u!4 &1436810331
 Transform:
   m_ObjectHideFlags: 0
@@ -19775,101 +19778,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &1436810332
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1436810327}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &1443252650
 GameObject:
   m_ObjectHideFlags: 0
@@ -20101,8 +20009,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1436810330}
-        m_MethodName: AudioButtonBack
+      - m_Target: {fileID: 1436810328}
+        m_MethodName: AudioBtnBack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21654,7 +21562,7 @@ Transform:
   m_LocalScale: {x: 4.7831426, y: 1.0084851, z: 1.51}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1524203970
 BoxCollider:
@@ -21980,7 +21888,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1559218888
 GameObject:
@@ -22992,8 +22900,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1436810330}
-        m_MethodName: AudioButtonBack
+      - m_Target: {fileID: 1436810328}
+        m_MethodName: AudioBtnBack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24510,8 +24418,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1436810330}
-        m_MethodName: AudioButtonBack
+      - m_Target: {fileID: 1436810328}
+        m_MethodName: AudioBtnBack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25882,7 +25790,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1436810330}
+      - m_Target: {fileID: 0}
         m_MethodName: AudioButtonDefault
         m_Mode: 1
         m_Arguments:
@@ -28757,6 +28665,131 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2025844454}
   m_CullTransparentMesh: 0
+--- !u!1 &2034892594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2034892596}
+  - component: {fileID: 2034892595}
+  m_Layer: 0
+  m_Name: UIAudioSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &2034892595
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2034892594}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 243070854274189250, guid: fa6623a82736c034cbd2d20a97c7b71e,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &2034892596
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2034892594}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2036164122
 GameObject:
   m_ObjectHideFlags: 0
@@ -29472,8 +29505,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1436810330}
-        m_MethodName: AudioButtonDefault
+      - m_Target: {fileID: 1436810328}
+        m_MethodName: AudioBtnDef
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -29698,8 +29731,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1436810330}
-        m_MethodName: AudioButtonDefault
+      - m_Target: {fileID: 1436810328}
+        m_MethodName: AudioBtnDef
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -30138,7 +30171,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2138768171
 GameObject:

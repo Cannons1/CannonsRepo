@@ -72,10 +72,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d9f309da453774aa6208bc781c5cfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mWriteVbles: {fileID: 0}
+  mWriteVbles: {fileID: 114178787721354798, guid: 50968a4552340f3468aec73489bdefb1,
+    type: 2}
   mSphereCollider: {fileID: 135471815425125940}
   anim: {fileID: 95382196602214662}
-  audioUI: {fileID: 0}
+  audioController: {fileID: 114694582040387180, guid: 50968a4552340f3468aec73489bdefb1,
+    type: 2}
   spriteRenderer: {fileID: 212325228809057472}
 --- !u!135 &135471815425125940
 SphereCollider:

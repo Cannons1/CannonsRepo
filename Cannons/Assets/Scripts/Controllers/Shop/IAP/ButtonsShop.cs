@@ -5,7 +5,7 @@ public class ButtonsShop : MonoBehaviour {
 
     int id;
     [SerializeField] IAPManager mIAP;
-    [SerializeField] AudioUI audioUI;
+    [SerializeField] AudioController audioController;
 
     private void Start()
     {
@@ -15,7 +15,7 @@ public class ButtonsShop : MonoBehaviour {
 
     public void ButtonBuyIAP(int _id) {
         id = _id;
-        audioUI.AudioButtonDefault();
+        audioController.AudioBtnDef();
         switch (id) {
             case 0:
                 mIAP.BuyFirstProduct();

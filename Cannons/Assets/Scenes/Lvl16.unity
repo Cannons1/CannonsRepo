@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -160,12 +160,17 @@ Prefab:
         type: 2}
       propertyPath: audioUI
       value: 
-      objectReference: {fileID: 1328184191}
+      objectReference: {fileID: 0}
     - target: {fileID: 114178305663971862, guid: 542e907df1a7c8a44b969ed4adce0769,
         type: 2}
       propertyPath: mWriteVbles
       value: 
       objectReference: {fileID: 1328184192}
+    - target: {fileID: 114178305663971862, guid: 542e907df1a7c8a44b969ed4adce0769,
+        type: 2}
+      propertyPath: audioController
+      value: 
+      objectReference: {fileID: 1328184191}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 542e907df1a7c8a44b969ed4adce0769, type: 2}
   m_IsPrefabAsset: 0
@@ -216,12 +221,17 @@ Prefab:
         type: 2}
       propertyPath: audioUI
       value: 
-      objectReference: {fileID: 1328184191}
+      objectReference: {fileID: 0}
     - target: {fileID: 114178305663971862, guid: 542e907df1a7c8a44b969ed4adce0769,
         type: 2}
       propertyPath: mWriteVbles
       value: 
       objectReference: {fileID: 1328184192}
+    - target: {fileID: 114178305663971862, guid: 542e907df1a7c8a44b969ed4adce0769,
+        type: 2}
+      propertyPath: audioController
+      value: 
+      objectReference: {fileID: 1328184191}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 542e907df1a7c8a44b969ed4adce0769, type: 2}
   m_IsPrefabAsset: 0
@@ -609,12 +619,17 @@ Prefab:
         type: 2}
       propertyPath: audioUI
       value: 
-      objectReference: {fileID: 1328184191}
+      objectReference: {fileID: 0}
     - target: {fileID: 114178305663971862, guid: 542e907df1a7c8a44b969ed4adce0769,
         type: 2}
       propertyPath: mWriteVbles
       value: 
       objectReference: {fileID: 1328184192}
+    - target: {fileID: 114178305663971862, guid: 542e907df1a7c8a44b969ed4adce0769,
+        type: 2}
+      propertyPath: audioController
+      value: 
+      objectReference: {fileID: 1328184191}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 542e907df1a7c8a44b969ed4adce0769, type: 2}
   m_IsPrefabAsset: 0
@@ -665,12 +680,17 @@ Prefab:
         type: 2}
       propertyPath: audioUI
       value: 
-      objectReference: {fileID: 1328184191}
+      objectReference: {fileID: 0}
     - target: {fileID: 114178305663971862, guid: 542e907df1a7c8a44b969ed4adce0769,
         type: 2}
       propertyPath: mWriteVbles
       value: 
       objectReference: {fileID: 1328184192}
+    - target: {fileID: 114178305663971862, guid: 542e907df1a7c8a44b969ed4adce0769,
+        type: 2}
+      propertyPath: audioController
+      value: 
+      objectReference: {fileID: 1328184191}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 542e907df1a7c8a44b969ed4adce0769, type: 2}
   m_IsPrefabAsset: 0
@@ -1234,12 +1254,17 @@ Prefab:
         type: 2}
       propertyPath: audioUI
       value: 
-      objectReference: {fileID: 1328184191}
+      objectReference: {fileID: 0}
     - target: {fileID: 114178305663971862, guid: 542e907df1a7c8a44b969ed4adce0769,
         type: 2}
       propertyPath: mWriteVbles
       value: 
       objectReference: {fileID: 1328184192}
+    - target: {fileID: 114178305663971862, guid: 542e907df1a7c8a44b969ed4adce0769,
+        type: 2}
+      propertyPath: audioController
+      value: 
+      objectReference: {fileID: 1328184191}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 542e907df1a7c8a44b969ed4adce0769, type: 2}
   m_IsPrefabAsset: 0
@@ -1370,12 +1395,17 @@ Prefab:
         type: 2}
       propertyPath: audioUI
       value: 
-      objectReference: {fileID: 1328184191}
+      objectReference: {fileID: 0}
     - target: {fileID: 114178305663971862, guid: 542e907df1a7c8a44b969ed4adce0769,
         type: 2}
       propertyPath: mWriteVbles
       value: 
       objectReference: {fileID: 1328184192}
+    - target: {fileID: 114178305663971862, guid: 542e907df1a7c8a44b969ed4adce0769,
+        type: 2}
+      propertyPath: audioController
+      value: 
+      objectReference: {fileID: 1328184191}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 542e907df1a7c8a44b969ed4adce0769, type: 2}
   m_IsPrefabAsset: 0
@@ -1534,12 +1564,17 @@ Prefab:
         type: 2}
       propertyPath: audioUI
       value: 
-      objectReference: {fileID: 1328184191}
+      objectReference: {fileID: 0}
     - target: {fileID: 114178305663971862, guid: 542e907df1a7c8a44b969ed4adce0769,
         type: 2}
       propertyPath: mWriteVbles
       value: 
       objectReference: {fileID: 1328184192}
+    - target: {fileID: 114178305663971862, guid: 542e907df1a7c8a44b969ed4adce0769,
+        type: 2}
+      propertyPath: audioController
+      value: 
+      objectReference: {fileID: 1328184191}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 542e907df1a7c8a44b969ed4adce0769, type: 2}
   m_IsPrefabAsset: 0
@@ -1670,10 +1705,10 @@ AudioSource:
   m_PrefabInternal: {fileID: 1328184189}
 --- !u!114 &1328184191 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114727729698650408, guid: 50968a4552340f3468aec73489bdefb1,
+  m_CorrespondingSourceObject: {fileID: 114694582040387180, guid: 50968a4552340f3468aec73489bdefb1,
     type: 2}
   m_PrefabInternal: {fileID: 1328184189}
-  m_Script: {fileID: 11500000, guid: bf89a0e0493929348b046182dd7e3f7b, type: 3}
+  m_Script: {fileID: 11500000, guid: 90af47fec54055f429b3dde70b1cff0e, type: 3}
 --- !u!114 &1328184192 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114178787721354798, guid: 50968a4552340f3468aec73489bdefb1,
@@ -1977,12 +2012,17 @@ Prefab:
         type: 2}
       propertyPath: audioUI
       value: 
-      objectReference: {fileID: 1328184191}
+      objectReference: {fileID: 0}
     - target: {fileID: 114178305663971862, guid: 542e907df1a7c8a44b969ed4adce0769,
         type: 2}
       propertyPath: mWriteVbles
       value: 
       objectReference: {fileID: 1328184192}
+    - target: {fileID: 114178305663971862, guid: 542e907df1a7c8a44b969ed4adce0769,
+        type: 2}
+      propertyPath: audioController
+      value: 
+      objectReference: {fileID: 1328184191}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 542e907df1a7c8a44b969ed4adce0769, type: 2}
   m_IsPrefabAsset: 0
@@ -2379,12 +2419,17 @@ Prefab:
         type: 2}
       propertyPath: audioUI
       value: 
-      objectReference: {fileID: 1328184191}
+      objectReference: {fileID: 0}
     - target: {fileID: 114178305663971862, guid: 542e907df1a7c8a44b969ed4adce0769,
         type: 2}
       propertyPath: mWriteVbles
       value: 
       objectReference: {fileID: 1328184192}
+    - target: {fileID: 114178305663971862, guid: 542e907df1a7c8a44b969ed4adce0769,
+        type: 2}
+      propertyPath: audioController
+      value: 
+      objectReference: {fileID: 1328184191}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 542e907df1a7c8a44b969ed4adce0769, type: 2}
   m_IsPrefabAsset: 0
@@ -2435,12 +2480,17 @@ Prefab:
         type: 2}
       propertyPath: audioUI
       value: 
-      objectReference: {fileID: 1328184191}
+      objectReference: {fileID: 0}
     - target: {fileID: 114178305663971862, guid: 542e907df1a7c8a44b969ed4adce0769,
         type: 2}
       propertyPath: mWriteVbles
       value: 
       objectReference: {fileID: 1328184192}
+    - target: {fileID: 114178305663971862, guid: 542e907df1a7c8a44b969ed4adce0769,
+        type: 2}
+      propertyPath: audioController
+      value: 
+      objectReference: {fileID: 1328184191}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 542e907df1a7c8a44b969ed4adce0769, type: 2}
   m_IsPrefabAsset: 0
@@ -2491,12 +2541,17 @@ Prefab:
         type: 2}
       propertyPath: audioUI
       value: 
-      objectReference: {fileID: 1328184191}
+      objectReference: {fileID: 0}
     - target: {fileID: 114178305663971862, guid: 542e907df1a7c8a44b969ed4adce0769,
         type: 2}
       propertyPath: mWriteVbles
       value: 
       objectReference: {fileID: 1328184192}
+    - target: {fileID: 114178305663971862, guid: 542e907df1a7c8a44b969ed4adce0769,
+        type: 2}
+      propertyPath: audioController
+      value: 
+      objectReference: {fileID: 1328184191}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 542e907df1a7c8a44b969ed4adce0769, type: 2}
   m_IsPrefabAsset: 0
@@ -2628,12 +2683,17 @@ Prefab:
         type: 2}
       propertyPath: audioUI
       value: 
-      objectReference: {fileID: 1328184191}
+      objectReference: {fileID: 0}
     - target: {fileID: 114178305663971862, guid: 542e907df1a7c8a44b969ed4adce0769,
         type: 2}
       propertyPath: mWriteVbles
       value: 
       objectReference: {fileID: 1328184192}
+    - target: {fileID: 114178305663971862, guid: 542e907df1a7c8a44b969ed4adce0769,
+        type: 2}
+      propertyPath: audioController
+      value: 
+      objectReference: {fileID: 1328184191}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 542e907df1a7c8a44b969ed4adce0769, type: 2}
   m_IsPrefabAsset: 0

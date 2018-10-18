@@ -6,7 +6,7 @@ public class TimerStars : MonoBehaviour
 {
     [SerializeField] Stars stars;
     [SerializeField] Image[] starsImgs;
-    [SerializeField] AudioItems audioItems;
+    [SerializeField] AudioController audioController;
     [SerializeField] WinCondition winCondition;
 
     float time = 0f;
@@ -47,17 +47,17 @@ public class TimerStars : MonoBehaviour
 
     IEnumerator DesapearStar(int _star, float _timeStars)
     {
-        audioItems.ItemsAudioSource.pitch = 1;
+        //audioController.ItemsAudioSource.pitch = 1;
         while (time < _timeStars && !winCondition.WinBool)
         {
             starsImgs[_star].enabled = false;
             yield return new WaitForSeconds(0.5f);
-            audioItems.AudioStar();
+            audioController.AudioStar();
             starsImgs[_star].enabled = true;
             yield return new WaitForSeconds(0.5f);
         }
         if (!winCondition.WinBool) {
-            audioItems.AudioStar();
+            audioController.AudioStar();
         }
         starsImgs[_star].enabled = false;
     }

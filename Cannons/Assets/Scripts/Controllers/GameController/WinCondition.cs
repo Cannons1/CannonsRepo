@@ -10,8 +10,7 @@ public class WinCondition : MonoBehaviour {
     [SerializeField] Text[] winTxt;
     [SerializeField] Animator[] anim;
     [SerializeField] ParticleSystem cParticle;
-    [SerializeField] AudioItems audioItems;
-    [SerializeField] AudioUI audioUI;
+    [SerializeField] AudioController audioController;
     [SerializeField] IGLevelManager iGLevelManager;
 
     private bool win = false;
@@ -34,11 +33,11 @@ public class WinCondition : MonoBehaviour {
         iGLevelManager.canvas[0].SetActive(false);
         anim[0].SetBool("Opened", true);
         yield return new WaitForSeconds(0.7f);
-        audioItems.AudioOpenChest();
+        audioController.AudioOpenChest();
         yield return new WaitForSeconds(0.1f);
         cParticle.Play();
         for (int i = 0; i < 3; i++) {
-            audioUI.AudioCoins();
+            audioController.AudioCoins();
             yield return new WaitForSeconds(0.16f);
         }
         yield return new WaitForSeconds(1.2f);//anim openChestLength

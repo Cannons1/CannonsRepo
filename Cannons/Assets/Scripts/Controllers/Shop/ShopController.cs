@@ -6,7 +6,7 @@ public class ShopController : MonoBehaviour {
     [SerializeField] GameObject skinButtonPref;
     [SerializeField] GameObject skinContainer;
     [SerializeField] SkinData skinInfo;
-    [SerializeField] AudioUI audioUI;
+    [SerializeField] AudioController audioController;
     [SerializeField] CanvasMenu canvasManager;
     [SerializeField] WriteVbles writeVbles;
 
@@ -68,13 +68,13 @@ public class ShopController : MonoBehaviour {
                 skinContainer.transform.GetChild(skinIndex).GetChild(0).gameObject.SetActive(false);
                 skinContainer.transform.GetChild(skinIndex).GetChild(1).gameObject.SetActive(true);
                 skinContainer.transform.GetChild(skinIndex).GetChild(3).gameObject.SetActive(false);
-                audioUI.SoundClaimGift();
+                audioController.SoundClaimGift();
             }
             else {
                 isInShop = true;
                 canvasManager.Canvas[3].SetActive(true);
                 canvasManager.Canvas[3].GetComponentInChildren<Animator>().SetBool("OpenShop",true);
-                audioUI.AudioButtonDefault();
+                audioController.AudioBtnDef();
             }
         }
     }    
@@ -83,7 +83,7 @@ public class ShopController : MonoBehaviour {
         skinContainer.transform.GetChild(GameManager.Instance.currentSkin).GetChild(4).gameObject.SetActive(false);
         if ((GameManager.Instance.skinAvailability & 1 << skinIndex) == 1 << skinIndex)
         {
-            audioUI.AudioButtonDefault();
+            audioController.AudioBtnDef();
             skinContainer.transform.GetChild(skinIndex).GetChild(4).gameObject.SetActive(true);
             GameManager.Instance.currentSkin = skinIndex;
             GameManager.Instance.Save();

@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class DailyGifts : MonoBehaviour
 {
     [SerializeField] WriteVbles mWriteVbles;
-    [SerializeField] AudioUI mAudioUI;
+    [SerializeField] AudioController audioController;
     public GameObject buttonDaily;
     public GameObject[] textAvailable;
 
@@ -72,7 +72,7 @@ public class DailyGifts : MonoBehaviour
                 SeventhDay();
                 break;
         }
-        mAudioUI.SoundClaimGift();
+        audioController.SoundClaimGift();
         DateTimeController.SaveDateTime();
         Singleton.SaveCoins();
         mWriteVbles.WriteOnPurchase();
