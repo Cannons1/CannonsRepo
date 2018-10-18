@@ -6,7 +6,6 @@ public class DailyGifts : MonoBehaviour
     [SerializeField] WriteVbles mWriteVbles;
     [SerializeField] AudioController audioController;
     public GameObject buttonDaily;
-    public GameObject[] textAvailable;
 
     int activeBtn;
 
@@ -27,16 +26,9 @@ public class DailyGifts : MonoBehaviour
             activeBtn = PlayerPrefs.GetInt("ButtonDaily");
 
             if (activeBtn == 0)
-            {
                 buttonDaily.GetComponent<Button>().interactable = false;
-                textAvailable[0].SetActive(false);
-                textAvailable[1].SetActive(true);
-            }
-            else {
+            else
                 buttonDaily.GetComponent<Button>().interactable = true;
-                textAvailable[0].SetActive(true);
-                textAvailable[1].SetActive(false);
-            }
         }
     }
 

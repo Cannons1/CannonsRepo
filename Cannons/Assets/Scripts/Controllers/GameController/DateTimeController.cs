@@ -4,9 +4,17 @@ using UnityEngine.UI;
 
 public class DateTimeController : MonoBehaviour
 {
-    TimeSpan differenceExp, differenceDaily;
+    TimeSpan differenceDaily;
     DateTime currentTimeDaily;
     [SerializeField] DailyGifts dailyGifts;
+
+    public TimeSpan DifferenceDaily
+    {
+        get
+        {
+            return differenceDaily;
+        }
+    }
 
     public delegate void Notifications();
     public event Notifications OnNotify;
@@ -19,22 +27,18 @@ public class DateTimeController : MonoBehaviour
             currentTimeDaily = Convert.ToDateTime(PlayerPrefs.GetString("Daily"));
             differenceDaily = DateTime.Now - currentTimeDaily;
 
-            if (differenceDaily.Days >= 1 && differenceDaily.Days < 2)
+            if (DifferenceDaily.Days >= 1 && DifferenceDaily.Days < 2)
             {
                 dailyGifts.buttonDaily.GetComponent<Button>().interactable =true;
-                dailyGifts.textAvailable[0].SetActive(true);
-                dailyGifts.textAvailable[1].SetActive(false);
                 SaveDateTime();
                 Singleton.instance.DailyGifts++;
                 SaveDailyCount();
                 PlayerPrefs.SetInt("ButtonDaily", 1);
             }
-            if (differenceDaily.Days >= 2) {
+            if (DifferenceDaily.Days >= 2) {
                 dailyGifts.buttonDaily.GetComponent<Button>().interactable = true;
                 dailyGifts.DeleteKeysAfterTwoDays();
                 PlayerPrefs.SetInt("ButtonDaily", 1);
-                dailyGifts.textAvailable[0].SetActive(true);
-                dailyGifts.textAvailable[1].SetActive(false);
             }
         }
         #endregion
@@ -52,6 +56,4 @@ public class DateTimeController : MonoBehaviour
     public static void SaveDailyCount() {
         PlayerPrefs.SetInt("DailyCount", Singleton.instance.DailyGifts);
     }
-
-
 }
