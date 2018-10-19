@@ -5,6 +5,7 @@ public class DateTimeController : MonoBehaviour
 {
     TimeSpan differenceDaily;
     DateTime currentTimeDaily;
+    DateTime twentyFour; 
     [SerializeField] DailyGifts dailyGifts;
 
     public delegate void Notifications();
@@ -22,11 +23,12 @@ public class DateTimeController : MonoBehaviour
 
     void Start ()
     {
+        //twentyFour = new DateTime(0, 0, 0,24,0,0);
         #region Daily Gift
         if (PlayerPrefs.HasKey("Daily"))
         {
             currentTimeDaily = Convert.ToDateTime(PlayerPrefs.GetString("Daily"));
-           // resta = (currentTimeDaily + currentTimeDaily.AddDays(1)) - DateTime.Now;
+            //resta = twentyFour-currentTimeDaily;
             differenceDaily = DateTime.Now - currentTimeDaily;
 
             if (differenceDaily.Days >= 1 && differenceDaily.Days < 2)
