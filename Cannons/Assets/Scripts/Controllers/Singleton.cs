@@ -67,14 +67,6 @@ public class Singleton : MonoBehaviour
 
     void Awake()
     {
-        if (!PlayerPrefs.HasKey("LvlUnlocked"))
-        {
-            lvlsUnlocked = 0;
-            PlayerPrefs.SetInt("LvlUnlocked", lvlsUnlocked);
-        }
-        else {
-            lvlsUnlocked = PlayerPrefs.GetInt("LvlUnlocked");
-        }
         if (instance == null)
         {
             instance = this;
@@ -84,6 +76,20 @@ public class Singleton : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (!PlayerPrefs.HasKey("LvlUnlocked"))
+        {
+            lvlsUnlocked = 0;
+            PlayerPrefs.SetInt("LvlUnlocked", lvlsUnlocked);
+        }
+        else
+            lvlsUnlocked = PlayerPrefs.GetInt("LvlUnlocked");
+        if (!PlayerPrefs.HasKey("Coins"))
+        {
+            Coins = 0;
+            PlayerPrefs.SetInt("Coins", instance.Coins);
+        }
+        else 
+            instance.Coins = PlayerPrefs.GetInt("Coins");
     }
 
     private void ResetStats()

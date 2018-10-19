@@ -23,7 +23,7 @@ public class TimeLeftToClaim : MonoBehaviour {
     private void Update()
     {
         if (canWriteTime) {
-            //textClaimDaily.text = (TimeSpan.FromHours(dateTimeController.DifferenceDaily.TotalHours));
+            textClaimDaily.text = dateTimeController.Resta.ToString();
         }
     }
 }

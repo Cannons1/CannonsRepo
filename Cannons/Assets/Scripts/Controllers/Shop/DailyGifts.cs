@@ -5,7 +5,7 @@ public class DailyGifts : MonoBehaviour
 {
     [SerializeField] WriteVbles mWriteVbles;
     [SerializeField] AudioController audioController;
-    public GameObject buttonDaily;
+    public Button buttonDaily;
 
     int activeBtn;
 
@@ -26,9 +26,9 @@ public class DailyGifts : MonoBehaviour
             activeBtn = PlayerPrefs.GetInt("ButtonDaily");
 
             if (activeBtn == 0)
-                buttonDaily.GetComponent<Button>().interactable = false;
+                buttonDaily.interactable = false;
             else
-                buttonDaily.GetComponent<Button>().interactable = true;
+                buttonDaily.interactable = true;
         }
     }
 
@@ -42,33 +42,32 @@ public class DailyGifts : MonoBehaviour
     {
         switch (Singleton.instance.DailyGifts) {
             case 1:
-                Singleton.instance.Coins += 50;
+                StartCoroutine(mWriteVbles.CountCoins(50));
                 break;
             case 2:
-                Singleton.instance.Coins += 150;
+                StartCoroutine(mWriteVbles.CountCoins(150));
                 break;
             case 3:
-                Singleton.instance.Coins += 300;
+                StartCoroutine(mWriteVbles.CountCoins(300));
                 break;
             case 4:
-                Singleton.instance.Coins += 500;
+                StartCoroutine(mWriteVbles.CountCoins(500));
                 break;
             case 5:
-                Singleton.instance.Coins += 600;
+                StartCoroutine(mWriteVbles.CountCoins(600));
                 break;
             case 6:
-                Singleton.instance.Coins += 900;
+                StartCoroutine(mWriteVbles.CountCoins(900));
                 break;
             case 7:
-                Singleton.instance.Coins += 1500;
+                StartCoroutine(mWriteVbles.CountCoins(1500));
                 SeventhDay();
                 break;
         }
+        
         audioController.SoundClaimGift();
         DateTimeController.SaveDateTime();
-        Singleton.SaveCoins();
-        mWriteVbles.WriteOnPurchase();
-        buttonDaily.GetComponent<Button>().interactable = false;
+        buttonDaily.interactable = false;
         PlayerPrefs.SetInt("ButtonDaily", 0);
         OnNotifyFalse();
     }
