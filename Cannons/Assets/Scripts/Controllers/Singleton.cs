@@ -67,7 +67,7 @@ public class Singleton : MonoBehaviour
 
     void Awake()
     {
-        ResetStats();
+        //PlayerPrefs.DeleteAll();
         if (instance == null)
         {
             instance = this;
@@ -105,6 +105,10 @@ public class Singleton : MonoBehaviour
     public static void SaveCoins()
     {
         PlayerPrefs.SetInt("Coins", instance.coins);
+    }
+
+    public static void SaveCoins(int _coins) {
+        PlayerPrefs.SetInt("Coins", instance.coins + _coins);
     }
 
     public static void SaveUnlockLevels() {

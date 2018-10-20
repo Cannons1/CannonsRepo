@@ -5,10 +5,9 @@ public class TimeLeftToClaim : MonoBehaviour {
 
     [SerializeField] Text leftTimeTxt;
     [SerializeField] DateTimeController dateTimeController;
+    [SerializeField] DailyGifts dailyGifts;
 
     bool canWriteTime;
-    int activeBtn = 0;
-
     public bool CanWriteTime
     {
         get
@@ -24,13 +23,8 @@ public class TimeLeftToClaim : MonoBehaviour {
 
     private void OnEnable()
     {
-        if (PlayerPrefs.HasKey("ButtonDaily"))
-        {
-            activeBtn = PlayerPrefs.GetInt("ButtonDaily");
-
-            if (activeBtn == 0)
-                CanWriteTime = true;
-        }
+        if (dailyGifts.ActiveBtn == 0 && !dateTimeController.OneDay)
+            CanWriteTime = true;
     }
 
     private void OnDisable()
@@ -40,10 +34,14 @@ public class TimeLeftToClaim : MonoBehaviour {
 
     private void Update()
     {
-        if (CanWriteTime) {
-            leftTimeTxt.text = "Time left " + dateTimeController.Timeleft().Hours.ToString("00h") + 
-                dateTimeController.Timeleft().Minutes.ToString(":00m") + 
+        if (CanWriteTime)
+        {
+            leftTimeTxt.text = "Time left " + dateTimeController.Timeleft().Hours.ToString("00h") +
+                dateTimeController.Timeleft().Minutes.ToString(":00m") +
                 dateTimeController.Timeleft().Seconds.ToString(":00s");
+        }
+        else {
+            leftTimeTxt.text = "Claim daily gift";
         }
     }
 }

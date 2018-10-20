@@ -5,10 +5,15 @@ public class DailyGifts : MonoBehaviour
 {
     [SerializeField] WriteVbles mWriteVbles;
     [SerializeField] AudioController audioController;
-    [SerializeField] TimeLeftToClaim timeLeftToClaim;
+    [SerializeField] DateTimeController dateTime;
     public Button buttonDaily;
 
     int activeBtn;
+
+    public int ActiveBtn {
+        get { return activeBtn; }
+        set { activeBtn = value; }
+    }
 
     public delegate void Notifications();
     public event Notifications OnNotifyFalse;
@@ -25,14 +30,19 @@ public class DailyGifts : MonoBehaviour
             Singleton.instance.DailyGifts = 1;
             DateTimeController.SaveDailyCount();
         }
-        if (PlayerPrefs.HasKey("ButtonDaily")) {
-            activeBtn = PlayerPrefs.GetInt("ButtonDaily");
-
-            if (activeBtn == 0)
-                buttonDaily.interactable = false;
-            else
-                buttonDaily.interactable = true;
+        if (PlayerPrefs.HasKey("ButtonDaily"))
+        {
+            ActiveBtn = PlayerPrefs.GetInt("ButtonDaily");
         }
+        else {
+            ActiveBtn = 1;
+            PlayerPrefs.SetInt("ButtonDaily", activeBtn);
+        }
+
+        if (ActiveBtn == 0)
+            buttonDaily.interactable = false;
+        else
+            buttonDaily.interactable = true;
     }
 
     public void DeleteKeysAfterTwoDays() {
@@ -68,13 +78,13 @@ public class DailyGifts : MonoBehaviour
                 break;
         }
 
-        timeLeftToClaim.CanWriteTime = true;
-        coinsLerpAnimator.SetBool("Claimed", true);
         audioController.SoundClaimGift();
         DateTimeController.SaveDateTime();
-        buttonDaily.interactable = false;
+        dateTime.GetTime();
         PlayerPrefs.SetInt("ButtonDaily", 0);
         OnNotifyFalse();
+        coinsLerpAnimator.SetBool("Claimed", true);
+        buttonDaily.interactable = false;
     }
 
     void SeventhDay()

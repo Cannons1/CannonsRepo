@@ -29,12 +29,14 @@ public class WriteVbles : MonoBehaviour
 
     public IEnumerator CountCoins(int _plusNum) {
         int amount = Singleton.instance.Coins + _plusNum;
+        Singleton.SaveCoins(_plusNum);
         while (Singleton.instance.Coins < amount) {
             Singleton.instance.Coins++;
+            Singleton.instance.Coins++;
+            Singleton.instance.Coins++;
             menuCoinsTxt[1].text = Singleton.instance.Coins.ToString();
-            yield return new WaitForEndOfFrame();
+            yield return null;
         }
         WriteOnPurchase();
-        Singleton.SaveCoins();
     }
 }
