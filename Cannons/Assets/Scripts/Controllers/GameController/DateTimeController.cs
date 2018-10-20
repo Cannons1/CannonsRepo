@@ -4,32 +4,22 @@ using System;
 public class DateTimeController : MonoBehaviour
 {
     TimeSpan differenceDaily;
-    DateTime currentTimeDaily;
-    DateTime twentyFour; 
+    DateTime dateClaimedGift;
     [SerializeField] DailyGifts dailyGifts;
 
     public delegate void Notifications();
     public event Notifications OnNotify;
 
-    TimeSpan resta;
-
-    public TimeSpan Resta
-    {
-        get
-        {
-            return resta;
-        }
-    }
+    TimeSpan timeLeft;
 
     void Start ()
     {
-        //twentyFour = new DateTime(0, 0, 0,24,0,0);
         #region Daily Gift
         if (PlayerPrefs.HasKey("Daily"))
         {
-            currentTimeDaily = Convert.ToDateTime(PlayerPrefs.GetString("Daily"));
-            //resta = twentyFour-currentTimeDaily;
-            differenceDaily = DateTime.Now - currentTimeDaily;
+            dateClaimedGift = Convert.ToDateTime(PlayerPrefs.GetString("Daily"));
+            differenceDaily = DateTime.Now - dateClaimedGift;
+            Timeleft();
 
             if (differenceDaily.Days >= 1 && differenceDaily.Days < 2)
             {
@@ -49,6 +39,15 @@ public class DateTimeController : MonoBehaviour
         if (dailyGifts.buttonDaily.interactable) {
             OnNotify();
         }
+    }
+
+    public TimeSpan Timeleft()
+    {
+        if (PlayerPrefs.HasKey("Daily")) {
+            dateClaimedGift = Convert.ToDateTime(PlayerPrefs.GetString("Daily"));
+        }
+        timeLeft = dateClaimedGift.AddDays(1) - DateTime.Now;
+        return timeLeft;
     }
 
     public static void SaveDateTime()

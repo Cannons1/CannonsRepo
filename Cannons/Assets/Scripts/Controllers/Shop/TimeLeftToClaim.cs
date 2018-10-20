@@ -1,29 +1,49 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System;
 
 public class TimeLeftToClaim : MonoBehaviour {
 
-    [SerializeField] Text textClaimDaily;
+    [SerializeField] Text leftTimeTxt;
     [SerializeField] DateTimeController dateTimeController;
 
     bool canWriteTime;
-    TimeSpan timeSpan;
+    int activeBtn = 0;
+
+    public bool CanWriteTime
+    {
+        get
+        {
+            return canWriteTime;
+        }
+
+        set
+        {
+            canWriteTime = value;
+        }
+    }
 
     private void OnEnable()
     {
-        canWriteTime = true;
+        if (PlayerPrefs.HasKey("ButtonDaily"))
+        {
+            activeBtn = PlayerPrefs.GetInt("ButtonDaily");
+
+            if (activeBtn == 0)
+                CanWriteTime = true;
+        }
     }
 
     private void OnDisable()
     {
-        canWriteTime = false;
+        CanWriteTime = false;
     }
 
     private void Update()
     {
-        if (canWriteTime) {
-            textClaimDaily.text = dateTimeController.Resta.ToString();
+        if (CanWriteTime) {
+            leftTimeTxt.text = "Time left " + dateTimeController.Timeleft().Hours.ToString("00h") + 
+                dateTimeController.Timeleft().Minutes.ToString(":00m") + 
+                dateTimeController.Timeleft().Seconds.ToString(":00s");
         }
     }
 }

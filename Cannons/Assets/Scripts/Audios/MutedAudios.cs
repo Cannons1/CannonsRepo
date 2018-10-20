@@ -21,8 +21,6 @@ public class MutedAudios : MonoBehaviour
             sFxToggle.isOn = false;
         else
             sFxToggle.isOn = true;
-
-
     }
 
     public void MusicButton()

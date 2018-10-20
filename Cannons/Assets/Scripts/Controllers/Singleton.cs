@@ -67,6 +67,7 @@ public class Singleton : MonoBehaviour
 
     void Awake()
     {
+        ResetStats();
         if (instance == null)
         {
             instance = this;

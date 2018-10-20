@@ -10335,7 +10335,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &703323838
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10924,7 +10924,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mWriteVbles: {fileID: 732049275}
   audioController: {fileID: 1436810328}
+  timeLeftToClaim: {fileID: 780505909}
   buttonDaily: {fileID: 780505906}
+  coinsLerpAnimator: {fileID: 1641596816}
 --- !u!114 &732049272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11962,7 +11964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e15dc06e50ab184a94fd27bc38c2d79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textClaimDaily: {fileID: 2138768173}
+  leftTimeTxt: {fileID: 2138768173}
   dateTimeController: {fileID: 732049274}
 --- !u!1 &800714175
 GameObject:
@@ -30474,7 +30476,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 67e3990bdcfb6d24fab1c74b01f4087e, type: 3}
-    m_FontSize: 19
+    m_FontSize: 17
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
