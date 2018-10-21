@@ -6,6 +6,7 @@ public class WriteVbles : MonoBehaviour
 {
     [SerializeField] Text numberOfCoins; 
     [SerializeField] Text[] menuCoinsTxt;
+    [SerializeField] Text dailyGiftTxtAmount;
 
     private void Start()
     {
@@ -28,12 +29,17 @@ public class WriteVbles : MonoBehaviour
     }
 
     public IEnumerator CountCoins(int _plusNum) {
-        int amount = Singleton.instance.Coins + _plusNum;
+        int actualCoins = Singleton.instance.Coins;
+        int amount = actualCoins + _plusNum;
+        float t = 0f;
+        float time = 3f;
+        dailyGiftTxtAmount.text = _plusNum.ToString("+00");
+
         Singleton.SaveCoins(_plusNum);
-        while (Singleton.instance.Coins < amount) {
-            Singleton.instance.Coins++;
-            Singleton.instance.Coins++;
-            Singleton.instance.Coins++;
+        yield return new WaitForSeconds(1f);
+        while (t < time) {
+            t += Time.deltaTime;
+            Singleton.instance.Coins = (int)Mathf.Lerp(actualCoins, amount, t / time);
             menuCoinsTxt[1].text = Singleton.instance.Coins.ToString();
             yield return null;
         }

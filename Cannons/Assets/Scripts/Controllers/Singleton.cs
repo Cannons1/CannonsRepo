@@ -67,7 +67,7 @@ public class Singleton : MonoBehaviour
 
     void Awake()
     {
-        //PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
         if (instance == null)
         {
             instance = this;

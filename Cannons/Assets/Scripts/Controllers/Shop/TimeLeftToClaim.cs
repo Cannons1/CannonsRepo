@@ -21,6 +21,8 @@ public class TimeLeftToClaim : MonoBehaviour {
         }
     }
 
+    string dailyGift = "Claim daily gift";
+
     private void OnEnable()
     {
         if (dailyGifts.ActiveBtn == 0 && !dateTimeController.OneDay)
@@ -36,12 +38,11 @@ public class TimeLeftToClaim : MonoBehaviour {
     {
         if (CanWriteTime)
         {
-            leftTimeTxt.text = "Time left " + dateTimeController.Timeleft().Hours.ToString("00h") +
-                dateTimeController.Timeleft().Minutes.ToString(":00m") +
-                dateTimeController.Timeleft().Seconds.ToString(":00s");
+            leftTimeTxt.text = string.Format("Time left: {0}h {1}m {2}s", dateTimeController.Timeleft().Hours, dateTimeController.Timeleft().Minutes, dateTimeController.Timeleft().Seconds);
         }
         else {
-            leftTimeTxt.text = "Claim daily gift";
+            if (leftTimeTxt.text != dailyGift)
+                leftTimeTxt.text = dailyGift;
         }
     }
 }

@@ -18,7 +18,7 @@ public class DailyGifts : MonoBehaviour
     public delegate void Notifications();
     public event Notifications OnNotifyFalse;
 
-    [SerializeField] Animator coinsLerpAnimator;
+    [SerializeField] Animator[] coinsLerpAnimator;
 
     private void Start()
     {
@@ -55,7 +55,7 @@ public class DailyGifts : MonoBehaviour
     {
         switch (Singleton.instance.DailyGifts) {
             case 1:
-                StartCoroutine(mWriteVbles.CountCoins(50));
+                StartCoroutine(mWriteVbles.CountCoins(1500));
                 break;
             case 2:
                 StartCoroutine(mWriteVbles.CountCoins(150));
@@ -83,7 +83,10 @@ public class DailyGifts : MonoBehaviour
         dateTime.GetTime();
         PlayerPrefs.SetInt("ButtonDaily", 0);
         OnNotifyFalse();
-        coinsLerpAnimator.SetBool("Claimed", true);
+        foreach (Animator a in coinsLerpAnimator) {
+            a.SetBool("Amount", true);
+            a.SetBool("Claimed", true); 
+        }
         buttonDaily.interactable = false;
     }
 
