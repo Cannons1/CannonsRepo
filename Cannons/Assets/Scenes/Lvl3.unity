@@ -1286,7 +1286,7 @@ Prefab:
     - target: {fileID: 114861857502814000, guid: 50968a4552340f3468aec73489bdefb1,
         type: 2}
       propertyPath: time3Stars
-      value: 20
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 114861857502814000, guid: 50968a4552340f3468aec73489bdefb1,
         type: 2}

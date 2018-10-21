@@ -2115,7 +2115,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243070854274189250, guid: fa6623a82736c034cbd2d20a97c7b71e,
     type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 6450f58cb38db5e4db44892367dc5a1e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2725,6 +2725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberOfCoins: {fileID: 114097149179431830}
   menuCoinsTxt: []
+  dailyGiftTxtAmount: {fileID: 0}
 --- !u!114 &114183210913493806
 MonoBehaviour:
   m_ObjectHideFlags: 1

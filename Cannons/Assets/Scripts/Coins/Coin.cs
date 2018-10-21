@@ -13,13 +13,13 @@ public class Coin : MonoBehaviour, ICoins
     {
         Singleton.instance.Coins += _Coin;
         mWriteVbles.WritingNumberOfCoins();//Will write the number of coins in a text
+        anim.SetBool("Get", true);
         DeactivatedCoin();//When you pick a coin it will deactivate its meshRenderer and box collider
         audioController.AudioCoins();
     }
 
     public void DeactivatedCoin()
     {
-        anim.SetBool("Get", true);
         mSphereCollider.enabled = false;
         StartCoroutine(FadeOut(spriteRenderer));
     }

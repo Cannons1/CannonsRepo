@@ -55,7 +55,7 @@ public class DailyGifts : MonoBehaviour
     {
         switch (Singleton.instance.DailyGifts) {
             case 1:
-                StartCoroutine(mWriteVbles.CountCoins(1500));
+                StartCoroutine(mWriteVbles.CountCoins(50));
                 break;
             case 2:
                 StartCoroutine(mWriteVbles.CountCoins(150));

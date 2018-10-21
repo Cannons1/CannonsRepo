@@ -1903,12 +1903,12 @@ Prefab:
     - target: {fileID: 114861857502814000, guid: 50968a4552340f3468aec73489bdefb1,
         type: 2}
       propertyPath: time3Stars
-      value: 23
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 114861857502814000, guid: 50968a4552340f3468aec73489bdefb1,
         type: 2}
       propertyPath: time2Stars
-      value: 30
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 114880174070462728, guid: 50968a4552340f3468aec73489bdefb1,
         type: 2}
