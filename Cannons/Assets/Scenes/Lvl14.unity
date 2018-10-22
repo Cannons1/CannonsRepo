@@ -800,7 +800,7 @@ Prefab:
   m_IsPrefabAsset: 0
 --- !u!82 &585297831 stripped
 AudioSource:
-  m_CorrespondingSourceObject: {fileID: 82787061887273484, guid: 50968a4552340f3468aec73489bdefb1,
+  m_CorrespondingSourceObject: {fileID: 82512223842370476, guid: 50968a4552340f3468aec73489bdefb1,
     type: 2}
   m_PrefabInternal: {fileID: 585297830}
 --- !u!114 &585297832 stripped

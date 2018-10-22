@@ -34,13 +34,14 @@ public class WinCondition : MonoBehaviour {
         anim[0].SetBool("Opened", true);
         yield return new WaitForSeconds(0.7f);
         audioController.AudioOpenChest();
+        audioController.AudioTropicalWin();
         yield return new WaitForSeconds(0.1f);
         cParticle.Play();
         for (int i = 0; i < 3; i++) {
             audioController.AudioCoins();
             yield return new WaitForSeconds(0.16f);
         }
-        yield return new WaitForSeconds(1.2f);//anim openChestLength
+        yield return new WaitForSeconds(1.2f);
         anim[1].SetBool("Win", true);
         yield return new WaitForSeconds(0.32f);
         canvasWin.SetActive(true);

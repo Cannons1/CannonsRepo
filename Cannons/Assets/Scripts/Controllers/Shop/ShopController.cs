@@ -68,7 +68,7 @@ public class ShopController : MonoBehaviour {
                 skinContainer.transform.GetChild(skinIndex).GetChild(0).gameObject.SetActive(false);
                 skinContainer.transform.GetChild(skinIndex).GetChild(1).gameObject.SetActive(true);
                 skinContainer.transform.GetChild(skinIndex).GetChild(3).gameObject.SetActive(false);
-                audioController.SoundClaimGift();
+                audioController.AudioTropicalWin();
             }
             else {
                 //isInShop = true;

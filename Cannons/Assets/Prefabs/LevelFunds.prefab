@@ -2115,7 +2115,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243070854274189250, guid: fa6623a82736c034cbd2d20a97c7b71e,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 6450f58cb38db5e4db44892367dc5a1e, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -4168,7 +4168,8 @@ MonoBehaviour:
   coin: {fileID: 8300000, guid: 26ba0a6e45a93a3459f80edebb5cd411, type: 3}
   star: {fileID: 8300000, guid: d9c70a1f2b0968043b9ea156ff0aa5cd, type: 3}
   openChest: {fileID: 8300000, guid: f9a28a87f23211e488a99bd5b9e7510e, type: 3}
-  music: {fileID: 8300000, guid: 04de96a420c867d4aa768242f36eeed8, type: 3}
+  music: {fileID: 8300000, guid: 2401f344c13e60f4f910af59b549143c, type: 3}
+  tropicalWin: {fileID: 8300000, guid: 40e3adaf5b6730b4cb8e8089cfd03edc, type: 3}
   uIAudioSource: {fileID: 82787061887273484}
   itemAudioSource: {fileID: 82869235394801146}
   musicAudioSource: {fileID: 82734215078727564}

@@ -47,18 +47,18 @@ public class TimerStars : MonoBehaviour
 
     IEnumerator DesapearStar(int _star, float _timeStars)
     {
-        //audioController.ItemsAudioSource.pitch = 1;
         while (time < _timeStars && !winCondition.WinBool)
         {
             starsImgs[_star].enabled = false;
             yield return new WaitForSeconds(0.5f);
-            audioController.AudioStar();
+            audioController.AudioStar(0.5f);
             starsImgs[_star].enabled = true;
             yield return new WaitForSeconds(0.5f);
         }
         if (!winCondition.WinBool) {
-            audioController.AudioStar();
+            audioController.AudioStar(0.5f);
         }
+        audioController.ItemAudioSource.volume = 1f;
         starsImgs[_star].enabled = false;
     }
 }

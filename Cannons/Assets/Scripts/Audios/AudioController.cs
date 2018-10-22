@@ -1,10 +1,9 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioController : MonoBehaviour {
 
-    [SerializeField] AudioClip buttonDefault, buttonBack, claimGift, coin, star, openChest, music;
+    [SerializeField] AudioClip buttonDefault, buttonBack, claimGift, coin, star, openChest, music, tropicalWin;
     [SerializeField] AudioSource uIAudioSource, itemAudioSource, musicAudioSource;
 
     public AudioSource UIAudioSource
@@ -54,6 +53,10 @@ public class AudioController : MonoBehaviour {
         ItemAudioSource.PlayOneShot(star);
     }
 
+    public void AudioStar(float _volume) {
+        ItemAudioSource.PlayOneShot(star, _volume);
+    }
+
     public void AudioOpenChest() {
         ItemAudioSource.PlayOneShot(openChest);
     }
@@ -66,5 +69,18 @@ public class AudioController : MonoBehaviour {
         musicAudioSource.clip = music;
         musicAudioSource.loop = true;
         musicAudioSource.Play();
+    }
+
+    public void AudioTropicalWin() {
+        StartCoroutine(MusicBack(tropicalWin, musicAudioSource.volume));
+    }
+
+    IEnumerator MusicBack(AudioClip _tropicalWin,float _currentVolume) {
+        musicAudioSource.clip = _tropicalWin;
+        musicAudioSource.volume = 1f;
+        musicAudioSource.Play();
+        yield return new WaitForSeconds(_tropicalWin.length);
+        musicAudioSource.volume = _currentVolume;
+        Music();
     }
 }

@@ -44,15 +44,16 @@ public class Stars : MonoBehaviour {
     }
 
     IEnumerator UnlockingStars(int _num) {
+        float pitch = audioController.ItemAudioSource.pitch;
         yield return new WaitForSeconds(3.5f);
         for (int i = 0; i < starsImg.Length; i++) {
             if (i < _num) {
                 starsImg[i].enabled = false;
                 audioController.AudioStar();
-                //audioController.ItemsAudioSource.pitch += 1;
+                audioController.ItemAudioSource.pitch += 1;
             }
             yield return new WaitForSeconds(0.15f);
         }
-        //audioController.ItemsAudioSource.pitch = 1;
+        audioController.ItemAudioSource.pitch = pitch;
     }
 }
