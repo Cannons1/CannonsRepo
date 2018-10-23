@@ -12,6 +12,7 @@ public class IGLevelManager : MonoBehaviour
     [SerializeField] Text lvlName, lvlNamePaused;
     [SerializeField] GameObject txtTapToShoot;
     [SerializeField] WinCondition winCondition;
+    [SerializeField] AudioController audioController;
 
     public GameObject[] canvas;
     public static bool unpause;
@@ -112,6 +113,7 @@ public class IGLevelManager : MonoBehaviour
 
     public IEnumerator LoadAsynchronously(string _sceneName) {
         Time.timeScale = 1;
+        audioController.AudioBtnDef();
         yield return new WaitForSeconds(0.13f);
         loadingScreen.SetActive(true);
         AsyncOperation operation = SceneManager.LoadSceneAsync(_sceneName);
@@ -125,6 +127,7 @@ public class IGLevelManager : MonoBehaviour
 
     public IEnumerator LoadAsynchronously(int index) {
         Time.timeScale = 1;
+        audioController.AudioBtnDef();
         yield return new WaitForSeconds(0.13f);
         loadingScreen.SetActive(true);
         AsyncOperation operation = SceneManager.LoadSceneAsync(index);

@@ -690,12 +690,12 @@ Prefab:
     - target: {fileID: 114861857502814000, guid: 50968a4552340f3468aec73489bdefb1,
         type: 2}
       propertyPath: time3Stars
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 114861857502814000, guid: 50968a4552340f3468aec73489bdefb1,
         type: 2}
       propertyPath: time2Stars
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 114880174070462728, guid: 50968a4552340f3468aec73489bdefb1,
         type: 2}

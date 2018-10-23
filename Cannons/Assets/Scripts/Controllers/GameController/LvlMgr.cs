@@ -16,8 +16,8 @@ public class LvlMgr : MonoBehaviour
 
     IEnumerator LoadAsynchronously(string _sceneName)
     {
-        audioController.AudioBtnDef();
         Time.timeScale = 1;
+        audioController.AudioBtnDef();
         yield return new WaitForSeconds(0.13f);
         loadingScreen.SetActive(true);
         AsyncOperation operation = SceneManager.LoadSceneAsync(_sceneName);

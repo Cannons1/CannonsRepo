@@ -90,7 +90,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -9026,7 +9026,7 @@ GameObject:
   - component: {fileID: 633530603}
   - component: {fileID: 633530602}
   m_Layer: 5
-  m_Name: BG (1)
+  m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24393,8 +24393,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -481}
-  m_SizeDelta: {x: 160, y: 962.2}
+  m_AnchoredPosition: {x: 0, y: -527}
+  m_SizeDelta: {x: 160, y: 1054.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1677703975
 MonoBehaviour:
@@ -24439,7 +24439,8 @@ MonoBehaviour:
     thanks\r\n\r\nEsteban Olarte (3D Support)\r\nArmid M. Florez (Background Sound
     Design)\r\nCristian Adarve\r\nJoseph Olin\r\nAlejandra Villa\r\nGlen Fox for 3D
     background Tiki Treasure! CC Attribution 4.0 on SketchFab (we don\u2019t claim
-    any of the material provided by Glen Fox). https://sketchfab.com/models/cbcf188a01f54d63a10f10c227c5a6ff?ref=related\r"
+    any of the material provided by Glen Fox). https://sketchfab.com/models/cbcf188a01f54d63a10f10c227c5a6ff?ref=related\r\nTropical
+    Musical Sound Copyright \xA9 2011 Varazuvi\u2122 www.varazuvi.com"
 --- !u!222 &1677703976
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -30617,7 +30618,6 @@ GameObject:
   - component: {fileID: 2141683911}
   - component: {fileID: 2141683914}
   - component: {fileID: 2141683913}
-  - component: {fileID: 2141683912}
   m_Layer: 5
   m_Name: Scroll
   m_TagString: Untagged
@@ -30644,33 +30644,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -162}
   m_SizeDelta: {x: 300, y: 165}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2141683912
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2141683910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
 --- !u!222 &2141683913
 CanvasRenderer:
   m_ObjectHideFlags: 0
