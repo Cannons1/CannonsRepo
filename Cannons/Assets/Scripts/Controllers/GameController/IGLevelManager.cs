@@ -25,7 +25,7 @@ public class IGLevelManager : MonoBehaviour
         unnpause = 0;
         Time.timeScale = 1;
         loadingScreen.SetActive(false);
-        slider.value = 0;
+        slider.value = 1;
         unpause = true;
         campaignBtn = false;
 
@@ -120,7 +120,7 @@ public class IGLevelManager : MonoBehaviour
         
         while (!operation.isDone) {
             float progress = Mathf.Clamp01(operation.progress * 0.9f);
-            slider.value = progress;
+            slider.value = 1f - progress;
             yield return null;
         }
     }
@@ -134,7 +134,7 @@ public class IGLevelManager : MonoBehaviour
 
         while (!operation.isDone) {
             float progress = Mathf.Clamp01(operation.progress * 0.9f);
-            slider.value = progress;
+            slider.value = 1f - progress;
             yield return null;
         }
     }
