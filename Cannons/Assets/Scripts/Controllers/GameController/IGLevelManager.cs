@@ -115,6 +115,9 @@ public class IGLevelManager : MonoBehaviour
         Time.timeScale = 1;
         audioController.AudioBtnDef();
         yield return new WaitForSeconds(0.13f);
+        foreach (GameObject a in canvas) {
+            a.SetActive(false);
+        }
         loadingScreen.SetActive(true);
         AsyncOperation operation = SceneManager.LoadSceneAsync(_sceneName);
         
@@ -129,7 +132,10 @@ public class IGLevelManager : MonoBehaviour
         Time.timeScale = 1;
         audioController.AudioBtnDef();
         yield return new WaitForSeconds(0.13f);
-        loadingScreen.SetActive(true);
+        foreach (GameObject a in canvas)
+        {
+            a.SetActive(false);
+        }
         AsyncOperation operation = SceneManager.LoadSceneAsync(index);
 
         while (!operation.isDone) {
