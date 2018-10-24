@@ -6,6 +6,7 @@ public class TimeLeftToClaim : MonoBehaviour {
     [SerializeField] Text leftTimeTxt;
     [SerializeField] DateTimeController dateTimeController;
     [SerializeField] DailyGifts dailyGifts;
+    [SerializeField] GameObject[] gameObjects;
 
     bool canWriteTime;
     public bool CanWriteTime
@@ -25,12 +26,19 @@ public class TimeLeftToClaim : MonoBehaviour {
 
     private void OnEnable()
     {
-        if (dailyGifts.ActiveBtn == 0 && !dateTimeController.OneDay)
+        if (!dailyGifts.buttonDaily.interactable && !dateTimeController.OneDay)
+        {
             CanWriteTime = true;
+        }
+        else
+            CanWriteTime = false;
     }
 
     private void OnDisable()
     {
+        foreach (GameObject a in gameObjects) {
+            a.SetActive(false);
+        }
         CanWriteTime = false;
     }
 

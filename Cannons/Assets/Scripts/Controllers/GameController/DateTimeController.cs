@@ -13,7 +13,7 @@ public class DateTimeController : MonoBehaviour
 
     TimeSpan timeLeft;
 
-    bool oneDay = false;
+    bool oneDay;
 
     public bool OneDay {
         get { return oneDay; }
@@ -21,6 +21,7 @@ public class DateTimeController : MonoBehaviour
 
     void Start ()
     {
+        oneDay = false;
         #region Daily Gift
         if (PlayerPrefs.HasKey("Daily"))
         {

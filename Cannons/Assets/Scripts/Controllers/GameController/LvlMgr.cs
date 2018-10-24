@@ -8,6 +8,8 @@ public class LvlMgr : MonoBehaviour
     [SerializeField] GameObject loadingScreen;
     [SerializeField] Slider slider;
     [SerializeField] AudioController audioController;
+    [SerializeField] GameObject background;
+    [SerializeField] CanvasMenu canvasMenu;
 
     public void Levels(string levelName)
     {
@@ -19,6 +21,8 @@ public class LvlMgr : MonoBehaviour
         Time.timeScale = 1;
         audioController.AudioBtnDef();
         yield return new WaitForSeconds(0.13f);
+        background.SetActive(false);
+        canvasMenu.Canvas[4].SetActive(false);
         loadingScreen.SetActive(true);
         AsyncOperation operation = SceneManager.LoadSceneAsync(_sceneName);
 

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class DailyGifts : MonoBehaviour
@@ -83,11 +84,21 @@ public class DailyGifts : MonoBehaviour
         dateTime.GetTime();
         PlayerPrefs.SetInt("ButtonDaily", 0);
         OnNotifyFalse();
-        foreach (Animator a in coinsLerpAnimator) {
-            a.SetBool("Amount", true);
-            a.SetBool("Claimed", true); 
-        }
         buttonDaily.interactable = false;
+        StartCoroutine(AnimCoin());
+    }
+
+    IEnumerator AnimCoin() {
+        foreach (Animator a in coinsLerpAnimator)
+        {
+            a.SetBool("Amount", true);
+            a.SetBool("Claimed", true);
+        }
+        yield return new WaitForSeconds(2f);
+        foreach (Animator a in coinsLerpAnimator) {
+            a.SetBool("Claimed", false);
+            a.SetBool("Amount", false);
+        }
     }
 
     void SeventhDay()

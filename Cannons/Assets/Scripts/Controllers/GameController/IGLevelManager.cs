@@ -1,11 +1,11 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using System.Collections;
 
 public class IGLevelManager : MonoBehaviour
 {
-    [SerializeField] string menuButton;
+    [SerializeField] string menuScene;
     [SerializeField] GameObject loadingScreen;
     [SerializeField] Slider slider;
     [SerializeField] ChestAnimatedUI chestAnimatedUI;
@@ -71,7 +71,7 @@ public class IGLevelManager : MonoBehaviour
 
     public void MenuButton() {
         Singleton.SaveCoins();
-        StartCoroutine(LoadAsynchronously(menuButton));
+        StartCoroutine(LoadAsynchronously(menuScene));
     }
 
     public void PauseButton() {
@@ -103,7 +103,7 @@ public class IGLevelManager : MonoBehaviour
 
     public void CampaignButton() {
         campaignBtn = true;
-        StartCoroutine(LoadAsynchronously(menuButton));
+        StartCoroutine(LoadAsynchronously(menuScene));
     }
 
     public void NextButton() {
