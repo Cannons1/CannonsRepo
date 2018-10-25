@@ -29,7 +29,7 @@ public class LvlMgr : MonoBehaviour
         while (!operation.isDone)
         {
             float progress = Mathf.Clamp01(operation.progress * 0.9f);
-            slider.value = progress;
+            slider.value = 1f - progress;
             yield return null;
         }
     }

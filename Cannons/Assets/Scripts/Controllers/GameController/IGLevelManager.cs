@@ -103,7 +103,7 @@ public class IGLevelManager : MonoBehaviour
 
     public void CampaignButton() {
         campaignBtn = true;
-        StartCoroutine(LoadAsynchronously(menuScene));
+        MenuButton();
     }
 
     public void NextButton() {
@@ -115,10 +115,10 @@ public class IGLevelManager : MonoBehaviour
         Time.timeScale = 1;
         audioController.AudioBtnDef();
         yield return new WaitForSeconds(0.13f);
+        loadingScreen.SetActive(true);
         foreach (GameObject a in canvas) {
             a.SetActive(false);
         }
-        loadingScreen.SetActive(true);
         AsyncOperation operation = SceneManager.LoadSceneAsync(_sceneName);
         
         while (!operation.isDone) {
@@ -132,6 +132,7 @@ public class IGLevelManager : MonoBehaviour
         Time.timeScale = 1;
         audioController.AudioBtnDef();
         yield return new WaitForSeconds(0.13f);
+        loadingScreen.SetActive(true);
         foreach (GameObject a in canvas)
         {
             a.SetActive(false);
