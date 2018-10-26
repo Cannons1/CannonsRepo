@@ -1281,7 +1281,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 038e72d928b2ca447891b45dfeabd867,
+      objectReference: {fileID: 21300000, guid: 200158e6ba4e2504c941deafdbae6aa8,
         type: 3}
     - target: {fileID: 4423579425172248, guid: 50968a4552340f3468aec73489bdefb1, type: 2}
       propertyPath: m_LocalPosition.y
