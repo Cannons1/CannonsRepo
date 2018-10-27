@@ -8,7 +8,7 @@ using System.Collections.Generic;
 public class ScrollSnapRect : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler {
 
     [Tooltip("Set starting page index - starting from 0")]
-    public int startingPage = 0;
+    public int startingPage;
     [Tooltip("Threshold time for fast swipe in seconds")]
     public float fastSwipeThresholdTime = 0.3f;
     [Tooltip("Threshold time for fast swipe in (unscaled) pixels")]
@@ -66,6 +66,7 @@ public class ScrollSnapRect : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
 
     //------------------------------------------------------------------------
     void Start() {
+
         Time.timeScale = 1;
         _scrollRectComponent = GetComponent<ScrollRect>();
         _scrollRectRect = GetComponent<RectTransform>();
@@ -85,6 +86,10 @@ public class ScrollSnapRect : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
         _lerp = false;
 
         // init
+        if (IGLevelManager.isFirstWolrd)
+            startingPage = 0;
+        else if (IGLevelManager.isSecondWorld)
+            startingPage = 1;
         SetPagePositions();
         SetPage(startingPage);
         InitPageSelection();
@@ -99,6 +104,8 @@ public class ScrollSnapRect : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
 
         if (_currentPage == 0)
             prevButton.SetActive(false);
+        else if (_currentPage == _pageCount -1)
+            nextButton.SetActive(false);
 	}
 
     //------------------------------------------------------------------------
@@ -238,7 +245,7 @@ public class ScrollSnapRect : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
                 Debug.LogWarning("Different count of pages and selection icons - will not show page selection");
                 _showPageSelection = false;
             } else {
-                _previousPageSelectionIndex = -1;
+                _previousPageSelectionIndex = startingPage - 1;//-1
                 _pageSelectionImages = new List<Image>();
 
                 // cache all Image components into list
