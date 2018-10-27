@@ -18,7 +18,6 @@ public class IGLevelManager : MonoBehaviour
     public GameObject[] canvas;
     public static bool unpause;
     public static bool campaignBtn;
-    public static bool isFirstWolrd;
     public static bool isSecondWorld;
 
     public static byte unnpause;
@@ -30,7 +29,6 @@ public class IGLevelManager : MonoBehaviour
         slider.value = 1;
         unpause = true;
         campaignBtn = false;
-        isFirstWolrd = false;
         isSecondWorld = false;
 
         lvlNamePaused.text = string.Format("Level {0}", winCondition.level);
@@ -107,9 +105,7 @@ public class IGLevelManager : MonoBehaviour
         campaignBtn = true;
 
         Scene currentScene = SceneManager.GetActiveScene();
-        if (currentScene.buildIndex >= 2 && currentScene.buildIndex <= 11)//2 to 11 first World
-            isFirstWolrd = true;
-        else if (currentScene.buildIndex >= 12 && currentScene.buildIndex <= 21)//12 to 21 second World
+        if (currentScene.buildIndex >= 12 && currentScene.buildIndex <= 21)//12 to 21 second World
             isSecondWorld = true;
         MenuButton();
     }

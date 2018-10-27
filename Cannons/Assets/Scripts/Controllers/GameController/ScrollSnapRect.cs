@@ -86,9 +86,8 @@ public class ScrollSnapRect : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
         _lerp = false;
 
         // init
-        if (IGLevelManager.isFirstWolrd)
-            startingPage = 0;
-        else if (IGLevelManager.isSecondWorld)
+        startingPage = 0;
+        if (IGLevelManager.isSecondWorld)
             startingPage = 1;
         SetPagePositions();
         SetPage(startingPage);
