@@ -71,6 +71,9 @@ public class IGLevelManager : MonoBehaviour
 
     public void MenuButton() {
         Singleton.SaveCoins();
+        Scene currentScene = SceneManager.GetActiveScene();
+        if (currentScene.buildIndex >= 12 && currentScene.buildIndex <= 21)//12 to 21 second World
+            isSecondWorld = true;
         StartCoroutine(LoadAsynchronously(menuScene));
     }
 
@@ -103,10 +106,6 @@ public class IGLevelManager : MonoBehaviour
 
     public void CampaignButton() {
         campaignBtn = true;
-
-        Scene currentScene = SceneManager.GetActiveScene();
-        if (currentScene.buildIndex >= 12 && currentScene.buildIndex <= 21)//12 to 21 second World
-            isSecondWorld = true;
         MenuButton();
     }
 

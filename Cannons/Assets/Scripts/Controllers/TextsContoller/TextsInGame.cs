@@ -20,12 +20,14 @@ public class TextsInGame : MonoBehaviour {
     private void ShowText(float _probabiltyToShow) {
 
         float prob = Random.Range(0f, 1f);
-        plusProb += 0.04f;
-        print(string.Format("{0} prob, {1} probToShow", prob, _probabiltyToShow + plusProb));
-        if (prob <= _probabiltyToShow + plusProb)
+        plusProb += 0.03f;
+        float currentProb = Mathf.Clamp01(_probabiltyToShow + plusProb);
+        print(string.Format("{0} prob, {1} probToShow", prob, currentProb));
+        if (prob <= currentProb)
         {
-            string stingToShow = motivations[Random.Range(0, motivations.Length)];
-            motivationalText.text = stingToShow;
+            string stringToShow = motivations[Random.Range(0, motivations.Length)];
+            if(!animatorMotivational.GetBool("Show"))
+                motivationalText.text = stringToShow;
             animatorMotivational.SetBool("Show", true);
             Invoke("SetFalse", 0.5f);
         }
