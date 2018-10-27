@@ -24,7 +24,6 @@ public abstract class CannonParent : MonoBehaviour
     Renderer mRenderer, wickRenderer;
     public Animator mAnimator;
     private AudioCannons m_AudioCannons;
-    
 
     [SerializeField] Shader fadeShader;
     float fadeTime = 3.5f;

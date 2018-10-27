@@ -13,13 +13,13 @@ public class IGLevelManager : MonoBehaviour
     [SerializeField] GameObject txtTapToShoot;
     [SerializeField] WinCondition winCondition;
     [SerializeField] AudioController audioController;
+    [SerializeField] Distance distance;
 
     public GameObject[] canvas;
     public static bool unpause;
     public static bool campaignBtn;
 
     public static byte unnpause;
-    static byte countTxtActive;
 
     private void Start() {
         unnpause = 0;
@@ -29,25 +29,23 @@ public class IGLevelManager : MonoBehaviour
         unpause = true;
         campaignBtn = false;
 
-        if (SceneManager.GetActiveScene().name == "Lvl1")
-            if (countTxtActive < 1)
-                StartCoroutine(TimeTxtActive());
-
         StartCoroutine(LvlName());
         lvlNamePaused.text = "Level " + winCondition.level.ToString();
+
+        if (SceneManager.GetActiveScene().name == "Lvl1") {
+            txtTapToShoot.SetActive(true);
+            distance.delTxtTapShoot += SetTapShoot;
+        }
+    }
+
+    private void SetTapShoot() {
+        txtTapToShoot.SetActive(false);
     }
 
     IEnumerator LvlName() {
         lvlName.text = "Level " + winCondition.level.ToString();
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(2f);
         lvlName.text = " ";
-    }
-
-    IEnumerator TimeTxtActive() {
-        countTxtActive++;
-        txtTapToShoot.SetActive(true);
-        yield return new WaitForSeconds(5f);
-        txtTapToShoot.SetActive(false);
     }
 
     private void Update() {

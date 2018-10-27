@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Distance : MonoBehaviour
 {
@@ -16,6 +17,14 @@ public class Distance : MonoBehaviour
 
     float percentOfLevel;
 
+    public delegate void TextInGame(float _probabilityToShow);
+    public TextInGame delTextInGame;
+
+    public delegate void TxtTapShoot();
+    public TxtTapShoot delTxtTapShoot;
+    bool sceneOne = false;
+    byte countCannons = 0;
+
     private void Start()
     {
         will = (Will)FindObjectOfType(typeof(Will));
@@ -25,6 +34,9 @@ public class Distance : MonoBehaviour
 
         //Recibe evento de Will
         will.OnProgressLvl += CalulateDistance;
+
+        if (SceneManager.GetActiveScene().name == "Lvl1")
+            sceneOne = true;
     }
 
     /// <summary>
@@ -36,6 +48,16 @@ public class Distance : MonoBehaviour
         StartCoroutine(UpdateValue(actualDistance));
         percentOfLevel = (actualDistance*100)/initialDistance;
         percentText.text = percentOfLevel.ToString("0")+ "%";
+
+        delTextInGame(0.15f);
+
+        if (sceneOne) {
+            countCannons++;
+            if (countCannons >= 2) {
+                delTxtTapShoot();
+                sceneOne = false;
+            }
+        }
     }
 
     IEnumerator UpdateValue(float _actualDistance)
