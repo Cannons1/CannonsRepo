@@ -29,8 +29,10 @@ public class IGLevelManager : MonoBehaviour
         unpause = true;
         campaignBtn = false;
 
-        StartCoroutine(LvlName());
-        lvlNamePaused.text = "Level " + winCondition.level.ToString();
+        lvlNamePaused.text = string.Format("Level {0}", winCondition.level);
+        lvlName.text = string.Format("Level {0}", winCondition.level);
+
+        Invoke("SetLvlName", 2f);
 
         if (SceneManager.GetActiveScene().name == "Lvl1") {
             txtTapToShoot.SetActive(true);
@@ -42,10 +44,8 @@ public class IGLevelManager : MonoBehaviour
         txtTapToShoot.SetActive(false);
     }
 
-    IEnumerator LvlName() {
-        lvlName.text = "Level " + winCondition.level.ToString();
-        yield return new WaitForSeconds(2f);
-        lvlName.text = " ";
+    private void SetLvlName() {
+        lvlName.gameObject.SetActive(false);
     }
 
     private void Update() {
