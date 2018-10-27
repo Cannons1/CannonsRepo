@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using ChartboostSDK;
+//using ChartboostSDK;
 
 public class ButtonsShop : MonoBehaviour {
 
@@ -37,6 +37,7 @@ public class ButtonsShop : MonoBehaviour {
         }
     }
     
+    /*
     public void Reward(CBLocation CB, int reward)
     {
         Singleton.instance.Coins += 10;
@@ -59,6 +60,7 @@ public class ButtonsShop : MonoBehaviour {
         {
             Chartboost.cacheRewardedVideo(CBLocation.Default);
         }
-        */
+        
     }
+    */
 }
