@@ -49,7 +49,7 @@ public class Distance : MonoBehaviour
         percentOfLevel = (actualDistance*100)/initialDistance;
         percentText.text = percentOfLevel.ToString("0")+ "%";
 
-        delTextInGame(0.15f);
+        delTextInGame(0.3f);
 
         if (sceneOne) {
             countCannons++;
