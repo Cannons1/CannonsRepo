@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class TextsInGame : MonoBehaviour {
 
@@ -26,14 +27,19 @@ public class TextsInGame : MonoBehaviour {
         if (prob <= currentProb)
         {
             string stringToShow = motivations[Random.Range(0, motivations.Length)];
-            if(!animatorMotivational.GetBool("Show"))
-                motivationalText.text = stringToShow;
+            motivationalText.text = stringToShow;
             animatorMotivational.SetBool("Show", true);
-            Invoke("SetFalse", 0.5f);
+            StartCoroutine(SetFalse());
+            //Invoke("SetFalse", 0.5f);
         }
     }
 
-    private void SetFalse() {
+    IEnumerator SetFalse() {
+        yield return new WaitForEndOfFrame();
         animatorMotivational.SetBool("Show", false);
     }
+
+    //private void SetFalse() {
+    //    animatorMotivational.SetBool("Show", false);
+    //}
 }
