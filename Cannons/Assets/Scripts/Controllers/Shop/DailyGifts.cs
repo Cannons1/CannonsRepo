@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using GameAnalyticsSDK;
 
 public class DailyGifts : MonoBehaviour
 {
@@ -54,6 +55,7 @@ public class DailyGifts : MonoBehaviour
 
     public void GettingGift()
     {
+        GameAnalytics.NewDesignEvent("DailyGift");
         switch (Singleton.instance.DailyGifts) {
             case 1:
                 StartCoroutine(mWriteVbles.CountCoins(50));

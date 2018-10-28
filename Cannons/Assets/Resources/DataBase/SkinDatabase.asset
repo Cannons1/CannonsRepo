@@ -25,7 +25,7 @@ MonoBehaviour:
   - skinName: Black beard
     skinDescription: A pirate with a red beard
     skinSprite: {fileID: 21300000, guid: 6b1937ee0846e75439e906bdce2795e5, type: 3}
-    skinValue: 200
+    skinValue: 500
     skinModel: {fileID: 1529388836188480, guid: 0eace1704495f5443890d653e61ac43c,
       type: 2}
     animations:
@@ -35,7 +35,7 @@ MonoBehaviour:
   - skinName: Red beard
     skinDescription: A pirate with a black beard
     skinSprite: {fileID: 21300000, guid: 9b79c7d859d953b43b4dd757fd881003, type: 3}
-    skinValue: 500
+    skinValue: 800
     skinModel: {fileID: 1647704181162974, guid: a6f1b425ea491c1489e34fcfc43342aa,
       type: 2}
     animations:
@@ -45,7 +45,7 @@ MonoBehaviour:
   - skinName: Disco!
     skinDescription: A pirate with a yellow beard
     skinSprite: {fileID: 21300000, guid: b7f830d2a0527f64fa8074d7f094ebe5, type: 3}
-    skinValue: 1500
+    skinValue: 1800
     skinModel: {fileID: 1471469473313762, guid: 2dab147a6b8fb574486371f77959df47,
       type: 2}
     animations:
