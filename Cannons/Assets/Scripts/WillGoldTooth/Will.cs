@@ -11,6 +11,7 @@ public class Will : MonoBehaviour
     [HideInInspector] public GameObject cannonTriggered;
     Transform reference;
     private Rigidbody m_Rigidbody;
+    Vector3 updateVelocity;
     public Rigidbody Rigidbody
     {
         get
@@ -51,6 +52,28 @@ public class Will : MonoBehaviour
 
     }
 
+    public void FixedUpdate()
+    {
+        updateVelocity = m_Rigidbody.velocity;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        switch (collision.gameObject.tag)
+        {
+            case "Wall":
+                ContactPoint contactWall = collision.contacts[0];
+                Vector3 direction = Vector3.Reflect(updateVelocity.normalized, contactWall.normal);
+                m_Rigidbody.AddForce(direction * 20f, ForceMode.Impulse);
+                break;
+            case "LaunchPad":
+                ContactPoint contactLaunch = collision.contacts[0];
+                m_Rigidbody.AddForce(contactLaunch.normal * 20f, ForceMode.Impulse);
+                break;
+            default:
+                break;
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         cannonTriggered = other.gameObject;
@@ -62,8 +85,7 @@ public class Will : MonoBehaviour
             cannonTriggered.GetComponent<CannonParent>().mAnimator.SetTrigger("Entering");
             OnProgressLvl(transform.position);
         }
-
-        if (cannonTriggered.GetComponent<DieEvent>() != null)
+        else if (cannonTriggered.GetComponent<DieEvent>() != null)
         {
             DieEvent dieEvent;
             dieEvent = cannonTriggered.GetComponent<DieEvent>();
@@ -72,8 +94,7 @@ public class Will : MonoBehaviour
             m_SpriteRenderer.enabled = false;
             //GetComponent<WillAudios>().DieAudio(); // Will Die Audio
         }
-
-        if (cannonTriggered.GetComponent<WinCondition>() != null) {
+        else if (cannonTriggered.GetComponent<WinCondition>() != null) {
             WinCondition winCondition;
             winCondition = cannonTriggered.GetComponent<WinCondition>();
             m_SpriteRenderer.enabled = false;
@@ -147,7 +168,7 @@ public class Will : MonoBehaviour
         anim.SetBool("InCannon", inCannon);
         while (!inCannon)
         {
-            velocity = (Mathf.Sign(m_Rigidbody.velocity.y) > 0) ? velocity = 1 : velocity = -1;
+            velocity = (m_Rigidbody.velocity.y < 0 && (Vector3.Dot(cannonTriggered.transform.up, Vector3.down) < 0)) ? velocity = -1 : velocity = 1;         
             anim.SetFloat("Velocity", velocity);
             yield return null;
         }
