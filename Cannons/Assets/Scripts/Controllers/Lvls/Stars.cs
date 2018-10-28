@@ -22,7 +22,7 @@ public class Stars : MonoBehaviour {
     }
 
     public void GiveStars(float _currentTime) {
-        GameAnalytics.NewDesignEvent("LevelTime", _currentTime);//Sends a event to GameAnalytics with the time the user needed to complete the level
+        GameAnalytics.NewProgressionEvent(GAProgressionStatus.Complete, mWinCondition.level.ToString(), (int)_currentTime);//Sends a event to GameAnalytics with the time the user needed to complete the level
         if (_currentTime < time3Stars) {
             Singleton.instance.Stars[mWinCondition.level - 1] = 3;
             print("Three Stars");

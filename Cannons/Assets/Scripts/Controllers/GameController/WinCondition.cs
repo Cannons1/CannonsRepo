@@ -28,7 +28,6 @@ public class WinCondition : MonoBehaviour {
             Singleton.instance.LvlsUnlocked = level;
             Singleton.SaveUnlockLevels();
         }
-        GameAnalytics.NewProgressionEvent(GAProgressionStatus.Complete, level.ToString());
     }
 
     IEnumerator ActivatingCanvas() {
