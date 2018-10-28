@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using GameAnalyticsSDK;
 
 public class IGLevelManager : MonoBehaviour
 {
@@ -40,6 +41,7 @@ public class IGLevelManager : MonoBehaviour
             txtTapToShoot.SetActive(true);
             distance.delTxtTapShoot += SetTapShoot;
         }
+        GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, winCondition.level.ToString());
     }
 
     private void SetTapShoot() {

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using GameAnalyticsSDK;
 
 public class WinCondition : MonoBehaviour {
 
@@ -27,6 +28,7 @@ public class WinCondition : MonoBehaviour {
             Singleton.instance.LvlsUnlocked = level;
             Singleton.SaveUnlockLevels();
         }
+        GameAnalytics.NewProgressionEvent(GAProgressionStatus.Complete, level.ToString());
     }
 
     IEnumerator ActivatingCanvas() {

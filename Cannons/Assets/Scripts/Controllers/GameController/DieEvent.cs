@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using GameAnalyticsSDK;
 
 public class DieEvent : MonoBehaviour {
 
     Collider mCollider;
     [SerializeField] IGLevelManager iGLevelManager;
+    [SerializeField] WinCondition winCondition;
     Scene scene;
 
     private void Start()
@@ -14,8 +16,9 @@ public class DieEvent : MonoBehaviour {
         mCollider = GetComponent<Collider>();
     }
 
-    public void ActiveCanvasRetry()
+    public void CharacterDie()
     {
+        GameAnalytics.NewProgressionEvent(GAProgressionStatus.Fail, winCondition.level.ToString());
         StartCoroutine(EndDieAudio());
         mCollider.enabled = false;
         iGLevelManager.canvas[0].SetActive(false);

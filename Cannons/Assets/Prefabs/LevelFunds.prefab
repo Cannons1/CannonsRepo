@@ -3171,7 +3171,7 @@ MonoBehaviour:
   animatorMotivational: {fileID: 95154996113310706}
   motivations:
   - Argh!
-  - Bumbastic!
+  - Bumba!
   - Yarr!
   - Willtastic!
   - Yo-ho!
@@ -4751,6 +4751,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iGLevelManager: {fileID: 114414949778851446}
+  winCondition: {fileID: 114534144998237950}
 --- !u!114 &114873946662038332
 MonoBehaviour:
   m_ObjectHideFlags: 1
