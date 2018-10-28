@@ -30,7 +30,6 @@ public class TextsInGame : MonoBehaviour {
             motivationalText.text = stringToShow;
             animatorMotivational.SetBool("Show", true);
             StartCoroutine(SetFalse());
-            //Invoke("SetFalse", 0.5f);
         }
     }
 
@@ -38,8 +37,4 @@ public class TextsInGame : MonoBehaviour {
         yield return new WaitForEndOfFrame();
         animatorMotivational.SetBool("Show", false);
     }
-
-    //private void SetFalse() {
-    //    animatorMotivational.SetBool("Show", false);
-    //}
 }
