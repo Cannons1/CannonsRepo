@@ -6,6 +6,21 @@ public class Ave : MonoBehaviour {
 
     [SerializeField] Transform target;
 
+    Rigidbody mRigid;
+    Vector3 initialPosition;
+    private void Start()
+    {
+        mRigid = GetComponent<Rigidbody>();
+        initialPosition = transform.localPosition;
+        mRigid.AddForce(Vector3.left * 2f, ForceMode.Impulse);
+    }
+
+    private void VerifyPosition()
+    {
+        if (transform.position.x < -4) transform.position = initialPosition;
+    }
+
+    /*
     private float speed = 5f;
     private Vector3 start, end, lastPos;
 
@@ -66,4 +81,5 @@ public class Ave : MonoBehaviour {
             gameObject.SetActive(false);
         }
     }
+    */
 }
