@@ -8,19 +8,39 @@ public class Ave : MonoBehaviour {
 
     Rigidbody mRigid;
     Vector3 initialPosition;
+    SpriteRenderer sprite;
+    [SerializeField] Transform background;
+    WaitForSeconds wait = new WaitForSeconds(5f);
+    private float randomPos;
+
     private void Start()
     {
+        sprite = GetComponent<SpriteRenderer>();
         mRigid = GetComponent<Rigidbody>();
         initialPosition = transform.localPosition;
-        mRigid.AddForce(Vector3.left * 2f, ForceMode.Impulse);
+        mRigid.AddForce(Vector3.left * 2f, ForceMode.Impulse);       
+        StartCoroutine(SetActivate());
+    }
+    
+    public IEnumerator SetActivate()
+    {
+        while (true)
+        {
+            wait = new WaitForSeconds(Random.Range(10, 20));
+            yield return wait;
+            if (!sprite.enabled) sprite.enabled = true;
+            randomPos = Random.Range(2f, 5f);
+            transform.position = new Vector3(initialPosition.x, background.position.y + randomPos, initialPosition.z);      
+        }                     
     }
 
-    private void VerifyPosition()
+    public void OnTriggerEnter(Collider other)
     {
-        if (transform.position.x < -4) transform.position = initialPosition;
+        if(other.gameObject.GetComponent<Will>() != null) sprite.enabled = false;
     }
 
     /*
+
     private float speed = 5f;
     private Vector3 start, end, lastPos;
 
