@@ -70,6 +70,7 @@ public class DateTimeController : MonoBehaviour
             SaveDailyCount();
             print(Singleton.instance.DailyGifts);
             PlayerPrefs.SetInt("ButtonDaily", 1);
+            OnNotify();
             oneDay = true;
         }
         return timeLeft;

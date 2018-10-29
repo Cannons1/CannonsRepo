@@ -39,7 +39,6 @@ public class TimeLeftToClaim : MonoBehaviour {
         foreach (GameObject a in gameObjects) {
             a.SetActive(false);
         }
-        CanWriteTime = false;
     }
 
     private void Update()
