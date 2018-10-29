@@ -88,19 +88,15 @@ public class Will : MonoBehaviour
         }
         else if (cannonTriggered.GetComponent<DieEvent>() != null)
         {
-            DieEvent dieEvent;
-            dieEvent = cannonTriggered.GetComponent<DieEvent>();
-            dieEvent.CharacterDie();
+            cannonTriggered.GetComponent<DieEvent>().CharacterDie();
             m_Rigidbody.constraints = RigidbodyConstraints.FreezeAll;
             m_SpriteRenderer.enabled = false;
             //GetComponent<WillAudios>().DieAudio(); // Will Die Audio
         }
         else if (cannonTriggered.GetComponent<WinCondition>() != null)
         {
-            WinCondition winCondition;
-            winCondition = cannonTriggered.GetComponent<WinCondition>();
+            cannonTriggered.GetComponent<WinCondition>().Win(m_Rigidbody);
             m_SpriteRenderer.enabled = false;
-            winCondition.Win(m_Rigidbody);
         }
         else if (cannonTriggered.GetComponent<Coin>() != null) {
             cannonTriggered.GetComponent<Coin>().CoinCollected(1);
