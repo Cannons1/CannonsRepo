@@ -2,7 +2,6 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(CollectingCoinExpPoints))]
 [RequireComponent(typeof(Animator))]
 //[RequireComponent(typeof(WillAudios))]
 [RequireComponent(typeof(AudioSource))]
@@ -96,11 +95,15 @@ public class Will : MonoBehaviour
             m_SpriteRenderer.enabled = false;
             //GetComponent<WillAudios>().DieAudio(); // Will Die Audio
         }
-        else if (cannonTriggered.GetComponent<WinCondition>() != null) {
+        else if (cannonTriggered.GetComponent<WinCondition>() != null)
+        {
             WinCondition winCondition;
             winCondition = cannonTriggered.GetComponent<WinCondition>();
             m_SpriteRenderer.enabled = false;
             winCondition.Win(m_Rigidbody);
+        }
+        else if (cannonTriggered.GetComponent<Coin>() != null) {
+            cannonTriggered.GetComponent<Coin>().CoinCollected(1);
         }
     }
 

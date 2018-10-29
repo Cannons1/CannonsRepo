@@ -34,7 +34,7 @@ public class TextsInGame : MonoBehaviour {
     }
 
     IEnumerator SetFalse() {
-        yield return new WaitForEndOfFrame();
+        yield return null;
         animatorMotivational.SetBool("Show", false);
     }
 }

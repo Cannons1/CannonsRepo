@@ -1,15 +1,14 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class Coin : MonoBehaviour, ICoins
-{
+public class Coin : MonoBehaviour {
     [SerializeField] WriteVbles mWriteVbles;
     [SerializeField] SphereCollider mSphereCollider;
     [SerializeField] Animator anim;
     [SerializeField] AudioController audioController;
     [SerializeField] SpriteRenderer spriteRenderer;
 
-    public void CoinsCollected(int _Coin)
+    public void CoinCollected(int _Coin)
     {
         Singleton.instance.Coins += _Coin;
         mWriteVbles.WritingNumberOfCoins();//Will write the number of coins in a text

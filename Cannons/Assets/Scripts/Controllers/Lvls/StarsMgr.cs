@@ -41,7 +41,7 @@ public class StarsMgr : MonoBehaviour {
             }
         }
 
-        txtTotalStars.text = TotalStars.ToString() + "/" + (unlockStars.Length * 3).ToString();
+        txtTotalStars.text = string.Format("{0}/{1}",TotalStars,unlockStars.Length *3);
 
         for (int i = 0; i < Singleton.instance.Stars.Length; i++)
         {
