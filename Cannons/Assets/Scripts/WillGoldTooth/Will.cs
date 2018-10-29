@@ -64,11 +64,13 @@ public class Will : MonoBehaviour
             case "Wall":
                 ContactPoint contactWall = collision.contacts[0];
                 Vector3 direction = Vector3.Reflect(updateVelocity.normalized, contactWall.normal);
-                m_Rigidbody.AddForce(direction * 20f, ForceMode.Impulse);
+                Bounce wallBounce = collision.gameObject.GetComponent<Bounce>();
+                m_Rigidbody.AddForce(direction * wallBounce.Force, ForceMode.Impulse);
                 break;
             case "LaunchPad":
                 ContactPoint contactLaunch = collision.contacts[0];
-                m_Rigidbody.AddForce(contactLaunch.normal * 20f, ForceMode.Impulse);
+                Bounce bounce = collision.gameObject.GetComponent<Bounce>();
+                m_Rigidbody.AddForce(contactLaunch.normal * bounce.Force, ForceMode.Impulse);
                 break;
             default:
                 break;
