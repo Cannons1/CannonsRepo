@@ -20,6 +20,7 @@ public class IGLevelManager : MonoBehaviour
     public static bool unpause;
     public static bool campaignBtn;
     public static bool isSecondWorld;
+    public static bool isThirdWorld;
 
     public static byte unnpause;
 
@@ -31,6 +32,7 @@ public class IGLevelManager : MonoBehaviour
         unpause = true;
         campaignBtn = false;
         isSecondWorld = false;
+        isThirdWorld = false;
 
         lvlNamePaused.text = string.Format("Level {0}", winCondition.level);
         lvlName.text = string.Format("Level {0}", winCondition.level);
@@ -76,6 +78,8 @@ public class IGLevelManager : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         if (currentScene.buildIndex >= 12 && currentScene.buildIndex <= 21)//12 to 21 second World
             isSecondWorld = true;
+        else if (currentScene.buildIndex >= 22 && currentScene.buildIndex <= 31)//22 to 31 third world
+            isThirdWorld = true;
         StartCoroutine(LoadAsynchronously(menuScene));
     }
 
