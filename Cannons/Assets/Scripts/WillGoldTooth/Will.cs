@@ -77,36 +77,38 @@ public class Will : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        cannonTriggered = other.gameObject;
+        WinCondition winCondition = other.GetComponent<WinCondition>();
+        DieEvent dieEvent = other.GetComponent<DieEvent>();
+        ICoins iCoins = other.GetComponent<ICoins>();
 
-        if (cannonTriggered.tag == "Cannon")
+        if (other.tag == "Cannon")
         {
+            cannonTriggered = other.gameObject;
             other.enabled = false;
             StuckOnCannon();
             cannonTriggered.GetComponent<CannonParent>().mAnimator.SetTrigger("Entering");
             OnProgressLvl(transform.position);
         }
-        else if (cannonTriggered.GetComponent<DieEvent>() != null)
+        else if (dieEvent != null)
         {
-            cannonTriggered.GetComponent<DieEvent>().CharacterDie();
+            dieEvent.CharacterDie();
             m_Rigidbody.constraints = RigidbodyConstraints.FreezeAll;
             m_SpriteRenderer.enabled = false;
             //GetComponent<WillAudios>().DieAudio(); // Will Die Audio
         }
-        else if (cannonTriggered.GetComponent<WinCondition>() != null)
+        else if (winCondition != null)
         {
-            cannonTriggered.GetComponent<WinCondition>().Win(m_Rigidbody);
+            winCondition.Win(m_Rigidbody);
             m_SpriteRenderer.enabled = false;
         }
-        else if (cannonTriggered.GetComponent<Coin>() != null) {
-            cannonTriggered.GetComponent<Coin>().CoinCollected(1);
+        else if (iCoins != null) {
+            iCoins.CollectCoins();
         }
     }
 
     void StuckOnCannon()
     {
         //GetComponent<WillAudios>().LandsInCannon(); //this is the audio of will landing in a cannon
-        
 
         m_Rigidbody.isKinematic = true;
         reference = cannonTriggered.transform.GetChild(0).gameObject.transform;

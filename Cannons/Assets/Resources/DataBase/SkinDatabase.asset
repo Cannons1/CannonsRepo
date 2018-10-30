@@ -43,7 +43,7 @@ MonoBehaviour:
     - {fileID: 7400000, guid: 191c753d099ee6c4dab019a4dd09c6c6, type: 2}
     - {fileID: 7400000, guid: 545995dc655084e47b3518950daa4e98, type: 2}
   - skinName: Disco!
-    skinDescription: A pirate with a yellow beard
+    skinDescription: Disco time!
     skinSprite: {fileID: 21300000, guid: b7f830d2a0527f64fa8074d7f094ebe5, type: 3}
     skinValue: 1800
     skinModel: {fileID: 1471469473313762, guid: 2dab147a6b8fb574486371f77959df47,
@@ -52,3 +52,13 @@ MonoBehaviour:
     - {fileID: 7400000, guid: d142d6fd333a3b24cab9123fb77a11fb, type: 2}
     - {fileID: 7400000, guid: 763d12b9f5a1fc646bb5b949c014ab21, type: 2}
     - {fileID: 7400000, guid: 28d715a93008a124499635e0b889e627, type: 2}
+  - skinName: Headless Willman
+    skinDescription: Will without head!
+    skinSprite: {fileID: 21300000, guid: 81e30c5617897ec448b6997cf7baf7e8, type: 3}
+    skinValue: 0
+    skinModel: {fileID: 1471469473313762, guid: 764254756f7b08a4aa154280043115c1,
+      type: 2}
+    animations:
+    - {fileID: 7400000, guid: 148d1adc6fc3f4d4ea0d307c18963ce3, type: 2}
+    - {fileID: 7400000, guid: 0d48fc14b8e96624abe85d63e73b8033, type: 2}
+    - {fileID: 7400000, guid: 4339d97f0b21c3f41aee2b9b63a53bd0, type: 2}

@@ -23,7 +23,6 @@ public class TextsInGame : MonoBehaviour {
         float prob = Random.Range(0f, 1f);
         plusProb += 0.03f;
         float currentProb = Mathf.Clamp01(_probabiltyToShow + plusProb);
-        print(string.Format("{0} prob, {1} probToShow", prob, currentProb));
         if (prob <= currentProb)
         {
             string stringToShow = motivations[Random.Range(0, motivations.Length)];

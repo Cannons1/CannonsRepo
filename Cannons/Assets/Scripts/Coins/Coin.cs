@@ -1,16 +1,16 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class Coin : MonoBehaviour {
+public class Coin : MonoBehaviour , ICoins{
     [SerializeField] WriteVbles mWriteVbles;
     [SerializeField] SphereCollider mSphereCollider;
     [SerializeField] Animator anim;
     [SerializeField] AudioController audioController;
     [SerializeField] SpriteRenderer spriteRenderer;
 
-    public void CoinCollected(int _Coin)
+    public void CollectCoins()
     {
-        Singleton.instance.Coins += _Coin;
+        Singleton.instance.Coins += 1;
         mWriteVbles.WritingNumberOfCoins();//Will write the number of coins in a text
         anim.SetBool("Get", true);
         DeactivatedCoin();//When you pick a coin it will deactivate its meshRenderer and box collider

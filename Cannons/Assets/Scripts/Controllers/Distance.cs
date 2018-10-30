@@ -25,6 +25,10 @@ public class Distance : MonoBehaviour
     bool sceneOne = false;
     byte countCannons = 0;
 
+    public delegate void Seagull();
+    public Seagull delSeagull;
+    private bool isActiveSeagulls = false;
+
     private void Start()
     {
         will = (Will)FindObjectOfType(typeof(Will));
@@ -48,6 +52,15 @@ public class Distance : MonoBehaviour
         StartCoroutine(UpdateValue(actualDistance));
         percentOfLevel = (actualDistance*100)/initialDistance;
         percentText.text = percentOfLevel.ToString("0")+ "%";
+
+        if (delSeagull != null)
+        {
+            if (percentOfLevel > 50f && !isActiveSeagulls)
+            {
+                delSeagull();
+                isActiveSeagulls = true;
+            } 
+        }
 
         delTextInGame(0.3f);
 
