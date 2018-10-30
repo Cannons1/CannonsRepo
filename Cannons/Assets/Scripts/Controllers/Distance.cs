@@ -25,7 +25,7 @@ public class Distance : MonoBehaviour
     bool sceneOne = false;
     byte countCannons = 0;
 
-    public delegate void Seagull();
+    public delegate IEnumerator Seagull();
     public Seagull delSeagull;
     private bool isActiveSeagulls = false;
 
@@ -57,7 +57,7 @@ public class Distance : MonoBehaviour
         {
             if (percentOfLevel > 50f && !isActiveSeagulls)
             {
-                delSeagull();
+                StartCoroutine(delSeagull());
                 isActiveSeagulls = true;
             } 
         }
