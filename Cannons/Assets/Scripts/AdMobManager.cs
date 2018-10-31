@@ -7,9 +7,6 @@ using System;
 
 public class AdMobManager : MonoBehaviour {
 
-    private static AdMobManager instance = null;
-    public static AdMobManager Instance { get { return instance; } }
-
     [SerializeField] string appID = "";
     [SerializeField] public static string coinsRewardId = "";
     [SerializeField] public static string lifeRewardId = "";
@@ -30,12 +27,13 @@ public class AdMobManager : MonoBehaviour {
 
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else Destroy(gameObject);
+        #if UNITY_ANDROID
+        string appId = "ca-app-pub-3940256099942544~3347511713";
+        #elif UNITY_IPHONE
+            string appId = "ca-app-pub-3940256099942544~1458002511";
+        #else
+            string appId = "unexpected_platform";
+        #endif
 
         interstitialHandler = ShowInterstitialAD;
         //For test
@@ -43,16 +41,9 @@ public class AdMobManager : MonoBehaviour {
         lifeRewardId = "ca-app-pub-3940256099942544/5224354917";
         interstitialID = "ca-app-pub-3940256099942544/1033173712";
 
-        if (SceneManager.GetActiveScene().name == "Menu")
-        {
-            coinsVideo = RewardBasedVideoAd.Instance;
-        }
-        else
-        {
-            lifeVideo = RewardBasedVideoAd.Instance;
-        }
-
-
+        coinsVideo = RewardBasedVideoAd.Instance;
+        lifeVideo = RewardBasedVideoAd.Instance;
+                                     
         interstitial = new InterstitialAd(interstitialID);
 
         coinsVideo.OnAdRewarded += OnGiveCoins;
@@ -111,8 +102,7 @@ public class AdMobManager : MonoBehaviour {
     private void OnGiveCoins(object sender, EventArgs args)
     {
         if (!panelReward.activeInHierarchy) panelReward.SetActive(true);
-        Singleton.instance.Coins += reward;
-        Singleton.SaveCoins();
+        Singleton.SaveCoins(reward);
         writeVbles.WriteOnPurchase();
     }
 

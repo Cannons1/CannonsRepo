@@ -4940,6 +4940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iGLevelManager: {fileID: 114414949778851446}
   winCondition: {fileID: 114534144998237950}
+  adMobManager: {fileID: 114922753755192424}
 --- !u!114 &114873946662038332
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5053,7 +5054,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   appID: 
   interstitialID: 
-  interstitialVideoID: 
   interstitialProbability: 0
   reward: 0
   panelReward: {fileID: 0}

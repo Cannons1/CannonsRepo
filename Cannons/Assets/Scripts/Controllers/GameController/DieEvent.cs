@@ -8,10 +8,9 @@ public class DieEvent : MonoBehaviour {
     Collider mCollider;
     [SerializeField] IGLevelManager iGLevelManager;
     [SerializeField] WinCondition winCondition;
+    [SerializeField] AdMobManager adMobManager;
     public delegate void CancelRevive();
     public static CancelRevive DesactivatePanel;
-
-    Scene scene;
 
     private void Start()
     {
@@ -41,7 +40,8 @@ public class DieEvent : MonoBehaviour {
 
     public void WatchAd()
     {
-        AdMobManager.Instance.ShowReviveVideo();
+        adMobManager.ShowReviveVideo();
+        //AdMobManager.Instance.ShowReviveVideo();
     }
     
     IEnumerator EndDieAudio()
