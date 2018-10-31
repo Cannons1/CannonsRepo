@@ -84,7 +84,6 @@ public class Will : MonoBehaviour
         if (other.tag == "Cannon")
         {
             cannonTriggered = other.gameObject;
-            GameManager.Instance.lastCannon = cannonTriggered.GetComponent<CannonParent>();
             other.enabled = false;
             StuckOnCannon();
             cannonTriggered.GetComponent<CannonParent>().mAnimator.SetTrigger("Entering");

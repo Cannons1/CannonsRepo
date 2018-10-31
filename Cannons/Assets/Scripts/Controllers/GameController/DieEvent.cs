@@ -41,7 +41,6 @@ public class DieEvent : MonoBehaviour {
 
     public void WatchAd()
     {
-        //AdMobManager.Instance.StartCoroutine(AdMobManager.Instance.ShowReviveVideo());
         AdMobManager.Instance.ShowReviveVideo();
     }
     

@@ -36,7 +36,6 @@ public class GameManager : MonoBehaviour {
     public int skinAvailability = 1;
 
     [SerializeField] Material handv, rotating, staticCannon;
-    public CannonParent lastCannon;
 
     private void Awake()
     {

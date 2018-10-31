@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using GoogleMobileAds.Api;
+using UnityEngine.SceneManagement;
 using System;
 
 public class AdMobManager : MonoBehaviour {
@@ -42,15 +43,19 @@ public class AdMobManager : MonoBehaviour {
         lifeRewardId = "ca-app-pub-3940256099942544/5224354917";
         interstitialID = "ca-app-pub-3940256099942544/1033173712";
 
-        coinsVideo = RewardBasedVideoAd.Instance;
-        lifeVideo = RewardBasedVideoAd.Instance;
+        if (SceneManager.GetActiveScene().name == "Menu")
+        {
+            coinsVideo = RewardBasedVideoAd.Instance;
+        }
+        else
+        {
+            lifeVideo = RewardBasedVideoAd.Instance;
+        }
+
+
         interstitial = new InterstitialAd(interstitialID);
 
         coinsVideo.OnAdRewarded += OnGiveCoins;
-        //lifeVideo.OnAdRewarded += OnRevivePlayer;
-        //lifeVideo.OnAdCompleted += OnRevivePlayer;
-
-        //lifeVideo.OnAdClosed += OnCancelRevive;
 
         interstitial.OnAdClosed += InterstitialClosed;
 
@@ -102,23 +107,7 @@ public class AdMobManager : MonoBehaviour {
         //Will.will.cannonTriggered.GetComponent<CannonParent>().Reactivate();
         //Time.timeScale = 1;
     }
-    /*
-    public IEnumerator ShowReviveVideo()
-    {
-        AdRequest request = new AdRequest.Builder().Build();
-        lifeVideo.LoadAd(request, lifeRewardId);
-        while(!lifeVideo.IsLoaded())
-        {
-            yield return null;
-        }
 
-        lifeVideo.Show();
-        //DieEvent.DesactivatePanel();
-        //Will.will.Revive();
-        //Will.will.cannonTriggered.GetComponent<CannonParent>().Reactivate();
-        //Time.timeScale = 1;
-    }
-    */
     private void OnGiveCoins(object sender, EventArgs args)
     {
         if (!panelReward.activeInHierarchy) panelReward.SetActive(true);
