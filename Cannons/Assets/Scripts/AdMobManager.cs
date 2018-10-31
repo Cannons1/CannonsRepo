@@ -102,7 +102,8 @@ public class AdMobManager : MonoBehaviour {
     private void OnGiveCoins(object sender, EventArgs args)
     {
         if (!panelReward.activeInHierarchy) panelReward.SetActive(true);
-        Singleton.SaveCoins(reward);
+        Singleton.instance.Coins += reward;
+        Singleton.SaveCoins();
         writeVbles.WriteOnPurchase();
     }
 
