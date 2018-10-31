@@ -477,6 +477,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1340685558461932
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4870980002632256}
+  - component: {fileID: 114922753755192424}
+  m_Layer: 0
+  m_Name: AdMobManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1350987311010136
 GameObject:
   m_ObjectHideFlags: 1
@@ -1885,8 +1901,22 @@ Transform:
   - {fileID: 4423579425172248}
   - {fileID: 4213157227605638}
   - {fileID: 4047343629475574}
+  - {fileID: 4870980002632256}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4870980002632256
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1340685558461932}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4848279867700980}
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4885492556556306
 Transform:
@@ -3606,6 +3636,7 @@ MonoBehaviour:
   winCondition: {fileID: 114534144998237950}
   audioController: {fileID: 114694582040387180}
   distance: {fileID: 114651438300736286}
+  adManager: {fileID: 114922753755192424}
   canvas:
   - {fileID: 1085667814124382}
   - {fileID: 1698133515569210}
@@ -4852,6 +4883,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 1
+--- !u!114 &114922753755192424
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1340685558461932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c0a202282db3f845908a8f96e048c28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  appID: 
+  rewardID: 
+  interstitialID: 
+  interstitialVideoID: 
+  interstitialProbability: 0
+  writeVbles: {fileID: 0}
 --- !u!114 &114923840028794184
 MonoBehaviour:
   m_ObjectHideFlags: 1

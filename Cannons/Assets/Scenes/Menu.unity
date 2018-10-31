@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -90,7 +90,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -4030,6 +4030,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114213983827099630, guid: 8f21b9231e4310e42958acf7365a67bc,
+        type: 2}
+      propertyPath: adManager
+      value: 
+      objectReference: {fileID: 732049271}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f21b9231e4310e42958acf7365a67bc, type: 2}
   m_IsPrefabAsset: 0
@@ -10817,9 +10822,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c0a202282db3f845908a8f96e048c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  appID: ca-app-pub-6196431305860923~5849023719
-  rewardID: ca-app-pub-3940256099942544/5224354917
-  interstitialID: ca-app-pub-3940256099942544/1033173712
+  appID: ca-app-pub-6196431305860923~5646677884
+  rewardID: ca-app-pub-6196431305860923/2356215852
+  interstitialID: ca-app-pub-6196431305860923/4954459035
+  interstitialVideoID: 
+  interstitialProbability: 50
   writeVbles: {fileID: 732049275}
 --- !u!114 &732049272
 MonoBehaviour:
@@ -12372,6 +12379,7 @@ MonoBehaviour:
   audioController: {fileID: 1436810328}
   background: {fileID: 1049196415}
   canvasMenu: {fileID: 1337719649}
+  adManager: {fileID: 732049271}
 --- !u!1 &850237981
 GameObject:
   m_ObjectHideFlags: 0
@@ -27478,12 +27486,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 732049271}
         m_MethodName: ShowInterstitialAD
-        m_Mode: 1
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 100
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2

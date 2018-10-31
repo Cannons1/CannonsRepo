@@ -10,6 +10,7 @@ public class LvlMgr : MonoBehaviour
     [SerializeField] AudioController audioController;
     [SerializeField] GameObject background;
     [SerializeField] CanvasMenu canvasMenu;
+    [SerializeField] AdMobManager adManager;
 
     public void Levels(string levelName)
     {
@@ -25,7 +26,7 @@ public class LvlMgr : MonoBehaviour
         canvasMenu.Canvas[4].SetActive(false);
         loadingScreen.SetActive(true);
         AsyncOperation operation = SceneManager.LoadSceneAsync(_sceneName);
-
+        
         while (!operation.isDone)
         {
             float progress = Mathf.Clamp01(operation.progress * 0.9f);

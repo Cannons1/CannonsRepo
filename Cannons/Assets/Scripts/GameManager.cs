@@ -29,21 +29,23 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    public float adsProbability = 100;
+    public float maxProbability = 100;
+
     public int currentSkin = 0;
     public int skinAvailability = 1;
 
     [SerializeField] Material handv, rotating, staticCannon;
+    [SerializeField] AdMobManager adManager;
 
     private void Awake()
     {
-       
         if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        else Destroy(gameObject);
-
+        else Destroy(gameObject);       
 
         if (PlayerPrefs.HasKey("CurrentSkin"))
         {
@@ -58,6 +60,12 @@ public class GameManager : MonoBehaviour {
 
         Application.targetFrameRate = 60;
         QualitySettings.vSyncCount = 0;
+    }
+
+    private void OnLevelWasLoaded(int level)
+    {
+        //adManager = FindObjectOfType<AdMobManager>();
+        //adManager.interstitialHandler(100f);
     }
 
     public void Save()
