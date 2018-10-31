@@ -10973,6 +10973,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   appID: ca-app-pub-6196431305860923~5646677884
+  coinsRewardId: 
+  lifeRewardId: 
   interstitialID: ca-app-pub-6196431305860923/4954459035
   interstitialProbability: 50
   reward: 20

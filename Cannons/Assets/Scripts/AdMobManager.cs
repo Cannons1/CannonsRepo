@@ -8,8 +8,8 @@ using System;
 public class AdMobManager : MonoBehaviour {
 
     [SerializeField] string appID = "";
-    [SerializeField] public static string coinsRewardId = "";
-    [SerializeField] public static string lifeRewardId = "";
+    [SerializeField] string coinsRewardId = "";
+    [SerializeField] string lifeRewardId = "";
     [SerializeField] string interstitialID = "";
     [SerializeField] float interstitialProbability;
 
@@ -28,18 +28,20 @@ public class AdMobManager : MonoBehaviour {
     private void Awake()
     {
         #if UNITY_ANDROID
-        string appId = "ca-app-pub-3940256099942544~3347511713";
+            appID = "ca-app-pub-6196431305860923~5849023719";
+            coinsRewardId = "ca-app-pub-6196431305860923/2279360087";
+            lifeRewardId = "ca-app-pub-6196431305860923/5802035643";
+            interstitialID = "ca-app-pub-6196431305860923/8128460863";
         #elif UNITY_IPHONE
-            string appId = "ca-app-pub-3940256099942544~1458002511";
-        #else
-            string appId = "unexpected_platform";
+            appID = "ca-app-pub-6196431305860923~8195855577";
+            coinsRewardId = "ca-app-pub-6196431305860923/9463994779";
+            lifeRewardId = "ca-app-pub-6196431305860923/5841154975";
+            interstitialID = "ca-app-pub-6196431305860923/1686287544";
         #endif
 
+        MobileAds.Initialize(appID);
+
         interstitialHandler = ShowInterstitialAD;
-        //For test
-        coinsRewardId = "ca-app-pub-6196431305860923/2279360087";
-        lifeRewardId = "ca-app-pub-6196431305860923/8128460863";
-        interstitialID = "ca-app-pub-6196431305860923/3809941904";
 
         coinsVideo = RewardBasedVideoAd.Instance;
         lifeVideo = RewardBasedVideoAd.Instance;
@@ -64,9 +66,7 @@ public class AdMobManager : MonoBehaviour {
         Will.will.cannonTriggered.GetComponent<CannonParent>().Reactivate();
         Time.timeScale = 1;
         lifeVideo.OnAdCompleted -= OnRevivePlayer;
-
     }
-
 
     private void OnCancelRevive(object sender, EventArgs args)
     {
