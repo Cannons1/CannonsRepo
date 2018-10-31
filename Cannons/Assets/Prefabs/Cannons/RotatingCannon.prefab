@@ -771,6 +771,7 @@ MonoBehaviour:
   wickRenderer: {fileID: 0}
   mAnimator: {fileID: 0}
   fadeShader: {fileID: 4800000, guid: 988d8629e6f249747ad5a0f1952cea6f, type: 3}
+  mMaterial: {fileID: 2100000, guid: 631d662beaf745341bbc01666cb6ea44, type: 2}
   rotationSpeed: 2.2
   angleRotation: 70
 --- !u!114 &114528305022932004

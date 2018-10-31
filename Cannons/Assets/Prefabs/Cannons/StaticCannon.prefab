@@ -804,6 +804,7 @@ MonoBehaviour:
   wickRenderer: {fileID: 0}
   mAnimator: {fileID: 0}
   fadeShader: {fileID: 4800000, guid: 988d8629e6f249747ad5a0f1952cea6f, type: 3}
+  mMaterial: {fileID: 2100000, guid: ec8aee0c509a91547aeef0bf54512f9e, type: 2}
   firstRotation: 0
 --- !u!135 &135466357097900426
 SphereCollider:

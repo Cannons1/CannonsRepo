@@ -8,12 +8,21 @@ public class DieEvent : MonoBehaviour {
     Collider mCollider;
     [SerializeField] IGLevelManager iGLevelManager;
     [SerializeField] WinCondition winCondition;
+    public delegate void CancelRevive();
+    public static CancelRevive DesactivatePanel;
+
     Scene scene;
 
     private void Start()
     {
         scene = SceneManager.GetActiveScene();
         mCollider = GetComponent<Collider>();
+        DesactivatePanel = delegate ()
+        {
+            iGLevelManager.canvas[0].SetActive(true);
+            iGLevelManager.canvas[2].SetActive(false);
+        };
+        
     }
 
     public void CharacterDie()
@@ -29,6 +38,12 @@ public class DieEvent : MonoBehaviour {
         StartCoroutine(iGLevelManager.LoadAsynchronously(scene.name));
         Singleton.SaveCoins();
     }
+
+    public void WatchAd()
+    {
+        //AdMobManager.Instance.StartCoroutine(AdMobManager.Instance.ShowReviveVideo());
+        AdMobManager.Instance.ShowReviveVideo();
+    }
     
     IEnumerator EndDieAudio()
     {
@@ -38,4 +53,5 @@ public class DieEvent : MonoBehaviour {
         }
         Time.timeScale = 0;
     }
+
 }

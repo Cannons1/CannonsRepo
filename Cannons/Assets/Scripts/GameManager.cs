@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour {
     public int skinAvailability = 1;
 
     [SerializeField] Material handv, rotating, staticCannon;
-    [SerializeField] AdMobManager adManager;
+    public CannonParent lastCannon;
 
     private void Awake()
     {
@@ -60,12 +60,6 @@ public class GameManager : MonoBehaviour {
 
         Application.targetFrameRate = 60;
         QualitySettings.vSyncCount = 0;
-    }
-
-    private void OnLevelWasLoaded(int level)
-    {
-        //adManager = FindObjectOfType<AdMobManager>();
-        //adManager.interstitialHandler(100f);
     }
 
     public void Save()

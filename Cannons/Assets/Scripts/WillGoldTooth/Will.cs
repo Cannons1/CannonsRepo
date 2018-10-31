@@ -84,6 +84,7 @@ public class Will : MonoBehaviour
         if (other.tag == "Cannon")
         {
             cannonTriggered = other.gameObject;
+            GameManager.Instance.lastCannon = cannonTriggered.GetComponent<CannonParent>();
             other.enabled = false;
             StuckOnCannon();
             cannonTriggered.GetComponent<CannonParent>().mAnimator.SetTrigger("Entering");
@@ -104,6 +105,17 @@ public class Will : MonoBehaviour
         else if (iCoins != null) {
             iCoins.CollectCoins();
         }
+    }
+
+    private bool revive;
+
+    public void Revive()
+    {
+        revive = true;
+        m_SpriteRenderer.enabled = true;
+        m_Rigidbody.constraints = RigidbodyConstraints.None;
+        m_Rigidbody.constraints = RigidbodyConstraints.FreezePositionZ;
+        StuckOnCannon();
     }
 
     void StuckOnCannon()
@@ -129,7 +141,16 @@ public class Will : MonoBehaviour
                 StartCoroutine(cannonTriggered.GetComponent<StaticCannon>().Preparation());
                 break;
             case CannonType.targetCannon:
-                StartCoroutine(cannonTriggered.GetComponent<HAndV>().Preparation());
+                if (!revive)
+                {
+                    StartCoroutine(cannonTriggered.GetComponent<HAndV>().Preparation());
+                }
+                else
+                {                  
+                    StartCoroutine(cannonTriggered.GetComponent<HAndV>().Move());
+                    StartCoroutine(cannonTriggered.GetComponent<HAndV>().Wick());
+                    revive = false;
+                }
                 break;
             case CannonType.rotatingCannon:
                 StartCoroutine(cannonTriggered.GetComponent<RotatingCannon>().CannonRotate());

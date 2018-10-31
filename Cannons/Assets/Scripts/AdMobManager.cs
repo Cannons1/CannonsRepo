@@ -6,10 +6,13 @@ using System;
 
 public class AdMobManager : MonoBehaviour {
 
+    private static AdMobManager instance = null;
+    public static AdMobManager Instance { get { return instance; } }
+
     [SerializeField] string appID = "";
-    [SerializeField] string rewardID = "";
+    [SerializeField] public static string coinsRewardId = "";
+    [SerializeField] public static string lifeRewardId = "";
     [SerializeField] string interstitialID = "";
-    [SerializeField] string interstitialVideoID = "";
     [SerializeField] float interstitialProbability;
 
     public Action<float> interstitialHandler;
@@ -20,54 +23,108 @@ public class AdMobManager : MonoBehaviour {
 
     [SerializeField] WriteVbles writeVbles;
 
-    RewardBasedVideoAd rewardVideo;
-    InterstitialAd interstitial;
-    InterstitialAd interstitialVideo;
+    public static RewardBasedVideoAd coinsVideo;
+    public static RewardBasedVideoAd lifeVideo;
+    public static InterstitialAd interstitial;
 
     private void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else Destroy(gameObject);
+
         interstitialHandler = ShowInterstitialAD;
         //For test
-        rewardID = "ca-app-pub-3940256099942544/5224354917";
+        coinsRewardId = "ca-app-pub-3940256099942544/5224354917";
+        lifeRewardId = "ca-app-pub-3940256099942544/5224354917";
         interstitialID = "ca-app-pub-3940256099942544/1033173712";
-        interstitialVideoID = "ca-app-pub-3940256099942544/8691691433";
 
-        rewardVideo = RewardBasedVideoAd.Instance;
+        coinsVideo = RewardBasedVideoAd.Instance;
+        lifeVideo = RewardBasedVideoAd.Instance;
         interstitial = new InterstitialAd(interstitialID);
-        interstitialVideo = new InterstitialAd(interstitialVideoID);
 
-        rewardVideo.OnAdRewarded += OnRewardPlayer;
+        coinsVideo.OnAdRewarded += OnGiveCoins;
+        //lifeVideo.OnAdRewarded += OnRevivePlayer;
+        //lifeVideo.OnAdCompleted += OnRevivePlayer;
+
+        //lifeVideo.OnAdClosed += OnCancelRevive;
+
         interstitial.OnAdClosed += InterstitialClosed;
-        interstitialVideo.OnAdClosed += InterstitialVideoClosed;
 
-        rewardVideo.OnAdClosed += RewardVideoClosed;
+        coinsVideo.OnAdClosed += RewardVideoClosed;
 
         RequestRewardAD();
         RequestInterstitialAD();
-        RequestInterstitialVideo();       
+        RequestLifeVideo();
     }
 
-    /*
-    private IEnumerator Start()
+    private void OnRevivePlayer(object sender, EventArgs args)
     {
-        while(!interstitial.IsLoaded())
+        DieEvent.DesactivatePanel();
+        Will.will.Revive();
+        Will.will.cannonTriggered.GetComponent<CannonParent>().Reactivate();
+        Time.timeScale = 1;
+        lifeVideo.OnAdCompleted -= OnRevivePlayer;
+
+    }
+
+
+    private void OnCancelRevive(object sender, EventArgs args)
+    {
+        lifeVideo.OnAdCompleted -= OnRevivePlayer;
+        lifeVideo.OnAdClosed -= OnCancelRevive;
+    }
+
+    public void RequestLifeVideo()
+    {
+        AdRequest request = new AdRequest.Builder().Build();
+        lifeVideo.LoadAd(request, lifeRewardId);
+    }
+
+    public void ShowReviveVideo()
+    {
+        if (lifeVideo.IsLoaded())
+        {
+            lifeVideo.Show();
+            lifeVideo.OnAdCompleted += OnRevivePlayer;
+            lifeVideo.OnAdClosed += OnCancelRevive;
+        }
+        else
+        {
+            RequestLifeVideo();
+        }
+
+        //DieEvent.DesactivatePanel();
+        //Will.will.Revive();
+        //Will.will.cannonTriggered.GetComponent<CannonParent>().Reactivate();
+        //Time.timeScale = 1;
+    }
+    /*
+    public IEnumerator ShowReviveVideo()
+    {
+        AdRequest request = new AdRequest.Builder().Build();
+        lifeVideo.LoadAd(request, lifeRewardId);
+        while(!lifeVideo.IsLoaded())
         {
             yield return null;
         }
-        interstitialHandler(10f);
+
+        lifeVideo.Show();
+        //DieEvent.DesactivatePanel();
+        //Will.will.Revive();
+        //Will.will.cannonTriggered.GetComponent<CannonParent>().Reactivate();
+        //Time.timeScale = 1;
     }
     */
-    private void OnRewardPlayer(object sender, EventArgs args)
+    private void OnGiveCoins(object sender, EventArgs args)
     {
         if (!panelReward.activeInHierarchy) panelReward.SetActive(true);
         Singleton.instance.Coins += reward;
         Singleton.SaveCoins();
         writeVbles.WriteOnPurchase();
-    }
-
-    private void InterstitialVideoClosed(object sender, EventArgs e)
-    {
-        RequestInterstitialVideo();
     }
 
     private void InterstitialClosed(object sender, EventArgs e)
@@ -85,31 +142,15 @@ public class AdMobManager : MonoBehaviour {
     private void RequestRewardAD()
     {
         AdRequest request = new AdRequest.Builder().Build();
-        rewardVideo.LoadAd(request, rewardID);        
+        coinsVideo.LoadAd(request, coinsRewardId);        
     }
-
-
-    private void RequestInterstitialVideo()
-    {
-        AdRequest request = new AdRequest.Builder().Build();
-        interstitialVideo.LoadAd(request);
-    }
-
 
     public void ShowRewardVideo()
     {
-        if (rewardVideo.IsLoaded())
-            rewardVideo.Show();
+        if (coinsVideo.IsLoaded())
+            coinsVideo.Show();
         else
             RequestRewardAD();
-    }
-
-    public void ShowInterstitialVideo()
-    {
-        if (interstitialVideo.IsLoaded())
-            interstitialVideo.Show();
-        else
-            RequestInterstitialVideo();
     }
 
     public void ShowInterstitialAD(float interstitialProb)

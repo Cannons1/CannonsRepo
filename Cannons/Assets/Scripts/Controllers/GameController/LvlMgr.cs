@@ -10,7 +10,6 @@ public class LvlMgr : MonoBehaviour
     [SerializeField] AudioController audioController;
     [SerializeField] GameObject background;
     [SerializeField] CanvasMenu canvasMenu;
-    [SerializeField] AdMobManager adManager;
 
     public void Levels(string levelName)
     {

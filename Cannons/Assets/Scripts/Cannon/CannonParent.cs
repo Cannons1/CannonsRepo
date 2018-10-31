@@ -26,6 +26,7 @@ public abstract class CannonParent : MonoBehaviour
     private AudioCannons m_AudioCannons;
 
     [SerializeField] Shader fadeShader;
+    [SerializeField] Material mMaterial; 
     float fadeTime = 3.5f;
 
     protected virtual void Start()
@@ -115,6 +116,16 @@ public abstract class CannonParent : MonoBehaviour
             yield return null;
         }
         
+    }
+
+    public void Reactivate()
+    {
+        pathPoint = 0;
+        Will.will.cannonTriggered.transform.GetChild(1).GetComponent<Collider>().enabled = true;
+        wickRenderer.material.SetFloat("_fadeFactor", 0);
+        wick.SetActive(true);
+        VFX.Instance.wickParticle.transform.position = pathWick.points[0].position;
+        mRenderer.material = mMaterial;
     }
 
     //public IEnumerator Tap()

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -90,7 +90,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -10973,9 +10973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   appID: ca-app-pub-6196431305860923~5646677884
-  rewardID: ca-app-pub-6196431305860923/2356215852
   interstitialID: ca-app-pub-6196431305860923/4954459035
-  interstitialVideoID: 
   interstitialProbability: 50
   reward: 20
   panelReward: {fileID: 189876033}
@@ -12533,7 +12531,6 @@ MonoBehaviour:
   audioController: {fileID: 1436810328}
   background: {fileID: 1049196415}
   canvasMenu: {fileID: 1337719649}
-  adManager: {fileID: 732049271}
 --- !u!1 &850237981
 GameObject:
   m_ObjectHideFlags: 0

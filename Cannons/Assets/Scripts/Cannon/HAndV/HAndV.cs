@@ -98,7 +98,7 @@ public class HAndV : CannonParent
         StartCoroutine(Move());  
     }
 
-    IEnumerator Move()
+    public IEnumerator Move()
     {
         while (Will.will.inCannon)
         {
