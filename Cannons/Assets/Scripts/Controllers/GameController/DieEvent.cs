@@ -12,6 +12,8 @@ public class DieEvent : MonoBehaviour {
     public delegate void CancelRevive();
     public static CancelRevive DesactivatePanel;
 
+    Scene scene;
+
     private void Start()
     {
         scene = SceneManager.GetActiveScene();
