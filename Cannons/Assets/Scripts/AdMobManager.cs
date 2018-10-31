@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using GoogleMobileAds.Api;
 using System;
-using UnityEngine.SceneManagement;
 
 public class AdMobManager : MonoBehaviour {
 
@@ -15,6 +14,7 @@ public class AdMobManager : MonoBehaviour {
 
     public Action<float> interstitialHandler;
     [SerializeField] int reward;
+    [SerializeField] GameObject panelReward; 
 
     public float InterstitialProbability { get { return interstitialProbability; } }
 
@@ -59,6 +59,7 @@ public class AdMobManager : MonoBehaviour {
     */
     private void OnRewardPlayer(object sender, EventArgs args)
     {
+        if (!panelReward.activeInHierarchy) panelReward.SetActive(true);
         Singleton.instance.Coins += reward;
         Singleton.SaveCoins();
         writeVbles.WriteOnPurchase();
