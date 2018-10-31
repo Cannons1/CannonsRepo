@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class TimeLeftToClaim : MonoBehaviour {
 
     [SerializeField] Text leftTimeTxt;
+    [SerializeField] Image gift;
     [SerializeField] DateTimeController dateTimeController;
     [SerializeField] DailyGifts dailyGifts;
     [SerializeField] GameObject[] gameObjects;
@@ -22,16 +23,27 @@ public class TimeLeftToClaim : MonoBehaviour {
         }
     }
 
-    string dailyGift = "Claim daily gift";
-
     private void OnEnable()
     {
+        dailyGifts.OnNotifyFalse += SetActiveFalse;
+        dateTimeController.OnNotify += SetActive;
         if (!dailyGifts.buttonDaily.interactable && !dateTimeController.OneDay)
         {
+            gift.enabled = false;
             CanWriteTime = true;
         }
-        else
+        else {
             CanWriteTime = false;
+            gift.enabled = true;
+        }
+    }
+
+    private void SetActive() {
+        gift.enabled = true;
+    }
+
+    private void SetActiveFalse() {
+        gift.enabled = false;
     }
 
     private void OnDisable()
@@ -48,8 +60,8 @@ public class TimeLeftToClaim : MonoBehaviour {
             leftTimeTxt.text = string.Format("Time left: {0}h {1}m {2}s", dateTimeController.Timeleft().Hours, dateTimeController.Timeleft().Minutes, dateTimeController.Timeleft().Seconds);
         }
         else {
-            if (leftTimeTxt.text != dailyGift)
-                leftTimeTxt.text = dailyGift;
+            if(leftTimeTxt.text != " ")
+                leftTimeTxt.text = " ";
         }
     }
 }
