@@ -37,9 +37,9 @@ public class AdMobManager : MonoBehaviour {
 
         interstitialHandler = ShowInterstitialAD;
         //For test
-        coinsRewardId = "ca-app-pub-3940256099942544/5224354917";
-        lifeRewardId = "ca-app-pub-3940256099942544/5224354917";
-        interstitialID = "ca-app-pub-3940256099942544/1033173712";
+        coinsRewardId = "ca-app-pub-6196431305860923/2279360087";
+        lifeRewardId = "ca-app-pub-6196431305860923/8128460863";
+        interstitialID = "ca-app-pub-6196431305860923/3809941904";
 
         coinsVideo = RewardBasedVideoAd.Instance;
         lifeVideo = RewardBasedVideoAd.Instance;
