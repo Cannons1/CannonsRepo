@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class CloseNews : MonoBehaviour {
     [SerializeField] Animator animatorNews;
@@ -24,5 +25,14 @@ public class CloseNews : MonoBehaviour {
     {
         animatorNews.SetBool("Closed", true);
         PlayerPrefs.SetInt("News", 0);
+        StartCoroutine(SetActive());
+    }
+
+    WaitForSeconds wait = new WaitForSeconds(0.25f);
+
+    IEnumerator SetActive() {
+        yield return wait;
+        if(gameObject.activeInHierarchy)
+            gameObject.SetActive(false);
     }
 }
