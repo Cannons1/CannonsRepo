@@ -1230,6 +1230,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 224512745436645364}
+  - component: {fileID: 95918755898661238}
   m_Layer: 5
   m_Name: Stars
   m_TagString: Untagged
@@ -2576,6 +2577,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &95918755898661238
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1747810896189060}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6a87e9e124b667b4c988780502636f36, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!108 &108992372860880054
 Light:
   m_ObjectHideFlags: 1
@@ -2766,12 +2785,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stars: {fileID: 114861857502814000}
-  starsImgs:
-  - {fileID: 114123231010721724}
-  - {fileID: 114436563910821378}
-  - {fileID: 114693807056074930}
   audioController: {fileID: 114694582040387180}
   winCondition: {fileID: 114534144998237950}
+  starsAnimator: {fileID: 95918755898661238}
 --- !u!114 &114108735873999364
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5053,6 +5069,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   appID: 
+  coinsRewardId: 
+  lifeRewardId: 
   interstitialID: 
   interstitialProbability: 0
   reward: 0
