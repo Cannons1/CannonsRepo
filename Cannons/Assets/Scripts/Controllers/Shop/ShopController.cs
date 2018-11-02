@@ -54,9 +54,9 @@ public class ShopController : MonoBehaviour {
                 audioController.AudioTropicalWin();
             }
             else {
-                canvasManager.Canvas[3].SetActive(true);
-                canvasManager.Canvas[3].GetComponentInChildren<Animator>().SetBool("OpenShop", true);
-                audioController.AudioBtnDef();
+                //canvasManager.Canvas[3].SetActive(true);
+                //canvasManager.Canvas[3].GetComponentInChildren<Animator>().SetBool("OpenShop", true);
+                //audioController.AudioBtnDef();
             }
         }
     }    
