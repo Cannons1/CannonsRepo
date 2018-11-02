@@ -22,6 +22,7 @@ namespace GoogleMobileAds.Api
     public class RewardBasedVideoAd
     {
         private IRewardBasedVideoAdClient client;
+        /*
         private static readonly RewardBasedVideoAd instance = new RewardBasedVideoAd();
 
         public static RewardBasedVideoAd Instance
@@ -31,9 +32,9 @@ namespace GoogleMobileAds.Api
                 return instance;
             }
         }
-
+        */
         // Creates a Singleton RewardBasedVideoAd.
-        private RewardBasedVideoAd()
+        public RewardBasedVideoAd()
         {
             Type googleMobileAdsClientFactory = Type.GetType(
                 "GoogleMobileAds.GoogleMobileAdsClientFactory,Assembly-CSharp");

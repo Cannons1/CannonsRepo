@@ -799,6 +799,16 @@ Prefab:
       propertyPath: cannonsAudioSource
       value: 
       objectReference: {fileID: 1571547365}
+    - target: {fileID: 65974667159079044, guid: cc657c91867499045866d7dfc00dfbbc,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 135508653761140568, guid: cc657c91867499045866d7dfc00dfbbc,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc657c91867499045866d7dfc00dfbbc, type: 2}
   m_IsPrefabAsset: 0

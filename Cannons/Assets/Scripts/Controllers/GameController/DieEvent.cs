@@ -11,19 +11,22 @@ public class DieEvent : MonoBehaviour {
     [SerializeField] AdMobManager adMobManager;
     public delegate void CancelRevive();
     public static CancelRevive DesactivatePanel;
+    private float coinsToRevive = 15;
 
     Scene scene;
 
     private void Start()
     {
+        iGLevelManager.coinsToRevive.text = coinsToRevive.ToString();
         scene = SceneManager.GetActiveScene();
         mCollider = GetComponent<Collider>();
         DesactivatePanel = delegate ()
         {
             iGLevelManager.canvas[0].SetActive(true);
             iGLevelManager.canvas[2].SetActive(false);
-        };
-        
+            iGLevelManager.adWatchButton.SetActive(false);
+            iGLevelManager.reviveButton.SetActive(true);
+        };       
     }
 
     public void CharacterDie()
@@ -40,10 +43,24 @@ public class DieEvent : MonoBehaviour {
         Singleton.SaveCoins();
     }
 
+    public void ReviveWithCoins()
+    {
+        if (Singleton.instance.Coins >= coinsToRevive)
+        {
+            Singleton.instance.Coins -= (int)coinsToRevive;
+            Singleton.SaveCoins();
+            DieEvent.DesactivatePanel();
+            Will.will.Revive();
+            Will.will.cannonTriggered.GetComponent<CannonParent>().Reactivate();
+            Time.timeScale = 1;
+            coinsToRevive *= 1.5f;
+            iGLevelManager.coinsToRevive.text = "" + (int)coinsToRevive;
+        }
+    }
+
     public void WatchAd()
     {
         adMobManager.ShowReviveVideo();
-        //AdMobManager.Instance.ShowReviveVideo();
     }
     
     IEnumerator EndDieAudio()

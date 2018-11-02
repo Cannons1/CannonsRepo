@@ -16,6 +16,9 @@ public class IGLevelManager : MonoBehaviour
     [SerializeField] AudioController audioController;
     [SerializeField] Distance distance;
 
+    public GameObject adWatchButton;
+    public GameObject reviveButton;
+    public Text coinsToRevive;
     public GameObject[] canvas;
     public static bool unpause;
     public static bool campaignBtn;
