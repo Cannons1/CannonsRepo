@@ -4,7 +4,6 @@ public class CanvasMenu : MonoBehaviour {
 
     [SerializeField] GameObject[] canvas;
     [SerializeField] AudioController audioController;
-    [SerializeField] GameObject capsuleTapToPlay;
     [SerializeField] ShopController shopController;
     [SerializeField] GameObject panelCredits;
 
@@ -21,25 +20,11 @@ public class CanvasMenu : MonoBehaviour {
         }
     }
 
-    public GameObject CapsuleTapToPlay
-    {
-        get
-        {
-            return capsuleTapToPlay;
-        }
-
-        set
-        {
-            capsuleTapToPlay = value;
-        }
-    }
-
     private void Start()
     {
         Time.timeScale = 1;
         if (IGLevelManager.campaignBtn)
         {
-            CapsuleTapToPlay.SetActive(false);
             Canvas[0].SetActive(false);
             Canvas[4].SetActive(true);
         }
@@ -54,28 +39,24 @@ public class CanvasMenu : MonoBehaviour {
             if (Canvas[0].activeInHierarchy) {
                 Application.Quit();
             }
-            if (Canvas[1].activeInHierarchy && !panelCredits.activeInHierarchy)
+            else if (Canvas[1].activeInHierarchy)
             {
-                BackSettings();
+                if (!panelCredits.activeInHierarchy)
+                    BackSettings();
+                else {
+                    panelCredits.SetActive(false);
+                    audioController.AudioBtnBack();
+                }
             }
-            else {
-                panelCredits.SetActive(false);
-                audioController.AudioBtnDef();
-            }
-            if (Canvas[2].activeInHierarchy && !canvas[3].activeInHierarchy) {
+            else if (Canvas[2].activeInHierarchy && !canvas[3].activeInHierarchy) {
                 BackCharacter();
             }
             if (Canvas[3].activeInHierarchy)
             {
-                if (!shopController.IsInShop)
-                    BackShop();
-                else
-                {
-                    canvas[3].SetActive(false);
-                    audioController.AudioBtnBack();
-                }
+                canvas[3].SetActive(false);
+                audioController.AudioBtnBack();
             }
-            if (Canvas[4].activeInHierarchy)
+            else if (Canvas[4].activeInHierarchy)
             {
                 BackCampaing();
             }
@@ -90,7 +71,6 @@ public class CanvasMenu : MonoBehaviour {
         Canvas[1].SetActive(false);
         PrincipalCanvasActive();
         audioController.AudioBtnBack();
-        CapsuleTapToPlay.SetActive(true);
     }
 
     private void BackLeaderboard() {
@@ -103,20 +83,11 @@ public class CanvasMenu : MonoBehaviour {
         Canvas[2].SetActive(false);
         PrincipalCanvasActive();
         audioController.AudioBtnBack();
-        CapsuleTapToPlay.SetActive(true);
-    }
-
-    private void BackShop() {
-        Canvas[3].SetActive(false);
-        PrincipalCanvasActive();
-        audioController.AudioBtnBack();
-        CapsuleTapToPlay.SetActive(true);
     }
 
     private void BackCampaing() {
         Canvas[4].SetActive(false);
         PrincipalCanvasActive();
         audioController.AudioBtnBack();
-        CapsuleTapToPlay.SetActive(true);
     }
 }

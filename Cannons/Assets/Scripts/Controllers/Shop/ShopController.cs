@@ -10,25 +10,8 @@ public class ShopController : MonoBehaviour {
     [SerializeField] CanvasMenu canvasManager;
     [SerializeField] WriteVbles writeVbles;
 
-    bool isInShop;
-
-    public bool IsInShop
-    {
-        get
-        {
-            return isInShop;
-        }
-
-        set
-        {
-            isInShop = value;
-        }
-    }
-
     private void Start()
     {
-        isInShop = false;
-          
         for (int i = 0; i < skinInfo.skins.Count; i++)
         {
             GameObject container = Instantiate(skinButtonPref) as GameObject;
@@ -71,10 +54,9 @@ public class ShopController : MonoBehaviour {
                 audioController.AudioTropicalWin();
             }
             else {
-                //isInShop = true;
-                //canvasManager.Canvas[3].SetActive(true);
-                //canvasManager.Canvas[3].GetComponentInChildren<Animator>().SetBool("OpenShop",true);
-                //audioController.AudioBtnDef();
+                canvasManager.Canvas[3].SetActive(true);
+                canvasManager.Canvas[3].GetComponentInChildren<Animator>().SetBool("OpenShop", true);
+                audioController.AudioBtnDef();
             }
         }
     }    
