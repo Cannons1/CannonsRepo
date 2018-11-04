@@ -7,9 +7,10 @@ public class Ave : MonoBehaviour,ICoins {
     [SerializeField] Transform background;
     [SerializeField] WriteVbles writeVbles;
     [SerializeField] Rigidbody mRigid;
-    Vector3 initialPosition;
     [SerializeField] SpriteRenderer sprite;
     [SerializeField] Collider mCollider;
+    [SerializeField] ParticleSystem cParticle;
+    Vector3 initialPosition;
     WaitForSeconds wait = new WaitForSeconds(0f);
     private float randomPos;
 
@@ -21,7 +22,7 @@ public class Ave : MonoBehaviour,ICoins {
 
     public IEnumerator SetActive()
     {
-        mRigid.AddForce(Vector3.left * 2f, ForceMode.Impulse);       
+        mRigid.AddForce(Vector3.left * Random.Range(1f, 3.5f), ForceMode.Impulse);       
         while (true)
         {
             if (!sprite.enabled) { sprite.enabled = true; mCollider.enabled = true; }                
@@ -38,6 +39,7 @@ public class Ave : MonoBehaviour,ICoins {
             mRigid.velocity = Vector3.zero;
             sprite.enabled = false;
             mCollider.enabled = false;
+            cParticle.Play();
         }
     }
 

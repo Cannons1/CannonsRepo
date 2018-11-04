@@ -7,10 +7,9 @@ public class AudioCannons : MonoBehaviour {
     [SerializeField] AudioSource cannonsAudioSource;
 
     public void AudioShoot() {
-        cannonsAudioSource.volume = 1f;
-        cannonsAudioSource.clip = shoot;
-        cannonsAudioSource.Play();
-        cannonsAudioSource.loop = false;
+        cannonsAudioSource.clip = null;
+        cannonsAudioSource.volume = 1;
+        cannonsAudioSource.PlayOneShot(shoot,1f);
     }
 
     public void AudioWick() {
