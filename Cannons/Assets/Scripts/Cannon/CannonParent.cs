@@ -26,11 +26,13 @@ public abstract class CannonParent : MonoBehaviour
     private AudioCannons m_AudioCannons;
 
     [SerializeField] Shader fadeShader;
-    [SerializeField] Material mMaterial; 
     float fadeTime = 3.5f;
+    WaitForSeconds littleWait = new WaitForSeconds(0.1f);
+    protected Vector3 initialRot;
 
     protected virtual void Start()
     {
+        initialRot = transform.eulerAngles;
         mAnimator = transform.GetChild(1).GetComponent<Animator>();
         wick = transform.GetChild(2).gameObject;
         wick.transform.localScale = new Vector3(wick.transform.localScale.x, (wickMaxScale / wickScaleFactor) * wickTime, transform.localScale.z);
@@ -108,16 +110,19 @@ public abstract class CannonParent : MonoBehaviour
         wick.SetActive(false);
         mRenderer.material.shader = fadeShader;
         i = 1;
-        
-        yield return new WaitForSeconds(0.1f);
+
+        yield return littleWait;
         while (mRenderer.material.GetFloat("_alpha") > 0)
         {
             i -= Time.deltaTime * fadeTime;
             mRenderer.material.SetFloat("_alpha", i);
             yield return null;
         }
-        
+        yield return littleWait;
+        SetPosition();
     }
+
+    public abstract void SetPosition();
 
     public void Reactivate()
     {

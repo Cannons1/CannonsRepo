@@ -34,8 +34,12 @@ public class RotatingCannon : CannonParent
             yield return null;
         }
 
-        yield return new WaitForSeconds(0.5f);
-        transform.eulerAngles = initialRotation;
+        //yield return new WaitForSeconds(0.5f);
+        //transform.eulerAngles = initialRotation;
     }
-
+    public override void SetPosition()
+    {
+        //transform.position = initialPos;
+        transform.eulerAngles = initialRot;
+    }
 }

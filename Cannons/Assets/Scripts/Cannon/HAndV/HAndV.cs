@@ -82,7 +82,7 @@ public class HAndV : CannonParent
         StartCoroutine(Wick());
     }
 
-    IEnumerator MoveToFirstTarget()
+    public IEnumerator MoveToFirstTarget()
     {
         if (Vector3.Distance(transform.localPosition, target1) > 0.5f)
         {
@@ -122,5 +122,10 @@ public class HAndV : CannonParent
         }
         Gizmos.color = Color.red;
         Gizmos.DrawLine(target1, target2);
+    }
+
+    public override void SetPosition()
+    {
+        StopAllCoroutines();
     }
 }

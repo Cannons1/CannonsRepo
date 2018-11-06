@@ -35,4 +35,10 @@ public class StaticCannon : CannonParent
         transform.eulerAngles = targetRotation;
         StartCoroutine(Wick());
     }
+
+    public override void SetPosition()
+    {
+        //transform.position = initialPos;
+        //transform.eulerAngles = initialRot;
+    }
 }

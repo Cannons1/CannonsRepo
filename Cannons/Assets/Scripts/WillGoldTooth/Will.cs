@@ -113,6 +113,7 @@ public class Will : MonoBehaviour
     public void Revive()
     {
         revive = true;
+        anim.SetBool("InCannon", true);
         transform.eulerAngles = reference.eulerAngles;
         transform.position = reference.position;
 
@@ -163,7 +164,7 @@ public class Will : MonoBehaviour
                 StartCoroutine(cannonTriggered.GetComponent<StaticCannon>().Preparation());
                 break;
             case CannonType.targetCannon:
-                StartCoroutine(cannonTriggered.GetComponent<HAndV>().Preparation());             
+                StartCoroutine(cannonTriggered.GetComponent<HAndV>().Preparation());
                 break;
             case CannonType.rotatingCannon:
                 StartCoroutine(cannonTriggered.GetComponent<RotatingCannon>().CannonRotate());
@@ -176,16 +177,20 @@ public class Will : MonoBehaviour
 
     IEnumerator MoveToCannon()
     {
-        Vector3 startingRotation = transform.eulerAngles;
-        Vector3 targetRotation = reference.eulerAngles;
-        float elapsedTime = 0f;
-
+        
         if(revive)
         {
             inCannon = true;
+            transform.position = reference.position;
+            transform.eulerAngles = reference.eulerAngles;
             AlreadyInRespawnCannon();
+            anim.SetBool("InCannon", true);
             yield break;
         }
+        
+        Vector3 startingRotation = transform.eulerAngles;
+        Vector3 targetRotation = reference.eulerAngles;
+        float elapsedTime = 0f;
 
         while (elapsedTime < time)
         {
@@ -197,6 +202,15 @@ public class Will : MonoBehaviour
         transform.eulerAngles = targetRotation;
         transform.position = reference.position;
 
+        /*
+        if (revive)
+        {
+            inCannon = true;
+            AlreadyInRespawnCannon();
+            anim.SetBool("InCannon", true);
+            yield break;
+        }
+        */
         inCannon = true;
         AlredyinCannon();
         anim.SetBool("InCannon", true);
