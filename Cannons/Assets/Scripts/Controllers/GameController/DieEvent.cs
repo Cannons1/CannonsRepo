@@ -58,8 +58,8 @@ public class DieEvent : MonoBehaviour {
 
             Time.timeScale = 1;
             DesactivatePanel();
-            Will.will.Revive();
             Will.will.cannonTriggered.GetComponent<CannonParent>().Reactivate();
+            Will.will.Revive();
             isDeath = false;
 
             coinsToRevive *= 1.5f;

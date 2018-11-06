@@ -11,6 +11,7 @@ public class Will : MonoBehaviour
     Transform reference;
     private Rigidbody m_Rigidbody;
     Vector3 updateVelocity;
+    Collider mCollider;
     public Rigidbody Rigidbody
     {
         get
@@ -38,6 +39,7 @@ public class Will : MonoBehaviour
 
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
         m_Rigidbody = GetComponent<Rigidbody>();
+        mCollider = GetComponent<Collider>();
         m_Rigidbody.constraints = RigidbodyConstraints.FreezePositionZ;
 
         if (will == null)
@@ -92,12 +94,14 @@ public class Will : MonoBehaviour
         }
         else if (dieEvent != null)
         {
-            //transform.eulerAngles = reference.eulerAngles;
-            //transform.position = reference.position;
+            mCollider.enabled = false;
+            transform.eulerAngles = reference.eulerAngles;
+            transform.position = reference.position;
 
             dieEvent.CharacterDie();
             m_Rigidbody.constraints = RigidbodyConstraints.FreezeAll;
             m_SpriteRenderer.enabled = false;
+           
             //GetComponent<WillAudios>().DieAudio(); // Will Die Audio
         }
         else if (winCondition != null)
@@ -114,9 +118,10 @@ public class Will : MonoBehaviour
     public void Revive()
     {
         revive = true;
-        anim.SetBool("InCannon", true);
+        mCollider.enabled = true;
         transform.eulerAngles = reference.eulerAngles;
-        transform.position = reference.position;
+        transform.position = reference.position;    
+        anim.SetBool("InCannon", true);
 
         m_SpriteRenderer.enabled = true;
         m_Rigidbody.constraints = RigidbodyConstraints.None;

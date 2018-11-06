@@ -62,8 +62,8 @@ public class AdMobManager : MonoBehaviour {
     {
         Time.timeScale = 1;
         DieEvent.DesactivatePanel();
-        Will.will.Revive();
         Will.will.cannonTriggered.GetComponent<CannonParent>().Reactivate();
+        Will.will.Revive();
         DieEvent.isDeath = false;
         //DieEvent.ReactivateCollider();
     }
@@ -103,8 +103,8 @@ public class AdMobManager : MonoBehaviour {
         
         Time.timeScale = 1;
         DieEvent.DesactivatePanel();       
-        Will.will.Revive();
         Will.will.cannonTriggered.GetComponent<CannonParent>().Reactivate();
+        Will.will.Revive();
         DieEvent.isDeath = false;
         
     }
