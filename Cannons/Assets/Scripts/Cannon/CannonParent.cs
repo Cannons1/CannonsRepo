@@ -108,6 +108,7 @@ public abstract class CannonParent : MonoBehaviour
         wick.SetActive(false);
         mRenderer.material.shader = fadeShader;
         i = 1;
+        
         yield return new WaitForSeconds(0.1f);
         while (mRenderer.material.GetFloat("_alpha") > 0)
         {
@@ -125,7 +126,7 @@ public abstract class CannonParent : MonoBehaviour
         wickRenderer.material.SetFloat("_fadeFactor", 0);
         wick.SetActive(true);
         VFX.Instance.wickParticle.transform.position = pathWick.points[0].position;
-        mRenderer.material = mMaterial;
+        mRenderer.material = GameManager.Instance.StaticCannon;
     }
 
     //public IEnumerator Tap()

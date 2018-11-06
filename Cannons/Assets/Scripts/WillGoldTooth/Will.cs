@@ -11,7 +11,6 @@ public class Will : MonoBehaviour
     Transform reference;
     private Rigidbody m_Rigidbody;
     Vector3 updateVelocity;
-    Collider mCollider;
     public Rigidbody Rigidbody
     {
         get
@@ -39,7 +38,7 @@ public class Will : MonoBehaviour
 
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
         m_Rigidbody = GetComponent<Rigidbody>();
-        mCollider = GetComponent<Collider>();
+
         m_Rigidbody.constraints = RigidbodyConstraints.FreezePositionZ;
 
         if (will == null)
@@ -94,14 +93,10 @@ public class Will : MonoBehaviour
         }
         else if (dieEvent != null)
         {
-            mCollider.enabled = false;
-            transform.eulerAngles = reference.eulerAngles;
             transform.position = reference.position;
-
             dieEvent.CharacterDie();
             m_Rigidbody.constraints = RigidbodyConstraints.FreezeAll;
-            m_SpriteRenderer.enabled = false;
-           
+            m_SpriteRenderer.enabled = false;           
             //GetComponent<WillAudios>().DieAudio(); // Will Die Audio
         }
         else if (winCondition != null)
@@ -118,14 +113,31 @@ public class Will : MonoBehaviour
     public void Revive()
     {
         revive = true;
-        mCollider.enabled = true;
         transform.eulerAngles = reference.eulerAngles;
-        transform.position = reference.position;    
-        anim.SetBool("InCannon", true);
+        transform.position = reference.position;
 
-        m_SpriteRenderer.enabled = true;
         m_Rigidbody.constraints = RigidbodyConstraints.None;
         m_Rigidbody.constraints = RigidbodyConstraints.FreezePositionZ;
+
+        m_SpriteRenderer.enabled = true;
+    }
+
+    void AlreadyInRespawnCannon()
+    {
+        switch (cannonTriggered.GetComponent<CannonParent>().cannonType)
+        {
+            case CannonType.staticCannon:
+                StartCoroutine(cannonTriggered.GetComponent<StaticCannon>().Wick());
+                break;
+            case CannonType.targetCannon:
+                StartCoroutine(cannonTriggered.GetComponent<HAndV>().Move());
+                StartCoroutine(cannonTriggered.GetComponent<HAndV>().Wick());
+                break;
+            case CannonType.rotatingCannon:
+                StartCoroutine(cannonTriggered.GetComponent<RotatingCannon>().CannonRotate());
+                break;
+        }
+        revive = false;
     }
 
     void StuckOnCannon()
@@ -148,19 +160,10 @@ public class Will : MonoBehaviour
         switch (cannonTriggered.GetComponent<CannonParent>().cannonType)
         {
             case CannonType.staticCannon:
-                if (!revive)
-                    StartCoroutine(cannonTriggered.GetComponent<StaticCannon>().Preparation());
-                else
-                    StartCoroutine(cannonTriggered.GetComponent<StaticCannon>().Wick());
+                StartCoroutine(cannonTriggered.GetComponent<StaticCannon>().Preparation());
                 break;
             case CannonType.targetCannon:
-                if (!revive)
-                    StartCoroutine(cannonTriggered.GetComponent<HAndV>().Preparation());
-                else
-                {                  
-                    StartCoroutine(cannonTriggered.GetComponent<HAndV>().Move());
-                    StartCoroutine(cannonTriggered.GetComponent<HAndV>().Wick());
-                }
+                StartCoroutine(cannonTriggered.GetComponent<HAndV>().Preparation());             
                 break;
             case CannonType.rotatingCannon:
                 StartCoroutine(cannonTriggered.GetComponent<RotatingCannon>().CannonRotate());
@@ -168,7 +171,6 @@ public class Will : MonoBehaviour
             default:
                 break;
         }
-        revive = false;
     }
     
 
@@ -177,6 +179,13 @@ public class Will : MonoBehaviour
         Vector3 startingRotation = transform.eulerAngles;
         Vector3 targetRotation = reference.eulerAngles;
         float elapsedTime = 0f;
+
+        if(revive)
+        {
+            inCannon = true;
+            AlreadyInRespawnCannon();
+            yield break;
+        }
 
         while (elapsedTime < time)
         {

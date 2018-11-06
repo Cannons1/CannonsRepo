@@ -25,6 +25,7 @@ public class RotatingCannon : CannonParent
         float angleOffset = transform.eulerAngles.z;
         canShoot = true;
         StartCoroutine(Wick());
+        //transform.eulerAngles = initialRotation;
 
         while (Will.will.inCannon)
         {
@@ -33,9 +34,8 @@ public class RotatingCannon : CannonParent
             yield return null;
         }
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         transform.eulerAngles = initialRotation;
-
     }
 
 }
