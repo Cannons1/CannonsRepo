@@ -42,8 +42,6 @@ public class AdMobManager : MonoBehaviour {
         //coinsRewardId = "ca-app-pub-3940256099942544/5224354917";
         //lifeRewardId = "ca-app-pub-3940256099942544/5224354917";
 
-
-
         if (SceneManager.GetActiveScene().name == "Menu")
         {
             coinsVideo = new RewardBasedVideoAd();
@@ -62,10 +60,12 @@ public class AdMobManager : MonoBehaviour {
 
     private void OnRevivePlayer(object sender, EventArgs args)
     {
+        Time.timeScale = 1;
         DieEvent.DesactivatePanel();
         Will.will.Revive();
         Will.will.cannonTriggered.GetComponent<CannonParent>().Reactivate();
-        Time.timeScale = 1;
+        DieEvent.isDeath = false;
+        //DieEvent.ReactivateCollider();
     }
 
     private void OnCancelRevive(object sender, EventArgs args)
@@ -98,14 +98,15 @@ public class AdMobManager : MonoBehaviour {
         {
             RequestLifeVideo();
         }
-
+        
         //TEST RESPAWN IN GAME
-        /*
-        DieEvent.DesactivatePanel();
+        
+        Time.timeScale = 1;
+        DieEvent.DesactivatePanel();       
         Will.will.Revive();
         Will.will.cannonTriggered.GetComponent<CannonParent>().Reactivate();
-        Time.timeScale = 1;
-        */      
+        DieEvent.isDeath = false;
+        
     }
 
     private void OnGiveCoins(object sender, EventArgs args)

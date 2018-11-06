@@ -121,7 +121,7 @@ public abstract class CannonParent : MonoBehaviour
     public void Reactivate()
     {
         pathPoint = 0;
-        Will.will.cannonTriggered.transform.GetChild(1).GetComponent<Collider>().enabled = true;
+        Will.will.cannonTriggered.transform.GetComponent<Collider>().enabled = true;
         wickRenderer.material.SetFloat("_fadeFactor", 0);
         wick.SetActive(true);
         VFX.Instance.wickParticle.transform.position = pathWick.points[0].position;

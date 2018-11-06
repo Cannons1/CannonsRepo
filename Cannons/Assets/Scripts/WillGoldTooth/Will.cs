@@ -29,6 +29,7 @@ public class Will : MonoBehaviour
 
     public delegate void WillDelegate(Vector3 _mTransform);
     public event WillDelegate OnProgressLvl;
+    private bool revive;
 
     private void Awake()
     {
@@ -91,6 +92,9 @@ public class Will : MonoBehaviour
         }
         else if (dieEvent != null)
         {
+            //transform.eulerAngles = reference.eulerAngles;
+            //transform.position = reference.position;
+
             dieEvent.CharacterDie();
             m_Rigidbody.constraints = RigidbodyConstraints.FreezeAll;
             m_SpriteRenderer.enabled = false;
@@ -106,15 +110,17 @@ public class Will : MonoBehaviour
         }
     }
 
-    private bool revive;
 
     public void Revive()
     {
         revive = true;
+        anim.SetBool("InCannon", true);
+        transform.eulerAngles = reference.eulerAngles;
+        transform.position = reference.position;
+
         m_SpriteRenderer.enabled = true;
         m_Rigidbody.constraints = RigidbodyConstraints.None;
         m_Rigidbody.constraints = RigidbodyConstraints.FreezePositionZ;
-        StuckOnCannon();
     }
 
     void StuckOnCannon()
@@ -131,24 +137,24 @@ public class Will : MonoBehaviour
         StartCoroutine(MoveToCannon());
         transform.SetParent(cannonTriggered.transform);  
     }
-
+    
     void AlredyinCannon()
     {
         switch (cannonTriggered.GetComponent<CannonParent>().cannonType)
         {
             case CannonType.staticCannon:
-                StartCoroutine(cannonTriggered.GetComponent<StaticCannon>().Preparation());
+                if (!revive)
+                    StartCoroutine(cannonTriggered.GetComponent<StaticCannon>().Preparation());
+                else
+                    StartCoroutine(cannonTriggered.GetComponent<StaticCannon>().Wick());
                 break;
             case CannonType.targetCannon:
                 if (!revive)
-                {
                     StartCoroutine(cannonTriggered.GetComponent<HAndV>().Preparation());
-                }
                 else
                 {                  
                     StartCoroutine(cannonTriggered.GetComponent<HAndV>().Move());
                     StartCoroutine(cannonTriggered.GetComponent<HAndV>().Wick());
-                    revive = false;
                 }
                 break;
             case CannonType.rotatingCannon:
@@ -157,7 +163,10 @@ public class Will : MonoBehaviour
             default:
                 break;
         }
+        revive = false;
     }
+    
+
     IEnumerator MoveToCannon()
     {
         Vector3 startingRotation = transform.eulerAngles;
@@ -176,14 +185,7 @@ public class Will : MonoBehaviour
 
         inCannon = true;
         AlredyinCannon();
-
         anim.SetBool("InCannon", true);
-        /*
-        yield return new WaitForSeconds(0.001f);
-        var playerClip = _anim.GetCurrentAnimatorClipInfo(0);
-        Debug.Log(playerClip[0].clip.name);
-        yield return new WaitForSeconds(playerClip[0].clip.length);
-        */
     }
 
     public IEnumerator FlyAnimation()
