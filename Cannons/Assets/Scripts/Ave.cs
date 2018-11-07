@@ -23,7 +23,8 @@ public class Ave : MonoBehaviour,ICoins {
 
     public IEnumerator SetActive()
     {
-        mRigid.AddForce(Vector3.left * Random.Range(1f, 3.5f), ForceMode.Impulse);       
+        mRigid.AddForce(Vector3.left * Random.Range(1f, 2.5f), ForceMode.Impulse);       
+        audioController.AudioGullSound(1f);
         while (true)
         {
             if (!sprite.enabled) { sprite.enabled = true; mCollider.enabled = true; }                
@@ -31,6 +32,7 @@ public class Ave : MonoBehaviour,ICoins {
             transform.position = new Vector3(initialPosition.x, background.position.y + randomPos, initialPosition.z);      
             wait = new WaitForSeconds(Random.Range(10f, 15f));
             yield return wait;
+            audioController.AudioGullSound(1f);
         }                     
     }
 

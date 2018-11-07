@@ -106,6 +106,7 @@ public class Will : MonoBehaviour
         else if (winCondition != null)
         {
             winCondition.Win(m_Rigidbody);
+            mCollider.enabled = false;
             m_SpriteRenderer.enabled = false;
         }
         else if (iCoins != null) {

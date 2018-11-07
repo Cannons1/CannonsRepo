@@ -4750,6 +4750,7 @@ MonoBehaviour:
   music: {fileID: 8300000, guid: 2401f344c13e60f4f910af59b549143c, type: 3}
   tropicalWin: {fileID: 8300000, guid: 40e3adaf5b6730b4cb8e8089cfd03edc, type: 3}
   smashSeagull: {fileID: 8300000, guid: 74be06516692d3346a09453c4f11085e, type: 3}
+  gullSound: {fileID: 8300000, guid: 250f126ae6253ab479d47606e3fae7dc, type: 3}
   uIAudioSource: {fileID: 82787061887273484}
   itemAudioSource: {fileID: 82869235394801146}
   musicAudioSource: {fileID: 82734215078727564}
