@@ -235,6 +235,16 @@ Prefab:
       propertyPath: writeVbles
       value: 
       objectReference: {fileID: 510346681}
+    - target: {fileID: 114805124710779898, guid: b62efdf9a46e78443aaeeb8d04e84469,
+        type: 2}
+      propertyPath: audioController
+      value: 
+      objectReference: {fileID: 177944252}
+    - target: {fileID: 212559819211681758, guid: b62efdf9a46e78443aaeeb8d04e84469,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b62efdf9a46e78443aaeeb8d04e84469, type: 2}
   m_IsPrefabAsset: 0

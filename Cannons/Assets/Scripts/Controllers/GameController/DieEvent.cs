@@ -8,6 +8,7 @@ public class DieEvent : MonoBehaviour {
     Collider mCollider;
     [SerializeField] IGLevelManager iGLevelManager;
     [SerializeField] WinCondition winCondition;
+    [SerializeField] WriteVbles writeVbles;
 
     [SerializeField] AdMobManager adMobManager;
     public delegate void Revive();
@@ -32,12 +33,12 @@ public class DieEvent : MonoBehaviour {
         };       
     }
 
-    public int i = 0;
+    int i = 0;
     public void CharacterDie()
     {
         print("Character Die llamado" + ++i);
         GameAnalytics.NewProgressionEvent(GAProgressionStatus.Fail, winCondition.level.ToString());
-        StartCoroutine(EndDieAudio());
+        StartCoroutine(ShowRetryPanel());
         iGLevelManager.canvas[0].SetActive(false);
         isDeath = true;
         //mCollider.enabled = false;
@@ -63,7 +64,7 @@ public class DieEvent : MonoBehaviour {
             isDeath = false;
 
             coinsToRevive *= 1.5f;
-            iGLevelManager.coinsToRevive.text = "" + (int)coinsToRevive;
+            iGLevelManager.coinsToRevive.text = ((int)coinsToRevive).ToString();
         }
     }
 
@@ -72,8 +73,9 @@ public class DieEvent : MonoBehaviour {
         adMobManager.ShowReviveVideo();
     }
     
-    IEnumerator EndDieAudio()
-    {     
+    IEnumerator ShowRetryPanel()
+    {
+        writeVbles.CoinsInRetry();
         yield return new WaitForSeconds(0.3f);
         if (!iGLevelManager.canvas[2].activeInHierarchy) {
             iGLevelManager.canvas[2].SetActive(true);

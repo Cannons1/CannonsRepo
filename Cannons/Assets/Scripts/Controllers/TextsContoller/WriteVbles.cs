@@ -4,7 +4,7 @@ using System.Collections;
 
 public class WriteVbles : MonoBehaviour
 {
-    [SerializeField] Text numberOfCoins; 
+    [SerializeField] Text numberOfCoins, numberOfCoinsRetry; 
     [SerializeField] Text[] menuCoinsTxt;
     [SerializeField] Text dailyGiftTxtAmount;
 
@@ -13,15 +13,19 @@ public class WriteVbles : MonoBehaviour
         if (PlayerPrefs.HasKey("Coins")) {
             Singleton.instance.Coins = PlayerPrefs.GetInt("Coins");
         }
-
-        numberOfCoins.text = Singleton.instance.Coins.ToString("0");
         WriteOnPurchase();
+        WritingNumberOfCoins();
     }
 
     public void WritingNumberOfCoins()
     {
         numberOfCoins.text = Singleton.instance.Coins.ToString("0");
     }
+
+    public void CoinsInRetry() {
+        numberOfCoinsRetry.text = Singleton.instance.Coins.ToString("0");
+    }
+
     public void WriteOnPurchase() {
         foreach (Text coinsTxt in menuCoinsTxt) {
             coinsTxt.text = Singleton.instance.Coins.ToString();

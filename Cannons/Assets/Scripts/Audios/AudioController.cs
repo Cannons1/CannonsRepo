@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class AudioController : MonoBehaviour {
 
-    [SerializeField] AudioClip buttonDefault, buttonBack, claimGift, coin, star, openChest, music, tropicalWin;
+    [SerializeField] AudioClip buttonDefault, buttonBack, claimGift, coin, star, openChest, music, tropicalWin, smashSeagull;
     [SerializeField] AudioSource uIAudioSource, itemAudioSource, musicAudioSource;
 
     public AudioSource UIAudioSource
@@ -59,6 +59,10 @@ public class AudioController : MonoBehaviour {
 
     public void AudioOpenChest() {
         ItemAudioSource.PlayOneShot(openChest);
+    }
+
+    public void AudioSmashSeagull() {
+        ItemAudioSource.PlayOneShot(smashSeagull);
     }
 
     public void SoundClaimGift() {

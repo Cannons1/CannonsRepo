@@ -10,6 +10,7 @@ public class Ave : MonoBehaviour,ICoins {
     [SerializeField] SpriteRenderer sprite;
     [SerializeField] Collider mCollider;
     [SerializeField] ParticleSystem cParticle;
+    [SerializeField] AudioController audioController;
     Vector3 initialPosition;
     WaitForSeconds wait = new WaitForSeconds(0f);
     private float randomPos;
@@ -36,6 +37,7 @@ public class Ave : MonoBehaviour,ICoins {
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<Will>() != null) {
+            audioController.AudioSmashSeagull();
             mRigid.velocity = Vector3.zero;
             sprite.enabled = false;
             mCollider.enabled = false;
