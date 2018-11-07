@@ -27,11 +27,12 @@ public abstract class CannonParent : MonoBehaviour
 
     [SerializeField] Shader fadeShader;
     float fadeTime = 3.5f;
-    WaitForSeconds littleWait = new WaitForSeconds(0.1f);
+    WaitForSecondsRealtime littleWait;
     protected Vector3 initialRot;
 
     protected virtual void Start()
     {
+        littleWait = new WaitForSecondsRealtime(0.1f);
         initialRot = transform.eulerAngles;
         mAnimator = transform.GetChild(1).GetComponent<Animator>();
         wick = transform.GetChild(2).gameObject;
@@ -118,7 +119,7 @@ public abstract class CannonParent : MonoBehaviour
             mRenderer.material.SetFloat("_alpha", i);
             yield return null;
         }
-        yield return littleWait;
+        yield return new WaitForSecondsRealtime(0.3f);
         SetPosition();
     }
 

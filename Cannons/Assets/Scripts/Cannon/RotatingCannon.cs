@@ -4,12 +4,10 @@ using UnityEngine;
 public class RotatingCannon : CannonParent
 {
     [SerializeField] float rotationSpeed, angleRotation;
-    Vector3 initialRotation;
 
     protected override void Start()
     {
-        base.Start();
-        initialRotation = transform.eulerAngles;     
+        base.Start();  
         cannonType = CannonType.rotatingCannon;
         GetComponentInChildren<SkinnedMeshRenderer>().material = GameManager.Instance.Rotating;
     }
@@ -25,7 +23,6 @@ public class RotatingCannon : CannonParent
         float angleOffset = transform.eulerAngles.z;
         canShoot = true;
         StartCoroutine(Wick());
-        //transform.eulerAngles = initialRotation;
 
         while (Will.will.inCannon)
         {
@@ -34,12 +31,9 @@ public class RotatingCannon : CannonParent
             yield return null;
         }
 
-        //yield return new WaitForSeconds(0.5f);
-        //transform.eulerAngles = initialRotation;
     }
     public override void SetPosition()
     {
-        //transform.position = initialPos;
         transform.eulerAngles = initialRot;
     }
 }

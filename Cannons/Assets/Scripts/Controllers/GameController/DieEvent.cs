@@ -6,6 +6,7 @@ using GameAnalyticsSDK;
 public class DieEvent : MonoBehaviour {
 
     Collider mCollider;
+    Collider[] mColliders;
     [SerializeField] IGLevelManager iGLevelManager;
     [SerializeField] WinCondition winCondition;
     [SerializeField] WriteVbles writeVbles;
@@ -14,16 +15,18 @@ public class DieEvent : MonoBehaviour {
     public delegate void Revive();
     public static Revive DesactivatePanel;
     public static Revive ReactivateCollider;
-    private float coinsToRevive = 15;
+    private float coinsToRevive = 40;
 
-    public static bool isDeath;
     Scene scene;
 
     private void Start()
     {
         iGLevelManager.coinsToRevive.text = coinsToRevive.ToString();
         scene = SceneManager.GetActiveScene();
-        mCollider = GetComponent<Collider>();
+        //mCollider = GetComponent<Collider>();
+        mColliders = GetComponents<Collider>();
+
+        ReactivateCollider = () => { foreach (Collider c in mColliders) { c.enabled = true; } };
         DesactivatePanel = delegate ()
         {
             iGLevelManager.canvas[0].SetActive(true);
@@ -38,9 +41,9 @@ public class DieEvent : MonoBehaviour {
     {
         print("Character Die llamado" + ++i);
         GameAnalytics.NewProgressionEvent(GAProgressionStatus.Fail, winCondition.level.ToString());
+        foreach (Collider c in mColliders) { c.enabled = false; }
         StartCoroutine(ShowRetryPanel());
         iGLevelManager.canvas[0].SetActive(false);
-        isDeath = true;
         //mCollider.enabled = false;
     }
 
@@ -61,7 +64,6 @@ public class DieEvent : MonoBehaviour {
             DesactivatePanel();
             Will.will.cannonTriggered.GetComponent<CannonParent>().Reactivate();
             Will.will.Revive();
-            isDeath = false;
 
             coinsToRevive *= 1.5f;
             iGLevelManager.coinsToRevive.text = ((int)coinsToRevive).ToString();
@@ -80,7 +82,7 @@ public class DieEvent : MonoBehaviour {
         if (!iGLevelManager.canvas[2].activeInHierarchy) {
             iGLevelManager.canvas[2].SetActive(true);
         }
-        //Time.timeScale = 0;       
+        Time.timeScale = 0;       
     }
 
 }

@@ -9,6 +9,8 @@ public class Will : MonoBehaviour
 {
     [HideInInspector] public GameObject cannonTriggered;
     Transform reference;
+    Vector3 referencePos = new Vector3(0.1f, 1.1f, 0f);
+    Collider mCollider;
     private Rigidbody m_Rigidbody;
     Vector3 updateVelocity;
     public Rigidbody Rigidbody
@@ -38,7 +40,7 @@ public class Will : MonoBehaviour
 
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
         m_Rigidbody = GetComponent<Rigidbody>();
-
+        mCollider = GetComponent<Collider>();
         m_Rigidbody.constraints = RigidbodyConstraints.FreezePositionZ;
 
         if (will == null)
@@ -93,7 +95,9 @@ public class Will : MonoBehaviour
         }
         else if (dieEvent != null)
         {
+            mCollider.enabled = false;
             transform.position = reference.position;
+            transform.eulerAngles = reference.eulerAngles;
             dieEvent.CharacterDie();
             m_Rigidbody.constraints = RigidbodyConstraints.FreezeAll;
             m_SpriteRenderer.enabled = false;           
@@ -113,18 +117,19 @@ public class Will : MonoBehaviour
     public void Revive()
     {
         revive = true;
+        mCollider.enabled = true;
         anim.SetBool("InCannon", true);
         transform.eulerAngles = reference.eulerAngles;
         transform.position = reference.position;
 
         m_Rigidbody.constraints = RigidbodyConstraints.None;
         m_Rigidbody.constraints = RigidbodyConstraints.FreezePositionZ;
-
         m_SpriteRenderer.enabled = true;
     }
 
     void AlreadyInRespawnCannon()
     {
+        DieEvent.ReactivateCollider();
         switch (cannonTriggered.GetComponent<CannonParent>().cannonType)
         {
             case CannonType.staticCannon:
@@ -177,17 +182,17 @@ public class Will : MonoBehaviour
 
     IEnumerator MoveToCannon()
     {
-        
+        /*
         if(revive)
         {
             inCannon = true;
-            transform.position = reference.position;
-            transform.eulerAngles = reference.eulerAngles;
             AlreadyInRespawnCannon();
+            transform.eulerAngles = reference.eulerAngles;
+            transform.position = reference.position;
             anim.SetBool("InCannon", true);
             yield break;
         }
-        
+        */
         Vector3 startingRotation = transform.eulerAngles;
         Vector3 targetRotation = reference.eulerAngles;
         float elapsedTime = 0f;
@@ -201,18 +206,10 @@ public class Will : MonoBehaviour
         }
         transform.eulerAngles = targetRotation;
         transform.position = reference.position;
-
-        /*
-        if (revive)
-        {
-            inCannon = true;
-            AlreadyInRespawnCannon();
-            anim.SetBool("InCannon", true);
-            yield break;
-        }
-        */
+                
         inCannon = true;
-        AlredyinCannon();
+        if (!revive) AlredyinCannon();
+        else AlreadyInRespawnCannon();
         anim.SetBool("InCannon", true);
     }
 
