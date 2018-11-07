@@ -11234,6 +11234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOfCoins: {fileID: 552766234}
+  numberOfCoinsRetry: {fileID: 0}
   menuCoinsTxt:
   - {fileID: 552766234}
   - {fileID: 647241821}
@@ -20249,6 +20250,8 @@ MonoBehaviour:
   openChest: {fileID: 8300000, guid: f9a28a87f23211e488a99bd5b9e7510e, type: 3}
   music: {fileID: 8300000, guid: 2401f344c13e60f4f910af59b549143c, type: 3}
   tropicalWin: {fileID: 8300000, guid: 40e3adaf5b6730b4cb8e8089cfd03edc, type: 3}
+  smashSeagull: {fileID: 0}
+  gullSound: {fileID: 0}
   uIAudioSource: {fileID: 2034892595}
   itemAudioSource: {fileID: 0}
   musicAudioSource: {fileID: 1222981268}
@@ -24886,8 +24889,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -527}
-  m_SizeDelta: {x: 160, y: 1054.3}
+  m_AnchoredPosition: {x: 0, y: -579.7}
+  m_SizeDelta: {x: 160, y: 1159.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1677703975
 MonoBehaviour:
@@ -24930,10 +24933,12 @@ MonoBehaviour:
     Pablo Daza\r\n\r\nSound Designer\r\nDaniel Alarcon\r\n\r\nMarketing & Community
     managers\r\nJorge Orrego\r\nDaniel Alarcon\r\nJuan David Atehortua\r\nDaniel Palacio\r\n\r\nSpecial
     thanks\r\n\r\nEsteban Olarte (3D Support)\r\nArmid M. Florez (Background Sound
-    Design)\r\nCristian Adarve\r\nJoseph Olin\r\nAlejandra Villa\r\nGlen Fox for 3D
-    background Tiki Treasure! CC Attribution 4.0 on SketchFab (we don\u2019t claim
-    any of the material provided by Glen Fox). https://sketchfab.com/models/cbcf188a01f54d63a10f10c227c5a6ff?ref=related\r\nTropical
-    Musical Sound Copyright \xA9 2011 Varazuvi\u2122 www.varazuvi.com"
+    Design)\r\nCristian Adarve\r\nJoseph Olin\r\nAlejandra Villa\r\n\nGlen Fox for
+    3D background Tiki Treasure! CC Attribution 4.0 on SketchFab (we don\u2019t claim
+    any of the material provided by Glen Fox). https://sketchfab.com/models/cbcf188a01f54d63a10f10c227c5a6ff?ref=related\r\n\nTropical
+    Musical Sound Copyright \xA9 2011 Varazuvi\u2122 www.varazuvi.com\n\n\"Feather\"
+    by Gongshu, https://sketchfab.com/models/7d93f6d775394cebb8ac81f668234e20 Lincensed
+    under CC BY 4.0"
 --- !u!222 &1677703976
 CanvasRenderer:
   m_ObjectHideFlags: 0
