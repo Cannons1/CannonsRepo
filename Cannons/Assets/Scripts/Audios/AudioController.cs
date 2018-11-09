@@ -72,7 +72,7 @@ public class AudioController : MonoBehaviour {
     IEnumerator PlayGullDelayed(float _timeDelay) {
         WaitForSeconds wait = new WaitForSeconds(_timeDelay);
         yield return wait;
-        ItemAudioSource.PlayOneShot(gullSound, 0.3f);
+        ItemAudioSource.PlayOneShot(gullSound, 0.15f);
     }
 
     public void SoundClaimGift() {
