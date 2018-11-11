@@ -2,6 +2,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using GameAnalyticsSDK;
+using Assets.SimpleAndroidNotifications;
+using System;
 
 public class DailyGifts : MonoBehaviour
 {
@@ -55,6 +57,7 @@ public class DailyGifts : MonoBehaviour
 
     public void GettingGift()
     {
+        NotificationManager.Send(TimeSpan.FromHours(24), "Daily gift!", "Is now available your daily gift", Color.white);
         GameAnalytics.NewDesignEvent("DailyGift");
         switch (Singleton.instance.DailyGifts) {
             case 1:
