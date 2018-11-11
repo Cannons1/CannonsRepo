@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-public class PanelShop : MonoBehaviour {
+public class PanelShop : MonoBehaviour
+{
 
     [SerializeField] Animator panelShopAnimator;
 
