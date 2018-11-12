@@ -19,4 +19,8 @@ public class AnimPanels : MonoBehaviour
     public void AnimPanelPause() {
         panelsAnimator.SetBool("OpenPause", true);
     }
+
+    public void AnimPanelRetry() {
+        panelsAnimator.SetBool("OpenRetry", true);
+    }
 }

@@ -10,6 +10,7 @@ public class DieEvent : MonoBehaviour {
     [SerializeField] IGLevelManager iGLevelManager;
     [SerializeField] WinCondition winCondition;
     [SerializeField] WriteVbles writeVbles;
+    [SerializeField] AnimPanels panelRetry;
 
     [SerializeField] AdMobManager adMobManager;
     public delegate void Revive();
@@ -23,7 +24,6 @@ public class DieEvent : MonoBehaviour {
     {
         iGLevelManager.coinsToRevive.text = coinsToRevive.ToString();
         scene = SceneManager.GetActiveScene();
-        //mCollider = GetComponent<Collider>();
         mColliders = GetComponents<Collider>();
 
         ReactivateCollider = () => { foreach (Collider c in mColliders) { c.enabled = true; } };
@@ -77,11 +77,12 @@ public class DieEvent : MonoBehaviour {
     
     IEnumerator ShowRetryPanel()
     {
-        writeVbles.CoinsInRetry();
-        yield return new WaitForSeconds(0.3f);
         if (!iGLevelManager.canvas[2].activeInHierarchy) {
             iGLevelManager.canvas[2].SetActive(true);
         }
+        panelRetry.AnimPanelRetry();
+        writeVbles.CoinsInRetry();
+        yield return new WaitForSeconds(0.25f);
         Time.timeScale = 0;       
     }
 
