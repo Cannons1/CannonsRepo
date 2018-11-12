@@ -25,7 +25,7 @@ public class ShopController : MonoBehaviour {
             container.GetComponentInChildren<Button>().onClick.AddListener(() => buySkin(skinIndex, skinValue));
             container.transform.GetChild(1).GetComponent<Button>().onClick.AddListener(() => SelectSkin(skinIndex));
 
-            if ((GameManager.Instance.skinAvailability & 1 << skinIndex) == 1 << skinIndex)
+            if ((GameController.Instance.skinAvailability & 1 << skinIndex) == 1 << skinIndex)
             {
                 container.transform.GetChild(0).gameObject.SetActive(false);
                 container.transform.GetChild(1).gameObject.SetActive(true);
@@ -33,12 +33,12 @@ public class ShopController : MonoBehaviour {
             }
         }
         //buySkin(GameManager.Instance.currentSkin, 0);
-        skinContainer.transform.GetChild(GameManager.Instance.currentSkin).GetChild(4).gameObject.SetActive(true);
+        skinContainer.transform.GetChild(GameController.Instance.currentSkin).GetChild(4).gameObject.SetActive(true);
     }
 
     public void buySkin(int skinIndex, int _value)
     {  
-        if (!((GameManager.Instance.skinAvailability & 1 << skinIndex) == 1 << skinIndex)) 
+        if (!((GameController.Instance.skinAvailability & 1 << skinIndex) == 1 << skinIndex)) 
         {
             int value = _value;
             if (Singleton.instance.Coins >= value)
@@ -46,8 +46,8 @@ public class ShopController : MonoBehaviour {
                 Singleton.instance.Coins -= value;
                 PlayerPrefs.SetInt("Coins", Singleton.instance.Coins);
                 writeVbles.WriteOnPurchase();
-                GameManager.Instance.skinAvailability += 1 << skinIndex;
-                GameManager.Instance.Save();
+                GameController.Instance.skinAvailability += 1 << skinIndex;
+                GameController.Instance.Save();
                 skinContainer.transform.GetChild(skinIndex).GetChild(0).gameObject.SetActive(false);
                 skinContainer.transform.GetChild(skinIndex).GetChild(1).gameObject.SetActive(true);
                 skinContainer.transform.GetChild(skinIndex).GetChild(3).gameObject.SetActive(false);
@@ -62,13 +62,13 @@ public class ShopController : MonoBehaviour {
     }    
     public void SelectSkin(int skinIndex)
     {
-        skinContainer.transform.GetChild(GameManager.Instance.currentSkin).GetChild(4).gameObject.SetActive(false);
-        if ((GameManager.Instance.skinAvailability & 1 << skinIndex) == 1 << skinIndex)
+        skinContainer.transform.GetChild(GameController.Instance.currentSkin).GetChild(4).gameObject.SetActive(false);
+        if ((GameController.Instance.skinAvailability & 1 << skinIndex) == 1 << skinIndex)
         {
             audioController.AudioBtnDef();
             skinContainer.transform.GetChild(skinIndex).GetChild(4).gameObject.SetActive(true);
-            GameManager.Instance.currentSkin = skinIndex;
-            GameManager.Instance.Save();
+            GameController.Instance.currentSkin = skinIndex;
+            GameController.Instance.Save();
         }
     }   
 }

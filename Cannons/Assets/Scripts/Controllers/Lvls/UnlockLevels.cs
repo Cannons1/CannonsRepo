@@ -2,7 +2,7 @@
 
 public class UnlockLevels : MonoBehaviour {
 
-    [SerializeField] int levelsFirstWorld, levelsOnePlusTwo;
+    [SerializeField] int levelsFirstWorld, levelsOnePlusTwo = 0;
     [SerializeField] int minStarsToWorldTwo;
     [SerializeField] int minStarsToWorldThree;
 

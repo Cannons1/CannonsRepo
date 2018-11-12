@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class AudioController : MonoBehaviour {
 
-    [SerializeField] AudioClip buttonDefault, buttonBack, claimGift, coin, star, openChest, music, tropicalWin, smashSeagull, gullSound;
+    [SerializeField] AudioClip buttonDefault = null, buttonBack = null, claimGift = null, coin= null, star = null, openChest =null, music= null, tropicalWin=null, smashSeagull =null, gullSound =null;
+    [SerializeField] AudioClip wall = null;
     [SerializeField] AudioSource uIAudioSource, itemAudioSource, musicAudioSource;
 
     public AudioSource UIAudioSource
@@ -31,10 +32,14 @@ public class AudioController : MonoBehaviour {
             itemAudioSource = value;
         }
     }
+    Will will;
 
     private void Start()
     {
         Music();
+        will = FindObjectOfType<Will>();
+        if (will != null)
+            will.delWillSounds += AudioWall;
     }
 
     public void AudioBtnDef() {
@@ -47,6 +52,10 @@ public class AudioController : MonoBehaviour {
 
     public void AudioCoins() {
         UIAudioSource.PlayOneShot(coin);
+    }
+
+    public void AudioWall() {
+        UIAudioSource.PlayOneShot(wall);
     }
 
     public void AudioStar() {
@@ -72,7 +81,7 @@ public class AudioController : MonoBehaviour {
     IEnumerator PlayGullDelayed(float _timeDelay) {
         WaitForSeconds wait = new WaitForSeconds(_timeDelay);
         yield return wait;
-        ItemAudioSource.PlayOneShot(gullSound, 0.15f);
+        UIAudioSource.PlayOneShot(gullSound, 0.15f);
     }
 
     public void SoundClaimGift() {

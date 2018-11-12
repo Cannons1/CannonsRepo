@@ -13,8 +13,8 @@ public class HAndV : CannonParent
     [Tooltip("False for horizontal, true for vertical")]
     [SerializeField] bool verticalOrHorizontal;
     [Range(-2.3f, 2.3f)]
-    [SerializeField] float horizontalTarget1, horizontalTarget2;
-    [SerializeField] float verticalTarget1, verticalTarget2;
+    [SerializeField] float horizontalTarget1 = 0f, horizontalTarget2 = 0f;
+    [SerializeField] float verticalTarget1 = 0f, verticalTarget2 =0f;
     float timer = 0f;
 
 
@@ -35,7 +35,7 @@ public class HAndV : CannonParent
         Vector3[] positions = { target1, target2 };
 
         GetComponent<LineRenderer>().SetPositions(positions);
-        GetComponentInChildren<SkinnedMeshRenderer>().material = GameManager.Instance.Handv;
+        GetComponentInChildren<SkinnedMeshRenderer>().material = GameController.Instance.Handv;
         cannonType = CannonType.targetCannon;
 
 

@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
-public class GameManager : MonoBehaviour {
+public class GameController : MonoBehaviour {
 
-    private static GameManager instance;
-    public static GameManager Instance { get { return instance; } }
+    private static GameController instance;
+    public static GameController Instance { get { return instance; } }
 
     public Material Handv
     {
@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour {
     public int currentSkin = 0;
     public int skinAvailability = 1;
 
-    [SerializeField] Material handv, rotating, staticCannon;
+    [SerializeField] Material handv = null, rotating = null, staticCannon = null;
 
     private void Awake()
     {

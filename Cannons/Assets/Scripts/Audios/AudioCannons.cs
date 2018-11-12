@@ -3,7 +3,7 @@ using System.Collections;
 
 public class AudioCannons : MonoBehaviour {
 
-    [SerializeField] AudioClip shoot, wick;
+    [SerializeField] AudioClip shoot = null, wick = null;
     [SerializeField] AudioSource cannonsAudioSource;
 
     public void AudioShoot() {

@@ -30,7 +30,7 @@ public class Instance : MonoBehaviour {
     void Awake()
     {
         reference = transform;
-        playerObject = Instantiate(skinInfo.skins[GameManager.Instance.currentSkin].skinModel, reference.position, reference.rotation);
+        playerObject = Instantiate(skinInfo.skins[GameController.Instance.currentSkin].skinModel, reference.position, reference.rotation);
         playerObject.AddComponent<Will>();
 
         will = playerObject.GetComponent<Will>();
@@ -39,9 +39,9 @@ public class Instance : MonoBehaviour {
         clipOverr = new AnimationClipOverrides(animOverr.overridesCount);
         animOverr.GetOverrides(clipOverr);
 
-        clipOverr["InCannon"] = skinInfo.skins[GameManager.Instance.currentSkin].animations[0];
-        clipOverr["Flying"] = skinInfo.skins[GameManager.Instance.currentSkin].animations[1];
-        clipOverr["Falling"] = skinInfo.skins[GameManager.Instance.currentSkin].animations[2];
+        clipOverr["InCannon"] = skinInfo.skins[GameController.Instance.currentSkin].animations[0];
+        clipOverr["Flying"] = skinInfo.skins[GameController.Instance.currentSkin].animations[1];
+        clipOverr["Falling"] = skinInfo.skins[GameController.Instance.currentSkin].animations[2];
         animOverr.ApplyOverrides(clipOverr);
         will._anim.runtimeAnimatorController = animOverr;
 

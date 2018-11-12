@@ -3,13 +3,12 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Animator))]
-//[RequireComponent(typeof(WillAudios))]
-[RequireComponent(typeof(AudioSource))]
+//[RequireComponent(typeof(AudioSource))]
 public class Will : MonoBehaviour
 {
     [HideInInspector] public GameObject cannonTriggered;
     Transform reference;
-    Vector3 referencePos = new Vector3(0.1f, 1.1f, 0f);
+    //Vector3 referencePos = new Vector3(0.1f, 1.1f, 0f);
     Collider mCollider;
     private Rigidbody m_Rigidbody;
     Vector3 updateVelocity;
@@ -31,6 +30,9 @@ public class Will : MonoBehaviour
 
     public delegate void WillDelegate(Vector3 _mTransform);
     public event WillDelegate OnProgressLvl;
+
+    public delegate void WillSounds();
+    public WillSounds delWillSounds;
     private bool revive;
 
     private void Awake()
@@ -65,6 +67,8 @@ public class Will : MonoBehaviour
         switch (collision.gameObject.tag)
         {
             case "Wall":
+                if(delWillSounds !=null)
+                    delWillSounds();//Send audio of bounce to AudioController
                 ContactPoint contactWall = collision.contacts[0];
                 Vector3 direction = Vector3.Reflect(updateVelocity.normalized, contactWall.normal);
                 Bounce wallBounce = collision.gameObject.GetComponent<Bounce>();
@@ -101,7 +105,6 @@ public class Will : MonoBehaviour
             dieEvent.CharacterDie();
             m_Rigidbody.constraints = RigidbodyConstraints.FreezeAll;
             m_SpriteRenderer.enabled = false;           
-            //GetComponent<WillAudios>().DieAudio(); // Will Die Audio
         }
         else if (winCondition != null)
         {

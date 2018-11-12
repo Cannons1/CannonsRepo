@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class Distance : MonoBehaviour
 {
     [SerializeField] Slider sliderDistance;
-    [SerializeField] Transform instanceT, winConditionT;
-    [SerializeField] Text percentText;
+    [SerializeField] Transform instanceT = null, winConditionT = null;
+    [SerializeField] Text percentText = null;
     Transform willTransform;
     Will will;
 

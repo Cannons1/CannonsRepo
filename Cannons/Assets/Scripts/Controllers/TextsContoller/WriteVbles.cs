@@ -4,9 +4,9 @@ using System.Collections;
 
 public class WriteVbles : MonoBehaviour
 {
-    [SerializeField] Text numberOfCoins, numberOfCoinsRetry; 
+    [SerializeField] Text numberOfCoins = null, numberOfCoinsRetry =null; 
     [SerializeField] Text[] menuCoinsTxt;
-    [SerializeField] Text dailyGiftTxtAmount;
+    [SerializeField] Text dailyGiftTxtAmount= null;
 
     private void Start()
     {

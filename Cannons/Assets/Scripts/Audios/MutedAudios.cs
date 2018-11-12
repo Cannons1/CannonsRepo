@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class MutedAudios : MonoBehaviour
 {
     [SerializeField] AudioMixer masterMixer;
-    [SerializeField] Toggle sFxToggle, musicToggle;
+    [SerializeField] Toggle sFxToggle = null, musicToggle = null;
     [SerializeField] AudioController audioController;
 
     byte i = 0;
@@ -25,19 +25,15 @@ public class MutedAudios : MonoBehaviour
 
     public void MusicButton()
     {
-        i += 1;
         if (Singleton.instance.MusicMuted == true)
         {
+            i += 1;
             if (i == 1)
             {
                 if (audioController.UIAudioSource.isPlaying == true)
                     audioController.UIAudioSource.Stop();
             }
-            else
-                audioController.AudioBtnDef();
         }
-        else
-            audioController.AudioBtnDef();
     }
 
     public void MusicMuted(float _MusicVol)

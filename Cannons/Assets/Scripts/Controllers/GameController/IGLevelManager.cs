@@ -10,7 +10,7 @@ public class IGLevelManager : MonoBehaviour
     [SerializeField] GameObject loadingScreen;
     [SerializeField] Slider slider;
     [SerializeField] ChestAnimatedUI chestAnimatedUI;
-    [SerializeField] Text lvlName, lvlNamePaused;
+    [SerializeField] Text lvlName = null, lvlNamePaused = null;
     [SerializeField] GameObject txtTapToShoot;
     [SerializeField] WinCondition winCondition;
     [SerializeField] AudioController audioController;

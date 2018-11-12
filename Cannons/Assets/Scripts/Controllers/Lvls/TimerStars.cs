@@ -65,26 +65,32 @@ public class TimerStars : MonoBehaviour
 
     IEnumerator DesapearStar(int _star, float _timeStars)
     {
-        starsAnimator.SetInteger("Star", _star);
-        currentStar = _star;
+        if (!winCondition.WinBool)
+        {
+            currentStar = _star; 
+            if(starsAnimator.gameObject.activeSelf)
+                starsAnimator.SetInteger("Star", _star);
+        }
         while (time < _timeStars && !winCondition.WinBool)
         {
             yield return wait;
             audioController.AudioStar(0.5f);
             yield return wait;
         }
-        if (_star == 3)
+        if (!winCondition.WinBool)
         {
-            starsAnimator.SetInteger("Star", -3);
-            currentStar = -3;
-        }
-        else if (_star == 2) {
-            starsAnimator.SetInteger("Star", -2);
-            currentStar = -2;
-        }
-        if (!winCondition.WinBool) {
             audioController.AudioStar(0.5f);
-        }
+            if (_star == 3)
+            {
+                starsAnimator.SetInteger("Star", -3);
+                currentStar = -3;
+            }
+            else if (_star == 2)
+            {
+                starsAnimator.SetInteger("Star", -2);
+                currentStar = -2;
+            }
+        }   
         audioController.ItemAudioSource.volume = 1f;
     }
 }

@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class RotatingCannon : CannonParent
 {
-    [SerializeField] float rotationSpeed, angleRotation;
+    [SerializeField] float rotationSpeed, angleRotation = 0f;
 
     protected override void Start()
     {
         base.Start();  
         cannonType = CannonType.rotatingCannon;
-        GetComponentInChildren<SkinnedMeshRenderer>().material = GameManager.Instance.Rotating;
+        GetComponentInChildren<SkinnedMeshRenderer>().material = GameController.Instance.Rotating;
     }
 
     protected override void Update()
