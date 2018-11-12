@@ -3,8 +3,8 @@ using GoogleMobileAds.Api;
 using UnityEngine.SceneManagement;
 using System;
 
-public class AdMobManager : MonoBehaviour {
-
+public class AdMobManager : MonoBehaviour
+{
 
     [SerializeField] string appID = "";
     [SerializeField] string coinsRewardId = "";
@@ -13,7 +13,7 @@ public class AdMobManager : MonoBehaviour {
     [SerializeField] float interstitialProbability;
 
     [SerializeField] int reward;
-    [SerializeField] GameObject panelReward; 
+    [SerializeField] GameObject panelReward;
     [SerializeField] WriteVbles writeVbles;
 
     public RewardBasedVideoAd coinsVideo;
@@ -21,21 +21,20 @@ public class AdMobManager : MonoBehaviour {
 
     private void Awake()
     {
-        
-        #if UNITY_ANDROID
-            appID = "ca-app-pub-6196431305860923~5849023719";
-            coinsRewardId = "ca-app-pub-6196431305860923/2279360087";
-            lifeRewardId = "ca-app-pub-6196431305860923/5802035643";
-            interstitialID = "ca-app-pub-6196431305860923/8128460863";
-        #elif UNITY_IPHONE
+#if UNITY_ANDROID
+        appID = "ca-app-pub-6196431305860923~5849023719";
+        coinsRewardId = "ca-app-pub-6196431305860923/2279360087";
+        lifeRewardId = "ca-app-pub-6196431305860923/5802035643";
+        interstitialID = "ca-app-pub-6196431305860923/8128460863";
+#elif UNITY_IPHONE
             appID = "ca-app-pub-6196431305860923~8195855577";
             coinsRewardId = "ca-app-pub-6196431305860923/9463994779";
             lifeRewardId = "ca-app-pub-6196431305860923/5841154975";
             interstitialID = "ca-app-pub-6196431305860923/1686287544";
-        #endif
-        
+#endif
+
         MobileAds.Initialize(appID);
-        
+
         //For test
         //coinsRewardId = "ca-app-pub-3940256099942544/5224354917";
         //lifeRewardId = "ca-app-pub-3940256099942544/5224354917";
@@ -45,15 +44,14 @@ public class AdMobManager : MonoBehaviour {
             coinsVideo = new RewardBasedVideoAd();
             coinsVideo.OnAdCompleted += OnGiveCoins;
             coinsVideo.OnAdClosed += CoinsVideoClosed;
-            RequestCoinsVideo();                    
-        }      
+            RequestCoinsVideo();
+        }
         else
         {
             lifeVideo = new RewardBasedVideoAd();
             lifeVideo.OnAdCompleted += OnRevivePlayer;
             RequestLifeVideo();
         }
-        
     }
 
     private void OnRevivePlayer(object sender, EventArgs args)
@@ -85,7 +83,6 @@ public class AdMobManager : MonoBehaviour {
 
     public void ShowReviveVideo()
     {
-        
         if (lifeVideo.IsLoaded())
         {
             lifeVideo.Show();
@@ -94,34 +91,32 @@ public class AdMobManager : MonoBehaviour {
         {
             RequestLifeVideo();
         }
-        
+
         //TEST RESPAWN IN GAME
-        
         Time.timeScale = 1;
-        DieEvent.DesactivatePanel();       
+        DieEvent.DesactivatePanel();
         Will.will.cannonTriggered.GetComponent<CannonParent>().Reactivate();
         Will.will.Revive();
-        
     }
 
     private void OnGiveCoins(object sender, EventArgs args)
     {
         if (!panelReward.activeInHierarchy) panelReward.SetActive(true);
+        panelReward.GetComponent<AnimPanels>().AnimPanelReward();
         Singleton.instance.Coins += reward;
         Singleton.SaveCoins();
         writeVbles.WriteOnPurchase();
     }
 
-    private void CoinsVideoClosed(object sender, EventArgs e) {
-
+    private void CoinsVideoClosed(object sender, EventArgs e)
+    {
         RequestCoinsVideo();
         coinsVideo.OnAdCompleted -= OnGiveCoins;
         coinsVideo.OnAdClosed -= CoinsVideoClosed;
     }
 
-
     public void ShowCoinsVideo()
-    {      
+    {
         if (coinsVideo.IsLoaded())
         {
             coinsVideo.Show();
@@ -129,7 +124,6 @@ public class AdMobManager : MonoBehaviour {
         else
         {
             RequestCoinsVideo();
-        }    
+        }
     }
-
 }

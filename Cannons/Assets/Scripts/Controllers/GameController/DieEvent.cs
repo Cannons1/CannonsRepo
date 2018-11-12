@@ -3,7 +3,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using GameAnalyticsSDK;
 
-public class DieEvent : MonoBehaviour {
+public class DieEvent : MonoBehaviour
+{
 
     Collider mCollider;
     Collider[] mColliders;
@@ -11,7 +12,6 @@ public class DieEvent : MonoBehaviour {
     [SerializeField] WinCondition winCondition;
     [SerializeField] WriteVbles writeVbles;
     [SerializeField] AnimPanels panelRetry;
-
     [SerializeField] AdMobManager adMobManager;
     public delegate void Revive();
     public static Revive DesactivatePanel;
@@ -33,7 +33,7 @@ public class DieEvent : MonoBehaviour {
             iGLevelManager.canvas[2].SetActive(false);
             iGLevelManager.adWatchButton.SetActive(false);
             iGLevelManager.reviveButton.SetActive(true);
-        };       
+        };
     }
 
     int i = 0;
@@ -74,16 +74,16 @@ public class DieEvent : MonoBehaviour {
     {
         adMobManager.ShowReviveVideo();
     }
-    
+
     IEnumerator ShowRetryPanel()
     {
-        if (!iGLevelManager.canvas[2].activeInHierarchy) {
+        if (!iGLevelManager.canvas[2].activeInHierarchy)
+        {
             iGLevelManager.canvas[2].SetActive(true);
         }
         panelRetry.AnimPanelRetry();
         writeVbles.CoinsInRetry();
         yield return new WaitForSeconds(0.25f);
-        Time.timeScale = 0;       
+        Time.timeScale = 0;
     }
-
 }
