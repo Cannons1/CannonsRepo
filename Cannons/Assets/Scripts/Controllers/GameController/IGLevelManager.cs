@@ -27,6 +27,9 @@ public class IGLevelManager : MonoBehaviour
 
     public static byte unnpause;
 
+    public delegate IEnumerator Stars();
+    public Stars delStars;
+
     private void Start() {
         unnpause = 0;
         Time.timeScale = 1;
@@ -88,18 +91,25 @@ public class IGLevelManager : MonoBehaviour
 
     public void PauseButton() {
         unpause = false;
-        Time.timeScale = 0;
         unnpause = 1;
 
         if (canvas[0].activeInHierarchy) {
             canvas[0].SetActive(false);
             canvas[1].SetActive(true);
         }
+
+        StartCoroutine(PauseGame());
+    }
+
+    IEnumerator PauseGame() {
+        WaitForSeconds wait = new WaitForSeconds(0.25f);
+        yield return wait;
+        Time.timeScale = 0;
     }
 
     public void ResumeButton() {
         unnpause = 0;
-
+        StartCoroutine(delStars());
         if (canvas[1].activeInHierarchy) {
             canvas[1].SetActive(false);
             canvas[0].SetActive(true);

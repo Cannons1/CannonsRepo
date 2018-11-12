@@ -1198,6 +1198,8 @@ GameObject:
   m_Component:
   - component: {fileID: 224235209312985872}
   - component: {fileID: 222011697758438454}
+  - component: {fileID: 114399514528469898}
+  - component: {fileID: 95680772437389414}
   m_Layer: 5
   m_Name: PanelPaused
   m_TagString: Untagged
@@ -2679,6 +2681,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &95680772437389414
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1698133515569210}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e2c6044e501b32247bab2d576626128d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!95 &95869698766652540
 Animator:
   serializedVersion: 3
@@ -2907,6 +2927,7 @@ MonoBehaviour:
   stars: {fileID: 114861857502814000}
   audioController: {fileID: 114694582040387180}
   winCondition: {fileID: 114534144998237950}
+  iGLevelManager: {fileID: 114414949778851446}
   starsAnimator: {fileID: 95918755898661238}
 --- !u!114 &114108735873999364
 MonoBehaviour:
@@ -3943,6 +3964,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114399514528469898
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1698133515569210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d15a31391a41340438dcdc84f93dd109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelsAnimator: {fileID: 95680772437389414}
 --- !u!114 &114414949778851446
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5028,6 +5061,28 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 114399514528469898}
+        m_MethodName: AnimPanelPause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 114118860980422970}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
