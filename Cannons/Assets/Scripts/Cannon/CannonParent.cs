@@ -26,7 +26,7 @@ public abstract class CannonParent : MonoBehaviour
     private AudioCannons m_AudioCannons;
 
     [SerializeField] Shader fadeShader;
-    float fadeTime = 3.5f;
+    float fadeTime = 2.2f;
     WaitForSecondsRealtime littleWait;
     protected Vector3 initialRot;
 
@@ -62,7 +62,7 @@ public abstract class CannonParent : MonoBehaviour
         //Will.will.cannonTriggered.SetActive(false);
         Will.will.cannonTriggered.transform.GetChild(1).GetComponent<Collider>().enabled = false;
         Will.will.StartCoroutine(Will.will.FlyAnimation());
-        VFX.Instance.explosion[VFX.Instance.expIndex].GetComponent<Animator>().SetTrigger("explosion");
+        VFX.Instance.explosion[VFX.Instance.explosionIndex].GetComponent<Animator>().SetTrigger("explosion");
         //Will.will.GetComponent<WillAudios>().BeingShot();
     }
 
@@ -72,9 +72,9 @@ public abstract class CannonParent : MonoBehaviour
         m_AudioCannons.AudioWick();
         reference = transform.GetChild(0).gameObject;
 
-        VFX.Instance.expIndex = (VFX.Instance.expIndex < 1) ? VFX.Instance.expIndex + 1 : 0 ;
-        VFX.Instance.explosion[VFX.Instance.expIndex].transform.SetParent(reference.transform, false);
-        VFX.Instance.explosion[VFX.Instance.expIndex].transform.position = new Vector3(reference.transform.position.x, reference.transform.position.y + 0.4f, -1f);
+        VFX.Instance.explosionIndex = (VFX.Instance.explosionIndex < 1) ? VFX.Instance.explosionIndex + 1 : 0 ;
+        VFX.Instance.explosion[VFX.Instance.explosionIndex].transform.SetParent(reference.transform, false);
+        VFX.Instance.explosion[VFX.Instance.explosionIndex].transform.position = new Vector3(reference.transform.position.x, reference.transform.position.y + 0.4f, -1f);
 
         canShoot = true;
         mRenderer = transform.GetChild(1).GetComponentInChildren<Renderer>();

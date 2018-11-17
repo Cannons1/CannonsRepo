@@ -69,7 +69,13 @@ public class Will : MonoBehaviour
             case "Wall":
                 if(delWillSounds !=null)
                     delWillSounds();//Send audio of bounce to AudioController
+                
+                Transform reference = collision.gameObject.transform.GetChild(0);
+                VFX.Instance.bounce.transform.SetParent(reference, false);
+                VFX.Instance.bounce.transform.position = new Vector3(reference.position.x, reference.transform.position.y, -1f);
+                VFX.Instance.bounce.GetComponent<Animator>().SetTrigger("VFXbounce");
                 collision.gameObject.GetComponent<Animator>().SetTrigger("bounce");
+
                 ContactPoint contactWall = collision.contacts[0];
                 Vector3 direction = Vector3.Reflect(updateVelocity.normalized, contactWall.normal);
                 Bounce wallBounce = collision.gameObject.GetComponent<Bounce>();
