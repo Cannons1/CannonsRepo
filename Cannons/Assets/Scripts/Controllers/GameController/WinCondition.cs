@@ -46,7 +46,7 @@ public class WinCondition : MonoBehaviour {
         anim[1].SetBool("Win", true);
         yield return new WaitForSeconds(0.32f);
         canvasWin.SetActive(true);
-        winTxt[1].text = "Level " + level.ToString() + " Complete"; 
+        winTxt[1].text = string.Format("Level {0} complete",level); 
         cParticle.Stop();
     }
 

@@ -79,13 +79,29 @@ public class IGLevelManager : MonoBehaviour
         }
     }
 
-    public void MenuButton() {
+    private void MenuButton() {
         Singleton.SaveCoins();
         Scene currentScene = SceneManager.GetActiveScene();
         if (currentScene.buildIndex >= 12 && currentScene.buildIndex <= 21)//12 to 21 second World
             isSecondWorld = true;
         else if (currentScene.buildIndex >= 22 && currentScene.buildIndex <= 31)//22 to 31 third world
             isThirdWorld = true;
+        StartCoroutine(LoadAsynchronously(menuScene));
+    }
+
+    public void NextWorld(int _nextWorld) {
+        campaignBtn = true;
+        Singleton.SaveCoins();
+        switch (_nextWorld) {
+            case 2:
+                isSecondWorld = true;
+                break;
+            case 3:
+                isThirdWorld = true;
+                break;
+            default:
+                break;
+        }
         StartCoroutine(LoadAsynchronously(menuScene));
     }
 
