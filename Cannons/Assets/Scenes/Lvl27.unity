@@ -845,22 +845,22 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1838947627320302, guid: 50968a4552340f3468aec73489bdefb1, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224839235262928560, guid: 50968a4552340f3468aec73489bdefb1,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 224839235262928560, guid: 50968a4552340f3468aec73489bdefb1,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 224839235262928560, guid: 50968a4552340f3468aec73489bdefb1,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -45
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224715613861528278, guid: 50968a4552340f3468aec73489bdefb1,
         type: 2}
