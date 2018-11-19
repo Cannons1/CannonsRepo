@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using GameAnalyticsSDK;
 
+public delegate IEnumerator Del();
+
 public class IGLevelManager : MonoBehaviour
 {
     [SerializeField] string menuScene;
@@ -15,6 +17,7 @@ public class IGLevelManager : MonoBehaviour
     [SerializeField] WinCondition winCondition;
     [SerializeField] AudioController audioController;
     [SerializeField] Distance distance;
+    [SerializeField] Text countDown;
 
     public GameObject adWatchButton;
     public GameObject reviveButton;
@@ -25,10 +28,12 @@ public class IGLevelManager : MonoBehaviour
     public static bool isSecondWorld;
     public static bool isThirdWorld;
 
+
     public static byte unnpause;
 
     public delegate IEnumerator Stars();
     public Stars delStars;
+    public static Del countDownHandler;
 
     private void Start() {
         unnpause = 0;
@@ -39,6 +44,8 @@ public class IGLevelManager : MonoBehaviour
         campaignBtn = false;
         isSecondWorld = false;
         isThirdWorld = false;
+
+        countDownHandler += CountDown;
 
         lvlNamePaused.text = string.Format("Level {0}", winCondition.level);
         lvlName.text = string.Format("Level {0}", winCondition.level);
@@ -58,6 +65,22 @@ public class IGLevelManager : MonoBehaviour
 
     private void SetLvlName() {
         lvlName.gameObject.SetActive(false);
+    }
+
+    public IEnumerator CountDown()
+    {
+        countDown.gameObject.SetActive(true);
+        countDown.GetComponent<Animator>().SetTrigger("trigger");
+        float t = 3f;
+        while(t > 1)
+        {
+            t -= Time.unscaledDeltaTime;
+            countDown.text = Mathf.RoundToInt(t) + "...";
+            yield return null;
+        }
+        Time.timeScale = 1;
+        Will.will.Revive();
+        countDown.gameObject.SetActive(false);
     }
 
     private void Update() {

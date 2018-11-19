@@ -152,6 +152,7 @@ public class Will : MonoBehaviour
                 break;
             case CannonType.rotatingCannon:
                 StartCoroutine(cannonTriggered.GetComponent<RotatingCannon>().CannonRotate());
+                StartCoroutine(cannonTriggered.GetComponent<RotatingCannon>().Wick());
                 break;
         }
         revive = false;
@@ -184,6 +185,7 @@ public class Will : MonoBehaviour
                 break;
             case CannonType.rotatingCannon:
                 StartCoroutine(cannonTriggered.GetComponent<RotatingCannon>().CannonRotate());
+                StartCoroutine(cannonTriggered.GetComponent<RotatingCannon>().Wick());
                 break;
             default:
                 break;
@@ -193,17 +195,6 @@ public class Will : MonoBehaviour
 
     IEnumerator MoveToCannon()
     {
-        /*
-        if(revive)
-        {
-            inCannon = true;
-            AlreadyInRespawnCannon();
-            transform.eulerAngles = reference.eulerAngles;
-            transform.position = reference.position;
-            anim.SetBool("InCannon", true);
-            yield break;
-        }
-        */
         Vector3 startingRotation = transform.eulerAngles;
         Vector3 targetRotation = reference.eulerAngles;
         float elapsedTime = 0f;

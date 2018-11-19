@@ -60,10 +60,11 @@ public class DieEvent : MonoBehaviour
             Singleton.instance.Coins -= (int)coinsToRevive;
             Singleton.SaveCoins();
 
-            Time.timeScale = 1;
+            //Time.timeScale = 1;
             DesactivatePanel();
             Will.will.cannonTriggered.GetComponent<CannonParent>().Reactivate();
-            Will.will.Revive();
+            //Will.will.Revive();
+            StartCoroutine(IGLevelManager.countDownHandler());
 
             coinsToRevive *= 1.5f;
             iGLevelManager.coinsToRevive.text = ((int)coinsToRevive).ToString();

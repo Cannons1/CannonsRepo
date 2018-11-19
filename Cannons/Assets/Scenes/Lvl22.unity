@@ -1489,6 +1489,11 @@ Prefab:
       propertyPath: cannonsAudioSource
       value: 
       objectReference: {fileID: 565056929}
+    - target: {fileID: 114517613381731680, guid: fe21117e4f7b9e74fbebc90c651b7357,
+        type: 2}
+      propertyPath: initialRotation
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe21117e4f7b9e74fbebc90c651b7357, type: 2}
   m_IsPrefabAsset: 0
