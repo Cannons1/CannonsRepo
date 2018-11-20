@@ -56,10 +56,8 @@ public class AdMobManager : MonoBehaviour
 
     private void OnRevivePlayer(object sender, EventArgs args)
     {
-        //Time.timeScale = 1;
         DieEvent.DesactivatePanel();
         Will.will.cannonTriggered.GetComponent<CannonParent>().Reactivate();
-        //Will.will.Revive();
         StartCoroutine(IGLevelManager.countDownHandler());
     }
 
@@ -95,11 +93,9 @@ public class AdMobManager : MonoBehaviour
 
         
         //TEST RESPAWN IN GAME
-        //Time.timeScale = 1f;
-        //DieEvent.DesactivatePanel();
-        //Will.will.cannonTriggered.GetComponent<CannonParent>().Reactivate();
-        //Will.will.Revive();
-        //StartCoroutine(IGLevelManager.countDownHandler());     
+        DieEvent.DesactivatePanel();
+        Will.will.cannonTriggered.GetComponent<CannonParent>().Reactivate();
+        StartCoroutine(IGLevelManager.countDownHandler());     
     }
 
     private void OnGiveCoins(object sender, EventArgs args)

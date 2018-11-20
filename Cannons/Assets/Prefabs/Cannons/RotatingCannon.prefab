@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4755974005196382}
   - component: {fileID: 33586105121194200}
   - component: {fileID: 23841482670462996}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ShapeControllers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4698426397056580}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4728367099969458}
   - component: {fileID: 114636242922470588}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4796914401714406}
   - component: {fileID: 135943786767000638}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Reference
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4960721729792360}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Body_Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4492340773411164}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cannon_Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4174076393665476}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Body_Cannon_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4278187291002346}
   - component: {fileID: 95568960571104414}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4205893451416900}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cannon_Controller.001_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4260915019426288}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4174432763996068}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bone_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4019896839131472}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cannon_Controller_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4850410524036380}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bone_004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 4687911946325828}
   - component: {fileID: 198678849283049134}
   - component: {fileID: 199663370761008194}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WickParticle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4641333373117212}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bone_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -252,7 +252,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4600045821482712}
   - component: {fileID: 137876242060771316}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WickModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4124639207810648}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bone_003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,7 +282,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4336530546067714}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +297,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4817472142001360}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cannon_Controller.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -315,7 +315,7 @@ GameObject:
   - component: {fileID: 65671529473027242}
   - component: {fileID: 114517613381731680}
   - component: {fileID: 114528305022932004}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RotatingCannon
   m_TagString: Cannon
   m_Icon: {fileID: 0}
@@ -331,7 +331,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4313261577414240}
   - component: {fileID: 137332456680015692}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -348,7 +348,7 @@ GameObject:
   - component: {fileID: 4731334151268442}
   - component: {fileID: 95728458316126644}
   - component: {fileID: 136006424264518070}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CannonFbx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -771,7 +771,6 @@ MonoBehaviour:
   wickRenderer: {fileID: 0}
   mAnimator: {fileID: 0}
   fadeShader: {fileID: 4800000, guid: 988d8629e6f249747ad5a0f1952cea6f, type: 3}
-  mMaterial: {fileID: 2100000, guid: 631d662beaf745341bbc01666cb6ea44, type: 2}
   rotationSpeed: 2.2
   angleRotation: 70
 --- !u!114 &114528305022932004

@@ -1,66 +1,72 @@
 ﻿using UnityEngine;
-//using ChartboostSDK;
+using UnityEngine.Purchasing;
 
 public class ButtonsShop : MonoBehaviour {
 
     int id;
-    [SerializeField] IAPManager mIAP;
+    //[SerializeField] IAPManager mIAP;
     [SerializeField] AudioController audioController;
+    [SerializeField] WriteVbles writeVbles;
 
     private void Start()
     {
-        //Chartboost.cacheRewardedVideo(CBLocation.Default);
-        //Chartboost.didCompleteRewardedVideo += Reward;
-    }
 
-    public void ButtonBuyIAP(int _id) {
-        id = _id;
-        audioController.AudioBtnDef();
-        switch (id) {
-            case 0:
-                mIAP.BuyFirstProduct();
+    }
+    
+    public void Buy(Product _product)
+    {
+        switch (_product.definition.id)
+        {
+            case "150coins":
+                Coins(150);
                 break;
-            case 1:
-                mIAP.BuySecondProduct();
+            case "800coins":
+                Coins(950);
                 break;
-            case 2:
-                mIAP.BuyThirdProduct();
+            case "1500coins":
+                Coins(1800);
                 break;
-            case 3:
-                mIAP.BuyFourthProduct();
+            case "3200coins":
+                Coins(3800);
                 break;
-            case 4:
-                mIAP.BuyFifthProduct();
+            case "8000coins":
+                Coins(10000);
                 break;
             default:
                 break;
         }
     }
-    
-    /*
-    public void Reward(CBLocation CB, int reward)
+
+    private void Coins(int _coins)
     {
-        Singleton.instance.Coins += 10;
+        Singleton.instance.Coins += _coins;
         Singleton.SaveCoins();
-        //Chartboost.didCompleteRewardedVideo -= Reward;
+        writeVbles.WriteOnPurchase();
     }
-    
-    public void ShowADS()
-    {
-        print("Llamado showADS");
-        Chartboost.showRewardedVideo(CBLocation.Default);
-        /*
-        Chartboost.cacheRewardedVideo(CBLocation.Default);
-        if (Chartboost.hasRewardedVideo(CBLocation.Default))
-        {
-            Chartboost.showRewardedVideo(CBLocation.Default);
-            Chartboost.didCompleteRewardedVideo += Reward;
-        }
-        else
-        {
-            Chartboost.cacheRewardedVideo(CBLocation.Default);
-        }
+
+    public void ButtonBuyIAP(int _id) {
+        
+        //id = _id;
+        //audiocontroller.audiobtndef();
+        //switch (id) {
+        //    case 0:
+        //        miap.buyfirstproduct();
+        //        break;
+        //    case 1:
+        //        miap.buysecondproduct();
+        //        break;
+        //    case 2:
+        //        miap.buythirdproduct();
+        //        break;
+        //    case 3:
+        //        miap.buyfourthproduct();
+        //        break;
+        //    case 4:
+        //        miap.buyfifthproduct();
+        //        break;
+        //    default:
+        //        break;
+        //}
         
     }
-    */
 }

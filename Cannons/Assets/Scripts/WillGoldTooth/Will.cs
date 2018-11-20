@@ -170,7 +170,7 @@ public class Will : MonoBehaviour
         //VFX.Instance.enteringCannon.GetComponent<Animator>().SetTrigger("entering");
 
         StartCoroutine(MoveToCannon());
-        transform.SetParent(cannonTriggered.transform);  
+        transform.SetParent(cannonTriggered.transform);
     }
     
     void AlredyinCannon()

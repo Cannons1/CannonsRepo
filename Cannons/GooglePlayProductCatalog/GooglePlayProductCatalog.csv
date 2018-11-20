@@ -1,0 +1,6 @@
+Product ID,Published State,Purchase Type,Auto Translate,Locale; Title; Description,Auto Fill Prices,Price,Pricing Template ID
+150coins,published,managed_by_android,false,"en_US;150 Coins;150 Coins, $0.99",true,990000,
+1500coins,published,managed_by_android,false,"en_US;1500 Coins;1500 Coins, $9.99",true,9990000,
+800coins,published,managed_by_android,false,"en_US;800 Coins;800 Coins, $4.99",true,4990000,
+3200coins,published,managed_by_android,false,"en_US;3200 Coins;3200 Coins, $19.99",true,19990000,
+8000coins,published,managed_by_android,false,"en_US;8000 Coins;8000 Coins, $49.99",true,49990000,
