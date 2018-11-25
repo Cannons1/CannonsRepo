@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 82159463385862642}
   - component: {fileID: 54820841519165630}
   - component: {fileID: 114036914499068972}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WillyWilliam2.0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 4462126900065168}
   - component: {fileID: 114072096116570828}
   - component: {fileID: 114828775574611864}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GameController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1144856206073318}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.0156058, y: -7.4, z: 0}
+  m_LocalPosition: {x: 0.072144985, y: -5.7347775, z: 0}
   m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_Children:
   - {fileID: 4462126900065168}
@@ -228,6 +228,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c86a883cfad5a24cb0f9f6768941be7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  adsProbability: 100
+  maxProbability: 100
   currentSkin: 0
   skinAvailability: 1
   handv: {fileID: 2100000, guid: ecbf3d54eb22d334d923dcb77ad04d49, type: 2}
