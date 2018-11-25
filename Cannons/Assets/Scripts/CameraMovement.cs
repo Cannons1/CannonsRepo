@@ -7,10 +7,11 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] float smoothSpeed;
     Vector3 offset;
     float orientation = 1;
-    [SerializeField] bool downOrientation;
+    public static bool downOrientation;
 
     private void Start()
     {
+        downOrientation = false;
         offset = new Vector3(0, 2f * orientation, -10);
         target = Will.will.gameObject.transform;
     }
