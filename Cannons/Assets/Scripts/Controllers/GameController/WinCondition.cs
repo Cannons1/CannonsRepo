@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using GameAnalyticsSDK;
 
 public class WinCondition : MonoBehaviour {
 
@@ -31,20 +30,26 @@ public class WinCondition : MonoBehaviour {
     }
 
     IEnumerator ActivatingCanvas() {
+        WaitForSeconds one = new WaitForSeconds(0.7f);
+        WaitForSeconds two = new WaitForSeconds(0.1f);
+        WaitForSeconds three = new WaitForSeconds(0.16f);
+        WaitForSeconds four = new WaitForSeconds(1.2f);
+        WaitForSeconds five = new WaitForSeconds(0.32f);
         iGLevelManager.canvas[0].SetActive(false);
         anim[0].SetBool("Opened", true);
-        yield return new WaitForSeconds(0.7f);
+        yield return one;
         audioController.AudioOpenChest();
         audioController.AudioTropicalWin();
-        yield return new WaitForSeconds(0.1f);
+        yield return two;
         cParticle.Play();
         for (int i = 0; i < 3; i++) {
             audioController.AudioCoins();
-            yield return new WaitForSeconds(0.16f);
+            yield return three;
         }
-        yield return new WaitForSeconds(1.2f);
+        yield return four;
+        anim[1].transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width/2f, Screen.height-(Screen.height*0.28f), 10));
         anim[1].SetBool("Win", true);
-        yield return new WaitForSeconds(0.32f);
+        yield return five;
         canvasWin.SetActive(true);
         winTxt[1].text = string.Format("Level {0} complete",level); 
         cParticle.Stop();
