@@ -15,6 +15,8 @@ public class LayerHandler : MonoBehaviour {
             else Physics.IgnoreLayerCollision(9, 10, false);
 
             if (cameraDownOrientation) CameraMovement.downOrientation = true;
+            else CameraMovement.downOrientation = false;
+
             gameObject.SetActive(false);
         }
     }

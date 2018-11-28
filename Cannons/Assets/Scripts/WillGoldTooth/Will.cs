@@ -80,6 +80,7 @@ public class Will : MonoBehaviour
                 Vector3 direction = Vector3.Reflect(updateVelocity.normalized, contactWall.normal);
                 Bounce wallBounce = collision.gameObject.GetComponent<Bounce>();
                 m_Rigidbody.AddForce(direction * wallBounce.Force, ForceMode.Impulse);
+                if(wallBounce.fadeOut) wallBounce.StartCoroutine("FadeOut");
                 break;
             case "LaunchPad":
                 ContactPoint contactLaunch = collision.contacts[0];
