@@ -11,7 +11,6 @@ public class IGLevelManager : MonoBehaviour
     [SerializeField] string menuScene;
     [SerializeField] GameObject loadingScreen;
     [SerializeField] Slider slider;
-    [SerializeField] ChestAnimatedUI chestAnimatedUI;
     [SerializeField] Text lvlName = null, lvlNamePaused = null;
     [SerializeField] GameObject txtTapToShoot;
     [SerializeField] WinCondition winCondition;
@@ -32,6 +31,7 @@ public class IGLevelManager : MonoBehaviour
     public delegate IEnumerator Stars();
     public Stars delStars;
     public static Del countDownHandler;
+    public static Del uIChestAnimated;
 
     private void Start() {
         unnpause = 0;
@@ -79,6 +79,7 @@ public class IGLevelManager : MonoBehaviour
         }
         Time.timeScale = 1;
         Will.will.Revive();
+        StartCoroutine(uIChestAnimated());//Starts again the animation of the chest
         countDown.gameObject.SetActive(false);
     }
 
@@ -158,7 +159,7 @@ public class IGLevelManager : MonoBehaviour
             canvas[0].SetActive(true);
         }
         Time.timeScale = 1;
-        StartCoroutine(chestAnimatedUI.SpriteAnim());
+        StartCoroutine(uIChestAnimated());//Starts again the animation of the chest
         Invoke("waitForShoot", 0.1f);
     }
 

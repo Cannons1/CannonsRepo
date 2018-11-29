@@ -10,6 +10,7 @@ public class ChestAnimatedUI : MonoBehaviour {
     private void Start()
     {
         StartCoroutine(SpriteAnim());
+        IGLevelManager.uIChestAnimated += SpriteAnim;
     }
 
     WaitForSeconds animSpeed = new WaitForSeconds(0.02f);
