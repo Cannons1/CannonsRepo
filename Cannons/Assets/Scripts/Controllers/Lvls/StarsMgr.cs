@@ -20,6 +20,7 @@ public class StarsMgr : MonoBehaviour {
         }
     }
 
+    //Text to visualize total stars in the bottom of the screen
     [SerializeField] Text txtTotalStars;
 
     private void OnEnable()
@@ -45,17 +46,19 @@ public class StarsMgr : MonoBehaviour {
 
         for (int i = 0; i < Singleton.instance.Stars.Length; i++)
         {
-            if (Singleton.instance.Stars[i] == 3)
-            {
-                unlockStars[i].StarsToUnlock(3);
-            }
-            if (Singleton.instance.Stars[i] == 2)
-            {
-                unlockStars[i].StarsToUnlock(2);
-            }
-            if (Singleton.instance.Stars[i] == 1)
-            {
-                unlockStars[i].StarsToUnlock(1);
+            switch (Singleton.instance.Stars[i]) {
+                case 3:
+                    unlockStars[i].StarsToUnlock(3);
+                    break;
+                case 2:
+                    unlockStars[i].StarsToUnlock(2);
+                    break;
+                case 1:
+                    unlockStars[i].StarsToUnlock(1);
+                    break;
+                default:
+                    unlockStars[i].StarsToUnlock(0);
+                    break;
             }
         }
     }

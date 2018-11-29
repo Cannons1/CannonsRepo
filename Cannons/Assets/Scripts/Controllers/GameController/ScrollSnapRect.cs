@@ -87,10 +87,14 @@ public class ScrollSnapRect : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
 
         // init
         startingPage = 0;
-        if (IGLevelManager.isSecondWorld)
-            startingPage = 1;
-        else if (IGLevelManager.isThirdWorld)
-            startingPage = 2;
+        if (IGLevelManager.wichWorld != null) {
+            if (IGLevelManager.wichWorld[0])
+                startingPage = 1;
+            else if (IGLevelManager.wichWorld[1])
+                startingPage = 2;
+            else if (IGLevelManager.wichWorld[2])
+                startingPage = 3;
+        }
         SetPagePositions();
         SetPage(startingPage);
         InitPageSelection();
@@ -286,7 +290,7 @@ public class ScrollSnapRect : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
         LerpToPage(_currentPage + 1);
         if (_currentPage != 0)
             prevButton.SetActive(true);
-        if (_currentPage == _pageSelectionImages.Count - 1)
+        if (_currentPage == _pageSelectionImages.Count -1)
             nextButton.SetActive(false);
     }
 

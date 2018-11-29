@@ -96,6 +96,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Lvl28.unity
     guid: 4f53ef9dda6d44445b1850ae4fbebe01
   - enabled: 1
-    path: Assets/Scenes/Lvl29.unity
+    path: Assets/Scenes/LvlAla1.unity
     guid: 94595919eb8a3f140af40355b7fa7354
+  - enabled: 1
+    path: Assets/Scenes/LvlPPP.unity
+    guid: 2315edc7c0dde384d8cc4903cea5e52f
   m_configObjects: {}
