@@ -25,9 +25,7 @@ public class IGLevelManager : MonoBehaviour
     public GameObject[] canvas;
     public static bool unpause;
     public static bool campaignBtn;
-    public static bool isSecondWorld;
-    public static bool isThirdWorld;
-
+    public static bool[] wichWorld;
 
     public static byte unnpause;
 
@@ -42,8 +40,9 @@ public class IGLevelManager : MonoBehaviour
         slider.value = 1;
         unpause = true;
         campaignBtn = false;
-        isSecondWorld = false;
-        isThirdWorld = false;
+
+        wichWorld = new bool[3];//Number of worlds in game except the number one
+        for (int i = 0; i < wichWorld.Length; i++) { wichWorld[i] = false; }
 
         countDownHandler += CountDown;
 
@@ -75,7 +74,7 @@ public class IGLevelManager : MonoBehaviour
         while(t > 1)
         {
             t -= Time.unscaledDeltaTime;
-            countDown.text = Mathf.RoundToInt(t) + "...";
+            countDown.text = string.Format("{0} ...", Mathf.RoundToInt(t));
             yield return null;
         }
         Time.timeScale = 1;
@@ -106,9 +105,11 @@ public class IGLevelManager : MonoBehaviour
         Singleton.SaveCoins();
         Scene currentScene = SceneManager.GetActiveScene();
         if (currentScene.buildIndex >= 12 && currentScene.buildIndex <= 21)//12 to 21 second World
-            isSecondWorld = true;
+            wichWorld[0] = true;
         else if (currentScene.buildIndex >= 22 && currentScene.buildIndex <= 31)//22 to 31 third world
-            isThirdWorld = true;
+            wichWorld[1] = true;
+        else if (currentScene.buildIndex >= 32 && currentScene.buildIndex <= 41)//32 to 41 fourth world
+            wichWorld[2] = true;
         StartCoroutine(LoadAsynchronously(menuScene));
     }
 
@@ -117,10 +118,13 @@ public class IGLevelManager : MonoBehaviour
         Singleton.SaveCoins();
         switch (_nextWorld) {
             case 2:
-                isSecondWorld = true;
+                wichWorld[0] = true;
                 break;
             case 3:
-                isThirdWorld = true;
+                wichWorld[1] = true;
+                break;
+            case 4:
+                wichWorld[2] = true;
                 break;
             default:
                 break;
