@@ -17,6 +17,7 @@ public class IAPManager : MonoBehaviour, IStoreListener
 
     void Start()
     {
+        print("IAP MANAGER HA SIDO INICIALIZADO");
         // If we haven't set up the Unity Purchasing reference
         if (m_StoreController == null)
         {

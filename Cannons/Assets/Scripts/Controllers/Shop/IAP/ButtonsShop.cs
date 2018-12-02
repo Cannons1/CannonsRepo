@@ -4,7 +4,7 @@ using UnityEngine.Purchasing;
 public class ButtonsShop : MonoBehaviour {
 
     int id;
-    //[SerializeField] IAPManager mIAP;
+    [SerializeField] IAPManager miap;
     [SerializeField] AudioController audioController;
     [SerializeField] WriteVbles writeVbles;
 
@@ -45,28 +45,29 @@ public class ButtonsShop : MonoBehaviour {
     }
 
     public void ButtonBuyIAP(int _id) {
-        
-        //id = _id;
+
+        id = _id;
         //audiocontroller.audiobtndef();
-        //switch (id) {
-        //    case 0:
-        //        miap.buyfirstproduct();
-        //        break;
-        //    case 1:
-        //        miap.buysecondproduct();
-        //        break;
-        //    case 2:
-        //        miap.buythirdproduct();
-        //        break;
-        //    case 3:
-        //        miap.buyfourthproduct();
-        //        break;
-        //    case 4:
-        //        miap.buyfifthproduct();
-        //        break;
-        //    default:
-        //        break;
-        //}
-        
+        switch (id)
+        {
+            case 0:
+                miap.BuyFirstProduct();
+                break;
+            case 1:
+                miap.BuySecondProduct();
+                break;
+            case 2:
+                miap.BuyThirdProduct();
+                break;
+            case 3:
+                miap.BuyFourthProduct();
+                break;
+            case 4:
+                miap.BuyFifthProduct();
+                break;
+            default:
+                break;
+        }
+
     }
 }
