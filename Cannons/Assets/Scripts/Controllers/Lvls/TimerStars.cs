@@ -4,7 +4,6 @@ using UnityEngine;
 public class TimerStars : MonoBehaviour
 {
     [SerializeField] Stars stars;
-    [SerializeField] AudioController audioController;
     [SerializeField] WinCondition winCondition;
     [SerializeField] IGLevelManager iGLevelManager;
     [SerializeField] Animator starsAnimator;
@@ -74,12 +73,12 @@ public class TimerStars : MonoBehaviour
         while (time < _timeStars && !winCondition.WinBool)
         {
             yield return wait;
-            audioController.AudioStar(0.5f);
+            AudioController.sharedInstance.AudioStar(0.5f);
             yield return wait;
         }
         if (!winCondition.WinBool)
         {
-            audioController.AudioStar(0.5f);
+            AudioController.sharedInstance.AudioStar(0.5f);
             if (_star == 3)
             {
                 starsAnimator.SetInteger("Star", -3);
@@ -91,6 +90,6 @@ public class TimerStars : MonoBehaviour
                 currentStar = -2;
             }
         }   
-        audioController.ItemAudioSource.volume = 1f;
+        AudioController.sharedInstance.ItemAudioSource.volume = 1f;
     }
 }

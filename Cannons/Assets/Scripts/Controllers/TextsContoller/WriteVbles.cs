@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class WriteVbles : MonoBehaviour
 {
@@ -8,13 +9,25 @@ public class WriteVbles : MonoBehaviour
     [SerializeField] Text[] menuCoinsTxt;
     [SerializeField] Text dailyGiftTxtAmount= null;
 
+    public static WriteVbles sharedInstance;
+
+    private void Awake()
+    {
+        if (sharedInstance == null) sharedInstance = this;
+    }
+
     private void Start()
     {
         if (PlayerPrefs.HasKey("Coins")) {
             Singleton.instance.Coins = PlayerPrefs.GetInt("Coins");
         }
-        WriteOnPurchase();
-        WritingNumberOfCoins();
+        if (SceneManager.GetActiveScene().name == "Menu")
+        {
+            WriteOnPurchase();
+        }
+        else {
+            WritingNumberOfCoins();
+        }
     }
 
     public void WritingNumberOfCoins()
@@ -27,8 +40,14 @@ public class WriteVbles : MonoBehaviour
     }
 
     public void WriteOnPurchase() {
-        foreach (Text coinsTxt in menuCoinsTxt) {
-            coinsTxt.text = Singleton.instance.Coins.ToString();
+        if (menuCoinsTxt != null)
+        {
+            foreach (Text coinsTxt in menuCoinsTxt)
+            {
+                if (coinsTxt != null) {
+                    coinsTxt.text = Singleton.instance.Coins.ToString();
+                }
+            }
         }
     }
 

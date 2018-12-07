@@ -13,8 +13,6 @@ public class IAPManager : MonoBehaviour, IStoreListener
     public static string FOURTH_PRODUCT = "fourth_product4.";
     public static string FIFTH_PRODUCT = "fifth_product5.";
 
-    [SerializeField] WriteVbles writeVbles;
-
     void Start()
     {
         print("IAP MANAGER HA SIDO INICIALIZADO");
@@ -185,7 +183,7 @@ public class IAPManager : MonoBehaviour, IStoreListener
     private void Coins(int _coins) {
         Singleton.instance.Coins += _coins;
         Singleton.SaveCoins();
-        writeVbles.WriteOnPurchase();
+        WriteVbles.sharedInstance.WriteOnPurchase();
     }
 }
 

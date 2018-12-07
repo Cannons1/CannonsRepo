@@ -6,7 +6,6 @@ public class MutedAudios : MonoBehaviour
 {
     [SerializeField] AudioMixer masterMixer;
     [SerializeField] Toggle sFxToggle = null, musicToggle = null;
-    [SerializeField] AudioController audioController;
 
     byte i = 0;
 
@@ -30,8 +29,8 @@ public class MutedAudios : MonoBehaviour
             i += 1;
             if (i == 1)
             {
-                if (audioController.UIAudioSource.isPlaying == true)
-                    audioController.UIAudioSource.Stop();
+                if (AudioController.sharedInstance.UIAudioSource.isPlaying == true)
+                    AudioController.sharedInstance.UIAudioSource.Stop();
             }
         }
     }

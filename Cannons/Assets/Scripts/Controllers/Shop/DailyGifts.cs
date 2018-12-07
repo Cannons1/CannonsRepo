@@ -7,8 +7,6 @@ using System;
 
 public class DailyGifts : MonoBehaviour
 {
-    [SerializeField] WriteVbles mWriteVbles;
-    [SerializeField] AudioController audioController;
     [SerializeField] DateTimeController dateTime;
     public Button buttonDaily;
 
@@ -61,30 +59,30 @@ public class DailyGifts : MonoBehaviour
         GameAnalytics.NewDesignEvent("DailyGift");
         switch (Singleton.instance.DailyGifts) {
             case 1:
-                StartCoroutine(mWriteVbles.CountCoins(50));
+                StartCoroutine(WriteVbles.sharedInstance.CountCoins(50));
                 break;
             case 2:
-                StartCoroutine(mWriteVbles.CountCoins(150));
+                StartCoroutine(WriteVbles.sharedInstance.CountCoins(150));
                 break;
             case 3:
-                StartCoroutine(mWriteVbles.CountCoins(300));
+                StartCoroutine(WriteVbles.sharedInstance.CountCoins(300));
                 break;
             case 4:
-                StartCoroutine(mWriteVbles.CountCoins(500));
+                StartCoroutine(WriteVbles.sharedInstance.CountCoins(500));
                 break;
             case 5:
-                StartCoroutine(mWriteVbles.CountCoins(600));
+                StartCoroutine(WriteVbles.sharedInstance.CountCoins(600));
                 break;
             case 6:
-                StartCoroutine(mWriteVbles.CountCoins(900));
+                StartCoroutine(WriteVbles.sharedInstance.CountCoins(900));
                 break;
             case 7:
-                StartCoroutine(mWriteVbles.CountCoins(1500));
+                StartCoroutine(WriteVbles.sharedInstance.CountCoins(1500));
                 SeventhDay();
                 break;
         }
 
-        audioController.SoundClaimGift();
+        AudioController.sharedInstance.SoundClaimGift();
         DateTimeController.SaveDateTime();
         dateTime.GetTime();
         PlayerPrefs.SetInt("ButtonDaily", 0);

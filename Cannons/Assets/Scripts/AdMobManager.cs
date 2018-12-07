@@ -14,7 +14,6 @@ public class AdMobManager : MonoBehaviour
 
     [SerializeField] int reward;
     [SerializeField] GameObject panelReward;
-    [SerializeField] WriteVbles writeVbles;
 
     public RewardBasedVideoAd coinsVideo;
     public RewardBasedVideoAd lifeVideo;
@@ -104,7 +103,7 @@ public class AdMobManager : MonoBehaviour
         panelReward.GetComponent<AnimPanels>().AnimPanelReward();
         Singleton.instance.Coins += reward;
         Singleton.SaveCoins();
-        writeVbles.WriteOnPurchase();
+        WriteVbles.sharedInstance.WriteOnPurchase();
     }
 
     private void CoinsVideoClosed(object sender, EventArgs e)

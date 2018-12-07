@@ -34,6 +34,13 @@ public class AudioController : MonoBehaviour {
     }
     Will will;
 
+    public static AudioController sharedInstance;
+
+    private void Awake()
+    {
+        if (sharedInstance == null) sharedInstance = this;
+    }
+
     private void Start()
     {
         Music();
@@ -95,15 +102,15 @@ public class AudioController : MonoBehaviour {
     }
 
     public void AudioTropicalWin() {
-        StartCoroutine(MusicBack(tropicalWin, musicAudioSource.volume));
+        StartCoroutine(MusicBack(tropicalWin));
     }
 
-    IEnumerator MusicBack(AudioClip _tropicalWin,float _currentVolume) {
-        musicAudioSource.clip = _tropicalWin;
+    IEnumerator MusicBack(AudioClip _tropicalWin) {
+        musicAudioSource.clip = null;
         musicAudioSource.volume = 1f;
-        musicAudioSource.Play();
+        musicAudioSource.PlayOneShot(_tropicalWin);
         yield return new WaitForSeconds(_tropicalWin.length);
-        musicAudioSource.volume = _currentVolume;
+        musicAudioSource.volume = 0.084f;
         Music();
     }
 }

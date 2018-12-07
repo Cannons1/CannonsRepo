@@ -14,7 +14,6 @@ public class IGLevelManager : MonoBehaviour
     [SerializeField] Text lvlName = null, lvlNamePaused = null;
     [SerializeField] GameObject txtTapToShoot;
     [SerializeField] WinCondition winCondition;
-    [SerializeField] AudioController audioController;
     [SerializeField] Distance distance;
     [SerializeField] Text countDown;
 
@@ -141,13 +140,6 @@ public class IGLevelManager : MonoBehaviour
             canvas[0].SetActive(false);
             canvas[1].SetActive(true);
         }
-
-        StartCoroutine(PauseGame());
-    }
-
-    IEnumerator PauseGame() {
-        WaitForSeconds wait = new WaitForSeconds(0.25f);
-        yield return wait;
         Time.timeScale = 0;
     }
 
@@ -179,7 +171,7 @@ public class IGLevelManager : MonoBehaviour
 
     public IEnumerator LoadAsynchronously(string _sceneName) {
         Time.timeScale = 1;
-        audioController.AudioBtnDef();
+        AudioController.sharedInstance.AudioBtnDef();
         yield return new WaitForSeconds(0.13f);
         loadingScreen.SetActive(true);
         foreach (GameObject a in canvas) {
@@ -196,7 +188,7 @@ public class IGLevelManager : MonoBehaviour
 
     public IEnumerator LoadAsynchronously(int index) {
         Time.timeScale = 1;
-        audioController.AudioBtnDef();
+        AudioController.sharedInstance.AudioBtnDef();
         yield return new WaitForSeconds(0.13f);
         loadingScreen.SetActive(true);
         foreach (GameObject a in canvas)

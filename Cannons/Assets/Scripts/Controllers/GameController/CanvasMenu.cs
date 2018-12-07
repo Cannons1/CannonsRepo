@@ -3,7 +3,6 @@
 public class CanvasMenu : MonoBehaviour {
 
     [SerializeField] GameObject[] canvas;
-    [SerializeField] AudioController audioController;
     [SerializeField] ShopController shopController;
     [SerializeField] GameObject panelCredits;
 
@@ -45,7 +44,7 @@ public class CanvasMenu : MonoBehaviour {
                     BackSettings();
                 else {
                     panelCredits.SetActive(false);
-                    audioController.AudioBtnBack();
+                    AudioController.sharedInstance.AudioBtnBack();
                 }
             }
             else if (Canvas[2].activeInHierarchy && !canvas[3].activeInHierarchy) {
@@ -54,7 +53,7 @@ public class CanvasMenu : MonoBehaviour {
             if (Canvas[3].activeInHierarchy)
             {
                 canvas[3].SetActive(false);
-                audioController.AudioBtnBack();
+                AudioController.sharedInstance.AudioBtnBack();
             }
             else if (Canvas[4].activeInHierarchy)
             {
@@ -70,24 +69,24 @@ public class CanvasMenu : MonoBehaviour {
     private void BackSettings() {
         Canvas[1].SetActive(false);
         PrincipalCanvasActive();
-        audioController.AudioBtnBack();
+        AudioController.sharedInstance.AudioBtnBack();
     }
 
     private void BackLeaderboard() {
         Canvas[2].SetActive(false);
         PrincipalCanvasActive();
-        audioController.AudioBtnBack();
+        AudioController.sharedInstance.AudioBtnBack();
     }
 
     private void BackCharacter() {
         Canvas[2].SetActive(false);
         PrincipalCanvasActive();
-        audioController.AudioBtnBack();
+        AudioController.sharedInstance.AudioBtnBack();
     }
 
     private void BackCampaing() {
         Canvas[4].SetActive(false);
         PrincipalCanvasActive();
-        audioController.AudioBtnBack();
+        AudioController.sharedInstance.AudioBtnBack();
     }
 }

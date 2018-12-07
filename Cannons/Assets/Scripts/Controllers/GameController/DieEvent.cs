@@ -10,7 +10,6 @@ public class DieEvent : MonoBehaviour
     Collider[] mColliders;
     [SerializeField] IGLevelManager iGLevelManager;
     [SerializeField] WinCondition winCondition;
-    [SerializeField] WriteVbles writeVbles;
     [SerializeField] AnimPanels panelRetry;
     [SerializeField] AdMobManager adMobManager;
     public delegate void Revive();
@@ -83,7 +82,7 @@ public class DieEvent : MonoBehaviour
             iGLevelManager.canvas[2].SetActive(true);
         }
         panelRetry.AnimPanelRetry();
-        writeVbles.CoinsInRetry();
+        WriteVbles.sharedInstance.CoinsInRetry();
         yield return new WaitForSeconds(0.25f);
         Time.timeScale = 0;
     }

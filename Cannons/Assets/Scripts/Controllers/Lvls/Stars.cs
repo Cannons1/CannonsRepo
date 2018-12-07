@@ -7,7 +7,6 @@ public class Stars : MonoBehaviour {
 
     [SerializeField] Image[] starsImg;
     [SerializeField] WinCondition mWinCondition;
-    [SerializeField] AudioController audioController;
 
     public float time3Stars, time2Stars;
 
@@ -47,16 +46,16 @@ public class Stars : MonoBehaviour {
     }
 
     IEnumerator UnlockingStars(int _num) {
-        float pitch = audioController.ItemAudioSource.pitch;
+        float pitch = AudioController.sharedInstance.ItemAudioSource.pitch;
         yield return new WaitForSeconds(3.5f);
         for (int i = 0; i < starsImg.Length; i++) {
             if (i < _num) {
                 starsImg[i].enabled = false;
-                audioController.AudioStar();
-                audioController.ItemAudioSource.pitch += 1;
+                AudioController.sharedInstance.AudioStar();
+                AudioController.sharedInstance.ItemAudioSource.pitch += 1;
             }
             yield return new WaitForSeconds(0.15f);
         }
-        audioController.ItemAudioSource.pitch = pitch;
+        AudioController.sharedInstance.ItemAudioSource.pitch = pitch;
     }
 }

@@ -6,9 +6,7 @@ public class ShopController : MonoBehaviour {
     [SerializeField] GameObject skinButtonPref;
     [SerializeField] GameObject skinContainer;
     [SerializeField] SkinData skinInfo;
-    [SerializeField] AudioController audioController;
     [SerializeField] CanvasMenu canvasManager;
-    [SerializeField] WriteVbles writeVbles;
 
     private void Start()
     {
@@ -45,18 +43,18 @@ public class ShopController : MonoBehaviour {
             {
                 Singleton.instance.Coins -= value;
                 PlayerPrefs.SetInt("Coins", Singleton.instance.Coins);
-                writeVbles.WriteOnPurchase();
+                WriteVbles.sharedInstance.WriteOnPurchase();
                 GameController.Instance.skinAvailability += 1 << skinIndex;
                 GameController.Instance.Save();
                 skinContainer.transform.GetChild(skinIndex).GetChild(0).gameObject.SetActive(false);
                 skinContainer.transform.GetChild(skinIndex).GetChild(1).gameObject.SetActive(true);
                 skinContainer.transform.GetChild(skinIndex).GetChild(3).gameObject.SetActive(false);
-                audioController.AudioTropicalWin();
+                AudioController.sharedInstance.AudioTropicalWin();
             }
             else {
-                //canvasManager.Canvas[3].SetActive(true);
-                //canvasManager.Canvas[3].GetComponentInChildren<Animator>().SetBool("OpenShop", true);
-                //audioController.AudioBtnDef();
+                canvasManager.Canvas[3].SetActive(true);
+                canvasManager.Canvas[3].GetComponentInChildren<Animator>().SetBool("OpenShop", true);
+                AudioController.sharedInstance.AudioBtnDef();
             }
         }
     }    
@@ -65,7 +63,7 @@ public class ShopController : MonoBehaviour {
         skinContainer.transform.GetChild(GameController.Instance.currentSkin).GetChild(4).gameObject.SetActive(false);
         if ((GameController.Instance.skinAvailability & 1 << skinIndex) == 1 << skinIndex)
         {
-            audioController.AudioBtnDef();
+            AudioController.sharedInstance.AudioBtnDef();
             skinContainer.transform.GetChild(skinIndex).GetChild(4).gameObject.SetActive(true);
             GameController.Instance.currentSkin = skinIndex;
             GameController.Instance.Save();

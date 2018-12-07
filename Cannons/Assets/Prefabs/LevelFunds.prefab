@@ -2814,7 +2814,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: e2c6044e501b32247bab2d576626128d, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -3047,7 +3047,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stars: {fileID: 114861857502814000}
-  audioController: {fileID: 114694582040387180}
   winCondition: {fileID: 114534144998237950}
   iGLevelManager: {fileID: 114414949778851446}
   starsAnimator: {fileID: 95918755898661238}
@@ -3275,7 +3274,6 @@ MonoBehaviour:
   masterMixer: {fileID: 24100000, guid: fa6623a82736c034cbd2d20a97c7b71e, type: 2}
   sFxToggle: {fileID: 114604764940337462}
   musicToggle: {fileID: 114389376859617396}
-  audioController: {fileID: 114694582040387180}
 --- !u!114 &114192619575331152
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4151,12 +4149,10 @@ MonoBehaviour:
   menuScene: Menu
   loadingScreen: {fileID: 1391139646021554}
   slider: {fileID: 114677324906742672}
-  chestAnimatedUI: {fileID: 114275165577332188}
   lvlName: {fileID: 114202516206084058}
   lvlNamePaused: {fileID: 114192619575331152}
   txtTapToShoot: {fileID: 1214782714028226}
   winCondition: {fileID: 114534144998237950}
-  audioController: {fileID: 114694582040387180}
   distance: {fileID: 114651438300736286}
   countDown: {fileID: 114757558004505604}
   adWatchButton: {fileID: 1045545746223738}
@@ -4561,7 +4557,6 @@ MonoBehaviour:
   - {fileID: 95869698766652540}
   - {fileID: 95029255879154480}
   cParticle: {fileID: 198034215770497476}
-  audioController: {fileID: 114694582040387180}
   iGLevelManager: {fileID: 114414949778851446}
 --- !u!114 &114577336929443846
 MonoBehaviour:
@@ -5517,7 +5512,6 @@ MonoBehaviour:
   - {fileID: 114440169053136574}
   - {fileID: 114829360124962596}
   mWinCondition: {fileID: 114534144998237950}
-  audioController: {fileID: 114694582040387180}
   time3Stars: 15
   time2Stars: 20
 --- !u!114 &114864330336271670
@@ -5560,7 +5554,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iGLevelManager: {fileID: 114414949778851446}
   winCondition: {fileID: 114534144998237950}
-  writeVbles: {fileID: 114178787721354798}
   panelRetry: {fileID: 114305361127167858}
   adMobManager: {fileID: 114922753755192424}
 --- !u!114 &114873946662038332
@@ -5708,7 +5701,6 @@ MonoBehaviour:
   interstitialProbability: 0
   reward: 0
   panelReward: {fileID: 0}
-  writeVbles: {fileID: 0}
 --- !u!114 &114923840028794184
 MonoBehaviour:
   m_ObjectHideFlags: 1

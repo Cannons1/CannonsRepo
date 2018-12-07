@@ -5,15 +5,9 @@ public class ButtonsShop : MonoBehaviour {
 
     int id;
     [SerializeField] IAPManager miap;
-    [SerializeField] AudioController audioController;
-    [SerializeField] WriteVbles writeVbles;
-
-    private void Start()
-    {
-
-    }
+    //[SerializeField] WriteVbles writeVbles;
     
-    public void Buy(Product _product)
+    /*public void Buy(Product _product)
     {
         switch (_product.definition.id)
         {
@@ -42,12 +36,12 @@ public class ButtonsShop : MonoBehaviour {
         Singleton.instance.Coins += _coins;
         Singleton.SaveCoins();
         writeVbles.WriteOnPurchase();
-    }
+    }*/
 
     public void ButtonBuyIAP(int _id) {
 
         id = _id;
-        //audiocontroller.audiobtndef();
+        AudioController.sharedInstance.AudioBtnDef();
         switch (id)
         {
             case 0:
@@ -68,6 +62,5 @@ public class ButtonsShop : MonoBehaviour {
             default:
                 break;
         }
-
     }
 }
