@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using UnityEngine.SceneManagement;
 
 public class Distance : MonoBehaviour
 {
@@ -20,11 +19,6 @@ public class Distance : MonoBehaviour
     public delegate void TextInGame(float _probabilityToShow);
     public TextInGame delTextInGame;
 
-    public delegate void TxtTapShoot();
-    public TxtTapShoot delTxtTapShoot;
-    bool sceneOne = false;
-    byte countCannons = 0;
-
     public delegate IEnumerator Seagull();
     public Seagull delSeagull;
     private bool isActiveSeagulls = false;
@@ -38,9 +32,6 @@ public class Distance : MonoBehaviour
 
         //Recibe evento de Will
         will.OnProgressLvl += CalulateDistance;
-
-        if (SceneManager.GetActiveScene().name == "Lvl1")
-            sceneOne = true;
     }
 
     /// <summary>
@@ -63,14 +54,6 @@ public class Distance : MonoBehaviour
         }
 
         delTextInGame(0.3f);
-
-        if (sceneOne) {
-            countCannons++;
-            if (countCannons >= 2) {
-                delTxtTapShoot();
-                sceneOne = false;
-            }
-        }
     }
 
     IEnumerator UpdateValue(float _actualDistance)

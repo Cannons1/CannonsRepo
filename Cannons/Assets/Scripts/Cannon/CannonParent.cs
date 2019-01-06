@@ -5,6 +5,8 @@ using EZCameraShake;
 //[RequireComponent(typeof(Points))]
 
 //[ExecuteInEditMode]
+public delegate void DelShoot();
+
 [RequireComponent(typeof(AudioCannons))]
 public abstract class CannonParent : MonoBehaviour
 {
@@ -30,6 +32,8 @@ public abstract class CannonParent : MonoBehaviour
     WaitForSecondsRealtime littleWait;
     protected Vector3 initialRot;
 
+    public static DelShoot delShoot;
+
     protected virtual void Start()
     {
         littleWait = new WaitForSecondsRealtime(0.1f);
@@ -45,6 +49,10 @@ public abstract class CannonParent : MonoBehaviour
     {
         if (Input.GetButtonUp("Fire1") && canShoot && IGLevelManager.unpause)
         {
+            if (IGLevelManager.firstTutotial && delShoot != null)
+            {
+                delShoot();
+            }
             mAnimator.SetTrigger("Shoot");
             Shoot();
         }

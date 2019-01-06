@@ -12,9 +12,8 @@ public class IGLevelManager : MonoBehaviour
     [SerializeField] GameObject loadingScreen;
     [SerializeField] Slider slider;
     [SerializeField] Text lvlName = null, lvlNamePaused = null;
-    [SerializeField] GameObject txtTapToShoot;
+    [SerializeField] GameObject animTapToShoot;
     [SerializeField] WinCondition winCondition;
-    [SerializeField] Distance distance;
     [SerializeField] Text countDown;
 
     public GameObject adWatchButton;
@@ -31,6 +30,9 @@ public class IGLevelManager : MonoBehaviour
     public Stars delStars;
     public static Del countDownHandler;
     public static Del uIChestAnimated;
+
+    public static bool firstTutotial;
+    public static bool tutorialFinished = false;
 
     private void Start() {
         unnpause = 0;
@@ -50,15 +52,25 @@ public class IGLevelManager : MonoBehaviour
 
         Invoke("SetLvlName", 2f);
 
-        if (SceneManager.GetActiveScene().name == "Lvl1") {
-            txtTapToShoot.SetActive(true);
-            distance.delTxtTapShoot += SetTapShoot;
+        if (SceneManager.GetActiveScene().name == "Lvl1")
+        {
+            if (tutorialFinished != true)
+            {
+                animTapToShoot.SetActive(true);
+                firstTutotial = true;
+                CannonParent.delShoot += SetTapShoot;
+            }
+            else {
+                animTapToShoot.SetActive(false);
+            }
         }
         GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, winCondition.level.ToString());
     }
 
     private void SetTapShoot() {
-        txtTapToShoot.SetActive(false);
+        animTapToShoot.SetActive(false);
+        tutorialFinished = true;
+        firstTutotial = false;
     }
 
     private void SetLvlName() {
