@@ -55,7 +55,7 @@ public class DailyGifts : MonoBehaviour
 
     public void GettingGift()
     {
-        NotificationManager.Send(TimeSpan.FromHours(24), "Daily gift!", "Is now available your daily gift", Color.white);
+        NotificationManager.Send(TimeSpan.FromHours(24), "Daily gift!", "Daily gift available", Color.white);
         GameAnalytics.NewDesignEvent("DailyGift");
         switch (Singleton.instance.DailyGifts) {
             case 1:
