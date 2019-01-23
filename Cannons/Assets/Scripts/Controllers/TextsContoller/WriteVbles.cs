@@ -14,6 +14,7 @@ public class WriteVbles : MonoBehaviour
     private void Awake()
     {
         if (sharedInstance == null) sharedInstance = this;
+        else Destroy(this);
     }
 
     private void Start()
