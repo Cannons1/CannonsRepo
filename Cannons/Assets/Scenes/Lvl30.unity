@@ -3546,9 +3546,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -2.35
       objectReference: {fileID: 0}
-    - target: {fileID: 114210241993506244, guid: 50968a4552340f3468aec73489bdefb1,
-        type: 3}
-      propertyPath: downOrientation
+    - target: {fileID: 1679607091488942, guid: 50968a4552340f3468aec73489bdefb1, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1036424639191088, guid: 50968a4552340f3468aec73489bdefb1, type: 3}
@@ -3558,6 +3557,11 @@ PrefabInstance:
     - target: {fileID: 1895899542989700, guid: 50968a4552340f3468aec73489bdefb1, type: 3}
       propertyPath: m_Name
       value: "MiniPoolExplosi\xF3n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114210241993506244, guid: 50968a4552340f3468aec73489bdefb1,
+        type: 3}
+      propertyPath: downOrientation
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50968a4552340f3468aec73489bdefb1, type: 3}
