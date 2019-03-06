@@ -3,21 +3,22 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ffdb59321f5aa47a48670265007a796b, type: 3}
   m_Name: ChartboostSettings
   m_EditorClassIdentifier: 
-  iOSAppId: CB_IOS_APP_ID
-  iOSAppSecret: CB_IOS_APP_SIGNATURE
-  androidAppId: CB_ANDROID_APP_ID
-  androidAppSecret: CB_ANDROID_APP_SIGNATURE
-  amazonAppId: CB_AMAZON_APP_ID
-  amazonAppSecret: CB_AMAZON_APP_SIGNATURE
-  isLoggingEnabled: 0
+  iOSAppId: 
+  iOSAppSecret: 
+  androidAppId: 5bcfc2d8254a5c0ab97830ab
+  androidAppSecret: 603056908ddd6020175207b5e515347c55a47ede
+  amazonAppId: 
+  amazonAppSecret: 
+  isLoggingEnabled: 1
   androidPlatformLabels:
   - Google Play
   - Amazon
