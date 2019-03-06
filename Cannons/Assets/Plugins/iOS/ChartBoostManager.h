@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 
 #if !defined(CB_UNITY_SDK_VERSION_STRING)
-  #define CB_UNITY_SDK_VERSION_STRING @"7.2.0"
+  #define CB_UNITY_SDK_VERSION_STRING @"7.3.0"
 #endif
 
 

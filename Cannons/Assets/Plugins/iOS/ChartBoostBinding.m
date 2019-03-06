@@ -233,6 +233,11 @@ void _chartBoostRestrictDataCollection(BOOL shouldRestrict)
     [Chartboost restrictDataCollection:shouldRestrict];
 }
 
+void _chartBoostsetPIDataUseConsent(CBPIDataUseConsent consent)
+{
+    [Chartboost setPIDataUseConsent:consent];
+}
+
 void _chartBoostSetMuted(BOOL muted)
 {
     [Chartboost setMuted:muted];
