@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffdb59321f5aa47a48670265007a796b, type: 3}
   m_Name: ChartboostSettings
   m_EditorClassIdentifier: 
-  iOSAppId: 
-  iOSAppSecret: 
+  iOSAppId: 5c803a320ab2a50c784ff40b
+  iOSAppSecret: f5e89e4877817beb2e5b27532be9ace277d91c46
   androidAppId: 5bcfc2d8254a5c0ab97830ab
   androidAppSecret: 603056908ddd6020175207b5e515347c55a47ede
   amazonAppId: 

@@ -8,13 +8,14 @@ public class ChartBoostManager : MonoBehaviour
 {
     void Start()
     {
-        Chartboost.didCompleteRewardedVideo += RewardCoins;
+        Chartboost.cacheRewardedVideo(CBLocation.HomeScreen);
+        Chartboost.didCompleteRewardedVideo += RewardCoins;       
     }
 
     private void RewardCoins(CBLocation arg1, int arg2)
     {
         Singleton.instance.Coins += 60;
-        WriteVbles.sharedInstance.WritingNumberOfCoins();
+        WriteVbles.sharedInstance.WriteOnPurchase();
     }
 
 
@@ -22,13 +23,24 @@ public class ChartBoostManager : MonoBehaviour
     {
         if (Chartboost.hasRewardedVideo(CBLocation.HomeScreen))
         {
-            Chartboost.hasRewardedVideo(CBLocation.HomeScreen);
+            Chartboost.showRewardedVideo(CBLocation.HomeScreen);
         }
         else
         {
-            Chartboost.hasRewardedVideo(CBLocation.HomeScreen);
-        }
+            Chartboost.cacheRewardedVideo(CBLocation.HomeScreen);
+        }       
     }
 
+    public void ShowLifeVideo()
+    {
+        if (Chartboost.hasRewardedVideo(CBLocation.HomeScreen))
+        {
+            Chartboost.showRewardedVideo(CBLocation.HomeScreen);
+        }
+        else
+        {
+            Chartboost.cacheRewardedVideo(CBLocation.HomeScreen);
+        }
+    }
 
 }
